@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.rabee.recyclerviewspeedtest.Constants;
+import com.example.rabee.recyclerviewspeedtest.GeneralInfo;
 import com.example.rabee.recyclerviewspeedtest.R;
 import com.squareup.picasso.Picasso;
 
@@ -32,8 +32,8 @@ public class UserProfileActivity extends AppCompatActivity{
         coverImage = (ImageView) findViewById(R.id.coverImage);
         userName = (TextView) findViewById(R.id.user_profile_name);
 
-        userName.setText(Constants.USER_NAME);
-        String imageUrl= Constants.SPRING_URL+"/"+Constants.PROFILE_PIC;
+        userName.setText(GeneralInfo.USER_NAME);
+        String imageUrl= GeneralInfo.SPRING_URL+"/"+ GeneralInfo.PROFILE_PIC;
         Picasso.with(getApplicationContext()).load(imageUrl).into(img);
         Picasso.with(getApplicationContext()).load(imageUrl).into(coverImage);
 

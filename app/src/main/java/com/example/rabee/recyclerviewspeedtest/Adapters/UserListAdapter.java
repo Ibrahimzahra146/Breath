@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.rabee.recyclerviewspeedtest.Constants;
+import com.example.rabee.recyclerviewspeedtest.GeneralInfo;
 import com.example.rabee.recyclerviewspeedtest.Models.UserModel;
 import com.example.rabee.recyclerviewspeedtest.R;
 import com.squareup.picasso.Picasso;
@@ -42,7 +42,7 @@ public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.UserVi
     public void onBindViewHolder(UserViewHolder holder, int position) {
         String fullName=userModelList.get(position).getFirst_name() +""+userModelList.get(position).getLast_name();
         holder.tvName.setText(fullName);
-        String imageUrl = Constants.SPRING_URL + "/" +userModelList.get(position).getImage() ;
+        String imageUrl = GeneralInfo.SPRING_URL + "/" +userModelList.get(position).getImage() ;
         Picasso.with(mContext).load(imageUrl).into(holder.ivProfile);
     }
 

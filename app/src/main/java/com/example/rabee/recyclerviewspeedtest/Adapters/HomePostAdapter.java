@@ -22,8 +22,8 @@ import de.hdodenhof.circleimageview.CircleImageView;
  */
 
 
-import com.example.rabee.recyclerviewspeedtest.Models.PostCommentModel;
-import com.example.rabee.recyclerviewspeedtest.Models.PostResponseModel;
+import com.example.rabee.recyclerviewspeedtest.Models.ResponseModels.PostCommentResponseModel;
+import com.example.rabee.recyclerviewspeedtest.Models.ResponseModels.PostResponseModel;
 import com.example.rabee.recyclerviewspeedtest.R;
 import com.squareup.picasso.Picasso;
 
@@ -32,9 +32,9 @@ import com.squareup.picasso.Picasso;
  */
 
 public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyViewHolder>{
-    private List<PostCommentModel> postResponseModelsList;
+    private List<PostCommentResponseModel> postResponseModelsList;
     private Context context;
-    public HomePostAdapter(Context context, List<PostCommentModel> postResponseModelsList){
+    public HomePostAdapter(Context context, List<PostCommentResponseModel> postResponseModelsList){
         this.postResponseModelsList=postResponseModelsList;
         this.context=context;
     }
@@ -46,7 +46,7 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        PostResponseModel postResponseModel=postResponseModelsList.get(position).getPost();
+        PostResponseModel postResponseModel =postResponseModelsList.get(position).getPost();
         holder.posterUserName.setText(postResponseModel.getUserId().getFirst_name() + " " + postResponseModel.getUserId().getLast_name());
         holder.postBodyText.setText(postResponseModel.getText());
         String image;

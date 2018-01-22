@@ -1,8 +1,6 @@
 package com.example.rabee.recyclerviewspeedtest.fragments;
 
-import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -12,7 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.rabee.recyclerviewspeedtest.Activities.UserProfileActivity;
-import com.example.rabee.recyclerviewspeedtest.Constants;
+import com.example.rabee.recyclerviewspeedtest.GeneralInfo;
 import com.example.rabee.recyclerviewspeedtest.R;
 import com.squareup.picasso.Picasso;
 
@@ -70,8 +68,8 @@ public class SettingsFragment extends Fragment {
         view=inflater.inflate(R.layout.fragment_settings, container, false);
         userName = (TextView) view.findViewById(R.id.userName);
         profilePicture = (CircleImageView) view.findViewById(R.id.profile_picture);
-        userName.setText(Constants.USER_NAME);
-        String imageUrl=Constants.SPRING_URL+"/"+Constants.PROFILE_PIC;
+        userName.setText(GeneralInfo.USER_NAME);
+        String imageUrl= GeneralInfo.SPRING_URL+"/"+ GeneralInfo.PROFILE_PIC;
         Picasso.with(getContext()).load(imageUrl).into(profilePicture);
         LinearLayout showProfileLayout = (LinearLayout) view.findViewById(R.id.showProfileLayout);
         showProfileLayout.setOnClickListener(new View.OnClickListener() {

@@ -1,7 +1,5 @@
 package com.example.rabee.recyclerviewspeedtest.fragments;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -9,9 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.rabee.recyclerviewspeedtest.Constants;
 import com.example.rabee.recyclerviewspeedtest.R;
-import com.squareup.picasso.Picasso;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 

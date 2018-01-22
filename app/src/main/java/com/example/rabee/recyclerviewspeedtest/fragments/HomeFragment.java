@@ -8,7 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.rabee.recyclerviewspeedtest.Models.PostCommentModel;
+import com.example.rabee.recyclerviewspeedtest.Models.ResponseModels.PostCommentResponseModel;
 import com.example.rabee.recyclerviewspeedtest.R;
 import com.example.rabee.recyclerviewspeedtest.Adapters.HomePostAdapter;
 import com.example.rabee.recyclerviewspeedtest.ReactsRecyclerViewModel;
@@ -24,7 +24,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 
 public class HomeFragment extends Fragment {
-    public static List<PostCommentModel> postResponseModelsList;
+    public static List<PostCommentResponseModel> postResponseModelsList;
     RecyclerView recyclerView;
     View view;
     // TODO: Rename parameter arguments, choose names that match
@@ -76,11 +76,11 @@ public class HomeFragment extends Fragment {
                 .baseUrl("http://17caa777.ngrok.io")
                 .addConverterFactory(GsonConverterFactory.create()).build();
         postInterface = retrofit.create(PostInterface.class);
-        final Call<List<PostCommentModel>> postResponse = postInterface.getUserHomePost(1);
-        postResponse.enqueue(new Callback<List<PostCommentModel>>() {
+        final Call<List<PostCommentResponseModel>> postResponse = postInterface.getUserHomePost(1);
+        postResponse.enqueue(new Callback<List<PostCommentResponseModel>>() {
 
             @Override
-            public void onResponse(Call<List<PostCommentModel>> call, Response<List<PostCommentModel>> response) {
+            public void onResponse(Call<List<PostCommentResponseModel>> call, Response<List<PostCommentResponseModel>> response) {
                 postResponseModelsList = response.body();
 
                 recyclerView.setAdapter(new HomePostAdapter(getContext(),postResponseModelsList));
@@ -88,7 +88,7 @@ public class HomeFragment extends Fragment {
             }
 
             @Override
-            public void onFailure(Call<List<PostCommentModel>> call, Throwable t) {
+            public void onFailure(Call<List<PostCommentResponseModel>> call, Throwable t) {
 
             }
         });

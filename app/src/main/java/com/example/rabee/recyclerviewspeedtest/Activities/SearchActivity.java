@@ -5,13 +5,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
-import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 
-import com.example.rabee.recyclerviewspeedtest.Adapters.HomePostAdapter;
 import com.example.rabee.recyclerviewspeedtest.Adapters.UserListAdapter;
-import com.example.rabee.recyclerviewspeedtest.Constants;
+import com.example.rabee.recyclerviewspeedtest.GeneralInfo;
 import com.example.rabee.recyclerviewspeedtest.Models.UserModel;
 import com.example.rabee.recyclerviewspeedtest.R;
 import com.example.rabee.recyclerviewspeedtest.RequestInterface.SearchInterface;
@@ -87,7 +85,7 @@ public class SearchActivity extends AppCompatActivity {
 
         userModelList.clear();
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(Constants.SPRING_URL)
+                .baseUrl(GeneralInfo.SPRING_URL)
                 .addConverterFactory(GsonConverterFactory.create()).build();
 
         searchInterface = retrofit.create(SearchInterface.class);

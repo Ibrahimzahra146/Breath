@@ -29,7 +29,8 @@
             android:name=".Activities.SearchActivity"
             android:label="@string/title_activity_search"
             android:theme="@style/AppTheme" />
-        <activity android:name=".Activities.UserProfileActivity"></activity>
+        <activity android:name=".Activities.UserProfileActivity" />
+        <activity android:name=".Activities.SplashActivity"></activity>
     </application>
 
 </manifest>

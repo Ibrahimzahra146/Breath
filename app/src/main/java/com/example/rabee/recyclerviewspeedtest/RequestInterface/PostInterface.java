@@ -1,6 +1,7 @@
 package com.example.rabee.recyclerviewspeedtest.RequestInterface;
 
-import com.example.rabee.recyclerviewspeedtest.Models.PostCommentModel;
+
+import com.example.rabee.recyclerviewspeedtest.Models.ResponseModels.PostCommentResponseModel;
 
 import java.util.List;
 
@@ -16,5 +17,5 @@ import retrofit2.http.Path;
 public interface PostInterface {
     @Headers("Cache-Control: max-age=64000")
     @GET("/api/v1/post/getUserHomePost/{id}")
-    Call<List<PostCommentModel>> getUserHomePost(@Path("id") int id);
+    Call<List<PostCommentResponseModel>> getUserHomePost(@Path("id") int id);
 }
