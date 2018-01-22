@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="C:\Users\Rabee\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.2\7446d06ec8d4f7ffcc53f1da37c95f200dcb9387\picasso-2.5.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="C:\Users\Rabee\Desktop\Sawa-v1.0\Sawa-v1.0\RecyclerViewSpeedTest\app\build\intermediates\transforms\dex\debug\folders\1000\10\picasso-2.5.2_987ea255707b5fc47a3c2eeb133dea7a485c2739\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Rabee\.android\build-cache\52ba1670979ad7014ac23895bea0aaaf5db36ef6\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="756f6297eef79784f5e356dcd4f39865028b2bd0">
+        <dex dex="C:\Users\Rabee\Desktop\Sawa-v1.0\Sawa-v1.0\RecyclerViewSpeedTest\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_e58282aaf8cc3df95988faacce2bf6f117106876\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Rabee\.android\build-cache\a4eb240bb9ad5e7a8471524b877b127efd7f3fa1\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="15ad6a46fb8e2ed86556e0b330d738b589dc62c7">
+        <dex dex="C:\Users\Rabee\Desktop\Sawa-v1.0\Sawa-v1.0\RecyclerViewSpeedTest\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_d32eea5d178c890db9edcfe1cb2234163afb9507\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Rabee\.android\build-cache\35a85871c7def1131e453c1e053d00a6b8278e6a\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="70f23cb87278f89aa51e6f57e8f0fd5266572d95">
+        <dex dex="C:\Users\Rabee\Desktop\Sawa-v1.0\Sawa-v1.0\RecyclerViewSpeedTest\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_10755070f486f335041fa6e367584ebeeb5099d4\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Rabee\Desktop\Sawa-v1.0\Sawa-v1.0\RecyclerViewSpeedTest\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="C:\Users\Rabee\Desktop\Sawa-v1.0\Sawa-v1.0\RecyclerViewSpeedTest\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_959a39e79554268f705b683f86a2bfba719c3537\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Rabee\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\retrofit\2.1.0\2de7cd8b95b7021b1d597f049bcb422055119f2c\retrofit-2.1.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="2de7cd8b95b7021b1d597f049bcb422055119f2c">
+        <dex dex="C:\Users\Rabee\Desktop\Sawa-v1.0\Sawa-v1.0\RecyclerViewSpeedTest\app\build\intermediates\transforms\dex\debug\folders\1000\10\retrofit-2.1.0_64ed6e0ff14be2c29c80c718a738332b116cac70\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Rabee\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.7\751f548c85fa49f330cecbb1875893f971b33c4e\gson-2.7.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="751f548c85fa49f330cecbb1875893f971b33c4e">
+        <dex dex="C:\Users\Rabee\Desktop\Sawa-v1.0\Sawa-v1.0\RecyclerViewSpeedTest\app\build\intermediates\transforms\dex\debug\folders\1000\10\gson-2.7_93fa9ab1d0e3e804685f560368ed0a5945f21459\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Rabee\.android\build-cache\92a22b68777b3dadf7a678522c13174a92b5a7ab\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="fbb206f7a119f66ce171d95aae1225a5b209a8b7">
+        <dex dex="C:\Users\Rabee\Desktop\Sawa-v1.0\Sawa-v1.0\RecyclerViewSpeedTest\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_fc840b8127faac872ccfa977b7ab2d7684886826\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Rabee\.android\build-cache\5fd25ccee54f67802217e32df09ec8701eec13fa\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="4b746ef0fd46acb5aaf3d9ab9a4cec22c28d3211">
+        <dex dex="C:\Users\Rabee\Desktop\Sawa-v1.0\Sawa-v1.0\RecyclerViewSpeedTest\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_4ae0a842f9dc1228ead67a116290258fc383989e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Rabee\.android\build-cache\47fb40a16ec0fb64341eb3482be330923062b6e7\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="9ab787a20aae245b5b3651ae0b9c38459eb37715">
+        <dex dex="C:\Users\Rabee\Desktop\Sawa-v1.0\Sawa-v1.0\RecyclerViewSpeedTest\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_7370b1684dd083c176e58796ada48a558e6b78ce\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Rabee\.android\build-cache\d3702d6caae4845ddb8c39d0d03c31b506f40b33\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="c14f0c89f28cf782e42581ab0aba5f63af39b3d2">
+        <dex dex="C:\Users\Rabee\Desktop\Sawa-v1.0\Sawa-v1.0\RecyclerViewSpeedTest\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_53d2bbe72525b45bb103c3d26c048d6744ddc449\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Rabee\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.8.0\5ea7af56cc7c567ed9856d99efb30740e9b17ff\okio-1.8.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="05ea7af56cc7c567ed9856d99efb30740e9b17ff">
+        <dex dex="C:\Users\Rabee\Desktop\Sawa-v1.0\Sawa-v1.0\RecyclerViewSpeedTest\app\build\intermediates\transforms\dex\debug\folders\1000\10\okio-1.8.0_9813ebc0c161cc932b34c1c6ff90c5a83435d887\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Rabee\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-android\1.2.0\6ee2953ccf51ce72b6d548c30c4633b99eb4f9dd\bolts-android-1.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="6ee2953ccf51ce72b6d548c30c4633b99eb4f9dd">
+        <dex dex="C:\Users\Rabee\Desktop\Sawa-v1.0\Sawa-v1.0\RecyclerViewSpeedTest\app\build\intermediates\transforms\dex\debug\folders\1000\10\bolts-android-1.2.0_ce7be08f1d1708cd23966db68d4d574d279e397b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Rabee\.android\build-cache\d053c761f2fc78f4526bcc36d158b96de9f29200\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="6addaba208e21c6da776d0ca75b6b23a6ccd5499">
+        <dex dex="C:\Users\Rabee\Desktop\Sawa-v1.0\Sawa-v1.0\RecyclerViewSpeedTest\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_dcf71c504a3ebe1df78e74349b3bddc6cab8b9a3\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Rabee\.android\build-cache\96855f3c91a68866e2519ed0a21cc00108982609\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="518768f3200963fbfec652f498da2c9d39245234">
+        <dex dex="C:\Users\Rabee\Desktop\Sawa-v1.0\Sawa-v1.0\RecyclerViewSpeedTest\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_3021eefa2e848ec897e1b80060707fc34bdb2156\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Rabee\Desktop\Sawa-v1.0\Sawa-v1.0\RecyclerViewSpeedTest\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="ea81e59127b60d60af0bc4470c4a8d536d789d88">
+        <dex dex="C:\Users\Rabee\Desktop\Sawa-v1.0\Sawa-v1.0\RecyclerViewSpeedTest\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_3711b7b831c9f4f2ae4ebf341e2cfe856396ba03\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Rabee\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.3.0\support-annotations-25.3.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="dd84903d2e1af25a6081ef9038ad863cb14ca3a0">
+        <dex dex="C:\Users\Rabee\Desktop\Sawa-v1.0\Sawa-v1.0\RecyclerViewSpeedTest\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.3.0_78c3f2d3b212549735dc31cf1d85c5176df396fd\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Rabee\.android\build-cache\01d7bd65eba65736b7bd2696cfb8c5e60ea37fd2\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\Rabee\Desktop\Sawa-v1.0\Sawa-v1.0\RecyclerViewSpeedTest\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_abd5496f8cfaf018784f22064b22166d85f93fad\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Rabee\.android\build-cache\4ea07a9e70ba51f6e942e37965073889c2d5430b\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="C:\Users\Rabee\Desktop\Sawa-v1.0\Sawa-v1.0\RecyclerViewSpeedTest\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_5a7d48cea45ba9bfedfd64792889337a0a452ee2\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Rabee\AppData\Local\Android\sdk\extras\m2repository\com\android\support\constraint\constraint-layout-solver\1.0.2\constraint-layout-solver-1.0.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="C:\Users\Rabee\Desktop\Sawa-v1.0\Sawa-v1.0\RecyclerViewSpeedTest\app\build\intermediates\transforms\dex\debug\folders\1000\10\constraint-layout-solver-1.0.2_e0fc772cfbaf9570f61a00d96312bbafc4c51717\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Rabee\.android\build-cache\a96e15d4f6eaedf055a3f57bda157935e73aa9be\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="425c7b17887e5c3f8cbdf67ba171bc246f29b42c">
+        <dex dex="C:\Users\Rabee\Desktop\Sawa-v1.0\Sawa-v1.0\RecyclerViewSpeedTest\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_4fb8330f8a42a7ca043ecab4d2245aa04e601cf7\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Rabee\.android\build-cache\72f71d893df461e2e0fb741baddd5409f90264c3\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="25438f55fc6d906a0e72f30b21487541430ede43">
+        <dex dex="C:\Users\Rabee\Desktop\Sawa-v1.0\Sawa-v1.0\RecyclerViewSpeedTest\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_cbb81bfb1e62bc05da56a113c00dd93a8ea86344\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Rabee\.android\build-cache\1e39cf8ee06c2590cf9a98da2ada61faef494fec\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="93c10d68ab5ea070f15782ae6d3a28d1f1d8f45e">
+        <dex dex="C:\Users\Rabee\Desktop\Sawa-v1.0\Sawa-v1.0\RecyclerViewSpeedTest\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_b872f702efe178fdf10a9cd9f989fc6229cc735d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Rabee\.android\build-cache\dafb0d6127d66ab94c6d7b9511146c91ce9a78b7\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="a3e61044038fb54cddf6b8dc79f41d2b57f42caf">
+        <dex dex="C:\Users\Rabee\Desktop\Sawa-v1.0\Sawa-v1.0\RecyclerViewSpeedTest\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_ef0429549532d330e1dfed2b4142476ac6e71d27\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Rabee\.android\build-cache\b1c4f02b7a883aae7dbef4ecdf98e8b53a9758e3\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="a2af9c72ccaa4c5c049b500ca6ea664a4ce1f7d4">
+        <dex dex="C:\Users\Rabee\Desktop\Sawa-v1.0\Sawa-v1.0\RecyclerViewSpeedTest\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_816b1694b150861fcf4bc096ac4d9e2263955462\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Rabee\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\converter-gson\2.1.0\aa557d71ead91cbf26e0c316a0f593d168303309\converter-gson-2.1.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="aa557d71ead91cbf26e0c316a0f593d168303309">
+        <dex dex="C:\Users\Rabee\Desktop\Sawa-v1.0\Sawa-v1.0\RecyclerViewSpeedTest\app\build\intermediates\transforms\dex\debug\folders\1000\10\converter-gson-2.1.0_5f7545345b2a0e6c73f4d30b2a62e882f4e7aded\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Rabee\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.3.0\2b802460eea20f8f2ad9c08c74e0f14718e88aa9\okhttp-3.3.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="2b802460eea20f8f2ad9c08c74e0f14718e88aa9">
+        <dex dex="C:\Users\Rabee\Desktop\Sawa-v1.0\Sawa-v1.0\RecyclerViewSpeedTest\app\build\intermediates\transforms\dex\debug\folders\1000\10\okhttp-3.3.0_c0c88a023ed7d2a26f7d744a998064fc2300e4c8\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Rabee\.android\build-cache\11a770b6866a6a0bfe3bd34d8791ac5642c7cc3c\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="5cc5ef8347a6bafa14556cbd35230aa9b3431bb0">
+        <dex dex="C:\Users\Rabee\Desktop\Sawa-v1.0\Sawa-v1.0\RecyclerViewSpeedTest\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_5aec62bb749b1e0a0e7aacd8eade970d4c39d64d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Rabee\.android\build-cache\33979f6cb28868b390054752c0be3852d7247693\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="d6a04527c17597019dad82777c5094a3d60d1c33">
+        <dex dex="C:\Users\Rabee\Desktop\Sawa-v1.0\Sawa-v1.0\RecyclerViewSpeedTest\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_7b44050d1fd2fefc516aa324a1216b3a605c59c3\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Rabee\.android\build-cache\49257bfb82274edeb0046168dab23d9debcb97d7\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="93c1199fcb0a34b980e6fff8350daff62e696ec2">
+        <dex dex="C:\Users\Rabee\Desktop\Sawa-v1.0\Sawa-v1.0\RecyclerViewSpeedTest\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_51690284838dcfccf42944a74a08a883e1cc5c04\classes.dex" />
+    </item>
+
+</items>

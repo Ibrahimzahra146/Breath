@@ -1,0 +1,344 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#eee">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="30dp"
+       >
+
+        <TextView
+            android:id="@+id/postTime"
+            android:layout_marginLeft="165dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10:10pm"
+            android:layout_centerVertical="true"
+            android:textSize="13dp"
+            />
+
+
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_marginTop="59dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <LinearLayout
+            android:id="@+id/userInfoLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:paddingRight="15dp"
+            android:paddingTop="17dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/userProfilePicture"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/test_image" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="First LastName"
+                    android:textColor="#000"
+                    android:textSize="14dp"
+                    android:textStyle="bold"/>
+
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="-5dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/love_post"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_marginTop="3dp"
+                    android:padding="4dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="2dp"
+                    android:src="@drawable/test_image"
+                    android:clickable="true"/>
+
+                <TextView
+                    android:id="@+id/loveCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1 love"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textSize="12dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="-5dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/like_post"
+                    android:layout_width="30dp"
+                    android:layout_height="31dp"
+                    android:padding="6dp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/test_image"
+
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="3 likes"
+                    android:id="@+id/likeCount"
+                    android:textSize="12dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="-2dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/dislike_post"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:padding="6dp"
+                    android:src="@drawable/test_image" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:id="@+id/unlikeCount"
+                    android:gravity="center"
+                    android:layout_marginTop="-2dp"
+                    android:text="4 unlikes"
+                    android:textSize="12dp" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/postInfoLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/userInfoLayout"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/postText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="5dp"
+                android:text=""
+                android:textColor="#000"
+                android:textSize="13dp" />
+
+            <LinearLayout
+                android:id="@+id/youtubeLinkLayout"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:layout_margin="7dp"
+
+                android:paddingRight="10dp">
+
+                <ImageView
+                    android:id="@+id/youtubeLinkImage"
+                    android:layout_width="65dp"
+                    android:layout_height="match_parent"
+                    android:background="#000" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/youtubeLinkTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="4dp"
+                        android:maxLines="1"
+                        android:textColor="#000"
+                        android:textSize="13dp"
+                        />
+
+                    <TextView
+                        android:id="@+id/youtubeLinkAuthor"
+                        android:layout_width="match_parent"
+                        android:textSize="12.5dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/youtubeLinkTitle"
+                        android:layout_marginLeft="20dp"
+                        android:maxLines="1"
+                        android:textColor="#000"
+
+                        />
+
+                    <TextView
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="3dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="Youtube.com"
+                        android:textSize="12dp"
+
+                        />
+                </RelativeLayout>
+            </LinearLayout>
+
+
+            <ImageView
+                android:id="@+id/postImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="2dp"
+                android:adjustViewBounds="true"
+                android:contentDescription="Specs"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:scaleType="centerCrop"
+                android:scrollbars="vertical" />
+
+
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_below="@+id/postInfoLayout"
+            android:background="#ccc" />
+        <!--android:layout_marginLeft="13dp"-->
+        <!--android:layout_marginRight="13dp"-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/postInfoLayout"
+            android:orientation="horizontal"
+            android:paddingBottom="8dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="20dp"
+            android:paddingTop="8dp">
+
+            <!--<ImageView-->
+            <!--android:layout_width="20dp"-->
+            <!--android:layout_height="20dp"-->
+            <!--android:src="@drawable/love_post" />-->
+
+            <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_marginLeft="2dp"-->
+            <!--android:gravity="center"-->
+            <!--android:text="12"-->
+            <!--android:textSize="13dp" />-->
+
+            <!--<ImageView-->
+            <!--android:layout_width="20dp"-->
+            <!--android:layout_height="20dp"-->
+            <!--android:layout_marginLeft="10dp"-->
+            <!--android:src="@drawable/like_post" />-->
+
+            <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_marginLeft="0dp"-->
+            <!--android:gravity="center"-->
+            <!--android:text="15"-->
+            <!--android:textSize="13dp" />-->
+
+            <!--<ImageView-->
+            <!--android:layout_width="20dp"-->
+            <!--android:layout_height="20dp"-->
+            <!--android:layout_marginLeft="10dp"-->
+            <!--android:src="@drawable/dislike_post" />-->
+
+            <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_marginLeft="2dp"-->
+            <!--android:gravity="center"-->
+            <!--android:text="5"-->
+            <!--android:textSize="13dp" />-->
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_marginLeft="0dp"
+                android:src="@drawable/test_image" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:gravity="center"
+                android:text="8 comments"
+                android:textSize="13dp" />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingRight="5dp">
+
+
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/profile_pic"
+                    />
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+</FrameLayout>
