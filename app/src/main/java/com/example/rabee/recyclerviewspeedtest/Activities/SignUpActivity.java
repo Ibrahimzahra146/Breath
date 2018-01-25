@@ -13,12 +13,13 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
 import android.widget.Toast;
+import com.example.rabee.recyclerviewspeedtest.GeneralFunctions;
 import com.example.rabee.recyclerviewspeedtest.GeneralInfo;
 import com.example.rabee.recyclerviewspeedtest.Models.RequestModels.SignUpRequestModel;
 import com.example.rabee.recyclerviewspeedtest.Models.ResponseModels.UserProfileResponseModel;
 import com.example.rabee.recyclerviewspeedtest.R;
 import com.example.rabee.recyclerviewspeedtest.RequestInterface.AuthInterface;
-import com.example.rabee.recyclerviewspeedtest.fragments.SignUpFragments.NameFragment;
+import com.example.rabee.recyclerviewspeedtest.Fragments.SignUpFragments.NameFragment;
 import com.google.gson.Gson;
 import java.io.ByteArrayOutputStream;
 import retrofit2.Call;
@@ -154,7 +155,7 @@ public class SignUpActivity extends Activity {
 
                     if (response.code() == 200) {
                         LoggingInDialog.dismiss();
-                        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.profileimage);
+                        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.profile_pic);
                         ByteArrayOutputStream stream = new ByteArrayOutputStream();
                         bitmap.compress(Bitmap.CompressFormat.PNG, 90, stream);
                         byte[] image = stream.toByteArray();

@@ -1,4 +1,4 @@
-package com.example.rabee.recyclerviewspeedtest.fragments.SignUpFragments;
+package com.example.rabee.recyclerviewspeedtest.Fragments.SignUpFragments;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;

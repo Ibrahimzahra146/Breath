@@ -1,4 +1,4 @@
-package com.example.rabee.recyclerviewspeedtest.fragments.SignUpFragments;
+package com.example.rabee.recyclerviewspeedtest.Fragments.SignUpFragments;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -9,7 +9,9 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import com.example.rabee.recyclerviewspeedtest.Activities.SignUpActivity;
+import com.example.rabee.recyclerviewspeedtest.GeneralFunctions;
 import com.example.rabee.recyclerviewspeedtest.R;
+import com.example.rabee.recyclerviewspeedtest.Services.ValidationService;
 import com.hbb20.CountryCodePicker;
 
 

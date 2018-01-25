@@ -4,9 +4,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
-import com.example.rabee.recyclerviewspeedtest.fragments.HomeFragment;
-import com.example.rabee.recyclerviewspeedtest.fragments.NotificationFragment;
-import com.example.rabee.recyclerviewspeedtest.fragments.SettingsFragment;
+import com.example.rabee.recyclerviewspeedtest.Fragments.HomeFragment;
+import com.example.rabee.recyclerviewspeedtest.Fragments.NotificationFragment;
+import com.example.rabee.recyclerviewspeedtest.Fragments.SettingsFragment;
 
 /**
  * Created by Rabee on 1/19/2018.

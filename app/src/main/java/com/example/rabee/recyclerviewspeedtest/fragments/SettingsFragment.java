@@ -1,4 +1,4 @@
-package com.example.rabee.recyclerviewspeedtest.fragments;
+package com.example.rabee.recyclerviewspeedtest.Fragments;
 
 import android.content.Intent;
 import android.os.Bundle;

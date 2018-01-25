@@ -1,4 +1,4 @@
-package com.example.rabee.recyclerviewspeedtest.fragments.SignUpFragments;
+package com.example.rabee.recyclerviewspeedtest.Fragments.SignUpFragments;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -10,11 +10,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import com.example.rabee.recyclerviewspeedtest.Activities.SignUpActivity;
+import com.example.rabee.recyclerviewspeedtest.GeneralFunctions;
 import com.example.rabee.recyclerviewspeedtest.GeneralInfo;
 import com.example.rabee.recyclerviewspeedtest.Models.ResponseModels.UserProfileResponseModel;
 import com.example.rabee.recyclerviewspeedtest.Models.SignInRequestModel;
 import com.example.rabee.recyclerviewspeedtest.R;
 import com.example.rabee.recyclerviewspeedtest.RequestInterface.AuthInterface;
+import com.example.rabee.recyclerviewspeedtest.Services.ValidationService;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
