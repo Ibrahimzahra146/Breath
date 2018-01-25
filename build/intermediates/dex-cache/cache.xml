@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="C:\Users\Rabee\Desktop\Breath\Breath\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="febfebd8df270402537d0125e0835a97898e54bf">
+        <dex dex="C:\Users\Rabee\Desktop\Breath\Breath\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_0b3e2b3db76b7d8ff01a65b99794e67aa38db162\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Rabee\Desktop\Breath\Breath\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="C:\Users\Rabee\Desktop\Breath\Breath\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_d14ff17d6a107c7d1fef0678b42a35e50216f959\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Rabee\.android\build-cache\e4246c09dfc90cc966492d5a5b0b6e3f282ed4d8\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="486371f97baad8e607f332f20fee1d3dd00a731a">
+        <dex dex="C:\Users\Rabee\Desktop\Breath\Breath\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_19ca7113838638060046528ef153431397d2c9ea\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Rabee\.android\build-cache\7edd0cd0ad6ba0c0deffdf417f70ce900528f7b9\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="433f4d6aa5f21f19552afe0e6c5eff0fedba73ad">
+        <dex dex="C:\Users\Rabee\Desktop\Breath\Breath\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_ee797b22ca17c74fe54ac3806c2cf16c360c7178\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Rabee\.android\build-cache\600d9488b73c7f0d1d28000e0707667ef729cf40\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="6116e0e7069de7fc259aac8e08b84f32c2038231">
+        <dex dex="C:\Users\Rabee\Desktop\Breath\Breath\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_947f442c611e9f27a3251fbf65b8f5816bc05431\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Rabee\.android\build-cache\370b3a7087cb71276dd7db564ef0832e91af63c9\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="eb0d830e3eabb9deb9ec44869cf7ac7ea1ad794c">
+        <dex dex="C:\Users\Rabee\Desktop\Breath\Breath\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_d19b0623402a12b4a1c66ab69bc101fce544b22d\classes.dex" />
+    </item>
+
+</items>
