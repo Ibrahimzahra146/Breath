@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\Users\zodiac\.android\build-cache\8cd75c3f66a0d5d84e840aae3a98f82416495615\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="1ee075177bd403c333d4843b92c4b6c55db929ed">
+        <dex dex="C:\Users\zodiac\Breath\app\build\intermediates\pre-dexed\debug\classes_e344242408c5be92b24b4451f84efd5b8892cfaf.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\zodiac\.android\build-cache\cf858c2cf29285dd20c67f551ce9e85dad434f34\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="93c10d68ab5ea070f15782ae6d3a28d1f1d8f45e">
+        <dex dex="C:\Users\zodiac\Breath\app\build\intermediates\pre-dexed\debug\classes_35130d21861a9d6bba304b1986739a5cfb66aef6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\zodiac\.android\build-cache\7c9adaa94be84bc45441f27b7aac99404ca50a4f\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="756f6297eef79784f5e356dcd4f39865028b2bd0">
+        <dex dex="C:\Users\zodiac\Breath\app\build\intermediates\pre-dexed\debug\classes_2d967169648608ca980813c52f3664a79038bc49.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\zodiac\.android\build-cache\9e26929f2c8b754cfb8828a22789948ed2097499\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="a3e61044038fb54cddf6b8dc79f41d2b57f42caf">
+        <dex dex="C:\Users\zodiac\Breath\app\build\intermediates\pre-dexed\debug\classes_5514bde095d4763c00fd089551e28188b6a7dd6a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\zodiac\.android\build-cache\35d602bf4e0d6bdeb22542c45c670ae217da405b\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="e96c6974cf924e7ee3b230e6847d5731423388c9">
+        <dex dex="C:\Users\zodiac\Breath\app\build\intermediates\pre-dexed\debug\classes_dab9fd8e2a0697cf59ab3ca9ffbd226a1b319142.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\zodiac\.android\build-cache\2d6bc99c225d38932c10316f18d698e586457eff\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="70f23cb87278f89aa51e6f57e8f0fd5266572d95">
+        <dex dex="C:\Users\zodiac\Breath\app\build\intermediates\pre-dexed\debug\classes_4f67b72f45ff14bfae43afb6c94c35b7445e0cf1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\zodiac\.android\build-cache\6bde94f5733eb40697cd16b1b72287cf738f719d\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="25438f55fc6d906a0e72f30b21487541430ede43">
+        <dex dex="C:\Users\zodiac\Breath\app\build\intermediates\pre-dexed\debug\classes_c23a080e24dc5fb953ff15cd6a0786a82bcdb3dc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\zodiac\.android\build-cache\4d4adb447d11957e0c7542607385907dd296915a\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="5cc5ef8347a6bafa14556cbd35230aa9b3431bb0">
+        <dex dex="C:\Users\zodiac\Breath\app\build\intermediates\pre-dexed\debug\classes_66c3b08d826e95276151c2383d87624e65d234f6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\zodiac\.gradle\caches\modules-2\files-2.1\com.googlecode.libphonenumber\libphonenumber\8.5.2\4a5b5caed312654f6aa2171d2f24e44785621d3d\libphonenumber-8.5.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="4a5b5caed312654f6aa2171d2f24e44785621d3d">
+        <dex dex="C:\Users\zodiac\Breath\app\build\intermediates\pre-dexed\debug\libphonenumber-8.5.2_ce690c2e29aa0b618d8ece0e390cff3b228541c4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\zodiac\.android\build-cache\1f4e6fcbad4ea0e762aa288caa17ca7765353a69\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="9ab787a20aae245b5b3651ae0b9c38459eb37715">
+        <dex dex="C:\Users\zodiac\Breath\app\build\intermediates\pre-dexed\debug\classes_e260e65bc0ec1aa302e2d2eec2f9dd5cdc97982e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\zodiac\.android\build-cache\8eded4b982efd3ee1ba0af9f50b3f5427c116446\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="a2af9c72ccaa4c5c049b500ca6ea664a4ce1f7d4">
+        <dex dex="C:\Users\zodiac\Breath\app\build\intermediates\pre-dexed\debug\classes_a0a6623f4712aaa9aecbe4ef342022d4d212477e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\zodiac\.android\build-cache\6d7dc6c62db217cda84689ea0eb4ac5b7bb17c72\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="e2185aff89caeb337b1ffc36d5e525d8318e7cfe">
+        <dex dex="C:\Users\zodiac\Breath\app\build\intermediates\pre-dexed\debug\classes_fdc9eddff0e532ab77cd8e42206733dd75383298.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\zodiac\.android\build-cache\5080e5c29c46640abf3e3326cf0c6483e41c460f\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="eb0d830e3eabb9deb9ec44869cf7ac7ea1ad794c">
+        <dex dex="C:\Users\zodiac\Breath\app\build\intermediates\pre-dexed\debug\classes_2d57a3160d87c0a3266af08443fa586b66e31109.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\zodiac\.android\build-cache\5864f5a9333612baf501c1fb62d1b6a6c6e22b7b\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="2cfb5a2b52bb09fa94a7a0c4c2f2319703cb1f03">
+        <dex dex="C:\Users\zodiac\Breath\app\build\intermediates\pre-dexed\debug\classes_74f9bf27d16c3f5b9b339ad4e593c5fd99f40e78.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\zodiac\.android\build-cache\3ff94e4d10f76b9a76508ed6eec80aa86bb62625\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="6116e0e7069de7fc259aac8e08b84f32c2038231">
+        <dex dex="C:\Users\zodiac\Breath\app\build\intermediates\pre-dexed\debug\classes_8f02a8efe861549cfde08d6a72ac8ecc982959d4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\zodiac\.android\build-cache\cebe8bf4d6073a30192133aa6ee5c6b4d7867b52\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="fbb206f7a119f66ce171d95aae1225a5b209a8b7">
+        <dex dex="C:\Users\zodiac\Breath\app\build\intermediates\pre-dexed\debug\classes_2154cd65a7a7560b4c2a2bdb2a4014d7cf78b5e7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\zodiac\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.2\7446d06ec8d4f7ffcc53f1da37c95f200dcb9387\picasso-2.5.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="C:\Users\zodiac\Breath\app\build\intermediates\pre-dexed\debug\picasso-2.5.2_4a30e6243f4ff2235478cc65fad57dfe7e3a80f5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\zodiac\.android\build-cache\d4196556a02b7171bada95a21bac122f92705a7a\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="6addaba208e21c6da776d0ca75b6b23a6ccd5499">
+        <dex dex="C:\Users\zodiac\Breath\app\build\intermediates\pre-dexed\debug\classes_341de31d228f7ed743b2393b47305e5522984603.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\zodiac\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.8.0\5ea7af56cc7c567ed9856d99efb30740e9b17ff\okio-1.8.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="05ea7af56cc7c567ed9856d99efb30740e9b17ff">
+        <dex dex="C:\Users\zodiac\Breath\app\build\intermediates\pre-dexed\debug\okio-1.8.0_d843aea49e7d036be81a57f538268e9e8a6022e8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\zodiac\.android\build-cache\878adbb17034c380f670fdc0605390ee0848c46d\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="70a9349df3cb6b8e23c2e5866ef157e57850e156">
+        <dex dex="C:\Users\zodiac\Breath\app\build\intermediates\pre-dexed\debug\classes_97180cf58fe653e1eadff7a2f9b21d56be5734f7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\zodiac\.android\build-cache\06d4f604085408168435e06b40a5bdb30baa7d54\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="c14f0c89f28cf782e42581ab0aba5f63af39b3d2">
+        <dex dex="C:\Users\zodiac\Breath\app\build\intermediates\pre-dexed\debug\classes_bde56d5c6ff7f42326215ad877dde5563533301c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\zodiac\.android\build-cache\adbd9931663e506fbed8e9401be3ae2d51fc5ec6\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="b8b26b28aae0ba8e2db55ad9fe0ebc770530c5ef">
+        <dex dex="C:\Users\zodiac\Breath\app\build\intermediates\pre-dexed\debug\classes_88f485213ece23048c51722e2e11ae4a69d23cae.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\zodiac\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\retrofit\2.1.0\2de7cd8b95b7021b1d597f049bcb422055119f2c\retrofit-2.1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="2de7cd8b95b7021b1d597f049bcb422055119f2c">
+        <dex dex="C:\Users\zodiac\Breath\app\build\intermediates\pre-dexed\debug\retrofit-2.1.0_34e86b892c9cc1a9670dc02b261fcc115c2306ac.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\zodiac\.android\build-cache\8c2386ab25e55162fe13e3b1dc87018ec460cfb0\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="486371f97baad8e607f332f20fee1d3dd00a731a">
+        <dex dex="C:\Users\zodiac\Breath\app\build\intermediates\pre-dexed\debug\classes_ec5bd8407d282fd0a122259e28c0047de325b81c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\zodiac\.android\build-cache\e8ee39c66afa907322ec9571840de26ed6b10ab9\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="518768f3200963fbfec652f498da2c9d39245234">
+        <dex dex="C:\Users\zodiac\Breath\app\build\intermediates\pre-dexed\debug\classes_508bc76640e1fde332fabf5555325c650ec8307f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\zodiac\.gradle\caches\modules-2\files-2.1\com.google.zxing\core\3.3.0\73c49077166faa4c3c0059c5f583d1d7bd1475fe\core-3.3.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="73c49077166faa4c3c0059c5f583d1d7bd1475fe">
+        <dex dex="C:\Users\zodiac\Breath\app\build\intermediates\pre-dexed\debug\core-3.3.0_8aa31305fab312768b11dbf3890e66328f0c57e7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\zodiac\.android\build-cache\29c8ba4e1eab34782ab2af0fdb66b0c873e548cc\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="93c1199fcb0a34b980e6fff8350daff62e696ec2">
+        <dex dex="C:\Users\zodiac\Breath\app\build\intermediates\pre-dexed\debug\classes_641768ab93e2a6fdf1e98224b9b0d6da067c5f78.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\zodiac\.android\build-cache\a42acdd12e861b26ecc39f679d182d9af454bc12\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="C:\Users\zodiac\Breath\app\build\intermediates\pre-dexed\debug\classes_e9f8cfe0aca8f64d36bc09ce0ea310e312162631.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\zodiac\.android\build-cache\5f0eb5c5058490512dc2740d0927a238cacd9890\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="433f4d6aa5f21f19552afe0e6c5eff0fedba73ad">
+        <dex dex="C:\Users\zodiac\Breath\app\build\intermediates\pre-dexed\debug\classes_617b265a071e281887377cc78eae7240cd61c691.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\zodiac\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-applinks\1.4.0\8ad21bf21784dacce5f2043afb97218cc377e835\bolts-applinks-1.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="8ad21bf21784dacce5f2043afb97218cc377e835">
+        <dex dex="C:\Users\zodiac\Breath\app\build\intermediates\pre-dexed\debug\bolts-applinks-1.4.0_1dbb05903400491ab3fe140eb3f561f8ceb19d50.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\zodiac\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.3.0\support-annotations-25.3.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="dd84903d2e1af25a6081ef9038ad863cb14ca3a0">
+        <dex dex="C:\Users\zodiac\Breath\app\build\intermediates\pre-dexed\debug\support-annotations-25.3.0_b80851b4267ff272d1e31fa301b944808f60d76d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\zodiac\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.7\751f548c85fa49f330cecbb1875893f971b33c4e\gson-2.7.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="751f548c85fa49f330cecbb1875893f971b33c4e">
+        <dex dex="C:\Users\zodiac\Breath\app\build\intermediates\pre-dexed\debug\gson-2.7_c0595bd813af0a29e1f650fa8972bc44ea8ac2e5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\zodiac\.android\build-cache\5d29eff2967849ba4b88b4ccc7079e2d97b773c5\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="8fb648e3321f9556ac5b36485b0028f455350c4a">
+        <dex dex="C:\Users\zodiac\Breath\app\build\intermediates\pre-dexed\debug\classes_cf8c81ce48a46e17a9e7e9e567680abd9056881f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\zodiac\.android\build-cache\30b9f917f4786305a426b4c87ae53bfc33ef1e0c\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="c5d103b270b3f3b50d8e6b44aa8e068b0de33426">
+        <dex dex="C:\Users\zodiac\Breath\app\build\intermediates\pre-dexed\debug\classes_fd233f096911c9ae19ca4b77080338b989d045ed.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\zodiac\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.3.0\2b802460eea20f8f2ad9c08c74e0f14718e88aa9\okhttp-3.3.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="2b802460eea20f8f2ad9c08c74e0f14718e88aa9">
+        <dex dex="C:\Users\zodiac\Breath\app\build\intermediates\pre-dexed\debug\okhttp-3.3.0_3919d97ce8cceae8ed96934f83f628347688284e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\zodiac\.android\build-cache\7a44050a73e2f116a46477cac5889e586ffa46d4\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="425c7b17887e5c3f8cbdf67ba171bc246f29b42c">
+        <dex dex="C:\Users\zodiac\Breath\app\build\intermediates\pre-dexed\debug\classes_0e926078f4567bb4587a864af3819b28c1796473.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\zodiac\AppData\Local\Android\sdk\extras\m2repository\com\android\support\constraint\constraint-layout-solver\1.0.2\constraint-layout-solver-1.0.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="C:\Users\zodiac\Breath\app\build\intermediates\pre-dexed\debug\constraint-layout-solver-1.0.2_832a4ce6a6305c72a2045f8e7b9ff58466095c50.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\zodiac\.android\build-cache\ab48254da1961acfc3a441d5e4b06903fd7e66e4\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\zodiac\Breath\app\build\intermediates\pre-dexed\debug\classes_444745a589a6d7760b21a0ca438c28a4796f5d91.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\zodiac\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-tasks\1.4.0\d85884acf6810a3bbbecb587f239005cbc846dc4\bolts-tasks-1.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="C:\Users\zodiac\Breath\app\build\intermediates\pre-dexed\debug\bolts-tasks-1.4.0_cd088aaf9cf24c26d39f2fd022180e6b11ec1370.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\zodiac\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\converter-gson\2.1.0\aa557d71ead91cbf26e0c316a0f593d168303309\converter-gson-2.1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="aa557d71ead91cbf26e0c316a0f593d168303309">
+        <dex dex="C:\Users\zodiac\Breath\app\build\intermediates\pre-dexed\debug\converter-gson-2.1.0_1de158704242c84936b18ce2577bea5f0ab36e49.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\zodiac\.android\build-cache\999029fd6945d4ac7fa99897935b1f81be084ac3\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="e3b8ecc558c6deeb90eb3934c1c715128ab26dcd">
+        <dex dex="C:\Users\zodiac\Breath\app\build\intermediates\pre-dexed\debug\classes_dc9af68cd00a30bfa253563675a03a4456c3257d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\zodiac\.android\build-cache\829eda9a511bf5f8245e714d3b0c5da217f3b3be\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="4b746ef0fd46acb5aaf3d9ab9a4cec22c28d3211">
+        <dex dex="C:\Users\zodiac\Breath\app\build\intermediates\pre-dexed\debug\classes_9dfda67d04c81c4f90ae07d9dd637ec687119a29.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\zodiac\.android\build-cache\6e9f3a0e872a079a612fadf6839bd9c782000e79\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="d6a04527c17597019dad82777c5094a3d60d1c33">
+        <dex dex="C:\Users\zodiac\Breath\app\build\intermediates\pre-dexed\debug\classes_fc0dbdbde40ac3ef48ad06591d7f36f642ac2298.jar" />
+    </item>
+
+</items>

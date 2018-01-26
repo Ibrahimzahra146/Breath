@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.rabee.recyclerviewspeedtest">
+    package="com.example.rabee.breath">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -14,23 +14,50 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activities.MainActivity">
+        <activity android:name="com.example.rabee.breath.Activities.MainActivity">
+
+        </activity>
+        <activity
+            android:name="com.example.rabee.breath.Activities.HomeActivity"
+            android:label="@string/title_activity_home"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Activities.SignUpActivity"
+            android:label="@string/title_activity_home"
+            android:configChanges="orientation|screenSize|keyboard"
+            android:windowSoftInputMode="adjustResize|stateVisible" />
+
+        <activity
+            android:name="com.example.rabee.breath.Activities.SearchActivity"
+            android:label="@string/title_activity_search"
+            android:theme="@style/AppTheme" />
+        <activity android:name="com.example.rabee.breath.Activities.UserProfileActivity" />
+        <activity android:name="com.example.rabee.breath.Activities.SplashActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".Activities.HomeActivity"
-            android:label="@string/title_activity_home"
-            android:theme="@style/AppTheme" />
-        <activity
-            android:name=".Activities.SearchActivity"
-            android:label="@string/title_activity_search"
-            android:theme="@style/AppTheme" />
-        <activity android:name=".Activities.UserProfileActivity" />
-        <activity android:name=".Activities.SplashActivity"></activity>
-    </application>
 
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name" />
+
+
+    </application>
 </manifest>
+
+
+
+
+
+
+
