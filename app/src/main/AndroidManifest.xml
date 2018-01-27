@@ -19,12 +19,19 @@
             android:name=".Activities.HomeActivity"
             android:label="@string/title_activity_home"
             android:theme="@style/AppTheme" />
+
+        <activity   android:name=".Activities.SignUpActivity"
+            android:label="@string/title_activity_home"
+            android:configChanges="orientation|screenSize|keyboard"
+            android:windowSoftInputMode="adjustResize|stateVisible" />
+
         <activity
-            android:name=".Activities.SearchActivity"
+            android:name="com.example.rabee.breath.Activities.SearchActivity"
             android:label="@string/title_activity_search"
             android:theme="@style/AppTheme" />
-        <activity android:name=".Activities.UserProfileActivity" />
-        <activity android:name=".Activities.SplashActivity">
+        <activity android:name="com.example.rabee.breath.Activities.UserProfileActivity" />
+        <activity android:name="com.example.rabee.breath.Activities.SplashActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -45,3 +52,11 @@
     </application>
 
 </manifest>
+
+
+
+
+
+
+
+

@@ -11,10 +11,6 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-/**
- * Created by Rabee on 1/20/2018.
- */
-
 public class GeneralInfo {
     public static String SPRING_URL = "http://3c5f5fd0.ngrok.io";
     public static String USER_NAME="Ibrahim zahra";

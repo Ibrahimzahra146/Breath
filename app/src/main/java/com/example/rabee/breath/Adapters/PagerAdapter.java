@@ -8,9 +8,6 @@ import com.example.rabee.breath.fragments.HomeFragment;
 import com.example.rabee.breath.fragments.NotificationFragment;
 import com.example.rabee.breath.fragments.SettingsFragment;
 
-/**
- * Created by Rabee on 1/19/2018.
- */
 
 public class PagerAdapter extends FragmentStatePagerAdapter {
     int mNumOfTabs;

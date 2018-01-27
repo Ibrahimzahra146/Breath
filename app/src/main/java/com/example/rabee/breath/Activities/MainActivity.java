@@ -194,6 +194,11 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
 
 
     }
+    public void register(View arg0) {
+        Intent i = new Intent(getApplicationContext(), SignUpActivity.class);
+        startActivity(i);
+
+    }
 
     public void checkLogin(View arg0) {
         final SignInRequestModel signInRequestModel = new SignInRequestModel();
@@ -352,4 +357,6 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
 
     }
+
+
 }
