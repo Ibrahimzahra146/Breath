@@ -16,7 +16,7 @@ import java.net.URL;
  */
 
 public class GeneralInfo {
-    public static String SPRING_URL = " http://90bdfe83.ngrok.io";
+    public static String SPRING_URL = "http://3c5f5fd0.ngrok.io";
     public static String USER_NAME="Ibrahim zahra";
     public static String PROFILE_PIC="_437.022828770496916832227_1341475782539973_288842465026282085_n.jpg";
     public static int notifications_counter = 0;

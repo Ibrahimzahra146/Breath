@@ -218,6 +218,8 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                     public void onResponse(Call<UserProfileResponseModel> call, Response<UserProfileResponseModel> response) {
                         if (response.code() == 200) {
                             UserProfileResponseModel userProfileResponseModel = response.body();
+                            GeneralInfo.setUserID(Integer.valueOf(userProfileResponseModel.getUser().getId()));
+                            GeneralInfo.setGeneralUserInfo(userProfileResponseModel);
                             saveLoginedUserInfo(userProfileResponseModel);
 
 

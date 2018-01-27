@@ -14,19 +14,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.example.rabee.breath.Activities.MainActivity">
-
-        </activity>
+        <activity android:name=".Activities.MainActivity" />
         <activity
-            android:name="com.example.rabee.breath.Activities.HomeActivity"
+            android:name=".Activities.HomeActivity"
             android:label="@string/title_activity_home"
             android:theme="@style/AppTheme" />
         <activity
-            android:name="com.example.rabee.breath.Activities.SearchActivity"
+            android:name=".Activities.SearchActivity"
             android:label="@string/title_activity_search"
             android:theme="@style/AppTheme" />
-        <activity android:name="com.example.rabee.breath.Activities.UserProfileActivity" />
-        <activity android:name="com.example.rabee.breath.Activities.SplashActivity">
+        <activity android:name=".Activities.UserProfileActivity" />
+        <activity android:name=".Activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -34,25 +32,16 @@
             </intent-filter>
         </activity>
 
-
-
-
-
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id" />
 
-    <activity android:name="com.facebook.FacebookActivity"
-        android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
-        android:label="@string/app_name" />
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name" />
+        <activity android:name=".Activities.UserYoutubeActivity" />
+        <activity android:name=".Activities.FollowingActivity"></activity>
+    </application>
 
-
-        </application>
-    </manifest>
-
-
-
-
-
-
-
+</manifest>
