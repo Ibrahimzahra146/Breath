@@ -13,7 +13,7 @@
             android:id="@+id/toolBarText"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:drawableLeft="@mipmap/left"
+            android:drawableLeft="@drawable/left_arrow"
             android:focusableInTouchMode="true"
             android:paddingRight="10dp"
             android:textColor="#fff"

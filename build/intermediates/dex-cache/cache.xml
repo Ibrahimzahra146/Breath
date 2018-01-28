@@ -3,48 +3,12 @@
 
     <item
         is-multidex="false"
-        jar="C:\Users\zodiac\Breath\app\additionnal.jar"
+        jar="C:\Users\zodiac\.android\build-cache\c408f1c6c15f58ce07a9a309d4d575ccb9e890e2\output\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.3"
-        sha1="bd9e8dc422bb8c8405359947fe9f4282b49f57f4">
-        <dex dex="C:\Users\zodiac\Breath\app\build\intermediates\pre-dexed\debug\additionnal_7d54a8f909f82a082813cffa8f5fd7c1181631af.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\zodiac\Breath\app\YouTubeAndroidPlayerApi.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.3"
-        sha1="3c4f96ff493456651cc7bdb0b47e10eb25545a16">
-        <dex dex="C:\Users\zodiac\Breath\app\build\intermediates\pre-dexed\debug\YouTubeAndroidPlayerApi_a39bb00f7143d8c0e713eb17acaa2460af01792d.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\zodiac\Breath\app\activation.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.3"
-        sha1="d1257cbff6faa44c1f325ae0d9413522d4644383">
-        <dex dex="C:\Users\zodiac\Breath\app\build\intermediates\pre-dexed\debug\activation_ed2c4665f5b2d157858fed75371dcf5167e397e0.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\zodiac\Breath\app\mail.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.3"
-        sha1="428e267abff0d10802ccde86b915da2c20471160">
-        <dex dex="C:\Users\zodiac\Breath\app\build\intermediates\pre-dexed\debug\mail_e7cee2619848725f321037687e4ef3a0e0232db7.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\zodiac\.gradle\caches\modules-2\files-2.1\javax.inject\javax.inject\1\6975da39a7040257bd51d21a231b76c915872d38\javax.inject-1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.3"
-        sha1="6975da39a7040257bd51d21a231b76c915872d38">
-        <dex dex="C:\Users\zodiac\Breath\app\build\intermediates\pre-dexed\debug\javax.inject-1_a73a531c5c539ca1f718f51b71ced73493503d98.jar" />
+        sha1="ebe3b1f14fa79ba3cd1588acda4e6517ee9fe611">
+        <dex dex="C:\Users\zodiac\Breath\app\build\intermediates\pre-dexed\debug\classes_270923f697d99b17c4acd29c0c7553f0d774ea5e.jar" />
     </item>
 
 </items>

@@ -284,6 +284,85 @@ public class UserProfileActivity extends AppCompatActivity {
 
             }
         });
+        editProfile.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+                Intent i = new Intent(getApplicationContext(), EditProfileActivity.class);
+                startActivity(i);
+            }
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         saveAbout.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 String bioText, statusText, songText;

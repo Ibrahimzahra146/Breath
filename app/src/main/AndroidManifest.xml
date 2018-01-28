@@ -25,14 +25,12 @@
             android:configChanges="orientation|screenSize|keyboard"
             android:label="@string/title_activity_home"
             android:windowSoftInputMode="adjustResize|stateVisible" />
-
         <activity
-            android:name="com.example.rabee.breath.Activities.SearchActivity"
+            android:name=".Activities.SearchActivity"
             android:label="@string/title_activity_search"
             android:theme="@style/AppTheme" />
-        <activity android:name="com.example.rabee.breath.Activities.UserProfileActivity" />
-        <activity android:name="com.example.rabee.breath.Activities.SplashActivity">
-
+        <activity android:name=".Activities.UserProfileActivity" />
+        <activity android:name=".Activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -48,7 +46,6 @@
             android:name="com.facebook.FacebookActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:label="@string/app_name" />
-        <activity android:name=".Activities.UserYoutubeActivity" />
         <activity
             android:name=".Activities.UpdatePasswordActivity"
             android:configChanges="orientation|keyboard|screenSize"
@@ -58,14 +55,13 @@
         <activity android:name=".Activities.ChangeAccountInfoActivities.ChangeEmailActivity" />
         <activity android:name=".Activities.ChangeAccountInfoActivities.ChangeMobileActivity" />
         <activity android:name=".Activities.FollowingActivity" />
+        <activity
+            android:name=".Activities.UserYoutubeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Dialog" />
+        <activity android:name=".Activities.EditProfileActivity" />
+        <activity android:name=".Activities.OtherProfileActivity" />
+        <activity android:name=".Activities.YoutubeDialogActivity" />
     </application>
 
 </manifest>
-
-
-
-
-
-
-
-
