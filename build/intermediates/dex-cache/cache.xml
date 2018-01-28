@@ -7,7 +7,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.3"
-        sha1="f39be973eafa546bbb023cbd7eac5bd287dfeb0b">
+        sha1="21f1d4e0fe199a2cedd12dc9b63dba71ef1ced1d">
         <dex dex="C:\Users\Rabee\Desktop\Breath\Breath\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_0b3e2b3db76b7d8ff01a65b99794e67aa38db162\classes.dex" />
     </item>
     <item
@@ -30,6 +30,15 @@
     </item>
     <item
         is-multidex="true"
+        jar="C:\Users\Rabee\Desktop\Breath\Breath\app\YouTubeAndroidPlayerApi.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="3c4f96ff493456651cc7bdb0b47e10eb25545a16">
+        <dex dex="C:\Users\Rabee\Desktop\Breath\Breath\app\build\intermediates\transforms\dex\debug\folders\1000\2\YouTubeAndroidPlayerApi_6652bee67759acc61d4efee10e9dc59fbd5f2704\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="C:\Users\Rabee\.android\build-cache\777410eb79b887cb065947f0bbe2ce6d6c442367\output\jars\classes.jar"
         jumboMode="true"
         optimize="true"
@@ -45,15 +54,6 @@
         revision="25.0.3"
         sha1="4a5b5caed312654f6aa2171d2f24e44785621d3d">
         <dex dex="C:\Users\Rabee\Desktop\Breath\Breath\app\build\intermediates\transforms\dex\debug\folders\1000\10\libphonenumber-8.5.2_7b4a6aa2698ad171b9d872bd6ab4cb6fcf417c89\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Rabee\Desktop\Breath\Breath\app\YouTubeAndroidPlayerApi.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="3c4f96ff493456651cc7bdb0b47e10eb25545a16">
-        <dex dex="C:\Users\Rabee\Desktop\Breath\Breath\app\build\intermediates\transforms\dex\debug\folders\1000\2\YouTubeAndroidPlayerApi_6652bee67759acc61d4efee10e9dc59fbd5f2704\classes.dex" />
     </item>
 
 </items>
