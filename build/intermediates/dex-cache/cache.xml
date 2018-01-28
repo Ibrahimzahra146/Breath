@@ -2,58 +2,49 @@
 <items version="2" >
 
     <item
-        is-multidex="true"
-        jar="C:\Users\Rabee\Desktop\Breath\Breath\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="C:\Users\zodiac\Breath\app\additionnal.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.3"
-        sha1="f39be973eafa546bbb023cbd7eac5bd287dfeb0b">
-        <dex dex="C:\Users\Rabee\Desktop\Breath\Breath\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_0b3e2b3db76b7d8ff01a65b99794e67aa38db162\classes.dex" />
+        sha1="bd9e8dc422bb8c8405359947fe9f4282b49f57f4">
+        <dex dex="C:\Users\zodiac\Breath\app\build\intermediates\pre-dexed\debug\additionnal_7d54a8f909f82a082813cffa8f5fd7c1181631af.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="C:\Users\Rabee\Desktop\Breath\Breath\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
-        <dex dex="C:\Users\Rabee\Desktop\Breath\Breath\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_d14ff17d6a107c7d1fef0678b42a35e50216f959\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Rabee\.android\build-cache\4067e68d4142afd601e667cf5398ec980f75fe49\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="2cfb5a2b52bb09fa94a7a0c4c2f2319703cb1f03">
-        <dex dex="C:\Users\Rabee\Desktop\Breath\Breath\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_5152b923e66eb37e662a6e9562c4bc986cc51b49\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Rabee\.android\build-cache\777410eb79b887cb065947f0bbe2ce6d6c442367\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="1ee075177bd403c333d4843b92c4b6c55db929ed">
-        <dex dex="C:\Users\Rabee\Desktop\Breath\Breath\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_34acf1f930876667ba1c1939ed5d23e5a1f1f5a4\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Rabee\.gradle\caches\modules-2\files-2.1\com.googlecode.libphonenumber\libphonenumber\8.5.2\4a5b5caed312654f6aa2171d2f24e44785621d3d\libphonenumber-8.5.2.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="4a5b5caed312654f6aa2171d2f24e44785621d3d">
-        <dex dex="C:\Users\Rabee\Desktop\Breath\Breath\app\build\intermediates\transforms\dex\debug\folders\1000\10\libphonenumber-8.5.2_7b4a6aa2698ad171b9d872bd6ab4cb6fcf417c89\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Rabee\Desktop\Breath\Breath\app\YouTubeAndroidPlayerApi.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="C:\Users\zodiac\Breath\app\YouTubeAndroidPlayerApi.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.3"
         sha1="3c4f96ff493456651cc7bdb0b47e10eb25545a16">
-        <dex dex="C:\Users\Rabee\Desktop\Breath\Breath\app\build\intermediates\transforms\dex\debug\folders\1000\2\YouTubeAndroidPlayerApi_6652bee67759acc61d4efee10e9dc59fbd5f2704\classes.dex" />
+        <dex dex="C:\Users\zodiac\Breath\app\build\intermediates\pre-dexed\debug\YouTubeAndroidPlayerApi_a39bb00f7143d8c0e713eb17acaa2460af01792d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\zodiac\Breath\app\activation.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="d1257cbff6faa44c1f325ae0d9413522d4644383">
+        <dex dex="C:\Users\zodiac\Breath\app\build\intermediates\pre-dexed\debug\activation_ed2c4665f5b2d157858fed75371dcf5167e397e0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\zodiac\Breath\app\mail.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="428e267abff0d10802ccde86b915da2c20471160">
+        <dex dex="C:\Users\zodiac\Breath\app\build\intermediates\pre-dexed\debug\mail_e7cee2619848725f321037687e4ef3a0e0232db7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\zodiac\.gradle\caches\modules-2\files-2.1\javax.inject\javax.inject\1\6975da39a7040257bd51d21a231b76c915872d38\javax.inject-1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="6975da39a7040257bd51d21a231b76c915872d38">
+        <dex dex="C:\Users\zodiac\Breath\app\build\intermediates\pre-dexed\debug\javax.inject-1_a73a531c5c539ca1f718f51b71ced73493503d98.jar" />
     </item>
 
 </items>

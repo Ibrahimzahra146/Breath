@@ -127,7 +127,6 @@ public class SignUpActivity extends Activity {
         signUpModel.setPassword(getPassword());
         signUpModel.setGender(getUserGender());
         signUpModel.setBirthdate(getUserBirthDate());
-        Log.d("Birthdate1", getUserBirthDate().toString().trim());
         LoggingInDialog = new Dialog(this);
         LoggingInDialog.setContentView(R.layout.logging_in_dialog);
         boolean isOnline = generalFunctions.isOnline(getApplicationContext());
@@ -151,7 +150,6 @@ public class SignUpActivity extends Activity {
                 @Override
                 public void onResponse(Call<UserProfileResponseModel> call, Response<UserProfileResponseModel> response) {
                     UserProfileResponseModel generalUserModel = response.body();
-                    Log.d("SignUpNew", response.code() + " ");
                     SharedPreferences sharedPreferences = getSharedPreferences("userInfo", Context.MODE_PRIVATE);
 
                     if (response.code() == 200) {

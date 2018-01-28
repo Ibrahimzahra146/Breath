@@ -67,15 +67,14 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     GoogleApiClient googleApiClient;
     Dialog progressDialog;
     TextView AppTitle;
-    private EditText emailEditText;
-    private EditText passEditText;
     SharedPreferences sharedPreferences;
-
-    private List<ReactsRecyclerViewModel> reactsList = new ArrayList<>();
     RecyclerView recyclerView;
     Retrofit retrofit = new Retrofit.Builder()
             .baseUrl(GeneralInfo.SPRING_URL)
             .addConverterFactory(GsonConverterFactory.create()).build();
+    private EditText emailEditText;
+    private EditText passEditText;
+    private List<ReactsRecyclerViewModel> reactsList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -149,15 +148,10 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
 
             @Override
             public void onCancel() {
-                Log.d("Facebook login", "");
-
-
             }
 
             @Override
             public void onError(FacebookException error) {
-                Log.d("Facebook login", "");
-
 
             }
         });
@@ -170,14 +164,13 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                 .addApi(Auth.GOOGLE_SIGN_IN_API, signInOptions).addApi(Plus.API)
                 .build();
     }
+
     public void signIn() {
         Intent intent = Auth.GoogleSignInApi.getSignInIntent(googleApiClient);
         startActivityForResult(intent, 9001);
     }
 
     public void onClick(View v) {
-        Log.d("Facebook login clicked", "");
-
         switch (v.getId()) {
             case R.id.loginWithGoogleBtn:
                 signIn();
@@ -194,10 +187,15 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
 
 
     }
+
     public void register(View arg0) {
         Intent i = new Intent(getApplicationContext(), SignUpActivity.class);
         startActivity(i);
+    }
 
+    public void forgot_pass(View arg0) {
+        Intent i = new Intent(getApplicationContext(), UpdatePasswordActivity.class);
+        startActivity(i);
     }
 
     public void checkLogin(View arg0) {
@@ -288,18 +286,18 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     @Override
     public void onActivityResult(int requestCode, int responseCode, Intent data) {
 
-            Log.i("899999999999999999999","");
-            // data.getStringExtra("")
+        Log.i("899999999999999999999", "");
+        // data.getStringExtra("")
 
+        LoggingInDialog.show();
+        GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
+        handleGoogleResult(result);
+        if (googleApiClient.hasConnectedApi(Plus.API)) {
             LoggingInDialog.show();
-            GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
-            handleGoogleResult(result);
-            if (googleApiClient.hasConnectedApi(Plus.API)) {
-                LoggingInDialog.show();
 
-                com.google.android.gms.plus.model.people.Person person = Plus.PeopleApi.getCurrentPerson(googleApiClient);
+            com.google.android.gms.plus.model.people.Person person = Plus.PeopleApi.getCurrentPerson(googleApiClient);
 
-                if (requestCode == 9001) {
+            if (requestCode == 9001) {
                 Log.i("", "Gender: " + person.getGender());
             }
 
@@ -311,8 +309,6 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     }
 
     public void handleGoogleResult(GoogleSignInResult googleSignInResult) {
-        Log.d("Handle google result","");
-
         if (googleSignInResult.isSuccess()) {
             GoogleSignInAccount account = googleSignInResult.getSignInAccount();
             String email = account.getEmail();
@@ -326,12 +322,6 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
             loginWIthGoogleModel.setId(userId);
             loginWIthGoogleModel.setImage(account.getPhotoUrl().toString());
             loginWithGoogleRequest(loginWIthGoogleModel);
-            Log.d("account.photo", account.getPhotoUrl().toString());
-            Log.d("Google email", email);
-            Log.d("account.getIdToken();", account.getIdToken());
-            Log.d("account.getIdToken();", account.getServerAuthCode());
-
-
         }
 
     }

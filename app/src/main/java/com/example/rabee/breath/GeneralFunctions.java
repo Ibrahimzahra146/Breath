@@ -137,8 +137,6 @@ public class GeneralFunctions {
 
             @Override
             public void onResponse(Call<UserIdDeviceIdResponseModel> call, Response<UserIdDeviceIdResponseModel> response) {
-                Log.d("Storing device token","..."+response.code());
-
                 if (response.code() == 404 || response.code() == 500 || response.code() == 502 || response.code() == 400) {
 
                     GeneralFunctions generalFunctions = new GeneralFunctions();
