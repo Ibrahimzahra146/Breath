@@ -52,7 +52,9 @@
         <activity android:name=".Activities.FollowingActivity" />
         <activity android:name=".Activities.EditProfileActivity" />
         <activity android:name=".Activities.OtherProfileActivity" />
-        <activity android:name=".Activities.YoutubeDialogActivity"></activity>
+        <activity android:name=".Activities.YoutubeDialogActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Dialog"></activity>
     </application>
 
 </manifest>
