@@ -12,10 +12,10 @@ import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
+import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Base64;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -27,6 +27,7 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.example.rabee.breath.GeneralFunctions;
 import com.example.rabee.breath.GeneralInfo;
 import com.example.rabee.breath.Models.RequestModels.AboutUserRequestModel;
 import com.example.rabee.breath.Models.ResponseModels.AboutUserResponseModel;
@@ -47,35 +48,46 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import static com.example.rabee.breath.Services.ImageService.RotateBitmap;
 import static com.example.rabee.breath.Services.ImageService.scaleDown;
 
-public class UserProfileActivity extends AppCompatActivity{
-        private static String[] PERMISSIONS_STORAGE = {
-                Manifest.permission.READ_EXTERNAL_STORAGE,
-                Manifest.permission.WRITE_EXTERNAL_STORAGE
-        };
+public class UserProfileActivity extends AppCompatActivity {
     private static final int SELECTED_PICTURE = 100;
     private static final int REQUEST_EXTERNAL_STORAGE = 1;
     public static ObjectAnimator anim;
+    private static String[] PERMISSIONS_STORAGE = {
+            Manifest.permission.READ_EXTERNAL_STORAGE,
+            Manifest.permission.WRITE_EXTERNAL_STORAGE
+    };
     SharedPreferences sharedPreferences;
     Retrofit retrofit = new Retrofit.Builder()
             .baseUrl(GeneralInfo.SPRING_URL)
             .addConverterFactory(GsonConverterFactory.create()).build();
-    ImageView img,coverImage,imageView;
-    TextView followingTxt, newPostTxt , followerCount , followingCount,userName,profileBio;
-    TextView changePic, viewPic, RemovePic, toolBarText,editBio;
+    ImageView img, coverImage, imageView;
+    TextView followingTxt, newPostTxt, followerCount, followingCount, userName, profileBio;
+    TextView changePic, viewPic, RemovePic, toolBarText, editBio;
     CircleImageView editProfile, editSong;
     Button saveAbout, saveSong;
     EditText bioTxt, statusTxt, songTxt;
-    Dialog imgClick,ViewImgDialog,editMyBio, editMySong;
+    Dialog imgClick, ViewImgDialog, editMyBio, editMySong;
     ProgressBar coverProgressBar, progressBar;
     Uri imageuri;
-
-
 
 
     String songUrl;
     int youtubeFlag = 0;
     //    TextView followerTxt;
 
+    public static void verifyStoragePermissions(Activity activity) {
+        // Check if we have write permission
+        int permission = ActivityCompat.checkSelfPermission(activity, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+
+        if (permission != PackageManager.PERMISSION_GRANTED) {
+            // We don't have permission so prompt the user
+            ActivityCompat.requestPermissions(
+                    activity,
+                    PERMISSIONS_STORAGE,
+                    REQUEST_EXTERNAL_STORAGE
+            );
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,13 +104,13 @@ public class UserProfileActivity extends AppCompatActivity{
         profileBio = (TextView) findViewById(R.id.profileBio);
         coverProgressBar = (ProgressBar) findViewById(R.id.coverProgressBar);
         img = (ImageView) findViewById(R.id.user_profile_photo);
-       // songTxt = (EditText) editMySong.findViewById(R.id.songTxt);
-       // saveSong = (Button) editMySong.findViewById(R.id.saveSong);
+        // songTxt = (EditText) editMySong.findViewById(R.id.songTxt);
+        // saveSong = (Button) editMySong.findViewById(R.id.saveSong);
         editBio = (TextView) findViewById(R.id.editBio);
         toolBarText = (TextView) findViewById(R.id.toolBarText);
         progressBar = (ProgressBar) findViewById(R.id.profilePictureProgressBar);
-        followingCount= (TextView) findViewById(R.id.followingCount);
-        followerCount= (TextView) findViewById(R.id.followerCount);
+        followingCount = (TextView) findViewById(R.id.followingCount);
+        followerCount = (TextView) findViewById(R.id.followerCount);
 
 
         ////////////////////////////////////////
@@ -131,7 +143,7 @@ public class UserProfileActivity extends AppCompatActivity{
         editMyBio.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         editMySong.setContentView(R.layout.edit_song_profile_dialog);
         editMySong.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-       /////
+        /////
         imageView = (ImageView) ViewImgDialog.findViewById(R.id.ImageView);
         saveAbout = (Button) editMyBio.findViewById(R.id.saveAbout);
         bioTxt = (EditText) editMyBio.findViewById(R.id.bioTxt);
@@ -364,16 +376,8 @@ public class UserProfileActivity extends AppCompatActivity{
         });
 
 
-
-
-
-
-
-
-
-
-
     }
+
     public void getUserInfo() {
         userName.setText(GeneralInfo.getGeneralUserInfo().getUser().getFirst_name() + " " + GeneralInfo.getGeneralUserInfo().getUser().getLast_name());
         String imageUrl = GeneralInfo.SPRING_URL + "/" + GeneralInfo.getGeneralUserInfo().getUser().getImage();
@@ -383,6 +387,7 @@ public class UserProfileActivity extends AppCompatActivity{
         Picasso.with(getApplicationContext()).load(coverUrl).into(coverImage);
 
     }
+
     public void fillAbout() {
 
         profileBio.setText(GeneralInfo.getGeneralUserInfo().getAboutUser().getUserBio());
@@ -391,19 +396,7 @@ public class UserProfileActivity extends AppCompatActivity{
         songTxt.setText(GeneralInfo.getGeneralUserInfo().getAboutUser().getUserSong());
         songUrl = GeneralInfo.getGeneralUserInfo().getAboutUser().getUserSong();
     }
-    public static void verifyStoragePermissions(Activity activity) {
-        // Check if we have write permission
-        int permission = ActivityCompat.checkSelfPermission(activity, Manifest.permission.WRITE_EXTERNAL_STORAGE);
 
-        if (permission != PackageManager.PERMISSION_GRANTED) {
-            // We don't have permission so prompt the user
-            ActivityCompat.requestPermissions(
-                    activity,
-                    PERMISSIONS_STORAGE,
-                    REQUEST_EXTERNAL_STORAGE
-            );
-        }
-    }
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK && (requestCode == 100 || requestCode == 200)) {
@@ -411,7 +404,6 @@ public class UserProfileActivity extends AppCompatActivity{
             try {
                 ImageService imageService = new ImageService();
                 String path = imageService.getRealPathFromURI(this, imageuri);
-                Log.d("Path", path);
                 int rotate = imageService.getPhotoOrientation(path);
 
                 Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), imageuri);
@@ -421,20 +413,18 @@ public class UserProfileActivity extends AppCompatActivity{
                     img.setImageBitmap(bitmap);
                 }
                 if (requestCode == 200) {
-                    Log.d("requestCode","Uploading cover image...");
-
                     coverImage.setImageBitmap(bitmap);
                 }
                 byte[] image = imageService.getBytes(bitmap);
                 String encodedImage = Base64.encodeToString(image, Base64.DEFAULT);
-                imageService.uploadImagetoDB(GeneralInfo.getUserID(),  path, bitmap, requestCode, coverProgressBar);
+                imageService.uploadImagetoDB(GeneralInfo.getUserID(), path, bitmap, requestCode, coverProgressBar);
 
             } catch (Exception e) {
                 Log.d("XX", "Image cannot be uploaded");
-
             }
         }
     }
+
     //Update user info
     public void updateAbout(final String bioText, final String statusText, final String songText) {
         AboutUserRequestModel aboutUserModel = new AboutUserRequestModel(GeneralInfo.getUserID(), bioText, statusText, songText);
@@ -449,7 +439,7 @@ public class UserProfileActivity extends AppCompatActivity{
             public void onResponse(Call<AboutUserResponseModel> call, Response<AboutUserResponseModel> response) {
                 if (response.code() == 404 || response.code() == 500 || response.code() == 502 || response.code() == 400) {
                     GeneralInfo generalFunctions = new GeneralInfo();
-                   // generalFunctions.showErrorMesaage(getApplicationContext());
+                    // generalFunctions.showErrorMesaage(getApplicationContext());
                 } else {
                     GeneralInfo.generalUserInfo.setAboutUser(response.body());
                     sharedPreferences = getSharedPreferences("userInfo", Context.MODE_PRIVATE);
@@ -464,9 +454,8 @@ public class UserProfileActivity extends AppCompatActivity{
 
             @Override
             public void onFailure(Call<AboutUserResponseModel> call, Throwable t) {
-               // GeneralInfo generalFunctions = new GeneralFunctions();
-               // generalFunctions.showErrorMesaage(getApplicationContext());
-                Log.d("AboutUserUpdate", "Failure " + t.getMessage());
+                GeneralFunctions generalFunctions = new GeneralFunctions();
+                generalFunctions.showErrorMesaage(getApplicationContext());
             }
         });
 
@@ -480,13 +469,9 @@ public class UserProfileActivity extends AppCompatActivity{
         removeImageResponse.enqueue(new Callback<Integer>() {
             @Override
             public void onResponse(Call<Integer> call, Response<Integer> response) {
-                Log.d("ImagesCode ", " " + response.code());
-                if(profileOrCover == 0)
-                {
+                if (profileOrCover == 0) {
                     GeneralInfo.generalUserInfo.getUser().setImage("");
-                }
-                else
-                {
+                } else {
                     GeneralInfo.generalUserInfo.getUser().setCover_image("");
                 }
                 sharedPreferences = getSharedPreferences("userInfo", Context.MODE_PRIVATE);
@@ -498,6 +483,7 @@ public class UserProfileActivity extends AppCompatActivity{
                 getUserInfo();
 
             }
+
             @Override
             public void onFailure(Call<Integer> call, Throwable t) {
                 Log.d("ImagesCode ", " Error " + t.getMessage());

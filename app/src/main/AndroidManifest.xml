@@ -15,6 +15,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Activities.MainActivity" />
+        <activity android:name=".Activities.SettingsActivity" />
+        <activity android:name=".Activities.ChangeAccountInfoActivities.ChangePasswordActivity" />
+        <activity android:name=".Activities.ChangeAccountInfoActivities.ChangeEmailActivity" />
+        <activity android:name=".Activities.ChangeAccountInfoActivities.ChangeMobileActivity" />
         <activity
             android:name=".Activities.HomeActivity"
             android:label="@string/title_activity_home"
@@ -52,9 +56,8 @@
         <activity android:name=".Activities.FollowingActivity" />
         <activity android:name=".Activities.EditProfileActivity" />
         <activity android:name=".Activities.OtherProfileActivity" />
-        <activity android:name=".Activities.YoutubeDialogActivity"
-            android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Dialog"></activity>
+        <activity android:name=".Activities.YoutubeDialogActivity" />
+        <activity android:name=".Activities.ReactActivity"></activity>
     </application>
 
 </manifest>

@@ -20,6 +20,8 @@ import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
+import static com.hbb20.R.styleable.RecyclerView;
+
 /**
  * Created by Rabee on 1/20/2018.
  */
@@ -40,7 +42,7 @@ public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.UserVi
     @Override
     public UserViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         view = LayoutInflater.from(mContext).inflate(R.layout.user_list_view_item, null);
-        ivProfile=(CircleImageView)view.findViewById(R.id.profile_pic);
+
         return new UserViewHolder(view);
     }
 

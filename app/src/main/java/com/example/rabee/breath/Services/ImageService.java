@@ -44,8 +44,6 @@ import static com.facebook.FacebookSdk.getApplicationContext;
 public class ImageService {
     public static Bitmap scaleDown(Bitmap realImage, float maxImageSize,
                                    boolean filter) {
-        Log.d("width", "" + realImage.getWidth());
-        Log.d("height", "" + realImage.getHeight());
         float ratio = Math.min(
                 (float) maxImageSize / realImage.getWidth(),
                 (float) maxImageSize / realImage.getHeight());
@@ -150,11 +148,8 @@ public class ImageService {
         Call<UserModel> userImageResponse;
         if (requestCode == 100) {
             userImageResponse = imageInterface.uploadProfileImage(body, GeneralInfo.userID);
-            Log.d("images", "  Profile" );
         } else {
             userImageResponse = imageInterface.uploadCoverImage(body, GeneralInfo.userID);
-            Log.d("images", "  Cover" + file.getName());
-
         }
 
         userImageResponse.enqueue(new Callback<UserModel>() {

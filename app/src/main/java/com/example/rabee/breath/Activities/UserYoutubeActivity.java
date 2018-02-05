@@ -3,13 +3,13 @@ package com.example.rabee.breath.Activities;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 
+import com.example.rabee.breath.GeneralFunctions;
 import com.example.rabee.breath.GeneralInfo;
 import com.example.rabee.breath.Models.RequestModels.AboutUserRequestModel;
 import com.example.rabee.breath.Models.ResponseModels.AboutUserResponseModel;
@@ -33,7 +33,7 @@ public class UserYoutubeActivity extends YouTubeBaseActivity implements
         YouTubePlayer.OnInitializedListener {
     private static YouTubePlayerView youTubePlayerFragment;
     int youtubeFlag = 0;
-    String video_id, backUp_video_id = "",backUp_Url="", youtubeBundleSong;
+    String video_id, backUp_video_id = "", backUp_Url = "", youtubeBundleSong;
     String API_KEY = "AIzaSyCHH7wadSVxjRklA5ebZHLIofaiYj_pgeE";
     EditText youtubeEdit;
     Button saveBtn;
@@ -152,13 +152,10 @@ public class UserYoutubeActivity extends YouTubeBaseActivity implements
                 String s = String.valueOf(youtubeEdit.getText());
                 int i = s.indexOf(pattern);
                 int j = s.indexOf(pattern1);
-                //Log.d("youtubeFlag", "i " + i + "j " + j + "Falg " + youtubeFlag);
-
 
                 if ((i >= 0) || (j >= 0)) {
                     backUp_Url = youtubeBundleSong;
                     backUp_video_id = video_id;
-                    Log.d("youtubeFlag", "i " + i + "j " + j + "Falg " + youtubeFlag);
                     youTubePlayerFragment = null;
 
 
@@ -195,6 +192,7 @@ public class UserYoutubeActivity extends YouTubeBaseActivity implements
     public void onInitializationFailure(YouTubePlayer.Provider provider, YouTubeInitializationResult youTubeInitializationResult) {
 
     }
+
     public void setNewVideo(String video_id) {
 
 
@@ -206,6 +204,7 @@ public class UserYoutubeActivity extends YouTubeBaseActivity implements
         youtubeFlag = 1;
 
     }
+
     public boolean isValidVideoId(String youtubeUrl) {
         int flag = 0;
         String pattern = "https?:\\/\\/(?:[0-9A-Z-]+\\.)?(?:youtu\\.be\\/|youtube\\.com\\S*[^\\w\\-\\s])([\\w\\-]{11})(?=[^\\w\\-]|$)(?![?=&+%\\w]*(?:['\"][^<>]*>|<\\/a>))[?=&+%\\w]*";
@@ -213,6 +212,7 @@ public class UserYoutubeActivity extends YouTubeBaseActivity implements
         Matcher matcher = compiledPattern.matcher(youtubeUrl);
         return matcher.find();
     }
+
     public void editUserSongRequest(String songUrl) {
 
         Retrofit retrofit = new Retrofit.Builder()
@@ -232,17 +232,16 @@ public class UserYoutubeActivity extends YouTubeBaseActivity implements
             public void onResponse(Call<AboutUserResponseModel> call, Response<AboutUserResponseModel> response) {
                 if (response.code() == 404 || response.code() == 500 || response.code() == 502 || response.code() == 400) {
 
-                   // GeneralFunctions generalFunctions = new GeneralFunctions();
-                   // generalFunctions.showErrorMesaage(getApplicationContext());
+                    GeneralFunctions generalFunctions = new GeneralFunctions();
+                    generalFunctions.showErrorMesaage(getApplicationContext());
                 }
-                Log.d("AboutProfileUpdate", "Done successfully " + response.code() + " " + response.body());
                 finish();
             }
 
             @Override
             public void onFailure(Call<AboutUserResponseModel> call, Throwable t) {
-//                GeneralFunctions generalFunctions = new GeneralFunctions();
-//                generalFunctions.showErrorMesaage(getApplicationContext());
+                GeneralFunctions generalFunctions = new GeneralFunctions();
+                generalFunctions.showErrorMesaage(getApplicationContext());
             }
         });
     }

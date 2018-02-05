@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.rabee.breath.Activities.SettingsActivity;
 import com.example.rabee.breath.Activities.UserProfileActivity;
 import com.example.rabee.breath.GeneralInfo;
 import com.example.rabee.breath.R;
@@ -23,7 +24,7 @@ public class SettingsFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     static TextView userName;
-    CircleImageView profilePicture;
+    CircleImageView profilePicture , settingIcon;
     View view;
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -68,6 +69,7 @@ public class SettingsFragment extends Fragment {
         view=inflater.inflate(R.layout.fragment_settings, container, false);
         userName = (TextView) view.findViewById(R.id.userName);
         profilePicture = (CircleImageView) view.findViewById(R.id.profile_picture);
+        settingIcon= (CircleImageView) view.findViewById(R.id.settingsIcon);
         userName.setText(GeneralInfo.USER_NAME);
         String imageUrl= GeneralInfo.SPRING_URL+"/"+ GeneralInfo.PROFILE_PIC;
         Picasso.with(getContext()).load(imageUrl).into(profilePicture);
@@ -76,6 +78,14 @@ public class SettingsFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getContext(), UserProfileActivity.class);
+                startActivity(i);
+            }
+        });
+
+        settingIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getContext(), SettingsActivity.class);
                 startActivity(i);
             }
         });
