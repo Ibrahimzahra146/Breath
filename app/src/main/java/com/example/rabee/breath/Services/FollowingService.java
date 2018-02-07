@@ -37,7 +37,7 @@ public class FollowingService {
     static Button NoBtn;
     static Button YesBtn;
     static TextView textMsg;
-    public void startRightActivity(Context mContext, String mName, int Id, String ImageUrl) {
+    public static void startRightActivity(Context mContext, String mName, int Id, String ImageUrl) {
         if (Id == GeneralInfo.getUserID()) {
             Intent i = new Intent(mContext, OtherProfileActivity.class);
             mContext.startActivity(i);
@@ -48,6 +48,8 @@ public class FollowingService {
             b.putInt("Id", Id);
             b.putString("mImageURL", ImageUrl);
             i.putExtras(b);
+            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
             mContext.startActivity(i);
         }
     }
