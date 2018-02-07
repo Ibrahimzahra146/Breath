@@ -40,6 +40,8 @@ import com.example.rabee.breath.R;
 import com.example.rabee.breath.RequestInterface.PostInterface;
 import com.squareup.picasso.Picasso;
 
+import org.w3c.dom.Text;
+
 import static com.facebook.FacebookSdk.getApplicationContext;
 
 /**
@@ -80,13 +82,14 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
             Picasso.with(context).load(imageUrl).into(holder.postImage);
 
         }
+        likeCount=postResponseModelsList.get(position).getReacts().getLikeList().getCount();
+        disLikeCount=postResponseModelsList.get(position).getReacts().getDislikeList().getCount();
+        loveCount=postResponseModelsList.get(position).getReacts().getLoveList().getCount();
         holder.postLoveCount.setText(loveCount > 0 ? (String.valueOf(loveCount) + (loveCount == 1 ? " Love" : " Loves")) : "");
         holder.postLikeCount.setText(likeCount > 0 ? (String.valueOf(likeCount) + (likeCount == 1 ? " Like" : " Likes")) : "");
         holder.postDislikeCount.setText(disLikeCount > 0 ? (String.valueOf(disLikeCount) + (disLikeCount > 1 ? " Unlikes" : " Unlike")) : "");
         //////////////////
-        likeCount=postResponseModelsList.get(position).getReacts().getLikeList().getCount();
-        disLikeCount=postResponseModelsList.get(position).getReacts().getDislikeList().getCount();
-        loveCount=postResponseModelsList.get(position).getReacts().getLoveList().getCount();
+
         if (postResponseModelsList.get(position).getReacts().getLoveList().getMyAction()) {
             holder.postLoveIcon.setImageResource(R.drawable.filled_love_post);
             pressedLoveFlag = true;
@@ -174,6 +177,7 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
            // youtubeLinkTitle = (TextView) view.findViewById(R.id.youtubeLinkTitle);
             youtubeLinkLayout = (LinearLayout) view.findViewById(R.id.youtubeLinkLayout);
            // youtubeLinkAuthor = (TextView) view.findViewById(R.id.youtubeLinkAuthor);
+            postLoveCount=(TextView) view.findViewById(R.id.loveCount);
             postLikeCount = (TextView) view.findViewById(R.id.likeCount);
             postDislikeCount = (TextView) view.findViewById(R.id.unlikeCount);
             postLoveIcon = (ImageView) view.findViewById(R.id.love_post);
