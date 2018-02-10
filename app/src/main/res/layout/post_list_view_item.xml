@@ -1,45 +1,67 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#eee">
+    android:layout_height="wrap_content"
+    android:background="@drawable/white_layout_corners"
+    android:layout_marginBottom="13dp"
+
+
+    >
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="30dp"
-        android:layout_marginTop="30dp">
+        android:layout_marginTop="5dp">
 
         <TextView
             android:id="@+id/postTime"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:layout_marginLeft="165dp"
-            android:background="@drawable/time_icon"
+            android:text=""
+            android:textSize="8dp" />
+        <ImageView
+            android:id="@+id/postStatus"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="165dp"
+            android:src="@drawable/unlocked_icon"
             android:text=""
             android:textSize="8dp" />
 
-
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_below="@+id/postStatus"
+            android:layout_marginTop="5dp"
+            android:background="#ccc" />
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="59dp">
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp">
 
         <LinearLayout
             android:id="@+id/userInfoLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
             android:paddingRight="15dp"
-            android:paddingTop="17dp">
+            android:paddingTop="17dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true">
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/userProfilePicture"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:src="@drawable/profile_pic" />
+                android:id="@+id/userProfilePicture"
+                android:src="#3a6368"
+                />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -62,10 +84,9 @@
 
                 <ImageView
                     android:layout_width="20dp"
-
                     android:layout_height="match_parent"
                     android:layout_alignParentRight="true"
-                    android:src="@drawable/sace_icon" />
+                    android:src="@drawable/save_icon" />
 
             </LinearLayout>
 
@@ -129,15 +150,20 @@
         <!--android:layout_marginLeft="13dp"-->
         <!--android:layout_marginRight="13dp"-->
 
+
+
+
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/postInfoLayout"
             android:orientation="vertical"
             android:paddingBottom="8dp"
-            android:paddingLeft="30dp"
-            android:paddingRight="20dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="5dp"
             android:paddingTop="8dp">
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -184,8 +210,8 @@
                         android:layout_height="31dp"
                         android:layout_gravity="center"
                         android:layout_marginLeft="2dp"
-                        android:padding="6dp"
-                        android:src="@drawable/test_image"
+                        android:padding="4dp"
+                        android:src="@drawable/like_icon"
 
                         />
 
@@ -212,8 +238,8 @@
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_gravity="center"
-                        android:padding="6dp"
-                        android:src="@drawable/test_image" />
+                        android:padding="4dp"
+                        android:src="@drawable/unlike_icon" />
 
                     <TextView
                         android:id="@+id/unlikeCount"
@@ -226,11 +252,11 @@
                         android:textSize="12dp" />
 
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="120dp"
-
+                    android:layout_marginLeft="90dp"
                     android:orientation="vertical">
 
                     <ImageView
@@ -242,20 +268,12 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:layout_marginLeft="5dp"
-
+                        android:layout_marginLeft="0dp"
                         android:gravity="center"
                         android:text="8 comments"
                         android:textSize="13dp" />
                 </LinearLayout>
             </LinearLayout>
-            <View
-                android:layout_width="wrap_content"
-                android:layout_height="1dp"
-                android:layout_below="@+id/postInfoLayout"
-                android:background="#ccc" />
-
-
 
 
         </LinearLayout>

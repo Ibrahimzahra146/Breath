@@ -173,10 +173,10 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
             posterUserName = (TextView) itemView.findViewById(R.id.username);
             postBodyText = (TextView) view.findViewById(R.id.postText);
             postImage = (ImageView) view.findViewById(R.id.postImage);
-           // youtubeLinkImage = (ImageView) view.findViewById(R.id.youtubeLinkImage);
-           // youtubeLinkTitle = (TextView) view.findViewById(R.id.youtubeLinkTitle);
+            // youtubeLinkImage = (ImageView) view.findViewById(R.id.youtubeLinkImage);
+            // youtubeLinkTitle = (TextView) view.findViewById(R.id.youtubeLinkTitle);
             youtubeLinkLayout = (LinearLayout) view.findViewById(R.id.youtubeLinkLayout);
-           // youtubeLinkAuthor = (TextView) view.findViewById(R.id.youtubeLinkAuthor);
+            // youtubeLinkAuthor = (TextView) view.findViewById(R.id.youtubeLinkAuthor);
             postLoveCount=(TextView) view.findViewById(R.id.loveCount);
             postLikeCount = (TextView) view.findViewById(R.id.likeCount);
             postDislikeCount = (TextView) view.findViewById(R.id.unlikeCount);
@@ -241,6 +241,9 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
 
 
                 }
+
+
+
             }
 
             @Override

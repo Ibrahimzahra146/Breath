@@ -5,5 +5,59 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.rabee.breath.Activities.ReactActivity">
+    <Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/purple"
+        android:focusableInTouchMode="true">
 
+        <TextView
+            android:id="@+id/back_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:drawableLeft="@drawable/back_icon"
+            android:focusableInTouchMode="true"
+            android:paddingRight="10dp"
+            android:textColor="#fff"
+            android:textSize="19dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/react_type_label"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="7dp"
+            android:focusableInTouchMode="true"
+            android:paddingRight="10dp"
+            android:text=""
+            android:textColor="#fff"
+            android:textSize="19dp"
+            android:textStyle="bold" />
+
+    </Toolbar>
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="25dp"
+        android:layout_gravity="center"
+        android:layout_height="25dp"
+        android:visibility="gone"
+        android:indeterminateTint="@color/purple"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:scrollbars="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fastScrollEnabled="true"
+            android:animateLayoutChanges = "false">
+
+        </android.support.v7.widget.RecyclerView>
+
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>
