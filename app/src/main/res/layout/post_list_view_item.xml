@@ -1,8 +1,8 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/white_layout_borders"
     android:layout_marginBottom="13dp"
+    android:background="@drawable/white_layout_borders"
 
 
     >
@@ -25,17 +25,16 @@
             android:id="@+id/postTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
             android:layout_below="@+id/postStatus"
+            android:layout_centerHorizontal="true"
             android:text="10:10pm"
-            android:textSize="12dp"
-            />
+            android:textSize="12dp" />
 
         <View
             android:layout_width="wrap_content"
             android:layout_height="1dp"
-            android:layout_marginTop="1dp"
             android:layout_below="@+id/postTime"
+            android:layout_marginTop="1dp"
             android:background="#ccc" />
     </RelativeLayout>
 
@@ -103,7 +102,6 @@
 
 
             <LinearLayout
-                android:id="@+id/youtubeLinkLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="7dp">
@@ -116,9 +114,63 @@
                     android:layout_marginBottom="3dp"
                     android:fontFamily="sans-serif-black"
                     android:text="My fist post is the best post ever ,I cant find better than what I have said"
-                    android:textSize="13dp" />
+                    android:textSize="13.5dp"
+                    android:textStyle="bold"/>
             </LinearLayout>
 
+            <LinearLayout
+                android:id="@+id/youtubeLinkLayout"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:layout_margin="7dp"
+                android:background="@drawable/post_view_youtube_borders"
+                android:paddingRight="10dp">
+
+                <ImageView
+                    android:id="@+id/youtubeLinkImage"
+                    android:layout_width="65dp"
+                    android:layout_height="match_parent"
+                    android:background="#000" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/youtubeLinkTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="4dp"
+                        android:maxLines="1"
+                        android:textColor="#000"
+                        android:textSize="13dp" />
+
+                    <TextView
+                        android:id="@+id/youtubeLinkAuthor"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/youtubeLinkTitle"
+                        android:layout_marginLeft="20dp"
+                        android:maxLines="1"
+                        android:textColor="#000"
+                        android:textSize="12.5dp"
+
+                        />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="3dp"
+                        android:layout_marginLeft="20dp"
+                        android:text="Youtube.com"
+                        android:textSize="12dp"
+
+                        />
+                </RelativeLayout>
+            </LinearLayout>
 
             <ImageView
                 android:id="@+id/postImage"
@@ -147,7 +199,7 @@
             android:layout_below="@+id/postInfoLayout"
             android:orientation="vertical"
             android:paddingBottom="8dp"
-            android:paddingLeft="10dp"
+            android:paddingLeft="7dp"
             android:paddingRight="15dp"
             android:paddingTop="8dp">
 
@@ -157,7 +209,7 @@
                 android:orientation="horizontal">
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="35dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="-5dp"
                     android:orientation="vertical">
@@ -170,7 +222,7 @@
                         android:layout_marginLeft="2dp"
                         android:layout_marginTop="3dp"
                         android:clickable="true"
-                        android:padding="4dp"
+                        android:padding="4.5dp"
                         android:src="@drawable/love_icon" />
 
                     <TextView
@@ -179,13 +231,12 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:gravity="center"
-                        android:text="1 love"
                         android:textSize="12dp" />
 
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="35dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="-5dp"
@@ -208,13 +259,13 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:gravity="center"
-                        android:text="3 likes"
+                        android:layout_marginTop="1dp"
                         android:textSize="12dp" />
 
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="35dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="-2dp"
@@ -225,19 +276,17 @@
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_gravity="center"
-                        android:layout_marginBottom="2dp"
-                        android:layout_marginTop="-2dp"
+                        android:layout_marginTop="1dp"
                         android:padding="4dp"
-                        android:src="@drawable/filled_thumb_up" />
+                        android:src="@drawable/unlike_icon" />
 
                     <TextView
                         android:id="@+id/unlikeCount"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginTop="-2dp"
+                        android:layout_marginTop="-3dp"
                         android:gravity="center"
-                        android:text="4 unlikes"
                         android:textSize="12dp" />
 
                 </LinearLayout>
