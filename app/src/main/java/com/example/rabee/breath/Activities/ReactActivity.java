@@ -78,8 +78,8 @@ public class ReactActivity extends AppCompatActivity {
                 .addConverterFactory(GsonConverterFactory.create()).build();
 
         postInterface = retrofit.create(PostInterface.class);
-        final Call<ReactSingleModel> searchResponse = postInterface.getPostReact(postId, type);
-        searchResponse.enqueue(new Callback<ReactSingleModel>() {
+        final Call<ReactSingleModel> reactResponse = postInterface.getPostReact(postId, type);
+        reactResponse.enqueue(new Callback<ReactSingleModel>() {
             @Override
             public void onResponse(Call<ReactSingleModel> call, Response<ReactSingleModel> response) {
                 userModelList = (ArrayList<UserModel>) response.body().getUsers();

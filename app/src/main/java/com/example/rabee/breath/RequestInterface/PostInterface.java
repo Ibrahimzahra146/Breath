@@ -46,4 +46,7 @@ public interface PostInterface {
     @Headers("Cache-Control: max-age=64000")
     @GET("/api/v1/post/getPostReact/{postId}/{type}")
     Call<ReactSingleModel> getPostReact(@Path("postId") int postId, @Path("type") int type);
+    @Headers("Cache-Control: max-age=64000")
+    @GET("/api/v1/post/getPost/{postId}")
+    Call<PostCommentResponseModel> getPost(@Path("postId") int postId);
 }

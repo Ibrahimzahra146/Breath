@@ -58,7 +58,8 @@
         <activity android:name=".Activities.OtherProfileActivity" />
         <activity android:name=".Activities.YoutubeDialogActivity" />
         <activity android:name=".Activities.ReactActivity" />
-        <activity android:name=".Activities.AddPostActivity"></activity>
+        <activity android:name=".Activities.AddPostActivity" />
+        <activity android:name=".Activities.CommentActivity"></activity>
     </application>
 
 </manifest>
