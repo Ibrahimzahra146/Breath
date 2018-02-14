@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#eee"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:paddingBottom="0dp"
+        android:background="@drawable/comment_layout_corners"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        >
+    <TextView
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:id="@+id/userComment"
+        android:text="Sometimes i think that if she had never left 5H, this song wouldn't even exist and I feel so lucky for her decision"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/userComment"
+        android:text="Replies 0"
+        android:layout_marginTop="7dp"
+        android:layout_marginBottom="7dp"
+        android:paddingLeft="30dp"
+        android:textColor="@color/purple"
+        android:id="@+id/repliesNumber"
+        android:textSize="11dp"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3w"
+            android:textColor="@color/purple"
+            android:textSize="11dp"
+            android:layout_alignBaseline="@+id/repliesNumber"
+            android:layout_alignBottom="@+id/repliesNumber"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:paddingRight="20dp"
+            android:layout_marginEnd="10dp" />
+    </RelativeLayout>
+
+</LinearLayout>
