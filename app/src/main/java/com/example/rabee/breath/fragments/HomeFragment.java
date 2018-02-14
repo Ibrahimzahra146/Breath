@@ -108,7 +108,10 @@ public class HomeFragment extends Fragment {
         view=inflater.inflate(R.layout.fragment_home, container, false);
         return view;
     }
-
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+    }
 
 
 

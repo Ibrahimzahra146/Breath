@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.rabee.breath.Activities.CommentActivity;
 import com.example.rabee.breath.Activities.ReactActivity;
 import com.example.rabee.breath.Activities.YoutubeDialogActivity;
 import com.example.rabee.breath.GeneralFunctions;
@@ -24,6 +25,9 @@ import com.example.rabee.breath.RequestInterface.PostInterface;
 import com.google.gson.Gson;
 import com.squareup.picasso.Picasso;
 
+import org.w3c.dom.Text;
+
+import static com.facebook.FacebookSdk.getApplicationContext;
 import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -67,12 +71,22 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
         String json = gson.toJson(postResponseModel);
         Log.d("PostActivity", json);
         String imageUrl = GeneralInfo.SPRING_URL + image;
-        // Picasso.with(context).load(imageUrl).into(holder.posterProfilePicture);
+        Picasso.with(context).load(imageUrl).into(holder.posterProfilePicture);
         if (postResponseModel.getImage() != null) {
             imageUrl = GeneralInfo.SPRING_URL + "/" + postResponseModel.getImage();
             Picasso.with(context).load(imageUrl).into(holder.postImage);
 
         }
+        likeCount=postResponseModelsList.get(position).getReacts().getLikeList().getCount();
+        disLikeCount=postResponseModelsList.get(position).getReacts().getDislikeList().getCount();
+        loveCount=postResponseModelsList.get(position).getReacts().getLoveList().getCount();
+        holder.postLoveCount.setText(loveCount > 0 ? (String.valueOf(loveCount) + (loveCount == 1 ? " Love" : " Loves")) : "");
+        holder.postLikeCount.setText(likeCount > 0 ? (String.valueOf(likeCount) + (likeCount == 1 ? " Like" : " Likes")) : "");
+        holder.postDislikeCount.setText(disLikeCount > 0 ? (String.valueOf(disLikeCount) + (disLikeCount > 1 ? " Unlikes" : " Unlike")) : "");
+        //////////////////
+
+        if (postResponseModelsList.get(position).getReacts().getLoveList().getMyAction()) {
+            holder.postLoveIcon.setImageResource(R.drawable.filled_love_post);
         likeCount = postResponseModelsList.get(position).getReacts().getLikeList().getCount();
         disLikeCount = postResponseModelsList.get(position).getReacts().getDislikeList().getCount();
         loveCount = postResponseModelsList.get(position).getReacts().getLoveList().getCount();
@@ -87,6 +101,52 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
         }
 
         if (postResponseModelsList.get(position).getReacts().getLikeList().getMyAction()) {
+            holder.postLikeIcon.setImageResource(R.drawable.filled_like3);
+            PressedLikeFlag = true;
+
+        }
+        if (postResponseModelsList.get(position).getReacts().getDislikeList().getMyAction()) {
+            holder.postUnlikeIcon.setImageResource(R.drawable.filled_unlike3);
+            PressedUnlikeFlag = true;
+
+        }
+        /////////////////Listeners//////////////////////////////
+        //React listener
+        View.OnClickListener reactsClickListener = new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), ReactActivity.class);
+                Bundle b = new Bundle();
+                b.putInt("postId",postResponseModelsList.get(position).getPost().getPostId());
+
+                i.putExtras(b);
+                context.startActivity(i);
+                // your stuff
+            }
+        };
+
+        holder.postLoveCount.setOnClickListener(reactsClickListener);
+        holder.postLikeCount.setOnClickListener(reactsClickListener);
+        holder.postDislikeCount.setOnClickListener(reactsClickListener);
+        //////////////react icon listener//////////////////////
+        holder.postLoveIcon.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        if (!pressedLoveFlag) {
+                            AddNewReact(position, 3);
+                            Log.d("PostHolder", " press on love icon " + position);
+                            holder.postLoveIcon.setImageResource(R.drawable.filled_love_post);
+                            loveCount++;
+                            holder.postLoveCount.setText(loveCount > 0 ? (String.valueOf(loveCount) + (loveCount == 1 ? " Love" : " Loves")) : "");
+                        } else {
+                            DeleteReact(position, 0);
+                            holder.postLoveIcon.setImageResource(R.drawable.love_icon);
+                            loveCount--;
+                            holder.postLoveCount.setText(loveCount > 0 ? (String.valueOf(loveCount) + (loveCount == 1 ? " Love" : " Loves")) : "");
+                        }
+                        pressedLoveFlag = !pressedLoveFlag;
+                    }
+                });
             holder.postLikeIcon.setImageResource(R.drawable.filled_thumb_up);
             PressedLikeFlag = true;
 
@@ -112,6 +172,22 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
         //holder.postLikeCount.setOnClickListener(reactsClickListener);
         //holder.postDislikeCount.setOnClickListener(reactsClickListener);
         //////////////react icon listener//////////////////////
+        holder.postCommentCount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(postResponseModelsList.get(position).getComments().size()==0){
+
+                }else {
+                    Intent i = new Intent(getApplicationContext(), CommentActivity.class);
+                    Bundle b = new Bundle();
+                    b.putInt("postId",postResponseModelsList.get(position).getPost().getPostId());
+
+                    i.putExtras(b);
+                    context.startActivity(i);
+                }
+
+            }
+        });
         holder.postLoveIcon.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
@@ -215,6 +291,7 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
         return postResponseModelsList.size();
     }
 
+
     public void AddNewReact(int position, int type) {
 
         PostInterface addNewReact = retrofit.create(PostInterface.class);
@@ -270,6 +347,9 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
 
 
                 }
+
+
+
             }
 
             @Override
@@ -288,7 +368,7 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
         TextView posterUserName;
         TextView postTime;
         TextView postLoveCount, postLikeCount, postDislikeCount;
-        TextView postCommentCount;
+        ImageView postCommentCount;
         TextView postBodyText;
         ImageView postImage;
         ImageView youtubeLinkImage;
@@ -303,6 +383,7 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
             posterProfilePicture = (CircleImageView) itemView.findViewById(R.id.userProfilePicture);
             posterUserName = (TextView) itemView.findViewById(R.id.username);
             postBodyText = (TextView) view.findViewById(R.id.postText);
+            postCommentCount=(ImageView)view.findViewById(R.id.comment_icon);
             postImage = (ImageView) view.findViewById(R.id.postImage);
             youtubeLinkImage = (ImageView) view.findViewById(R.id.youtubeLinkImage);
             youtubeLinkTitle = (TextView) view.findViewById(R.id.youtubeLinkTitle);

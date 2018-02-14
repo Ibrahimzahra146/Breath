@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#eee"
+    >
+    <!--<de.hdodenhof.circleimageview.CircleImageView-->
+        <!--android:layout_width="40dp"-->
+        <!--android:layout_height="40dp"-->
+        <!--android:src="@drawable/profile_pic"-->
+        <!--android:paddingRight="2dp"-->
+        <!--android:paddingLeft="10dp"-->
+        <!--android:layout_marginBottom="7dp"-->
+        <!--android:layout_gravity="center"-->
+
+
+        <!--/>-->
+    <!--<TextView-->
+
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Ibrahim zahra"-->
+        <!--android:layout_gravity="center"/>-->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:paddingBottom="0dp"
+        android:background="@drawable/comment_layout_corner"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="25dp"
+        >
+
+
+        <TextView
+            android:id="@+id/commentText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="sans-serif-thin"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:text="Sometimes i think that if she had never left 5H, this song wouldn't even exist and I feel so lucky for her decision"
+            android:textColor="@color/cardview_dark_background"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/commentText"
+            android:orientation="horizontal"
+            android:paddingLeft="30dp"
+            android:layout_marginTop="7dp"
+            android:id="@+id/repliesNumber"
+
+            >
+        <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/profile_pic"
+        android:layout_marginBottom="7dp"
+        />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Ibrahim Zahra"
+            android:layout_marginBottom="7dp"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/purple"
+            android:textSize="11dp"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:text="3w"
+            android:textColor="@color/purple"
+            android:textSize="11dp"
+            android:paddingRight="20dp"
+            android:layout_marginEnd="18dp"
+            android:layout_alignTop="@+id/repliesNumber"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="18dp" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:paddingBottom="0dp"
+        android:background="@drawable/comment_layout_corner"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="25dp"
+        >
+
+
+        <TextView
+            android:id="@+id/commentText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="sans-serif-thin"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:text="IKR !!"
+            android:textColor="@color/cardview_dark_background"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/commentText"
+            android:orientation="horizontal"
+            android:paddingLeft="30dp"
+            android:layout_marginTop="7dp"
+            android:id="@+id/repliesNumber"
+            android:visibility="invisible"
+            >
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/profile_pic"
+                android:layout_marginBottom="7dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Ibrahim Zahra"
+                android:layout_marginBottom="7dp"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/purple"
+                android:textSize="11dp"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:text="3w"
+            android:textColor="@color/purple"
+            android:textSize="11dp"
+            android:paddingRight="20dp"
+            android:layout_marginEnd="18dp"
+            android:layout_alignTop="@+id/repliesNumber"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="18dp" />
+    </RelativeLayout>
+
+</LinearLayout>
