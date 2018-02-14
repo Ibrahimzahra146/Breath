@@ -83,7 +83,24 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
         holder.postLoveCount.setText(loveCount > 0 ? (String.valueOf(loveCount) + (loveCount == 1 ? " Love" : " Loves")) : "");
         holder.postLikeCount.setText(likeCount > 0 ? (String.valueOf(likeCount) + (likeCount == 1 ? " Like" : " Likes")) : "");
         holder.postDislikeCount.setText(disLikeCount > 0 ? (String.valueOf(disLikeCount) + (disLikeCount > 1 ? " Unlikes" : " Unlike")) : "");
-        //////////////////
+
+        int commentSize=postResponseModelsList.get(position).getComments().size();
+        if(commentSize>0)
+        {
+            if(commentSize==1)
+            {
+                holder.postCommentCount.setText( String.valueOf(commentSize)+" comment");
+            }
+            else
+            {
+                holder.postCommentCount.setText( String.valueOf(commentSize)+" comments");
+            }
+        }
+        else
+        {
+            holder.postCommentCount.setVisibility(View.INVISIBLE);
+        }
+
 
         if (postResponseModelsList.get(position).getReacts().getLoveList().getMyAction()) {
             holder.postLoveIcon.setImageResource(R.drawable.filled_love_post);
@@ -171,9 +188,8 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
         //  holder.postLoveCount.setOnClickListener(reactsClickListener);
         //holder.postLikeCount.setOnClickListener(reactsClickListener);
         //holder.postDislikeCount.setOnClickListener(reactsClickListener);
-        //////////////react icon listener//////////////////////
-        holder.postCommentCount.setOnClickListener(new View.OnClickListener() {
-            @Override
+
+        View.OnClickListener commentListener = new View.OnClickListener() {
             public void onClick(View v) {
                 if(postResponseModelsList.get(position).getComments().size()==0){
 
@@ -187,7 +203,11 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
                 }
 
             }
-        });
+        };
+        holder.postCommentCount.setOnClickListener(commentListener);
+        holder.postCommentIcon.setOnClickListener(commentListener);
+
+        //////////////react icon listener//////////////////////
         holder.postLoveIcon.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
@@ -368,14 +388,14 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
         TextView posterUserName;
         TextView postTime;
         TextView postLoveCount, postLikeCount, postDislikeCount;
-        ImageView postCommentCount;
+        TextView postCommentCount;
         TextView postBodyText;
         ImageView postImage;
         ImageView youtubeLinkImage;
         TextView youtubeLinkTitle;
         TextView youtubeLinkAuthor;
         LinearLayout youtubeLinkLayout;
-        ImageView postLoveIcon, postLikeIcon, postUnlikeIcon;
+        ImageView postCommentIcon, postLoveIcon, postLikeIcon, postUnlikeIcon;
 
         public MyViewHolder(View view) {
             super(view);
@@ -383,7 +403,8 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
             posterProfilePicture = (CircleImageView) itemView.findViewById(R.id.userProfilePicture);
             posterUserName = (TextView) itemView.findViewById(R.id.username);
             postBodyText = (TextView) view.findViewById(R.id.postText);
-            postCommentCount=(ImageView)view.findViewById(R.id.comment_icon);
+            postCommentIcon=(ImageView)view.findViewById(R.id.comment_icon);
+            postCommentCount=(TextView) view.findViewById(R.id.commentText);
             postImage = (ImageView) view.findViewById(R.id.postImage);
             youtubeLinkImage = (ImageView) view.findViewById(R.id.youtubeLinkImage);
             youtubeLinkTitle = (TextView) view.findViewById(R.id.youtubeLinkTitle);
