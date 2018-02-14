@@ -80,9 +80,9 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
         likeCount=postResponseModelsList.get(position).getReacts().getLikeList().getCount();
         disLikeCount=postResponseModelsList.get(position).getReacts().getDislikeList().getCount();
         loveCount=postResponseModelsList.get(position).getReacts().getLoveList().getCount();
-        holder.postLoveCount.setText(loveCount > 0 ? (String.valueOf(loveCount) + (loveCount == 1 ? " Love" : " Loves")) : "");
-        holder.postLikeCount.setText(likeCount > 0 ? (String.valueOf(likeCount) + (likeCount == 1 ? " Like" : " Likes")) : "");
-        holder.postDislikeCount.setText(disLikeCount > 0 ? (String.valueOf(disLikeCount) + (disLikeCount > 1 ? " Unlikes" : " Unlike")) : "");
+        holder.postLoveCount.setText(loveCount > 0 ? (String.valueOf(loveCount)) : "");
+        holder.postLikeCount.setText(likeCount > 0 ? (String.valueOf(likeCount)) : "");
+        holder.postDislikeCount.setText(disLikeCount > 0 ? (String.valueOf(disLikeCount)) : "");
 
         int commentSize=postResponseModelsList.get(position).getComments().size();
         if(commentSize>0)
