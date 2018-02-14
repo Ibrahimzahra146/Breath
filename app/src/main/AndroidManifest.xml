@@ -59,7 +59,8 @@
         <activity android:name=".Activities.YoutubeDialogActivity" />
         <activity android:name=".Activities.ReactActivity" />
         <activity android:name=".Activities.AddPostActivity" />
-        <activity android:name=".Activities.CommentActivity"></activity>
+        <activity android:name=".Activities.CommentActivity" />
+        <activity android:name=".Activities.ReplyActivity"></activity>
     </application>
 
 </manifest>
