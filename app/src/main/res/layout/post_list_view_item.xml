@@ -79,7 +79,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView2"
+                    android:id="@+id/save_icon"
                     android:layout_width="30dp"
                     android:layout_height="19.5dp"
                     android:layout_alignParentRight="true"

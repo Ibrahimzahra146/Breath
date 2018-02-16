@@ -10,6 +10,7 @@ public class ReplyModel {
     int id;
     String text;
     private Date timestamp;
+    UserModel userId;
 
     public int getId() {
         return id;
@@ -33,5 +34,13 @@ public class ReplyModel {
 
     public void setTimestamp(Date timestamp) {
         this.timestamp = timestamp;
+    }
+
+    public UserModel getUser() {
+        return userId;
+    }
+
+    public void setUser(UserModel user) {
+        this.userId = user;
     }
 }

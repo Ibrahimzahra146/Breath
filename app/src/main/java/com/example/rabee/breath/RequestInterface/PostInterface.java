@@ -2,10 +2,13 @@ package com.example.rabee.breath.RequestInterface;
 
 
 import com.example.rabee.breath.Models.ReactSingleModel;
+import com.example.rabee.breath.Models.ReplyModel;
 import com.example.rabee.breath.Models.RequestModels.PostRequestModel;
 import com.example.rabee.breath.Models.RequestModels.ReactRequestModel;
+import com.example.rabee.breath.Models.RequestModels.SavePostRequestModel;
 import com.example.rabee.breath.Models.ResponseModels.PostCommentResponseModel;
 import com.example.rabee.breath.Models.ResponseModels.PostResponseModel;
+import com.example.rabee.breath.Models.ResponseModels.ReplyResponseModel;
 
 import java.util.List;
 
@@ -49,4 +52,10 @@ public interface PostInterface {
     @Headers("Cache-Control: max-age=64000")
     @GET("/api/v1/post/getPost/{postId}")
     Call<PostCommentResponseModel> getPost(@Path("postId") int postId);
+    @Headers("Cache-Control: max-age=64000")
+    @GET("/api/v1/comment/getCommentReplies/{commentId}")
+    Call<ReplyResponseModel> getCommentReplies(@Path("commentId") int commentId);
+    @Headers("Cache-Control: max-age=64000")
+    @POST("/api/v1/post/save-post")
+    Call<SavePostRequestModel> savePost(@Body SavePostRequestModel savePostRequestModel);
 }

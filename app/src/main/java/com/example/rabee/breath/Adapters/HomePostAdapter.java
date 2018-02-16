@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.rabee.breath.Activities.CommentActivity;
 import com.example.rabee.breath.Activities.ReactActivity;
@@ -18,6 +19,7 @@ import com.example.rabee.breath.Activities.YoutubeDialogActivity;
 import com.example.rabee.breath.GeneralFunctions;
 import com.example.rabee.breath.GeneralInfo;
 import com.example.rabee.breath.Models.RequestModels.ReactRequestModel;
+import com.example.rabee.breath.Models.RequestModels.SavePostRequestModel;
 import com.example.rabee.breath.Models.ResponseModels.PostCommentResponseModel;
 import com.example.rabee.breath.Models.ResponseModels.PostResponseModel;
 import com.example.rabee.breath.R;
@@ -279,6 +281,12 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
                         PressedUnlikeFlag = !PressedUnlikeFlag;
                     }
                 });
+        holder.saveIcon.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SavePost(position);
+            }
+        });
 
         if (postResponseModel.getYoutubelink().getLink() != "" && postResponseModel.getImage() == null) {
             holder.youtubeLinkTitle.setText(postResponseModel.getYoutubelink().getTitle());
@@ -381,6 +389,41 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
 
         });
     }
+    public void SavePost(int position) {
+
+        PostInterface savePost = retrofit.create(PostInterface.class);
+        SavePostRequestModel savePostRequestModel= new SavePostRequestModel();
+
+        int postId = postResponseModelsList.get(position).getPost().getPostId();
+        savePostRequestModel.setUserId(GeneralInfo.getUserID());
+        savePostRequestModel.setPostId(postId);
+        Call<SavePostRequestModel> savePostRequestModelCall = savePost.savePost(savePostRequestModel);
+
+        savePostRequestModelCall.enqueue(new Callback<SavePostRequestModel>() {
+            @Override
+            public void onResponse(Call<SavePostRequestModel> call, Response<SavePostRequestModel> response) {
+                if (response.code() == 404 || response.code() == 500 || response.code() == 502 || response.code() == 400) {
+                    GeneralFunctions generalFunctions = new GeneralFunctions();
+                    generalFunctions.showErrorMesaage(getApplicationContext());
+                } else {
+                    Toast.makeText(context, "Post saved",
+                            Toast.LENGTH_SHORT).show();
+
+                }
+
+
+
+            }
+
+            @Override
+            public void onFailure(Call<SavePostRequestModel> call, Throwable t) {
+                GeneralFunctions generalFunctions = new GeneralFunctions();
+                generalFunctions.showErrorMesaage(getApplicationContext());
+                Log.d("PostHolder", t.getMessage());
+            }
+
+        });
+    }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
@@ -395,7 +438,7 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
         TextView youtubeLinkTitle;
         TextView youtubeLinkAuthor;
         LinearLayout youtubeLinkLayout;
-        ImageView postCommentIcon, postLoveIcon, postLikeIcon, postUnlikeIcon;
+        ImageView postCommentIcon, postLoveIcon, postLikeIcon, postUnlikeIcon,saveIcon;
 
         public MyViewHolder(View view) {
             super(view);
@@ -416,6 +459,7 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
             postLoveIcon = (ImageView) view.findViewById(R.id.love_post);
             postLikeIcon = (ImageView) view.findViewById(R.id.like_post);
             postUnlikeIcon = (ImageView) view.findViewById(R.id.dislike_post);
+            saveIcon=(ImageView)view.findViewById(R.id.save_icon);
 
         }
     }
