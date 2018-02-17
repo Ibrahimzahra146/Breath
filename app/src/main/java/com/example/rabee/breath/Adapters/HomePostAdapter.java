@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
+import android.text.format.DateUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -30,6 +31,10 @@ import com.squareup.picasso.Picasso;
 import org.w3c.dom.Text;
 
 import static com.facebook.FacebookSdk.getApplicationContext;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -67,6 +72,22 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
         final PostResponseModel postResponseModel = postResponseModelsList.get(position).getPost();
         holder.posterUserName.setText(postResponseModel.getUserId().getFirst_name() + " " + postResponseModel.getUserId().getLast_name());
         holder.postBodyText.setText(postResponseModel.getText());
+        long now = System.currentTimeMillis();
+
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        try {
+            Date convertedDate = dateFormat.parse( postResponseModelsList.get(position).getPost().getTimestamp());
+            CharSequence relativeTIme = DateUtils.getRelativeTimeSpanString(
+                    convertedDate.getTime(),
+                    now,
+                    DateUtils.SECOND_IN_MILLIS);
+            holder.postTime.setText(relativeTIme);
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+
         String image;
         image = postResponseModel.getUserId().getImage();
         Gson gson = new Gson();
@@ -176,6 +197,7 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
             PressedUnlikeFlag = true;
 
         }
+
         ///////////////Listeners//////////////////////////////
         // React listener
         View.OnClickListener reactsClickListener = new View.OnClickListener() {
@@ -460,6 +482,7 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
             postLikeIcon = (ImageView) view.findViewById(R.id.like_post);
             postUnlikeIcon = (ImageView) view.findViewById(R.id.dislike_post);
             saveIcon=(ImageView)view.findViewById(R.id.save_icon);
+            postTime=(TextView)view.findViewById(R.id.postTime);
 
         }
     }

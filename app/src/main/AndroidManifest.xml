@@ -60,7 +60,8 @@
         <activity android:name=".Activities.ReactActivity" />
         <activity android:name=".Activities.AddPostActivity" />
         <activity android:name=".Activities.CommentActivity" />
-        <activity android:name=".Activities.ReplyActivity"></activity>
+        <activity android:name=".Activities.ReplyActivity" />
+        <activity android:name=".Activities.AddCommentActivity"></activity>
     </application>
 
 </manifest>

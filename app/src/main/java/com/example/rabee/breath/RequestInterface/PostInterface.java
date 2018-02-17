@@ -3,6 +3,7 @@ package com.example.rabee.breath.RequestInterface;
 
 import com.example.rabee.breath.Models.ReactSingleModel;
 import com.example.rabee.breath.Models.ReplyModel;
+import com.example.rabee.breath.Models.RequestModels.AddCommentModel;
 import com.example.rabee.breath.Models.RequestModels.PostRequestModel;
 import com.example.rabee.breath.Models.RequestModels.ReactRequestModel;
 import com.example.rabee.breath.Models.RequestModels.SavePostRequestModel;
@@ -58,4 +59,7 @@ public interface PostInterface {
     @Headers("Cache-Control: max-age=64000")
     @POST("/api/v1/post/save-post")
     Call<SavePostRequestModel> savePost(@Body SavePostRequestModel savePostRequestModel);
+    @Headers("Cache-Control: max-age=64000")
+    @POST("/api/v1/comment/addNewComment")
+    Call<AddCommentModel> addComment(@Body AddCommentModel addCommentModel);
 }
