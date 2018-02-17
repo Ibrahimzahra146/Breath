@@ -35,6 +35,8 @@ import static com.facebook.FacebookSdk.getApplicationContext;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -51,13 +53,20 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
             .baseUrl(GeneralInfo.SPRING_URL)
             .addConverterFactory(GsonConverterFactory.create()).build();
     PostInterface postInterface = retrofit.create(PostInterface.class);
-    boolean pressedLoveFlag = false, PressedLikeFlag = false, PressedUnlikeFlag = false;
-    int likeCount = 0, disLikeCount = 0, loveCount = 0;
+    List<Boolean> pressedLoveFlag , PressedLikeFlag , PressedUnlikeFlag ;
     private List<PostCommentResponseModel> postResponseModelsList;
+    List<Integer> likeCount , loveCount, disLikeCount;
     private Context context;
 
     public HomePostAdapter(Context context, List<PostCommentResponseModel> postResponseModelsList) {
         this.postResponseModelsList = postResponseModelsList;
+        this.likeCount = new ArrayList<Integer>(Collections.nCopies(this.postResponseModelsList.size(), 0));
+        this.loveCount = new ArrayList<Integer>(Collections.nCopies(this.postResponseModelsList.size(), 0));
+        this.disLikeCount = new ArrayList<Integer>(Collections.nCopies(this.postResponseModelsList.size(), 0));
+        this.pressedLoveFlag=new ArrayList<Boolean>(Collections.nCopies(this.postResponseModelsList.size(),false));
+        this.PressedLikeFlag=new ArrayList<Boolean>(Collections.nCopies(this.postResponseModelsList.size(),false));
+        this.PressedUnlikeFlag=new ArrayList<Boolean>(Collections.nCopies(this.postResponseModelsList.size(),false));
+
         this.context = context;
     }
 
@@ -92,7 +101,6 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
         image = postResponseModel.getUserId().getImage();
         Gson gson = new Gson();
         String json = gson.toJson(postResponseModel);
-        Log.d("PostActivity", json);
         String imageUrl = GeneralInfo.SPRING_URL + image;
         Picasso.with(context).load(imageUrl).into(holder.posterProfilePicture);
         if (postResponseModel.getImage() != null) {
@@ -100,13 +108,19 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
             Picasso.with(context).load(imageUrl).into(holder.postImage);
 
         }
-        likeCount=postResponseModelsList.get(position).getReacts().getLikeList().getCount();
-        disLikeCount=postResponseModelsList.get(position).getReacts().getDislikeList().getCount();
-        loveCount=postResponseModelsList.get(position).getReacts().getLoveList().getCount();
-        holder.postLoveCount.setText(loveCount > 0 ? (String.valueOf(loveCount) + (loveCount == 1 ? " Love" : " Loves")) : "");
-        holder.postLikeCount.setText(likeCount > 0 ? (String.valueOf(likeCount) + (likeCount == 1 ? " Like" : " Likes")) : "");
-        holder.postDislikeCount.setText(disLikeCount > 0 ? (String.valueOf(disLikeCount) + (disLikeCount > 1 ? " Unlikes" : " Unlike")) : "");
+        likeCount.set(position,postResponseModelsList.get(position).getReacts().getLikeList().getCount());
+        disLikeCount.set(position,postResponseModelsList.get(position).getReacts().getDislikeList().getCount());
+        loveCount.set(position, postResponseModelsList.get(position).getReacts().getLoveList().getCount());
+        holder.postLoveCount.setText(loveCount.get(position) > 0 ? (String.valueOf(loveCount.get(position))) : "");
+        holder.postLikeCount.setText(likeCount.get(position) > 0 ? (String.valueOf(likeCount.get(position))) : "");
+        holder.postDislikeCount.setText(disLikeCount.get(position) > 0 ? (String.valueOf(disLikeCount.get(position))) : "");
 
+
+
+        //// postStatusIcon
+
+        holder.postStatusIcon.setImageResource(postResponseModelsList.get(position).getPost().is_public_comment() ? R.drawable.unlocked_icon : R.drawable.locked_icon);
+       // holder.postTime.setText(postResponseModelsList.get(position).getPost());
         int commentSize=postResponseModelsList.get(position).getComments().size();
         if(commentSize>0)
         {
@@ -126,28 +140,18 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
 
 
         if (postResponseModelsList.get(position).getReacts().getLoveList().getMyAction()) {
-            holder.postLoveIcon.setImageResource(R.drawable.filled_love_post);
-        likeCount = postResponseModelsList.get(position).getReacts().getLikeList().getCount();
-        disLikeCount = postResponseModelsList.get(position).getReacts().getDislikeList().getCount();
-        loveCount = postResponseModelsList.get(position).getReacts().getLoveList().getCount();
-        holder.postLoveCount.setText(loveCount > 0 ? String.valueOf(loveCount) : "");
-        holder.postLikeCount.setText(likeCount > 0 ? String.valueOf(likeCount) : "");
-        holder.postDislikeCount.setText(disLikeCount > 0 ? String.valueOf(disLikeCount) : "");
-        //////////////////
-
-        if (postResponseModelsList.get(position).getReacts().getLoveList().getMyAction()) {
             holder.postLoveIcon.setImageResource(R.drawable.love_icon_filled);
-            pressedLoveFlag = true;
+            pressedLoveFlag.set(position,true);
         }
 
         if (postResponseModelsList.get(position).getReacts().getLikeList().getMyAction()) {
-            holder.postLikeIcon.setImageResource(R.drawable.filled_like3);
-            PressedLikeFlag = true;
+            holder.postLikeIcon.setImageResource(R.drawable.filled_thumb_up);
+            PressedLikeFlag.set(position,true);
 
         }
         if (postResponseModelsList.get(position).getReacts().getDislikeList().getMyAction()) {
-            holder.postUnlikeIcon.setImageResource(R.drawable.filled_unlike3);
-            PressedUnlikeFlag = true;
+            holder.postUnlikeIcon.setImageResource(R.drawable.dislike_filled_icon);
+            PressedUnlikeFlag.set(position,true);
 
         }
         /////////////////Listeners//////////////////////////////
@@ -167,48 +171,16 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
         holder.postLoveCount.setOnClickListener(reactsClickListener);
         holder.postLikeCount.setOnClickListener(reactsClickListener);
         holder.postDislikeCount.setOnClickListener(reactsClickListener);
-        //////////////react icon listener//////////////////////
-        holder.postLoveIcon.setOnClickListener(
-                new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        if (!pressedLoveFlag) {
-                            AddNewReact(position, 3);
-                            Log.d("PostHolder", " press on love icon " + position);
-                            holder.postLoveIcon.setImageResource(R.drawable.filled_love_post);
-                            loveCount++;
-                            holder.postLoveCount.setText(loveCount > 0 ? (String.valueOf(loveCount) + (loveCount == 1 ? " Love" : " Loves")) : "");
-                        } else {
-                            DeleteReact(position, 0);
-                            holder.postLoveIcon.setImageResource(R.drawable.love_icon);
-                            loveCount--;
-                            holder.postLoveCount.setText(loveCount > 0 ? (String.valueOf(loveCount) + (loveCount == 1 ? " Love" : " Loves")) : "");
-                        }
-                        pressedLoveFlag = !pressedLoveFlag;
-                    }
-                });
-            holder.postLikeIcon.setImageResource(R.drawable.filled_thumb_up);
-            PressedLikeFlag = true;
-
-        }
 
         if (postResponseModelsList.get(position).getReacts().getDislikeList().getMyAction()) {
             holder.postUnlikeIcon.setImageResource(R.drawable.dislike_filled_icon);
-            PressedUnlikeFlag = true;
+            PressedUnlikeFlag.set(position,true);
 
         }
 
         ///////////////Listeners//////////////////////////////
         // React listener
-        View.OnClickListener reactsClickListener = new View.OnClickListener() {
-            public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(), ReactActivity.class);
-                Bundle b = new Bundle();
-                b.putInt("postId", postResponseModelsList.get(position).getPost().getPostId());
-                i.putExtras(b);
-                context.startActivity(i);
-            }
-        };
+
         //  holder.postLoveCount.setOnClickListener(reactsClickListener);
         //holder.postLikeCount.setOnClickListener(reactsClickListener);
         //holder.postDislikeCount.setOnClickListener(reactsClickListener);
@@ -236,47 +208,50 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        if (!pressedLoveFlag) {
+                        if (!pressedLoveFlag.get(position)) {
                             AddNewReact(position, 3);
-                            Log.d("PostHolder", " press on love icon " + position);
                             holder.postLoveIcon.setImageResource(R.drawable.love_icon_filled);
                             holder.postLikeIcon.setImageResource(R.drawable.like_icon);
                             holder.postUnlikeIcon.setImageResource(R.drawable.unlike_icon);
-                            loveCount++;
-                            likeCount=!PressedLikeFlag ? likeCount : likeCount--;
-                            disLikeCount=!PressedUnlikeFlag ? disLikeCount : disLikeCount--;
+                            loveCount.set(position,loveCount.get(position)+1);
+                            likeCount.set(position, !PressedLikeFlag.get(position) ? likeCount.get(position) :(likeCount.get(position)-1));
+                            disLikeCount.set(position, !PressedUnlikeFlag.get(position) ? disLikeCount.get(position) : (disLikeCount.get(position)-1));
                         } else {
                             DeleteReact(position, 0);
                             holder.postLoveIcon.setImageResource(R.drawable.love_icon);
-                            loveCount--;
+                            loveCount.set(position,loveCount.get(position)-1);
                         }
-                        holder.postLikeCount.setText(likeCount > 0 ? String.valueOf(likeCount) : "");
-                        holder.postDislikeCount.setText(disLikeCount > 0 ? String.valueOf(disLikeCount) : "");
-                        holder.postLoveCount.setText(loveCount > 0 ? String.valueOf(loveCount) : "");
-                        pressedLoveFlag = !pressedLoveFlag;
+                        holder.postLoveCount.setText(loveCount.get(position) > 0 ? (String.valueOf(loveCount.get(position))) : "");
+                        holder.postLikeCount.setText(likeCount.get(position) > 0 ? (String.valueOf(likeCount.get(position))) : "");
+                        holder.postDislikeCount.setText(disLikeCount.get(position) > 0 ? (String.valueOf(disLikeCount.get(position))) : "");
+                        pressedLoveFlag.set( position,!pressedLoveFlag.get(position));
+                        PressedUnlikeFlag.set(position,false);
+                        PressedLikeFlag.set(position,false);
                     }
                 });
         holder.postLikeIcon.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        if (!PressedLikeFlag) {
+                        if (!PressedLikeFlag.get(position)) {
                             AddNewReact(position, 1);
                             holder.postLikeIcon.setImageResource(R.drawable.filled_thumb_up);
                             holder.postUnlikeIcon.setImageResource(R.drawable.unlike_icon);
                             holder.postLoveIcon.setImageResource(R.drawable.love_icon);
-                            likeCount++;
-                            loveCount=!pressedLoveFlag ? loveCount: loveCount--;
-                            disLikeCount=!PressedUnlikeFlag? disLikeCount : disLikeCount--;
+                            likeCount.set(position,likeCount.get(position)+1);
+                            loveCount.set(position, !pressedLoveFlag.get(position) ? loveCount.get(position) :(loveCount.get(position)-1));
+                            disLikeCount.set(position, !PressedUnlikeFlag.get(position) ? disLikeCount.get(position) : (disLikeCount.get(position)-1));
                         } else {
                             DeleteReact(position, 0);
                             holder.postLikeIcon.setImageResource(R.drawable.like_icon);
-                            likeCount--;
+                            likeCount.set(position,likeCount.get(position)-1);
                         }
-                        holder.postLikeCount.setText(likeCount > 0 ? String.valueOf(likeCount) : "");
-                        holder.postDislikeCount.setText(disLikeCount > 0 ? String.valueOf(disLikeCount) : "");
-                        holder.postLoveCount.setText(loveCount > 0 ? String.valueOf(loveCount) : "");
-                        PressedLikeFlag = !PressedLikeFlag;
+                        holder.postLoveCount.setText(loveCount.get(position) > 0 ? (String.valueOf(loveCount.get(position))) : "");
+                        holder.postLikeCount.setText(likeCount.get(position) > 0 ? (String.valueOf(likeCount.get(position))) : "");
+                        holder.postDislikeCount.setText(disLikeCount.get(position) > 0 ? (String.valueOf(disLikeCount.get(position))) : "");
+                        PressedLikeFlag.set(position ,!PressedLikeFlag.get(position));
+                        pressedLoveFlag.set(position,false);
+                        PressedUnlikeFlag.set(position,false);
                     }
                 });
 
@@ -284,23 +259,25 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        if (!PressedUnlikeFlag) {
+                        if (!PressedUnlikeFlag.get(position)) {
                             AddNewReact(position, 2);
                             holder.postUnlikeIcon.setImageResource(R.drawable.dislike_filled_icon);
                             holder.postLoveIcon.setImageResource(R.drawable.love_icon);
                             holder.postLikeIcon.setImageResource(R.drawable.like_icon);
-                            disLikeCount++;
-                            loveCount=!pressedLoveFlag ? loveCount: loveCount--;
-                            likeCount=!PressedLikeFlag? likeCount : likeCount--;
+                            disLikeCount.set(position,disLikeCount.get(position)+1);
+                            loveCount.set(position, !pressedLoveFlag.get(position) ? loveCount.get(position) :(loveCount.get(position)-1));
+                            likeCount.set(position, !PressedLikeFlag.get(position) ? likeCount.get(position) : (likeCount.get(position)-1));
                         } else {
                             DeleteReact(position, 0);
                             holder.postUnlikeIcon.setImageResource(R.drawable.unlike_icon);
-                            disLikeCount--;
+                            disLikeCount.set(position,disLikeCount.get(position)-1);
                         }
-                        holder.postLikeCount.setText(likeCount > 0 ? String.valueOf(likeCount) : "");
-                        holder.postDislikeCount.setText(disLikeCount > 0 ? String.valueOf(disLikeCount) : "");
-                        holder.postLoveCount.setText(loveCount > 0 ? String.valueOf(loveCount) : "");
-                        PressedUnlikeFlag = !PressedUnlikeFlag;
+                        holder.postLoveCount.setText(loveCount.get(position) > 0 ? (String.valueOf(loveCount.get(position))) : "");
+                        holder.postLikeCount.setText(likeCount.get(position) > 0 ? (String.valueOf(likeCount.get(position))) : "");
+                        holder.postDislikeCount.setText(disLikeCount.get(position) > 0 ? (String.valueOf(disLikeCount.get(position))) : "");
+                        PressedUnlikeFlag.set(position,!PressedUnlikeFlag.get(position));
+                        pressedLoveFlag.set(position,false);
+                        PressedLikeFlag.set(position,false);
                     }
                 });
         holder.saveIcon.setOnClickListener( new View.OnClickListener() {
@@ -316,7 +293,6 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
             imageUrl = postResponseModel.getYoutubelink().getImage();
             Picasso.with(getApplicationContext()).load(imageUrl).into(holder.youtubeLinkImage);
         } else {
-            Log.d("PostActivity", "Photo with youtube");
             holder.youtubeLinkLayout.setVisibility(View.GONE);
         }
 
@@ -356,7 +332,6 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
         addNewReactResponse.enqueue(new Callback<Integer>() {
             @Override
             public void onResponse(Call<Integer> call, Response<Integer> response) {
-                Log.d("PostHolder", " Post react addition " + response.code());
                 if (response.code() == 404 || response.code() == 500 || response.code() == 502 || response.code() == 400) {
                     GeneralFunctions generalFunctions = new GeneralFunctions();
                     generalFunctions.showErrorMesaage(getApplicationContext());
@@ -370,7 +345,6 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
             public void onFailure(Call<Integer> call, Throwable t) {
                 GeneralFunctions generalFunctions = new GeneralFunctions();
                 generalFunctions.showErrorMesaage(getApplicationContext());
-                Log.d("PostHolder", t.getMessage());
             }
 
         });
@@ -406,7 +380,6 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
             public void onFailure(Call<Integer> call, Throwable t) {
                 GeneralFunctions generalFunctions = new GeneralFunctions();
                 generalFunctions.showErrorMesaage(getApplicationContext());
-                Log.d("PostHolder", t.getMessage());
             }
 
         });
@@ -460,7 +433,7 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
         TextView youtubeLinkTitle;
         TextView youtubeLinkAuthor;
         LinearLayout youtubeLinkLayout;
-        ImageView postCommentIcon, postLoveIcon, postLikeIcon, postUnlikeIcon,saveIcon;
+        ImageView postCommentIcon, postLoveIcon, postLikeIcon, postUnlikeIcon , postStatusIcon,saveIcon;
 
         public MyViewHolder(View view) {
             super(view);
@@ -482,7 +455,9 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
             postLikeIcon = (ImageView) view.findViewById(R.id.like_post);
             postUnlikeIcon = (ImageView) view.findViewById(R.id.dislike_post);
             saveIcon=(ImageView)view.findViewById(R.id.save_icon);
-            postTime=(TextView)view.findViewById(R.id.postTime);
+            postStatusIcon = (ImageView) view.findViewById(R.id.postStatus);
+            postTime=(TextView) view.findViewById(R.id.postTime);
+
 
         }
     }
