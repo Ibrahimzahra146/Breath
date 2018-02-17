@@ -209,7 +209,7 @@
                 <LinearLayout
                     android:layout_width="35dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="-5dp"
+                    android:layout_marginTop="-4.5dp"
                     android:orientation="vertical">
 
                     <ImageView
@@ -220,15 +220,16 @@
                         android:layout_marginLeft="2dp"
                         android:layout_marginTop="3dp"
                         android:clickable="true"
-                        android:padding="4.5dp"
+                        android:padding="4.3dp"
                         android:src="@drawable/love_icon" />
 
                     <TextView
                         android:id="@+id/loveCount"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:text="1"
                         android:layout_gravity="center"
-                        android:gravity="center"
+                        android:layout_marginTop="3dp"
                         android:textSize="12dp" />
 
                 </LinearLayout>
@@ -236,8 +237,8 @@
                 <LinearLayout
                     android:layout_width="35dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="-5dp"
+                    android:layout_marginLeft="7.5dp"
+                    android:layout_marginTop="-6dp"
                     android:orientation="vertical">
 
                     <ImageView
@@ -255,9 +256,9 @@
                         android:id="@+id/likeCount"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:text="1"
                         android:layout_gravity="center"
-                        android:gravity="center"
-                        android:layout_marginTop="1dp"
+                        android:layout_marginTop="4.3dp"
                         android:textSize="12dp" />
 
                 </LinearLayout>
@@ -266,7 +267,7 @@
                     android:layout_width="35dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="-2dp"
+                    android:layout_marginTop="0dp"
                     android:orientation="vertical">
 
                     <ImageView
@@ -283,8 +284,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginTop="-3dp"
-                        android:gravity="center"
+                        android:layout_marginTop="-1.5dp"
+                        android:text="1"
                         android:textSize="12dp" />
 
                 </LinearLayout>
