@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.rabee.breath.GeneralFunctions;
@@ -26,6 +27,7 @@ public class AddCommentActivity extends AppCompatActivity {
     TextView cancelBtn;
     ImageView sendBtn;
     int postId;
+    ProgressBar progressBar;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
