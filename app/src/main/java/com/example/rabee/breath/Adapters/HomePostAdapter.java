@@ -180,11 +180,6 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
 
         ///////////////Listeners//////////////////////////////
         // React listener
-
-        //  holder.postLoveCount.setOnClickListener(reactsClickListener);
-        //holder.postLikeCount.setOnClickListener(reactsClickListener);
-        //holder.postDislikeCount.setOnClickListener(reactsClickListener);
-
         View.OnClickListener commentListener = new View.OnClickListener() {
             public void onClick(View v) {
                 if(postResponseModelsList.get(position).getComments().size()==0){
