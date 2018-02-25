@@ -61,7 +61,8 @@
         <activity android:name=".Activities.AddPostActivity" />
         <activity android:name=".Activities.CommentActivity" />
         <activity android:name=".Activities.ReplyActivity" />
-        <activity android:name=".Activities.AddCommentActivity"></activity>
+        <activity android:name=".Activities.AddCommentActivity" />
+        <activity android:name=".Activities.RecentCommentsActivity"></activity>
     </application>
 
 </manifest>

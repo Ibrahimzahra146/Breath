@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="ccp-2.0.2">
     <CLASSES>
-      <root url="file://$USER_HOME$/.android/build-cache/5864f5a9333612baf501c1fb62d1b6a6c6e22b7b/output/res" />
-      <root url="jar://$USER_HOME$/.android/build-cache/5864f5a9333612baf501c1fb62d1b6a6c6e22b7b/output/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.android/build-cache/4067e68d4142afd601e667cf5398ec980f75fe49/output/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.android/build-cache/4067e68d4142afd601e667cf5398ec980f75fe49/output/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

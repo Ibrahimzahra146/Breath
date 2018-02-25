@@ -62,4 +62,8 @@ public interface PostInterface {
     @Headers("Cache-Control: max-age=64000")
     @POST("/api/v1/comment/addNewComment")
     Call<AddCommentModel> addComment(@Body AddCommentModel addCommentModel);
+    @Headers("Cache-Control: max-age=64000")
+    @GET("/api/v1/comment/get-recent-comments/{userId}/{page}")
+    Call<List<PostCommentResponseModel>> getRecentComments(@Path("userId") int postId,@Path("page") int page);
+
 }
