@@ -3,33 +3,36 @@
     android:layout_height="wrap_content"
     android:layout_marginBottom="13dp"
     android:background="@drawable/white_layout_corners"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:weightSum="1">
 
     <LinearLayout
         android:id="@+id/userInfoLayout"
-        android:layout_width="wrap_content"
+        android:layout_width="373dp"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
+        android:layout_weight="0.99"
         android:paddingTop="17dp"
         android:weightSum="1">
 
         <TextView
             android:id="@+id/profile_pic"
             android:layout_width="wrap_content"
-            android:layout_height="46dp"
+            android:layout_height="76dp"
             android:layout_marginBottom="20dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginTop="20dp"
-            android:background="@drawable/right_corners_50dp"
+            android:background="@drawable/image_view_border"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
-            android:paddingTop="10dp"
+            android:paddingTop="25dp"
             android:text="10:10"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_weight="0.08" />
 
 
         <TextView
@@ -37,16 +40,10 @@
             android:layout_width="150dp"
             android:layout_height="46dp"
             android:layout_marginTop="6dp"
+            android:layout_weight="2.13"
             android:text="My fist post is the best post ever ,I cant find better than what I have said"
             android:textColor="#000"
             android:textSize="14dp" />
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="50dp"
-            android:layout_height="76dp"
-            android:layout_marginLeft="40dp"
-            android:src="@drawable/profile_pic" />
 
 
     </LinearLayout>
