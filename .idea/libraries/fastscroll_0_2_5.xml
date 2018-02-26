@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="fastscroll-0.2.5">
     <CLASSES>
-      <root url="file://$USER_HOME$/.android/build-cache/8cd75c3f66a0d5d84e840aae3a98f82416495615/output/res" />
-      <root url="jar://$USER_HOME$/.android/build-cache/8cd75c3f66a0d5d84e840aae3a98f82416495615/output/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.android/build-cache/777410eb79b887cb065947f0bbe2ce6d6c442367/output/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.android/build-cache/777410eb79b887cb065947f0bbe2ce6d6c442367/output/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

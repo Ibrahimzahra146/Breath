@@ -17,29 +17,47 @@
         android:paddingTop="17dp"
         android:weightSum="1">
 
-        <TextView
-            android:id="@+id/profile_pic"
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="76dp"
-            android:layout_marginBottom="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.10"
+
             android:background="@drawable/image_view_border"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:paddingTop="25dp"
-            android:text="10:10"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_weight="0.08" />
+            android:orientation="vertical"
+            android:weightSum="1"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="5dp">
+
+            <TextView
+                android:layout_gravity="center"
+                android:id="@+id/profile_pic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="5dp"
+                android:paddingTop="10dp"
+                android:text="3"
+                android:gravity="center"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+                android:text="comments" />
+
+        </LinearLayout>
 
 
         <TextView
             android:id="@+id/postText"
             android:layout_width="150dp"
             android:layout_height="46dp"
-            android:layout_marginTop="6dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="30dp"
             android:layout_weight="2.13"
             android:text="My fist post is the best post ever ,I cant find better than what I have said"
             android:textColor="#000"
@@ -66,7 +84,7 @@
             android:layout_below="@+id/postStatus"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="0dp"
-            android:layout_marginRight="230dp"
+            android:layout_marginRight="23dp"
             android:layout_marginLeft="10dp"
 
             android:text="2 hours ago"
@@ -74,15 +92,9 @@
 
 
 
-            <TextView
-                android:id="@+id/commentText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/comment_icon"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="0dp"
-                android:text="8 comments"
-                android:textSize="12dp" />
+
+
+
 
     </LinearLayout>
 
@@ -236,18 +248,6 @@
     <!--</RelativeLayout>-->
     <!--</LinearLayout>-->
 
-    <!--<ImageView-->
-    <!--android:id="@+id/postImage"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:layout_gravity="center"-->
-    <!--android:layout_marginTop="2dp"-->
-    <!--android:adjustViewBounds="true"-->
-    <!--android:contentDescription="Specs"-->
-    <!--android:paddingLeft="8dp"-->
-    <!--android:paddingRight="8dp"-->
-    <!--android:scaleType="centerCrop"-->
-    <!--android:scrollbars="vertical" />-->
 
 
     <!--</LinearLayout>-->
