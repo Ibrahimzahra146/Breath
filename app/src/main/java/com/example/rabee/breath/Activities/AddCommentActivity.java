@@ -31,7 +31,7 @@ public class AddCommentActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_add_comment);
+     setContentView(R.layout.activity_add_comment);
 
         commentText = (EditText) findViewById(R.id.commentText);
         cancelBtn= (TextView) findViewById(R.id.cancelBtn);
