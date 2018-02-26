@@ -2,30 +2,54 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="13dp"
-    android:background="@drawable/white_layout_corners"
+    android:background="@drawable/layout_borders"
     android:orientation="vertical"
-    android:weightSum="1">
+    android:weightSum="1"
+    android:paddingLeft="5dp"
+    android:layout_marginTop="5dp"
+    >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:paddingTop="3dp"
+        >
+
+        <TextView
+            android:id="@+id/postTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/postStatus"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:text="2 hours ago"
+            android:textSize="12dp" />
+
+
+    </LinearLayout>
+
+    <!--<View-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="1dp"-->
+        <!--android:layout_below="@+id/postTime"-->
+        <!--android:layout_marginTop="1dp"-->
+        <!--android:background="#ccc" />-->
 
     <LinearLayout
         android:id="@+id/userInfoLayout"
-        android:layout_width="373dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:layout_weight="0.99"
-        android:paddingTop="17dp"
-        android:weightSum="1">
+        android:gravity="center_horizontal"
+       >
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.10"
-
+            android:layout_width="65dp"
+            android:layout_height="65dp"
             android:background="@drawable/image_view_border"
             android:orientation="vertical"
-            android:weightSum="1"
-            android:layout_marginBottom="5dp"
             android:layout_marginLeft="5dp">
 
             <TextView
@@ -33,9 +57,8 @@
                 android:id="@+id/profile_pic"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
-                android:layout_marginTop="5dp"
-                android:paddingTop="10dp"
+                android:layout_marginTop="3dp"
+                android:paddingTop="2dp"
                 android:text="3"
                 android:gravity="center"
                 android:textSize="30sp"
@@ -43,10 +66,10 @@
 
             <TextView
                 android:id="@+id/textView"
-                android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
+                android:textSize="10dp"
+                android:layout_gravity="center_horizontal"
                 android:text="comments" />
 
         </LinearLayout>
@@ -54,11 +77,10 @@
 
         <TextView
             android:id="@+id/postText"
-            android:layout_width="150dp"
-            android:layout_height="46dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="30dp"
-            android:layout_weight="2.13"
+            android:layout_gravity="center_vertical"
             android:text="My fist post is the best post ever ,I cant find better than what I have said"
             android:textColor="#000"
             android:textSize="14dp" />
@@ -66,37 +88,92 @@
 
     </LinearLayout>
 
-    <View
-        android:layout_width="wrap_content"
-        android:layout_height="1dp"
-        android:layout_below="@+id/postTime"
-        android:layout_marginTop="1dp"
-        android:background="#ccc" />
+
+   <View
+    android:layout_width="wrap_content"
+    android:layout_height="1dp"
+    android:layout_below="@+id/postTime"
+    android:layout_marginTop="10dp"
+    android:background="#ccc" />
+
+
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:paddingTop="3dp"
+        >
 
         <TextView
             android:id="@+id/postTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/postStatus"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="0dp"
-            android:layout_marginRight="23dp"
-            android:layout_marginLeft="10dp"
-
-            android:text="2 hours ago"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:text="23 hours ago"
             android:textSize="12dp" />
 
 
+    </LinearLayout>
 
 
+    <LinearLayout
+        android:id="@+id/userInfoLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        >
 
+        <LinearLayout
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_marginLeft="5dp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/image_view_border"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/profile_pic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="3dp"
+                android:gravity="center"
+                android:paddingTop="2dp"
+                android:text="11"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="comments"
+                android:textSize="10dp" />
+
+        </LinearLayout>
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginRight="65dp"
+            android:src="@drawable/flag_bangladesh"/>
 
 
     </LinearLayout>
+
+
+
+
+
+
 
     <!--<RelativeLayout-->
     <!--android:layout_width="match_parent"-->
