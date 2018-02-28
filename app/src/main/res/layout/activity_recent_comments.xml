@@ -12,8 +12,6 @@
         android:background="@color/purple"
         android:focusableInTouchMode="true">
 
-
-
         <TextView
             android:id="@+id/header_label"
             android:layout_width="match_parent"

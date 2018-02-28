@@ -1,7 +1,9 @@
 
 package com.example.rabee.breath.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -9,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.rabee.breath.Activities.RecentCommentsActivity;
 import com.example.rabee.breath.GeneralInfo;
 import com.example.rabee.breath.Models.ResponseModels.PostCommentResponseModel;
 import com.example.rabee.breath.R;
@@ -106,6 +109,16 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view=inflater.inflate(R.layout.fragment_home, container, false);
+        FloatingActionButton RecentActivityFab = (FloatingActionButton) view.findViewById(R.id.RecentActivityFab);
+
+        RecentActivityFab.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent i = new Intent(getContext(), RecentCommentsActivity.class);
+                        startActivity(i);
+                    }
+                });
+
         return view;
     }
     @Override

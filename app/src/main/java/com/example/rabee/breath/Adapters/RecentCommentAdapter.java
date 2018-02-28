@@ -2,6 +2,7 @@ package com.example.rabee.breath.Adapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,25 +29,33 @@ public class RecentCommentAdapter extends RecyclerView.Adapter<RecentCommentAdap
     public RecentCommentAdapter(Context context, List<PostCommentResponseModel> postCommentResponseModels){
         this.context=context;
         this.postCommentResponseModels=postCommentResponseModels;
-
     }
+
     @Override
     public RecentCommentAdapter.UserViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         view = LayoutInflater.from(context).inflate(R.layout.general_post_item_view, null);
-
         return new RecentCommentAdapter.UserViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(RecentCommentAdapter.UserViewHolder holder, int position) {
         String imageUrl;
+        holder.newCommentsCounter.setText(String.valueOf(postCommentResponseModels.get(position).getComments().size()));
         holder.postText.setText(postCommentResponseModels.get(position).getPost().getText());
-        if(!postCommentResponseModels.get(position).getPost().getImage().equals("")){
+        Log.d("RecetnComments " ," " + postCommentResponseModels.get(position).getPost().getImage() +" : " );
+        if(postCommentResponseModels.get(position).getPost().getImage() != null){
              imageUrl = GeneralInfo.SPRING_URL + "/" +postCommentResponseModels.get(position).getPost().getImage() ;
             Picasso.with(context).load(imageUrl).into(holder.postImage);
+            holder.postImage.setVisibility(View.VISIBLE);
+
         }
-        imageUrl = GeneralInfo.SPRING_URL + "/" +postCommentResponseModels.get(position).getPost().getUserId().getImage() ;
-        Picasso.with(context).load(imageUrl).into(holder.profilePic );
+//        imageUrl = GeneralInfo.SPRING_URL + "/" +postCommentResponseModels.get(position).getPost().getUserId().getImage() ;
+//        Picasso.with(context).load(imageUrl).into(holder.profilePic );
+        if(!postCommentResponseModels.get(position).getPost().getYoutubelink().getLink().equals(""))
+        {
+            holder.postText.setText(postCommentResponseModels.get(position).getPost().getYoutubelink().getLink());
+
+        }
     }
 
     @Override
@@ -55,14 +64,17 @@ public class RecentCommentAdapter extends RecyclerView.Adapter<RecentCommentAdap
     }
 
     public class UserViewHolder extends  RecyclerView.ViewHolder {
-        TextView postText;
+        TextView postText, newCommentsCounter , postTime;
         ImageView postImage;
-        CircleImageView profilePic;
+
         public UserViewHolder(View itemView) {
             super(itemView);
             postText=(TextView)itemView.findViewById(R.id.postText);
-            postImage=(ImageView)itemView.findViewById(R.id.imageView);
-            profilePic=(CircleImageView)itemView.findViewById(R.id.profile_pic);
+            postImage=(ImageView)itemView.findViewById(R.id.postImage);
+            newCommentsCounter=(TextView)itemView.findViewById(R.id.newCommentsCounter);
+            postTime=(TextView)itemView.findViewById(R.id.postTime);
+
+//            profilePic=(CircleImageView)itemView.findViewById(R.id.profile_pic);
         }
     }
 }

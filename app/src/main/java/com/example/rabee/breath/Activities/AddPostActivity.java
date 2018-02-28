@@ -18,6 +18,7 @@ import com.example.rabee.breath.GeneralInfo;
 import com.example.rabee.breath.R;
 import com.squareup.picasso.Picasso;
 
+
 import de.hdodenhof.circleimageview.CircleImageView;
 
 import static com.example.rabee.breath.Activities.UserProfileActivity.verifyStoragePermissions;
@@ -69,9 +70,9 @@ public class AddPostActivity extends Activity {
         sendPost.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (isThereIsImage == true || (!PostText.getText().toString().trim().equals("") || !youtubeLinkString.equals(""))){
+                if (isThereIsImage == true || (!PostText.getText().toString().trim().equals("") /*|| !youtubeLinkString.equals("")*/)){
                     progressBar.setVisibility(View.VISIBLE);}
-                AddNewPost();
+               // AddNewPost();
 
             }
         });
