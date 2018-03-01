@@ -18,6 +18,7 @@
         android:weightSum="1">
 
         <LinearLayout
+            android:id="@+id/comments_num_layout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="0.10"

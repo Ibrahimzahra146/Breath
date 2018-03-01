@@ -2,11 +2,13 @@ package com.example.rabee.breath.Activities;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.example.rabee.breath.Adapters.RecentCommentAdapter;
 import com.example.rabee.breath.GeneralInfo;
 import com.example.rabee.breath.Models.ResponseModels.PostCommentResponseModel;
 import com.example.rabee.breath.R;
@@ -34,6 +36,8 @@ public class RecentCommentsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recent_comments);
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
         progressBar = (ProgressBar) findViewById(R.id.progress_bar);
         headerLabel = (TextView) findViewById(R.id.header_label);
         progressBar.setVisibility(View.VISIBLE);
@@ -48,7 +52,7 @@ public class RecentCommentsActivity extends AppCompatActivity {
             public void onResponse(Call<List<PostCommentResponseModel>> call, Response<List<PostCommentResponseModel>> response) {
                 postCommentResponseModel = (ArrayList<PostCommentResponseModel>) response.body();
 
-                //recyclerView.setAdapter(new UserListAdapter(getApplicationContext(), userModelList));
+                recyclerView.setAdapter(new RecentCommentAdapter(getApplicationContext(), postCommentResponseModel));
                 progressBar.setVisibility(View.INVISIBLE);
 
             }
