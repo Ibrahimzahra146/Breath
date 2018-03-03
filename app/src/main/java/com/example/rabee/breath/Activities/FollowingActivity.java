@@ -62,7 +62,6 @@ public class FollowingActivity extends AppCompatActivity {
             public void onResponse(Call<List<UserModel>> call, Response<List<UserModel>> response) {
                 userModelList = (ArrayList<UserModel>) response.body();
                 progressBar.setVisibility(View.GONE);
-
                 recyclerView.setAdapter(new UserListAdapter(getApplicationContext(),userModelList));
             }
 

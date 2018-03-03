@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -46,20 +47,23 @@ public class RecentCommentsActivity extends AppCompatActivity {
                 .addConverterFactory(GsonConverterFactory.create()).build();
 
         postInterface = retrofit.create(PostInterface.class);
-        final Call<List<PostCommentResponseModel>> reactResponse = postInterface.getRecentComments(GeneralInfo.getUserID(), 1);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        final Call<List<PostCommentResponseModel>> reactResponse = postInterface.getRecentComments(GeneralInfo.getUserID(), 0);
         reactResponse.enqueue(new Callback<List<PostCommentResponseModel>>() {
             @Override
             public void onResponse(Call<List<PostCommentResponseModel>> call, Response<List<PostCommentResponseModel>> response) {
                 postCommentResponseModel = (ArrayList<PostCommentResponseModel>) response.body();
 
-                recyclerView.setAdapter(new RecentCommentAdapter(getApplicationContext(), postCommentResponseModel));
-                progressBar.setVisibility(View.INVISIBLE);
 
+
+                recyclerView.setAdapter(new RecentCommentAdapter(getApplicationContext(), postCommentResponseModel));
+                progressBar.setVisibility(View.GONE);
             }
 
             @Override
             public void onFailure(Call<List<PostCommentResponseModel>> call, Throwable t) {
-                progressBar.setVisibility(View.INVISIBLE);
+                progressBar.setVisibility(View.GONE);
 
             }
         });
