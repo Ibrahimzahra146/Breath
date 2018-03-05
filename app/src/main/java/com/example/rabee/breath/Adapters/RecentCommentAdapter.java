@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.rabee.breath.Activities.CommentActivity;
@@ -83,10 +84,11 @@ public class RecentCommentAdapter extends RecyclerView.Adapter<RecentCommentAdap
                 e.printStackTrace();
             }
             /////////////////Listeners/////////
-            holder.newCommentsCounter.setOnClickListener(new View.OnClickListener() {
+            holder.commentsNumSection.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Intent i = new Intent(getApplicationContext(), CommentActivity.class);
+                    i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     Bundle b = new Bundle();
                     b.putInt("postId", postCommentResponseModels.get(position).getPost().getPostId());
 
@@ -105,14 +107,16 @@ public class RecentCommentAdapter extends RecyclerView.Adapter<RecentCommentAdap
 
         public class UserViewHolder extends RecyclerView.ViewHolder {
             TextView postText, newCommentsCounter , postTime;
-            ImageView postImage;
+            CircleImageView postImage;
+            RelativeLayout commentsNumSection;
 
             public UserViewHolder(View itemView) {
                 super(itemView);
                 postText=(TextView)itemView.findViewById(R.id.postText);
-                postImage=(ImageView)itemView.findViewById(R.id.postImage);
+                postImage=(CircleImageView)itemView.findViewById(R.id.postImage);
                 newCommentsCounter=(TextView)itemView.findViewById(R.id.newCommentsCounter);
                 postTime=(TextView)itemView.findViewById(R.id.postTime);
+                commentsNumSection=(RelativeLayout)itemView.findViewById(R.id.comments_num_section);
 
 
             }
