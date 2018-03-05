@@ -1,43 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#eee"
-    >
-    <!--<de.hdodenhof.circleimageview.CircleImageView-->
-        <!--android:layout_width="40dp"-->
-        <!--android:layout_height="40dp"-->
-        <!--android:src="@drawable/profile_pic"-->
-        <!--android:paddingRight="2dp"-->
-        <!--android:paddingLeft="10dp"-->
-        <!--android:layout_marginTop="10dp"-->
-        <!--android:layout_marginBottom="10dp"-->
-        <!--android:layout_gravity="center"-->
+    android:orientation="vertical"
+    android:background="#eee">
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
 
-
-        <!--/>-->
-    <!--<TextView-->
-
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="Ibrahim zahra"-->
-        <!--android:layout_gravity="center"/>-->
-    <RelativeLayout
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop="5dp"
-        android:paddingBottom="0dp"
-        android:background="@drawable/comment_layout_corner"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="25dp"
-        android:layout_marginTop="10dp"
-        >
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/replies_num_section"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp">
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/replies_background"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:alpha="0.4"
+                android:src="@drawable/post_pic_2" />
+
+
+            <LinearLayout
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+
+                android:layout_marginLeft="0dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/replies_counter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="-2dp"
+
+                    android:gravity="center"
+                    android:paddingTop="10dp"
+                    android:shadowColor="#000"
+                    android:shadowDx="6"
+                    android:shadowDy="6"
+                    android:shadowRadius="10"
+                    android:text="3"
+                    android:textColor="#000"
+                    android:textSize="28sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="-3dp"
+
+                    android:text="replies"
+                    android:textColor="#000"
+                    android:textSize="10dp" />
+
+
+            </LinearLayout>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/comment_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:text="3w ago"
+            android:textColor="@color/purple"
+            android:textSize="11dp" />
+    </LinearLayout>
+
+
 
         <TextView
             android:id="@+id/commentText"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="3dp"
+            android:paddingBottom="15dp"
+            android:paddingTop="15dp"
+
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/comment_layout_corner"
+
+
+
             android:fontFamily="sans-serif-thin"
             android:paddingLeft="30dp"
             android:paddingRight="30dp"
@@ -45,31 +101,15 @@
             android:textColor="@color/cardview_dark_background"
             android:textStyle="bold" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/commentText"
-            android:text="Replies 0"
-            android:layout_marginTop="7dp"
-            android:layout_marginBottom="7dp"
-            android:paddingLeft="30dp"
-            android:textColor="@color/purple"
-            android:id="@+id/repliesNumber"
-            android:textSize="11dp"/>
 
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="3w"
-            android:textColor="@color/purple"
-            android:textSize="11dp"
-            android:layout_alignBaseline="@+id/repliesNumber"
-            android:layout_alignBottom="@+id/repliesNumber"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:paddingRight="20dp"
-            android:layout_marginEnd="10dp" />
-    </RelativeLayout>
 
+</LinearLayout>
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="2dp"
+        android:paddingBottom="2dp"
+        android:layout_below="@+id/postTime"
+        android:layout_marginTop="10dp"
+        android:background="#D3D3D3" />
 </LinearLayout>

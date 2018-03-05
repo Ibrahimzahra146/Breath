@@ -49,7 +49,7 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.UserView
     public void onBindViewHolder(UserViewHolder holder, final int position) {
         holder.commentText.setText(commentModelsList.get(position).getText());
         if(commentModelsList.get(position).getReplies().size()==0){
-            holder.repliesNumber.setText("No replies");
+            holder.repliesNumber.setText("0");
             //holder.repliesNumber.setVisibility(View.INVISIBLE);
 
         }else holder.repliesNumber.setText(commentModelsList.get(position).getReplies().size()+" replies");
@@ -81,7 +81,7 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.UserView
         public UserViewHolder(View itemView) {
             super(itemView);
             commentText=(TextView)itemView.findViewById(R.id.commentText);
-            repliesNumber=(TextView)itemView.findViewById(R.id.repliesNumber);
+            repliesNumber=(TextView)itemView.findViewById(R.id.replies_counter);
 
         }
     }
