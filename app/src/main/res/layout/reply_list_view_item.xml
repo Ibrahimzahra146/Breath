@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+   android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#eee"
+    android:background="#fff"
     >
     <!--<de.hdodenhof.circleimageview.CircleImageView-->
         <!--android:layout_width="40dp"-->
@@ -45,6 +45,7 @@
             android:paddingRight="30dp"
             android:text="Sometimes i think that if she had never left 5H, this song wouldn't even exist and I feel so lucky for her decision"
             android:textColor="@color/cardview_dark_background"
+
             android:textStyle="bold" />
 
         <LinearLayout
@@ -90,7 +91,43 @@
             android:layout_alignParentEnd="true"
             android:layout_marginRight="18dp" />
     </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="23dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+
+        android:background="@drawable/comment_layout_corner"
+
+        >
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+
+
+            android:hint="add a reply ..."
+
+          />
+        <ImageButton
+            android:id="@+id/button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/send_icon"
+            android:paddingRight="10dp"
+            android:layout_centerVertical="true"
+            android:background="#eee"
+           />
+    </RelativeLayout>
 
 
 
-</LinearLayout>
+
+</RelativeLayout>
