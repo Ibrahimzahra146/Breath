@@ -1,6 +1,7 @@
 package com.example.rabee.breath.RequestInterface;
 
 
+import com.example.rabee.breath.Models.AddReplyModel;
 import com.example.rabee.breath.Models.ReactSingleModel;
 import com.example.rabee.breath.Models.ReplyModel;
 import com.example.rabee.breath.Models.RequestModels.AddCommentModel;
@@ -65,5 +66,8 @@ public interface PostInterface {
     @Headers("Cache-Control: max-age=64000")
     @GET("/api/v1/comment/get-recent-comments/{userId}/{page}")
     Call<List<PostCommentResponseModel>> getRecentComments(@Path("userId") int postId,@Path("page") int page);
+    @POST("/api/v1/comment/addNewReply")
+    Call<AddReplyModel> addReply(@Body AddReplyModel addReplyModel);
+
 
 }

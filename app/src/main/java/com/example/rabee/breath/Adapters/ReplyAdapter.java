@@ -50,7 +50,6 @@ public class ReplyAdapter extends RecyclerView.Adapter<ReplyAdapter.UserViewHold
         if (replyModelList.get(position).getUser().getId() == id) {
             String imageUrl = GeneralInfo.SPRING_URL + "/" + userModel.getImage();
             Picasso.with(context).load(imageUrl).into(holder.profilePic);
-
             holder.fullName.setText(userModel.getFirst_name() + " " + userModel.getLast_name());
         }
 
