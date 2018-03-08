@@ -52,7 +52,7 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.UserView
             holder.repliesNumber.setText("0");
             //holder.repliesNumber.setVisibility(View.INVISIBLE);
 
-        }else holder.repliesNumber.setText(commentModelsList.get(position).getReplies().size()+" replies");
+        }else holder.repliesNumber.setText(String.valueOf(commentModelsList.get(position).getReplies().size()));
         holder.repliesNumber.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
