@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.rabee.breath.Adapters.ReplyAdapter;
@@ -35,16 +36,20 @@ public class ReplyActivity extends AppCompatActivity {
     EditText replyText;
     PostInterface postInterface;
     ImageButton addReplyBtn;
+    ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reply);
+        progressBar= (ProgressBar) findViewById(R.id.progressBar);
         Bundle b = getIntent().getExtras();
         int commentId = 0;
         if (b != null) {
             commentId = b.getInt("commentId");
         }
+        progressBar.setVisibility(View.VISIBLE);
+
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         back_icon = (TextView) findViewById(R.id.back_icon);
         toolbarText = (TextView) findViewById(R.id.toolBarText);
@@ -65,6 +70,7 @@ public class ReplyActivity extends AppCompatActivity {
                 UserModel userModel = response.body().getUser();
                 toolbarText.setText(replytModelsList.size() + " replies");
                 Log.d("response.body().getUser()", response.body().getUser().getId() + "");
+                progressBar.setVisibility(View.GONE);
 
                 recyclerView.setAdapter(new ReplyAdapter(getApplicationContext(), replytModelsList, userModel));
 
@@ -74,6 +80,7 @@ public class ReplyActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<ReplyResponseModel> call, Throwable t) {
+                progressBar.setVisibility(View.GONE);
 
             }
         });
