@@ -15,13 +15,17 @@ import com.example.rabee.breath.Activities.ReplyActivity;
 import com.example.rabee.breath.Activities.UserProfileActivity;
 import com.example.rabee.breath.GeneralInfo;
 import com.example.rabee.breath.Models.CommentModel;
+import com.example.rabee.breath.Models.UserModel;
 import com.example.rabee.breath.R;
 import com.example.rabee.breath.Services.FollowingService;
+import com.squareup.picasso.Picasso;
 
 import org.w3c.dom.Text;
 
 import java.util.List;
 import java.util.zip.Inflater;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 import static com.facebook.FacebookSdk.getApplicationContext;
 
@@ -34,10 +38,12 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.UserView
     List<CommentModel> commentModelsList;
     TextView commentText;
     View view;
+    UserModel user;
 
-    public CommentAdapter(Context context, List<CommentModel> commentModelsList){
+    public CommentAdapter(Context context, List<CommentModel> commentModelsList, UserModel user){
         this.context=context;
         this.commentModelsList=commentModelsList;
+        this.user=user;
     }
     @Override
     public CommentAdapter.UserViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -48,7 +54,20 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.UserView
     @Override
     public void onBindViewHolder(UserViewHolder holder, final int position) {
         holder.commentText.setText(commentModelsList.get(position).getText());
+        int id = user.getId();
+        if (commentModelsList.get(position).getUser().getId() == id) {
+            String imageUrl = GeneralInfo.SPRING_URL + "/" + user.getImage();
+            Picasso.with(context).load(imageUrl).into(holder.profilePic);
+            holder.fullName.setText(user.getFirst_name() + " " + user.getLast_name());
+        }
+        Log.d("User id",GeneralInfo.userID+"");
+        if (commentModelsList.get(position).getUser().getId() == GeneralInfo.userID) {
+            String imageUrl = GeneralInfo.SPRING_URL + "/" + GeneralInfo.generalUserInfo.getUser().getImage();
+            Picasso.with(context).load(imageUrl).into(holder.profilePic);
+            holder.fullName.setText(GeneralInfo.getGeneralUserInfo().getUser().getFirst_name() + " " + GeneralInfo.getGeneralUserInfo().getUser().getLast_name());
+        }
         if(commentModelsList.get(position).getReplies().size()==0){
+
             holder.repliesNumber.setText("0");
             //holder.repliesNumber.setVisibility(View.INVISIBLE);
 
@@ -78,10 +97,17 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.UserView
     public class UserViewHolder extends RecyclerView.ViewHolder {
         TextView commentText;
         TextView repliesNumber;
+        CircleImageView profilePic;
+        TextView fullName;
+
+
         public UserViewHolder(View itemView) {
             super(itemView);
             commentText=(TextView)itemView.findViewById(R.id.commentText);
             repliesNumber=(TextView)itemView.findViewById(R.id.replies_counter);
+            profilePic = (CircleImageView) itemView.findViewById(R.id.profile_pic);
+            fullName = (TextView) itemView.findViewById(R.id.full_name);
+
 
         }
     }
