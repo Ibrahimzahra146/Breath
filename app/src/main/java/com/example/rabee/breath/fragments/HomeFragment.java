@@ -82,7 +82,7 @@ public class HomeFragment extends Fragment {
                 .baseUrl(GeneralInfo.SPRING_URL)
                 .addConverterFactory(GsonConverterFactory.create()).build();
         postInterface = retrofit.create(PostInterface.class);
-        final Call<List<PostCommentResponseModel>> postResponse = postInterface.getUserHomePost(1);
+        final Call<List<PostCommentResponseModel>> postResponse = postInterface.getUserHomePost(GeneralInfo.getUserID());
         postResponse.enqueue(new Callback<List<PostCommentResponseModel>>() {
 
             @Override

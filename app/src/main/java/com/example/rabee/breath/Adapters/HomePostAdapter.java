@@ -329,7 +329,7 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
         if (postResponseModel.getYoutubelink().getLink() != "" && postResponseModel.getImage() == null) {
             holder.youtubeLinkTitle.setText(postResponseModel.getYoutubelink().getTitle());
             holder.youtubeLinkAuthor.setText("Channel: " + postResponseModel.getYoutubelink().getAuthor_name());
-            imageUrl = postResponseModel.getYoutubelink().getImage();
+            imageUrl = GeneralInfo.SPRING_URL+"/"+postResponseModel.getYoutubelink().getImage();
             Picasso.with(getApplicationContext()).load(imageUrl).into(holder.youtubeLinkImage);
         } else {
             holder.youtubeLinkLayout.setVisibility(View.GONE);

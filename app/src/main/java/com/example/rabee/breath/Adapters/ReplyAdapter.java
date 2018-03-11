@@ -18,8 +18,6 @@ import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-import static com.facebook.FacebookSdk.getApplicationContext;
-
 /**
  * Created by Rabee on 2/14/2018.
  */
@@ -45,12 +43,17 @@ public class ReplyAdapter extends RecyclerView.Adapter<ReplyAdapter.UserViewHold
     @Override
     public void onBindViewHolder(ReplyAdapter.UserViewHolder holder, int position) {
         holder.replyText.setText(replyModelList.get(position).getText());
-        Log.d("userModel.getId()",userModel.getId()+"");
-        int id=userModel.getId();
+        Log.d("userModel.getId()", userModel.getId() + "");
+        int id = userModel.getId();
         if (replyModelList.get(position).getUser().getId() == id) {
             String imageUrl = GeneralInfo.SPRING_URL + "/" + userModel.getImage();
             Picasso.with(context).load(imageUrl).into(holder.profilePic);
             holder.fullName.setText(userModel.getFirst_name() + " " + userModel.getLast_name());
+        }
+        if (replyModelList.get(position).getUser().getId() == GeneralInfo.userID) {
+            String imageUrl = GeneralInfo.SPRING_URL + "/" + GeneralInfo.generalUserInfo.getUser().getImage();
+            Picasso.with(context).load(imageUrl).into(holder.profilePic);
+            holder.fullName.setText(GeneralInfo.getGeneralUserInfo().getUser().getFirst_name() + " " + GeneralInfo.getGeneralUserInfo().getUser().getLast_name());
         }
 
     }

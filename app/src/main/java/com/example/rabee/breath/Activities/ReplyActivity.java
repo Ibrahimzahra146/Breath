@@ -36,6 +36,7 @@ public class ReplyActivity extends AppCompatActivity {
     EditText replyText;
     PostInterface postInterface;
     ImageButton addReplyBtn;
+    static ReplyAdapter replyAdapter;
     ProgressBar progressBar;
 
     @Override
@@ -48,6 +49,7 @@ public class ReplyActivity extends AppCompatActivity {
         if (b != null) {
             commentId = b.getInt("commentId");
         }
+        progressBar=(ProgressBar)findViewById(R.id.progress_bar);
         progressBar.setVisibility(View.VISIBLE);
 
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
@@ -56,6 +58,7 @@ public class ReplyActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         addReplyBtn = (ImageButton) findViewById(R.id.addReplyBtn);
         replyText = (EditText) findViewById(R.id.replyText);
+        progressBar.setVisibility(View.VISIBLE);
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(GeneralInfo.SPRING_URL)
@@ -70,9 +73,10 @@ public class ReplyActivity extends AppCompatActivity {
                 UserModel userModel = response.body().getUser();
                 toolbarText.setText(replytModelsList.size() + " replies");
                 Log.d("response.body().getUser()", response.body().getUser().getId() + "");
+                replyAdapter=new ReplyAdapter(getApplicationContext(), replytModelsList, userModel);
+                recyclerView.setAdapter(replyAdapter);
                 progressBar.setVisibility(View.GONE);
 
-                recyclerView.setAdapter(new ReplyAdapter(getApplicationContext(), replytModelsList, userModel));
 
 
             }
@@ -90,8 +94,9 @@ public class ReplyActivity extends AppCompatActivity {
         addReplyBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                progressBar.setVisibility(View.VISIBLE);
                 if (replyText.getText().toString().trim() != "") {
-                    AddReplyModel addReplyModel = new AddReplyModel();
+                    final AddReplyModel addReplyModel = new AddReplyModel();
                     addReplyModel.setCommentId(finalCommentId);
                     addReplyModel.setText(replyText.getText().toString());
                     addReplyModel.setUserId(GeneralInfo.getUserID());
@@ -102,8 +107,17 @@ public class ReplyActivity extends AppCompatActivity {
                             Log.d("Replies", " done Successfully " + response.code());
                             if(response.code()==200)
                             {
+                                progressBar.setVisibility(View.INVISIBLE);
+
+                                ReplyModel replyModel=new ReplyModel();
+                                replyModel.setText(addReplyModel.getText());
+                                replyModel.setUser(GeneralInfo.getGeneralUserInfo().getUser());
+                                replyModel.setId(1);
+                                replytModelsList.add(replyModel);
+                                replyAdapter.notifyDataSetChanged();
                                 replyText.setText("");
                                 replyText.clearFocus();
+                                replyAdapter.notifyDataSetChanged();
                             }
                         }
 
