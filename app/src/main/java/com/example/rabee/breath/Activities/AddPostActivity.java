@@ -212,6 +212,10 @@ public class AddPostActivity extends YouTubeBaseActivity implements YouTubePlaye
 
                     String[] split = s.split("v=");
                     youtubeLinkString = s;
+                    if(split.length==1)
+                    {
+                        split = s.split(".be/");
+                    }
                     video_id = split[1];
                     youTubePlayerView.initialize(api_key, AddPostActivity.this);
                     youTubePlayerView.setVisibility(View.VISIBLE);
@@ -341,7 +345,7 @@ public class AddPostActivity extends YouTubeBaseActivity implements YouTubePlaye
             PostRequestModel postRequestModel = new PostRequestModel();
             postRequestModel.setUserId(GeneralInfo.getGeneralUserInfo().getUser().getId());
             postRequestModel.setText(PostText.getText().toString());
-            postRequestModel.setLink(youtubeLinkString);
+            postRequestModel.setLink("");
             postRequestModel.setIs_public_comment(showComments.isChecked());
 
 

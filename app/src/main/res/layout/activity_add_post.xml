@@ -75,7 +75,7 @@
         <com.google.android.youtube.player.YouTubePlayerView
             android:id="@+id/youtube"
             android:layout_width="match_parent"
-            android:layout_height="120dp"
+            android:layout_height="140dp"
             android:visibility="gone"
             android:layout_marginLeft="25dp"
             android:layout_marginRight="25dp"
