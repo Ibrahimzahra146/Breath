@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.rabee.breath.Activities.AddPostActivity;
 import com.example.rabee.breath.Activities.RecentCommentsActivity;
 import com.example.rabee.breath.GeneralInfo;
 import com.example.rabee.breath.Models.ResponseModels.PostCommentResponseModel;
@@ -110,7 +111,7 @@ public class HomeFragment extends Fragment {
         // Inflate the layout for this fragment
         view=inflater.inflate(R.layout.fragment_home, container, false);
         FloatingActionButton RecentActivityFab = (FloatingActionButton) view.findViewById(R.id.RecentActivityFab);
-
+        FloatingActionButton AddPostActivityfab  = (FloatingActionButton) view.findViewById(R.id.AddPostActivityfab);
         RecentActivityFab.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -118,7 +119,13 @@ public class HomeFragment extends Fragment {
                         startActivity(i);
                     }
                 });
-
+        AddPostActivityfab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getContext(), AddPostActivity.class);
+                startActivity(i);
+            }
+        });
         return view;
     }
     @Override
