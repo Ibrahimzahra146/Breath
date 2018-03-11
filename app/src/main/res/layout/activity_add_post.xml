@@ -76,6 +76,7 @@
             android:id="@+id/youtube"
             android:layout_width="match_parent"
             android:layout_height="120dp"
+            android:visibility="gone"
             android:layout_marginLeft="25dp"
             android:layout_marginRight="25dp"
             android:layout_marginTop="10dp" />
@@ -93,6 +94,7 @@
             android:layout_marginTop="-10dp"
             android:padding="18dp"
             android:scaleType="fitXY"
+            android:visibility="invisible"
             android:src="@drawable/cross_icon" />
     </RelativeLayout>
 
@@ -143,68 +145,6 @@
         android:layout_centerHorizontal="true">
 
 
-        <!--<LinearLayout-->
-        <!--android:background="#fff"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="100dp"-->
-        <!--android:layout_above="@+id/linearLayout4"-->
-        <!--android:layout_alignParentLeft="true"-->
-        <!--android:layout_alignParentStart="true"-->
-        <!--android:orientation="vertical"-->
-        <!--android:paddingTop="5dp">-->
-
-        <!--<LinearLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:orientation="horizontal">-->
-
-        <!--<de.hdodenhof.circleimageview.CircleImageView-->
-        <!--android:layout_width="10dp"-->
-        <!--android:layout_height="10dp"-->
-        <!--android:layout_marginLeft="17dp"-->
-        <!--android:layout_marginRight="8dp"-->
-        <!--android:layout_marginTop="2.5dp"-->
-        <!--android:src="#00FF00" />-->
-
-        <!--<TextView-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="Friends may see your post"-->
-        <!--android:textColor="#000"-->
-        <!--android:textSize="13dp" />-->
-
-        <!--</LinearLayout>-->
-
-        <!--<LinearLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:orientation="horizontal"-->
-        <!--android:background="#fff"-->
-        <!--android:paddingTop="10dp">-->
-
-        <!--<LinearLayout-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:orientation="vertical">-->
-
-        <!--<de.hdodenhof.circleimageview.CircleImageView-->
-        <!--android:layout_width="40dp"-->
-        <!--android:layout_height="40dp"-->
-        <!--android:layout_marginLeft="10dp"-->
-        <!--android:layout_marginRight="10dp"-->
-        <!--android:src="@drawable/image1" />-->
-
-        <!--<TextView-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="Raghad Q."-->
-        <!--android:textAlignment="center"-->
-        <!--android:textColor="#000"-->
-        <!--android:textSize="30px" />-->
-        <!--</LinearLayout>-->
-
-        <!--</LinearLayout>-->
-        <!--</LinearLayout>-->
 
         <LinearLayout
             android:id="@+id/linearLayout4"
@@ -219,10 +159,11 @@
 
             <ImageView
                 android:id="@+id/addPhoto"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="30dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="4dp"
                 android:src="@drawable/gallery_icon" />
 
             <LinearLayout
@@ -251,10 +192,10 @@
 
             <ImageView
                 android:id="@+id/sendPost"
-                android:layout_width="52dp"
-                android:layout_height="52dp"
+                android:layout_width="32dp"
+                android:layout_height="42dp"
                 android:layout_marginLeft="70dp"
-                android:layout_marginTop="-8dp"
+                android:layout_marginTop="-2dp"
                 android:src="@drawable/send_icon" />
 
         </LinearLayout>
