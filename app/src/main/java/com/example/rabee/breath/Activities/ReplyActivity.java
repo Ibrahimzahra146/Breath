@@ -43,12 +43,15 @@ public class ReplyActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reply);
+        progressBar= (ProgressBar) findViewById(R.id.progressBar);
         Bundle b = getIntent().getExtras();
         int commentId = 0;
         if (b != null) {
             commentId = b.getInt("commentId");
         }
         progressBar=(ProgressBar)findViewById(R.id.progress_bar);
+        progressBar.setVisibility(View.VISIBLE);
+
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         back_icon = (TextView) findViewById(R.id.back_icon);
         toolbarText = (TextView) findViewById(R.id.toolBarText);
@@ -81,6 +84,7 @@ public class ReplyActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<ReplyResponseModel> call, Throwable t) {
+                progressBar.setVisibility(View.GONE);
 
             }
         });

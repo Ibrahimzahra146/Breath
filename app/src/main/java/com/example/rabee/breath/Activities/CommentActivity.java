@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.rabee.breath.Adapters.CommentAdapter;
@@ -28,12 +30,14 @@ public class CommentActivity extends AppCompatActivity {
     TextView back_icon, toolbarText;
     PostInterface postInterface;
     public List<CommentModel> commentModelsList = new ArrayList<>();
-
+    ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_comment);
+        progressBar= (ProgressBar) findViewById(R.id.progressBar);
+        progressBar.setVisibility(View.VISIBLE);
         Bundle b = getIntent().getExtras();
         int postId = 0;
         if (b != null) {
@@ -55,9 +59,11 @@ public class CommentActivity extends AppCompatActivity {
                 Log.d("response", response.code() + "res");
                 Log.d("response", response.body().getComments().get(0).getText() + "res");
 
-                commentModelsList = response.body().getComments();
-                toolbarText.setText(commentModelsList.size() + " comments");
 
+
+                commentModelsList=  response.body().getComments();
+                toolbarText.setText(commentModelsList.size()+" comments");
+                progressBar.setVisibility(View.GONE);
                 recyclerView.setAdapter(new CommentAdapter(getApplicationContext(), commentModelsList,response.body().getPost().getUserId()));
 
 
@@ -66,6 +72,7 @@ public class CommentActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<PostCommentResponseModel> call, Throwable t) {
+                progressBar.setVisibility(View.GONE);
 
             }
         });
