@@ -39,6 +39,7 @@ public interface AuthInterface {
 
     @POST("/api/v1/user/signOut")
     Call<Integer> signOut(@Body SignOutRequestModel signOutModel);
-
+    @POST("/api/v1/user/direct-signUp")
+    Call<UserProfileResponseModel> directSignUp(@Body String deviceId);
 
 }

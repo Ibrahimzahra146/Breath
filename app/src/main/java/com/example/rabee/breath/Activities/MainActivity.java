@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     CircleImageView fb, google;
     GoogleApiClient googleApiClient;
     Dialog progressDialog;
-    TextView AppTitle;
+    TextView AppTitle,directSignUp;
     SharedPreferences sharedPreferences;
     RecyclerView recyclerView;
     Retrofit retrofit = new Retrofit.Builder()
@@ -90,6 +90,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         //setGooglePlusButtonText(signInButton, "Log in with google ");
         emailEditText = (EditText) findViewById(R.id.username);
         passEditText = (EditText) findViewById(R.id.password);
+        directSignUp=(TextView)findViewById(R.id.direct_signup);
         fb = (CircleImageView) findViewById(R.id.fb);
         google = (CircleImageView) findViewById(R.id.google);
         loginButton = (LoginButton) findViewById(R.id.login_button);
@@ -163,6 +164,32 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                 .enableAutoManage(this /* FragmentActivity */, this/* OnConnectionFailedListener */)
                 .addApi(Auth.GOOGLE_SIGN_IN_API, signInOptions).addApi(Plus.API)
                 .build();
+
+
+       //////////////////////direct signup flow///////////////////
+        directSignUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                 final Call<UserProfileResponseModel> call=service.directSignUp("");
+                call.enqueue(new Callback<UserProfileResponseModel>() {
+                    @Override
+                    public void onResponse(Call<UserProfileResponseModel> call, Response<UserProfileResponseModel> response) {
+                        Log.d("Direct sign up status code",""+response.code());
+                        GeneralInfo.setUserID(Integer.valueOf(response.body().getUser().getId()));
+                        sharedPreferences = getSharedPreferences("userInfo", Context.MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.putInt("id", GeneralInfo.getUserID());
+                        editor.putBoolean("isLogined", true);
+                        editor.apply();
+                    }
+
+                    @Override
+                    public void onFailure(Call<UserProfileResponseModel> call, Throwable t) {
+
+                    }
+                });
+            }
+        });
     }
 
     public void signIn() {

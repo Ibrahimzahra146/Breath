@@ -221,5 +221,17 @@
                 android:textColor="@color/purple"
                 android:textSize="16dp" />
         </LinearLayout>
+        <TextView
+            android:id="@+id/direct_signup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:clickable="true"
+            android:onClick="register"
+            android:text="Or launch app directly"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/purple"
+            android:layout_marginTop="5dp"
+            android:textSize="16dp" />
     </LinearLayout>
 </RelativeLayout>
