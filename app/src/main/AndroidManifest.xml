@@ -19,6 +19,8 @@
         <activity android:name=".Activities.ChangeAccountInfoActivities.ChangePasswordActivity" />
         <activity android:name=".Activities.ChangeAccountInfoActivities.ChangeEmailActivity" />
         <activity android:name=".Activities.ChangeAccountInfoActivities.ChangeMobileActivity" />
+        <activity android:name=".Activities.OneTimeLogInActivity" />
+
         <activity
             android:name=".Activities.HomeActivity"
             android:label="@string/title_activity_home"

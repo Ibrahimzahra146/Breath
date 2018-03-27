@@ -69,5 +69,9 @@ public interface PostInterface {
     @POST("/api/v1/comment/addNewReply")
     Call<AddReplyModel> addReply(@Body AddReplyModel addReplyModel);
 
+    @GET("/api/v1/post/getRandomPosts/{id}/{page}")
+    Call<List<PostCommentResponseModel>> getRandomPosts(@Path("id") int postId,@Path("page") int page);
+
+
 
 }
