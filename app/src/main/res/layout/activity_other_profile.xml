@@ -23,6 +23,7 @@
                 android:focusableInTouchMode="true">
 
                 <TextView
+                    
                     android:id="@+id/ToolbarText"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
@@ -144,6 +145,7 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="-32dp"
                     android:gravity="center"
+                    android:id="@+id/FollowLinearLayout"
                     android:orientation="horizontal">
 
                     <Button
@@ -155,7 +157,6 @@
                         android:background="@drawable/left_corners_50dp"
                         android:paddingLeft="11dp"
                         android:visibility="invisible"
-
                         />
 
                     <ImageView

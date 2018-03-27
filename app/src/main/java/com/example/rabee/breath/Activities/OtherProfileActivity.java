@@ -2,7 +2,9 @@ package com.example.rabee.breath.Activities;
 
 import android.animation.ObjectAnimator;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Handler;
@@ -15,6 +17,7 @@ import android.view.View;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -56,6 +59,9 @@ public class OtherProfileActivity extends AppCompatActivity implements SwipeRefr
     int Id1, Id = -1; // or other values
     String mName = "",mImageUrl = "",youtubeSongUrl;
     UserModel userProfileModel;
+    LinearLayout FollowLinearlayout;
+    SharedPreferences sharedPreferences;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,7 +90,15 @@ public class OtherProfileActivity extends AppCompatActivity implements SwipeRefr
         progressBar = (ProgressBar) findViewById(R.id.circular_progress_bar);
         img = (CircleImageView) findViewById(R.id.user_profile_photo);
         editBio = (TextView) findViewById(R.id.editBio);
+        FollowLinearlayout=(LinearLayout) findViewById(R.id.FollowLinearLayout);
+        sharedPreferences = getSharedPreferences("userInfo", Context.MODE_PRIVATE);
+        String loginType=sharedPreferences.getString("loginType", "");
 
+        if(loginType.equals("DIRECT_SIGNUP"))
+        {
+            FollowLinearlayout.setVisibility(View.GONE);
+            progressBar_button.setVisibility(View.GONE);
+        }
         //Set user info
         user_profile_name.setText(mName);
         toolBarText.setText(mName);
