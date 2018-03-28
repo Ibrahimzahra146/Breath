@@ -2,58 +2,94 @@
 <items version="2" >
 
     <item
-        is-multidex="true"
-        jar="C:\Users\Rabee\Desktop\Breath\Breath\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="C:\Users\exalt\Desktop\Breath\app\mail.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.3"
-        sha1="6dc17acad921c7d839905cfe4f30b14f17e7530a">
-        <dex dex="C:\Users\Rabee\Desktop\Breath\Breath\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_0b3e2b3db76b7d8ff01a65b99794e67aa38db162\classes.dex" />
+        sha1="428e267abff0d10802ccde86b915da2c20471160">
+        <dex dex="C:\Users\exalt\Desktop\Breath\app\build\intermediates\pre-dexed\debug\mail_0c3dbdf940d3ea40badb8205e86d15dc13680c78.jar" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Rabee\Desktop\Breath\Breath\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
-        <dex dex="C:\Users\Rabee\Desktop\Breath\Breath\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_d14ff17d6a107c7d1fef0678b42a35e50216f959\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Rabee\Desktop\Breath\Breath\app\mail.jar"
+        jar="C:\Users\exalt\Desktop\Breath\app\mail.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.3"
         sha1="428e267abff0d10802ccde86b915da2c20471160">
-        <dex dex="C:\Users\Rabee\Desktop\Breath\Breath\app\build\intermediates\transforms\dex\debug\folders\1000\2\mail_93dc12a8e377bc72c207c24d1c4a6989841afe75\classes.dex" />
+        <dex dex="C:\Users\exalt\Desktop\Breath\app\build\intermediates\transforms\dex\debug\folders\1000\2\mail_0c3dbdf940d3ea40badb8205e86d15dc13680c78\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Rabee\Desktop\Breath\Breath\app\YouTubeAndroidPlayerApi.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="3c4f96ff493456651cc7bdb0b47e10eb25545a16">
-        <dex dex="C:\Users\Rabee\Desktop\Breath\Breath\app\build\intermediates\transforms\dex\debug\folders\1000\2\YouTubeAndroidPlayerApi_6652bee67759acc61d4efee10e9dc59fbd5f2704\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Rabee\Desktop\Breath\Breath\app\additionnal.jar"
+        jar="C:\Users\exalt\Desktop\Breath\app\additionnal.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.3"
         sha1="bd9e8dc422bb8c8405359947fe9f4282b49f57f4">
-        <dex dex="C:\Users\Rabee\Desktop\Breath\Breath\app\build\intermediates\transforms\dex\debug\folders\1000\2\additionnal_8ad2471780a02b901e5c2e5edf88fab17bfb864c\classes.dex" />
+        <dex dex="C:\Users\exalt\Desktop\Breath\app\build\intermediates\transforms\dex\debug\folders\1000\2\additionnal_0dfd451c7adc5c9e72faf7ca62004c701ec5093a\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Rabee\Desktop\Breath\Breath\app\activation.jar"
+        jar="C:\Users\exalt\Desktop\Breath\app\activation.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.3"
         sha1="d1257cbff6faa44c1f325ae0d9413522d4644383">
-        <dex dex="C:\Users\Rabee\Desktop\Breath\Breath\app\build\intermediates\transforms\dex\debug\folders\1000\2\activation_9e813d1460c1b7fe0b5f2be6cbd8a380432be5a4\classes.dex" />
+        <dex dex="C:\Users\exalt\Desktop\Breath\app\build\intermediates\transforms\dex\debug\folders\1000\2\activation_50d3b9cdaabb71ecf3ce08584f0922e1ef463cb5\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\exalt\Desktop\Breath\app\YouTubeAndroidPlayerApi.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="3c4f96ff493456651cc7bdb0b47e10eb25545a16">
+        <dex dex="C:\Users\exalt\Desktop\Breath\app\build\intermediates\transforms\dex\debug\folders\1000\2\YouTubeAndroidPlayerApi_fd57b48db5335fd3025d8327b46d8f6479233be3\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\exalt\Desktop\Breath\app\additionnal.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="bd9e8dc422bb8c8405359947fe9f4282b49f57f4">
+        <dex dex="C:\Users\exalt\Desktop\Breath\app\build\intermediates\pre-dexed\debug\additionnal_0dfd451c7adc5c9e72faf7ca62004c701ec5093a.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\exalt\Desktop\Breath\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="dce05e8cede958da8833a3efc1f13ac126d26330">
+        <dex dex="C:\Users\exalt\Desktop\Breath\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_27b9172dcd9add6bbbdaf0284381e6e80aa50b23\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\exalt\Desktop\Breath\app\activation.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="d1257cbff6faa44c1f325ae0d9413522d4644383">
+        <dex dex="C:\Users\exalt\Desktop\Breath\app\build\intermediates\pre-dexed\debug\activation_50d3b9cdaabb71ecf3ce08584f0922e1ef463cb5.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\exalt\Desktop\Breath\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="C:\Users\exalt\Desktop\Breath\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_56abb352a3eadba70c050aab244acac7f1545789\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\exalt\Desktop\Breath\app\YouTubeAndroidPlayerApi.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="3c4f96ff493456651cc7bdb0b47e10eb25545a16">
+        <dex dex="C:\Users\exalt\Desktop\Breath\app\build\intermediates\pre-dexed\debug\YouTubeAndroidPlayerApi_fd57b48db5335fd3025d8327b46d8f6479233be3.jar" />
     </item>
 
 </items>

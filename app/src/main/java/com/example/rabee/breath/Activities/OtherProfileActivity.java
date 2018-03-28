@@ -11,6 +11,8 @@ import android.os.Handler;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -22,18 +24,23 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.rabee.breath.Adapters.DirectSignUpHomePostsAdapter;
+import com.example.rabee.breath.Adapters.HomePostAdapter;
 import com.example.rabee.breath.GeneralFunctions;
 import com.example.rabee.breath.GeneralInfo;
 import com.example.rabee.breath.Models.ResponseModels.AboutUserResponseModel;
 import com.example.rabee.breath.Models.ResponseModels.FollowingRelationResponseModel;
 import com.example.rabee.breath.Models.ResponseModels.FollowingResponseModel;
+import com.example.rabee.breath.Models.ResponseModels.PostCommentResponseModel;
 import com.example.rabee.breath.Models.UserModel;
 import com.example.rabee.breath.R;
 import com.example.rabee.breath.RequestInterface.AboutUserInterface;
 import com.example.rabee.breath.RequestInterface.FollowingInterface;
+import com.example.rabee.breath.RequestInterface.PostInterface;
 import com.example.rabee.breath.Services.FollowingService;
 import com.squareup.picasso.Picasso;
 
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -61,6 +68,10 @@ public class OtherProfileActivity extends AppCompatActivity implements SwipeRefr
     UserModel userProfileModel;
     LinearLayout FollowLinearlayout;
     SharedPreferences sharedPreferences;
+    RecyclerView postRecyclerView;
+    PostInterface postInterface;
+    public static List<PostCommentResponseModel> postResponseModelsList;
+
 
 
     @Override
@@ -92,13 +103,49 @@ public class OtherProfileActivity extends AppCompatActivity implements SwipeRefr
         editBio = (TextView) findViewById(R.id.editBio);
         FollowLinearlayout=(LinearLayout) findViewById(R.id.FollowLinearLayout);
         sharedPreferences = getSharedPreferences("userInfo", Context.MODE_PRIVATE);
-        String loginType=sharedPreferences.getString("loginType", "");
+        final String loginType=sharedPreferences.getString("loginType", "");
+        postRecyclerView = (RecyclerView)findViewById(R.id.postRecyclerView);
+        postRecyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+        postRecyclerView.hasFixedSize();
+
 
         if(loginType.equals("DIRECT_SIGNUP"))
         {
             FollowLinearlayout.setVisibility(View.GONE);
             progressBar_button.setVisibility(View.GONE);
+            friendStatus.setVisibility(View.GONE);
         }
+
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(GeneralInfo.SPRING_URL)
+                .addConverterFactory(GsonConverterFactory.create()).build();
+        postInterface = retrofit.create(PostInterface.class);
+        final Call<List<PostCommentResponseModel>> postResponse = postInterface.getUserHomePost(GeneralInfo.getUserID());
+        postResponse.enqueue(new Callback<List<PostCommentResponseModel>>() {
+
+            @Override
+            public void onResponse(Call<List<PostCommentResponseModel>> call, Response<List<PostCommentResponseModel>> response) {
+                postResponseModelsList = response.body();
+
+                if(loginType.equals("DIRECT_SIGNUP")) {
+                    postRecyclerView.setAdapter(new DirectSignUpHomePostsAdapter(getApplicationContext(),postResponseModelsList));
+                }
+                else
+                {
+                    postRecyclerView.setAdapter(new HomePostAdapter(getApplicationContext(),postResponseModelsList));
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<List<PostCommentResponseModel>> call, Throwable t) {
+
+            }
+        });
+
+
+
         //Set user info
         user_profile_name.setText(mName);
         toolBarText.setText(mName);
