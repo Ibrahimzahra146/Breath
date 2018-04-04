@@ -1,4 +1,4 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -16,9 +16,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="65dp"
+            android:layout_marginTop="20dp"
             android:fontFamily="cursive"
             android:text="Sawa"
-            android:layout_marginTop="90dp"
             android:textColor="@color/purple"
             android:textSize="70dp"
             android:textStyle="bold"
@@ -62,7 +62,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/password"
-            android:layout_marginBottom="90dp"
+            android:layout_marginBottom="20dp"
             android:layout_marginTop="30dp"
             android:background="@drawable/selector_xml_btn_yellow"
             android:imeOptions="actionDone"
@@ -72,120 +72,104 @@
             android:textStyle="bold" />
 
 
-        <!--  <com.facebook.login.widget.LoginButton
-              android:id="@+id/login_button"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:layout_alignTop="@+id/LogInProgress"
-              android:layout_marginLeft="52dp"
-               />-->
-
     </RelativeLayout>
 
-        <FrameLayout
+    <RelativeLayout
+        android:id="@+id/connectWith"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:layout_marginTop="10dp">
 
-            android:id="@+id/FrameLayout1"
-            android:layout_width="match_parent"
+        <View
+            android:layout_width="70dp"
+            android:layout_height="2dp"
+            android:layout_centerVertical="true"
+            android:background="#c2c2c2" />
+
+        <TextView
+            android:id="@+id/orText"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/LogInProgress"
-            android:layout_marginBottom="15dp"
-            android:layout_marginTop="380dp">
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:text="OR CONNECT WITH"
+            android:textColor="#c2c2c2" />
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical|center_horizontal"
-                android:layout_marginTop="-26dp">
+        <View
+            android:layout_width="70dp"
+            android:layout_height="2dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="207dp"
+            android:background="#c2c2c2" />
 
-                <View
-                    android:layout_width="70dp"
-                    android:layout_height="2dp"
-                    android:layout_centerVertical="true"
-                    android:background="#c2c2c2" />
+        <com.facebook.login.widget.LoginButton
+            android:id="@+id/login_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/orText"
+            android:onClick="onClick"
+            android:visibility="gone" />
 
-                <TextView
-                    android:id="@+id/orText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_centerHorizontal="true"
-                    android:text="OR CONNECT WITH"
-                    android:textColor="#c2c2c2" />
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/fb"
+            android:layout_width="130dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="23dp"
+            android:background="@drawable/facebook_btn"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:src="@drawable/facebook_icon"
+            android:textColor="#000"
+            android:textStyle="bold" />
 
-                <View
-                    android:layout_width="70dp"
-                    android:layout_height="2dp"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="207dp"
-                    android:background="#c2c2c2" />
-            </RelativeLayout>
-            <com.facebook.login.widget.LoginButton
-                android:id="@+id/login_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:visibility="gone"
-                android:onClick="onClick"/>
+        <com.google.android.gms.common.SignInButton
+            android:id="@+id/loginWithGoogleBtn"
+            android:layout_width="1dp"
+            android:layout_height="1dp"
+            android:onClick="onClick"
+            android:visibility="gone" />
 
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/fb"
-                android:layout_width="130dp"
-                android:layout_height="42dp"
-                android:layout_marginTop="23dp"
-                android:background="@drawable/facebook_btn"
-                android:clickable="true"
-                android:onClick="onClick"
-                android:src="@drawable/facebook_icon"
-                android:textColor="#000"
-                android:textStyle="bold" />
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/google"
+            android:layout_width="130dp"
+            android:layout_height="42dp"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="23dp"
+            android:background="@drawable/google_btn"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:src="@drawable/google"
+            android:text="Gmail"
+            android:textColor="#000"
+            android:textStyle="bold" />
 
-            <com.google.android.gms.common.SignInButton
-                android:id="@+id/loginWithGoogleBtn"
-                android:layout_width="1dp"
-                android:layout_height="1dp"
-                android:visibility="gone"
-                android:onClick="onClick"/>
-
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/google"
-                android:layout_width="130dp"
-                android:layout_height="42dp"
-                android:layout_marginLeft="150dp"
-                android:layout_marginTop="23dp"
-                android:background="@drawable/google_btn"
-                android:clickable="true"
-                android:onClick="onClick"
-                android:src="@drawable/google"
-                android:text="Gmail"
-                android:textColor="#000"
-                android:textStyle="bold" />
-
-        </FrameLayout>
 
         <ProgressBar
             android:id="@+id/LogInProgress"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_below="@+id/button"
-            android:layout_marginBottom="30dp"
+            android:layout_marginBottom="10dp"
             android:layout_marginLeft="130dp"
             android:layout_marginTop="15dp"
             android:indeterminateTint="@color/purple" />
+    </RelativeLayout>
 
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/RelativeLayout"
-        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/connectWith"
+        android:layout_marginTop="20dp"
+
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/LogInProgress"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="15dp"
             android:clickable="true"
             android:onClick="forgot_pass"
             android:text="Forgot password ?"
@@ -200,17 +184,17 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/textView9"
+                android:id="@+id/dont_have_account"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:text="Don't have an account ? "
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="#000"
-                android:textSize="16dp" />
+                android:textSize="@dimen/main_activity_text" />
 
             <TextView
-                android:id="@+id/textView10"
+                android:id="@+id/register_now"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -219,19 +203,22 @@
                 android:text="Register Now"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="@color/purple"
-                android:textSize="16dp" />
+                android:textSize="@dimen/main_activity_text" />
         </LinearLayout>
+
         <TextView
             android:id="@+id/direct_signup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
             android:clickable="true"
             android:onClick="register"
             android:text="Or launch app directly"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@color/purple"
-            android:layout_marginTop="5dp"
-            android:textSize="16dp" />
+            android:textSize="@dimen/main_activity_text" />
     </LinearLayout>
-</RelativeLayout>
+
+
+</LinearLayout>

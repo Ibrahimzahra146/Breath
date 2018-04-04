@@ -1,7 +1,9 @@
 package com.example.rabee.breath;
+
 import android.app.ActivityManager;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.media.ExifInterface;
@@ -13,6 +15,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
+
 import com.example.rabee.breath.Models.DeviceTokenModel;
 import com.example.rabee.breath.Models.RequestModels.UserDeviceIdRequestModel;
 import com.example.rabee.breath.Models.ResponseModels.UserIdDeviceIdResponseModel;
@@ -21,10 +24,12 @@ import com.example.rabee.breath.RequestInterface.DeviceTokenInterface;
 import com.example.rabee.breath.RequestInterface.ImageInterface;
 import com.example.rabee.breath.RequestInterface.UserIdDeviceIdInterface;
 import com.google.gson.Gson;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.List;
+
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
@@ -124,6 +129,11 @@ public class GeneralFunctions {
             }
         });
     }
+
+    /**
+     * @param user_id
+     * @param deviceId
+     */
     public void storeUserIdWithDeviceId(int user_id, String deviceId) {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(GeneralInfo.SPRING_URL)
@@ -151,6 +161,11 @@ public class GeneralFunctions {
             }
         });
     }
+
+    /**
+     * @param c
+     * @return
+     */
     public boolean isOnline(Context c) {
         ConnectivityManager cm = (ConnectivityManager) c.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo netInfo = cm.getActiveNetworkInfo();
@@ -160,6 +175,11 @@ public class GeneralFunctions {
         return false;
     }
 
+    /**
+     * @param bitmap
+     * @param path
+     * @return
+     */
     public File saveBitmap(Bitmap bitmap, String path) {
         File file = null;
         if (bitmap != null) {
@@ -220,12 +240,9 @@ public class GeneralFunctions {
         userImageResponse.enqueue(new Callback<UserModel>() {
             @Override
             public void onResponse(Call<UserModel> call, Response<UserModel> response) {
-                if(requestCode == 100)
-                {
+                if (requestCode == 100) {
                     GeneralInfo.getGeneralUserInfo().getUser().setImage(response.body().getImage());
-                }
-                else
-                {
+                } else {
                     GeneralInfo.getGeneralUserInfo().getUser().setCover_image(response.body().getCover_image());
                 }
                 SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("userInfo", Context.MODE_PRIVATE);
@@ -244,5 +261,14 @@ public class GeneralFunctions {
 
             }
         });
-           }
+    }
+
+    /**
+     *
+     * @return
+     */
+    public int  getScreenHeight(){
+        return Resources.getSystem().getDisplayMetrics().heightPixels;
+
+    }
 }
