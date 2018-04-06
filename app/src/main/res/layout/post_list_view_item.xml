@@ -58,19 +58,18 @@
                 android:layout_height="50dp"
                 android:src="#3a6368" />
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="8dp"
-                android:layout_weight="0.30"
+                android:layout_marginRight="15dp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/username"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="150dp"
                     android:layout_marginTop="6dp"
                     android:text="First LastName"
                     android:textColor="#000"
@@ -82,10 +81,11 @@
                     android:id="@+id/save_icon"
                     android:layout_width="30dp"
                     android:layout_height="19.5dp"
+                    android:layout_marginTop="7dp"
                     android:layout_alignParentRight="true"
                     android:src="@drawable/save_icon" />
 
-            </LinearLayout>
+            </RelativeLayout>
 
 
         </LinearLayout>
@@ -335,7 +335,7 @@
                     android:layout_width="30dp"
                     android:layout_marginTop="10dp"
                     android:layout_height="30dp"
-                    android:src="@drawable/add_comment_icon" />
+                    android:src="@drawable/add_comment_icon_png" />
             </LinearLayout>
         </RelativeLayout>
 

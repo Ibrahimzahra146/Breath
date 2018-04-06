@@ -230,7 +230,7 @@
                     android:layout_height="30dp"
                     android:layout_marginBottom="7dp"
                     android:layout_marginRight="10dp"
-                    android:src="@drawable/add_comment_icon" />
+                    android:src="@drawable/add_comment_icon_png" />
 
 
             </LinearLayout>

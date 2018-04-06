@@ -53,6 +53,7 @@
                     <FrameLayout
                         android:layout_width="match_parent"
                         android:layout_height="250dp"
+
                         android:background="#fff">
 
                         <ImageView
@@ -60,6 +61,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="160dp"
                             android:scaleType="fitXY"
+                            android:background="@drawable/layout_bottom_border"
                             android:src="@drawable/default_profile_pic" />
 
                         <de.hdodenhof.circleimageview.CircleImageView
@@ -91,39 +93,48 @@
                     android:progressDrawable="@drawable/circular_progress_bar"
                     android:visibility="invisible" />
 
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginTop="30dp"
 
+    android:gravity="center_horizontal"
+
+    >
                 <TextView
+                    android:layout_marginLeft="25dp"
                     android:id="@+id/user_profile_name"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="23dp"
                     android:background="#00000000"
-                    android:gravity="center"
-                    android:padding="5dp"
                     android:text="Ibrahim Zahra"
                     android:textColor="#000"
                     android:textColorHint="#000"
                     android:textSize="18dp" />
 
+
+                <ImageView
+                    android:id="@+id/aboutFriendIcon"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginLeft="4dp"
+                    android:src="@drawable/about_icon" />
+</LinearLayout>
+
                 <LinearLayout
                     android:layout_width="wrap_content"
+                    android:layout_marginTop="-5dp"
+                    android:layout_marginBottom="5dp"
+                    android:gravity="center_horizontal"
                     android:layout_height="wrap_content">
 
                     <TextView
                         android:id="@+id/editBio"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginLeft="35dp"
-                        android:layout_marginRight="15dp" />
-
-
-                    <ImageView
-                        android:id="@+id/aboutFriendIcon"
-                        android:layout_width="22dp"
-                        android:layout_height="22dp"
-                        android:layout_marginTop="5dp"
-                        android:src="@drawable/about_icon" />
+                        />
 
                 </LinearLayout>
 

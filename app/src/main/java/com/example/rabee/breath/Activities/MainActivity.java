@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         //setGooglePlusButtonText(signInButton, "Log in with google ");
         emailEditText = (EditText) findViewById(R.id.username);
         passEditText = (EditText) findViewById(R.id.password);
-        directSignUp=(TextView)findViewById(R.id.direct_signup);
+        directSignUp=(TextView)findViewById(R.id.username);
         fb = (CircleImageView) findViewById(R.id.fb);
         google = (CircleImageView) findViewById(R.id.google);
         loginButton = (LoginButton) findViewById(R.id.login_button);
