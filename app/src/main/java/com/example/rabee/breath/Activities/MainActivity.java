@@ -10,6 +10,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -66,7 +67,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     CircleImageView fb, google;
     GoogleApiClient googleApiClient;
     Dialog progressDialog;
-    TextView AppTitle,directSignUp;
+    TextView AppTitle,directSignUp,registerNow,dontHaveAccount;
     SharedPreferences sharedPreferences;
     RecyclerView recyclerView;
     Retrofit retrofit = new Retrofit.Builder()
@@ -90,7 +91,17 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         //setGooglePlusButtonText(signInButton, "Log in with google ");
         emailEditText = (EditText) findViewById(R.id.username);
         passEditText = (EditText) findViewById(R.id.password);
+<<<<<<< HEAD
         directSignUp=(TextView)findViewById(R.id.username);
+=======
+        directSignUp=(TextView)findViewById(R.id.direct_signup);
+        registerNow=(TextView)findViewById(R.id.register_now);
+        dontHaveAccount=(TextView)findViewById(R.id.dont_have_account);
+
+        registerNow.setTextSize(TypedValue.COMPLEX_UNIT_PX,getResources().getDimension(R.dimen.main_activity_text));
+        dontHaveAccount.setTextSize(TypedValue.COMPLEX_UNIT_PX,getResources().getDimension(R.dimen.main_activity_text));
+
+>>>>>>> ff13ec13b1557eb3b5baf3e644b8bae20bfa017b
         fb = (CircleImageView) findViewById(R.id.fb);
         google = (CircleImageView) findViewById(R.id.google);
         loginButton = (LoginButton) findViewById(R.id.login_button);
