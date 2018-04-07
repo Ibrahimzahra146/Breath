@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="main_activity_text">12sp</dimen>
+    <dimen name="other_profile_activity">16sp</dimen>
+
 
 </resources>
