@@ -8,9 +8,11 @@
     android:background="#55eeeeee"
     android:orientation="vertical">
 
-    <Toolbar
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="45dp"
+        android:paddingRight="20dp"
+        android:paddingLeft="20dp"
         android:focusableInTouchMode="true"
         android:background="?attr/colorPrimary"
         android:weightSum="1">
@@ -19,9 +21,9 @@
             android:id="@+id/toolBarText"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:drawableLeft="@drawable/left_arrow"
+            android:drawableLeft="@drawable/back_icon"
             android:focusableInTouchMode="true"
-            android:paddingRight="10dp"
+            android:gravity="center"
             android:textColor="#fff"
             android:textSize="19dp"
             android:textStyle="bold" />
@@ -30,9 +32,9 @@
             android:id="@+id/FriendshipTabType"
             android:layout_width="240dp"
             android:layout_height="40dp"
-            android:layout_marginTop="4dp"
             android:focusableInTouchMode="true"
             android:gravity="center"
+            android:layout_centerHorizontal="true"
             android:text="Settings"
             android:textColor="#fff"
             android:textSize="19dp"
@@ -44,13 +46,14 @@
             android:layout_height="40dp"
             android:text="Save"
             android:gravity="center"
+            android:layout_alignParentRight="true"
             android:textSize="15dp"
             android:id="@+id/saveSettings"
             android:textStyle="bold"
             android:textAllCaps="false"
             android:textColor="#fff" />
 
-    </Toolbar>
+    </RelativeLayout>
 
     <ScrollView
         android:layout_width="match_parent"
