@@ -19,7 +19,7 @@
             android:paddingLeft="5dp"
             android:text="Edit Profile"
             android:textColor="#fff"
-            android:textSize="17dp"
+            android:textSize="16dp"
             android:textStyle="bold" />
 
         <TextView
@@ -76,7 +76,7 @@
                         android:paddingLeft="10dp"
                         android:text="First Name"
                         android:textAllCaps="false"
-                        android:textSize="@dimen/main_activity_text"
+                        android:textSize="@dimen/general_title_size"
                         android:textColor="@color/purple"
                         android:textStyle="bold" />
 
@@ -105,7 +105,7 @@
                         android:paddingLeft="10dp"
                         android:text="Last Name"
                         android:textAllCaps="false"
-                        android:textSize="@dimen/main_activity_text"
+                        android:textSize="@dimen/general_title_size"
                         android:textColor="@color/purple"
                         android:textStyle="bold" />
 
@@ -138,7 +138,7 @@
                         android:minLines="2"
                         android:paddingLeft="10dp"
                         android:text="Birth Date"
-                        android:textSize="@dimen/main_activity_text"
+                        android:textSize="@dimen/general_title_size"
                         android:textAllCaps="false"
                         android:textColor="@color/purple"
                         android:textStyle="bold" />
@@ -146,8 +146,8 @@
                     <DatePicker
                         android:id="@+id/BirthDatePicker"
                         style="@style/date_picker_theme"
-                        android:layout_width="1200dp"
-                        android:layout_height="130dp"
+                        android:layout_width="@dimen/date_picker_width"
+                        android:layout_height="@dimen/date_picker_height"
                         android:layout_gravity="center"
                         android:layout_marginLeft="80dp"
                         android:layout_marginTop="30dp"
@@ -164,7 +164,8 @@
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="30dp">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -175,7 +176,7 @@
                         android:layout_marginLeft="18dp"
                         android:minLines="2"
                         android:paddingLeft="10dp"
-                        android:textSize="@dimen/main_activity_text"
+                        android:textSize="@dimen/general_title_size"
                         android:text="Gender"
                         android:textAllCaps="false"
                         android:textColor="@color/purple"
@@ -204,7 +205,7 @@
                             android:scaleX="0.9"
                             android:scaleY="0.9"
                             android:text="Male"
-                            android:textSize="13dp" />
+                            android:textSize="@dimen/general_subtitle_size" />
 
                         <RadioButton
                             android:id="@+id/radioF"
@@ -218,7 +219,7 @@
                             android:scaleX="0.9"
                             android:scaleY="0.9"
                             android:text="Female"
-                            android:textSize="13dp" />
+                            android:textSize="@dimen/general_subtitle_size" />
                     </RadioGroup>
                 </RelativeLayout>
             </LinearLayout>

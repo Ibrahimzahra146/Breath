@@ -13,12 +13,12 @@
         android:orientation="horizontal">
 
         <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_picture"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_marginLeft="25dp"
             android:layout_marginRight="18dp"
-            android:layout_marginTop="19dp"
-            android:id="@+id/profile_picture" />
+            android:layout_marginTop="19dp" />
         <!--android:src="@drawable/tower" />-->
 
         <LinearLayout
@@ -57,6 +57,8 @@
         android:background="#ababab"
 
         />
+    <!--
+    -->
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -66,159 +68,164 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingLeft="70dp"
-            android:paddingRight="40dp">
+            android:orientation="horizontal">
 
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/followersIcon"
-                android:layout_width="75dp"
-                android:layout_height="75dp"
-                android:layout_marginTop="18dp"
-                android:src="@drawable/followingicon"
-                />
-            <!--android:src="@drawable/new_friends"-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/followersIcon"
+                    android:layout_width="@dimen/fragment_settings_image_size"
+                    android:layout_height="@dimen/fragment_settings_image_size"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginRight="50dp"
+                    android:layout_marginTop="18dp"
+                    android:src="@drawable/followingicon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="40dp"
+                    android:text="Active Followings"
+                    android:textColor="#000"
+                    android:textSize="@dimen/fragment_settings_subtitle"
+                    android:textStyle="bold"
+                    />
+
+            </LinearLayout>
 
 
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/FollowingIcon"
-                android:layout_width="73dp"
-                android:layout_height="73dp"
-                android:layout_marginLeft="97dp"
-                android:layout_marginTop="18dp"
-                android:src="@drawable/followingicon" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/followersIcon"
+                    android:layout_width="@dimen/fragment_settings_image_size"
+                    android:layout_height="@dimen/fragment_settings_image_size"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="40dp"
+                    android:layout_marginTop="18dp"
+                    android:src="@drawable/followingicon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="40dp"
+                    android:text="Following"
+                    android:textColor="#000"
+                    android:textSize="@dimen/fragment_settings_subtitle"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingLeft="55dp"
-            android:paddingRight="40dp"
-            android:paddingTop="3dp">
+            android:layout_marginBottom="30dp"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Active Followings"
-                android:textColor="#000"
-                android:textStyle="bold" />
+                android:orientation="vertical">
 
-            <TextView
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/followersIcon"
+                    android:layout_width="@dimen/fragment_settings_image_size"
+                    android:layout_height="@dimen/fragment_settings_image_size"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginRight="50dp"
+                    android:layout_marginTop="18dp"
+                    android:src="@drawable/save_post_setting_icon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginRight="40dp"
+                    android:text="Saved Posts"
+                    android:textColor="#000"
+                    android:textSize="@dimen/fragment_settings_subtitle"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="80dp"
-                android:text="Following"
-                android:textColor="#000"
-                android:textStyle="bold" />
-        </LinearLayout>
+                android:orientation="vertical">
 
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/followersIcon"
+                    android:layout_width="@dimen/fragment_settings_image_size"
+                    android:layout_height="@dimen/fragment_settings_image_size"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="40dp"
+                    android:layout_marginTop="18dp"
+                    android:src="@drawable/settings_icon" />
 
-    </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="65dp"
+                    android:layout_marginRight="30dp"
+                    android:text="Settings"
+                    android:textColor="#000"
+                    android:textSize="@dimen/fragment_settings_subtitle"
+                    android:textStyle="bold" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="70dp"
-            android:paddingRight="40dp">
-
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/RequestsIcon"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_marginTop="18dp"
-                android:src="@drawable/save_post_setting_icon"/>
-            <!--android:src="@drawable/requests" />-->
-
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/settingsIcon"
-                android:layout_width="73dp"
-                android:layout_height="73dp"
-                android:layout_marginLeft="97dp"
-                android:layout_marginTop="18dp"
-                android:src="@drawable/settings_icon" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="70dp"
-            android:paddingRight="40dp"
-            android:paddingTop="3dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Saved Posts"
-                android:textColor="#000"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="113dp"
-                android:text="Settings"
-                android:textColor="#000"
-                android:textStyle="bold" />
-        </LinearLayout>
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="70dp"
-            android:paddingRight="40dp">
-
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/logoutIcon"
-                android:layout_width="73dp"
-                android:layout_height="73dp"
-                android:layout_marginTop="18dp"
-                android:src="@drawable/logout" />
-
-            <!--    <de.hdodenhof.circleimageview.CircleImageView
-                    android:layout_width="75dp"
-                    android:layout_height="75dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginLeft="100dp"
-                    android:src="@
-
-                    able/new_friends" />-->
-
+            </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingLeft="84dp"
-            android:paddingRight="50dp"
-            android:paddingTop="3dp">
+            android:orientation="horizontal">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Logout"
-                android:textColor="#000"
-                android:textStyle="bold" />
+                android:orientation="vertical">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/followersIcon"
+                    android:layout_width="@dimen/fragment_settings_image_size"
+                    android:layout_height="@dimen/fragment_settings_image_size"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginRight="50dp"
+                    android:layout_marginTop="18dp"
+                    android:src="@drawable/logout" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="40dp"
+                    android:text="Logout"
+                    android:textColor="#000"
+                    android:textSize="@dimen/fragment_settings_subtitle"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
 
 
         </LinearLayout>
-
 
     </LinearLayout>
 
 </LinearLayout>
+
+
+
+
 
 

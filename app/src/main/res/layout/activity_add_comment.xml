@@ -18,7 +18,7 @@
             android:layout_marginTop="20dp"
             android:text="Add Comment"
             android:textColor="#000"
-            android:textSize="16dp" />
+            android:textSize="@dimen/general_title_size" />
 
         <View
             android:layout_width="match_parent"
@@ -41,7 +41,7 @@
             android:lines="7"
             android:paddingLeft="5dp"
             android:paddingTop="20dp"
-            android:textSize="16dp" />
+            android:textSize="@dimen/general_subtitle_size" />
 
 
         <RelativeLayout
