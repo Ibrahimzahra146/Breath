@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
+import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 
@@ -93,6 +94,7 @@ public class SearchActivity extends AppCompatActivity {
         searchResponse.enqueue(new Callback<List<UserModel>>() {
             @Override
             public void onResponse(Call<List<UserModel>> call, Response<List<UserModel>> response) {
+                Log.d("STATUS","status " + response.code());
                 userModelList = (ArrayList<UserModel>) response.body();
                 searchProgressBar.setVisibility(View.GONE);
 

@@ -159,8 +159,9 @@ public class OtherProfileActivity extends AppCompatActivity implements SwipeRefr
         anim_button.setDuration(1000);
         anim_button.setInterpolator(new DecelerateInterpolator());
         anim_button.start();
-        progressBar.setProgress(0);
-        progressBar.setMax(100);
+        //progressBar.setProgress(0);
+        //progressBar.setMax(100);
+        //progressBar.setVisibility(View.INVISIBLE);
         anim = ObjectAnimator.ofInt(progressBar, "progress", 0, 100);
         anim.setDuration(2000);
         anim.setInterpolator(new DecelerateInterpolator());
@@ -271,7 +272,7 @@ public class OtherProfileActivity extends AppCompatActivity implements SwipeRefr
 
     }
     public void getOtherProfileView() {
-        progressBar.setVisibility(View.VISIBLE);
+        //progressBar.setVisibility(View.VISIBLE);
 
 
         FollowingInterface getFreindApi = retrofit.create(FollowingInterface.class);
@@ -288,12 +289,9 @@ public class OtherProfileActivity extends AppCompatActivity implements SwipeRefr
                     progressBar.setVisibility(View.INVISIBLE);
                     progressBar_button.setVisibility(View.INVISIBLE);
                     if (FollowRelationState[0] == 0) {
-
                         // No relation
                         GeneralInfo.friendMode = 0;
                         FollowingService.setFollowRelationState(friendStatus, OtherProfileActivity.this, userProfileModel, getApplicationContext());
-
-
 
                     } else if (FollowRelationState[0] == 1) { // Follow Request Pending
                         GeneralInfo.friendMode = 1;
