@@ -139,8 +139,7 @@
                 android:text="Edit Bio"
                 android:textAlignment="center"
                 android:textAllCaps="false"
-                android:textColor="@color/purple"
-                android:textSize="14dp" />
+                android:textColor="@color/purple" />
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/editSong"
@@ -168,24 +167,25 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:textAlignment="center"
                 android:layout_gravity="center"
                 android:layout_marginLeft="20dp"
-                android:gravity="center">
+                android:gravity="center"
+                android:orientation="vertical"
+                android:textAlignment="center">
 
                 <TextView
                     android:id="@+id/newPostTxt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:clickable="true"
-                    android:paddingTop="10dp"
-                    android:paddingLeft="10dp"
+                    android:paddingLeft="8dp"
                     android:paddingRight="10dp"
+                    android:paddingTop="10dp"
                     android:text="New Post"
                     android:textAllCaps="false"
                     android:textColor="@color/purple"
-                    android:textSize="14dp" />
+                    android:textSize="@dimen/main_activity_text" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -193,8 +193,9 @@
                     android:text=" "
                     android:textAllCaps="false"
                     android:textColor="#ccc"
-                    android:textSize="12dp"/>
+                    android:textSize="@dimen/main_activity_text" />
             </LinearLayout>
+
             <View
                 android:layout_width="0.1dp"
                 android:layout_height="36dp"
@@ -206,34 +207,35 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:textAlignment="center"
                 android:layout_gravity="center"
                 android:layout_marginLeft="20dp"
-                android:gravity="center">
+                android:gravity="center"
+                android:orientation="vertical"
+                android:textAlignment="center">
+
                 <TextView
                     android:id="@+id/followerTxt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:clickable="true"
-                    android:paddingTop="10dp"
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"
+                    android:paddingTop="10dp"
                     android:text="Follower"
                     android:textAllCaps="false"
                     android:textColor="@color/purple"
-                    android:textSize="14dp" />
+                    android:textSize="@dimen/main_activity_text" />
+
                 <TextView
+                    android:id="@+id/followerCount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:clickable="true"
                     android:text="150"
-                    android:id="@+id/followerCount"
                     android:textAllCaps="false"
                     android:textColor="#ccc"
-                    android:textSize="12dp"/>
+                    android:textSize="@dimen/main_activity_text" />
             </LinearLayout>
-
 
 
             <View
@@ -243,35 +245,36 @@
                 android:layout_marginLeft="22dp"
                 android:layout_marginTop="3dp"
                 android:background="#ACACAC" />
+
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                android:layout_marginRight="15dp"
+                android:gravity="center"
                 android:orientation="vertical"
-                android:textAlignment="center"
-                android:layout_gravity="center"
-                android:layout_marginLeft="20dp"
-                android:gravity="center">
+                android:textAlignment="center">
+
                 <TextView
                     android:id="@+id/followingTxt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:clickable="true"
                     android:paddingTop="10dp"
-                    android:paddingLeft="10dp"
-                    android:paddingRight="10dp"
                     android:text="Following"
                     android:textAllCaps="false"
                     android:textColor="@color/purple"
-                    android:textSize="14dp" />
+                    android:textSize="@dimen/main_activity_text" />
+
                 <TextView
+                    android:id="@+id/followingCount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:clickable="true"
                     android:text="150"
-                    android:id="@+id/followingCount"
                     android:textAllCaps="false"
                     android:textColor="#ccc"
-                    android:textSize="12dp"/>
+                    android:textSize="@dimen/main_activity_text" />
             </LinearLayout>
 
             <!--<View-->
