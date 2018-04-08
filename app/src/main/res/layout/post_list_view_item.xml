@@ -39,7 +39,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="32dp">
 
         <LinearLayout
@@ -197,7 +197,6 @@
             android:layout_below="@+id/postInfoLayout"
             android:orientation="vertical"
             android:paddingBottom="8dp"
-            android:paddingLeft="7dp"
             android:paddingRight="7dp"
             android:paddingTop="8dp">
 
@@ -323,20 +322,20 @@
                     android:id="@+id/commentText"/>
             </RelativeLayout>
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
-
                 android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:orientation="vertical">
+                android:gravity="center"
+                >
 
                 <ImageView
                     android:id="@+id/add_comment"
                     android:layout_width="30dp"
                     android:layout_marginTop="10dp"
+                    android:layout_gravity="center"
                     android:layout_height="30dp"
                     android:src="@drawable/add_comment_icon_png" />
-            </LinearLayout>
+            </RelativeLayout>
         </RelativeLayout>
 
 
