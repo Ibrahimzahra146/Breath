@@ -209,7 +209,7 @@ public class GeneralFunctions {
         return file;
     }
 
-    public void showErrorMesaage(Context context) {
+    public static void showErrorMesaage(Context context) {
         Toast.makeText(context, "Something went worng",
                 Toast.LENGTH_SHORT).show();
     }

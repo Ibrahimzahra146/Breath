@@ -10,13 +10,15 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 
 import com.example.rabee.breath.Activities.AddPostActivity;
 import com.example.rabee.breath.Activities.RecentCommentsActivity;
+import com.example.rabee.breath.Adapters.HomePostAdapter;
 import com.example.rabee.breath.GeneralInfo;
 import com.example.rabee.breath.Models.ResponseModels.PostCommentResponseModel;
 import com.example.rabee.breath.R;
-import com.example.rabee.breath.Adapters.HomePostAdapter;
 import com.example.rabee.breath.ReactsRecyclerViewModel;
 import com.example.rabee.breath.RequestInterface.PostInterface;
 
@@ -32,6 +34,9 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class HomeFragment extends Fragment {
     public static List<PostCommentResponseModel> postResponseModelsList;
     RecyclerView recyclerView;
+    ProgressBar progressBar;
+    LinearLayout noFriendsLayout;
+
     View view;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -70,14 +75,19 @@ public class HomeFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
     }
+
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        ReactsRecyclerViewModel reactSingleModel= new ReactsRecyclerViewModel(1,"Ibrahim zahra","75782539973_288842465026282085_n.jpg");
+        ReactsRecyclerViewModel reactSingleModel = new ReactsRecyclerViewModel(1, "Ibrahim zahra", "75782539973_288842465026282085_n.jpg");
         PostInterface postInterface;
-        recyclerView=(RecyclerView)view.findViewById(R.id.recycler_view1);
+        recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view1);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.hasFixedSize();
+        progressBar = (ProgressBar) view.findViewById(R.id.progress_bar);
+        noFriendsLayout = (LinearLayout) view.findViewById(R.id.no_friends_Layout);
+
+        progressBar.setVisibility(View.VISIBLE);
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(GeneralInfo.SPRING_URL)
                 .addConverterFactory(GsonConverterFactory.create()).build();
@@ -88,8 +98,16 @@ public class HomeFragment extends Fragment {
             @Override
             public void onResponse(Call<List<PostCommentResponseModel>> call, Response<List<PostCommentResponseModel>> response) {
                 postResponseModelsList = response.body();
+                if(postResponseModelsList.size()==0){
+                    noFriendsLayout.setVisibility(View.VISIBLE);
+                    progressBar.setVisibility(View.INVISIBLE);
 
-                recyclerView.setAdapter(new HomePostAdapter(getContext(),postResponseModelsList));
+                }else{
+                    recyclerView.setAdapter(new HomePostAdapter(getContext(), postResponseModelsList));
+                    progressBar.setVisibility(View.INVISIBLE);
+                }
+
+
 
             }
 
@@ -100,25 +118,22 @@ public class HomeFragment extends Fragment {
         });
 
 
-
-
-
-
     }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        view=inflater.inflate(R.layout.fragment_home, container, false);
+        view = inflater.inflate(R.layout.fragment_home, container, false);
         FloatingActionButton RecentActivityFab = (FloatingActionButton) view.findViewById(R.id.RecentActivityFab);
-        FloatingActionButton AddPostActivityfab  = (FloatingActionButton) view.findViewById(R.id.AddPostActivityfab);
+        FloatingActionButton AddPostActivityfab = (FloatingActionButton) view.findViewById(R.id.AddPostActivityfab);
         RecentActivityFab.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Intent i = new Intent(getContext(), RecentCommentsActivity.class);
-                        startActivity(i);
-                    }
-                });
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getContext(), RecentCommentsActivity.class);
+                startActivity(i);
+            }
+        });
         AddPostActivityfab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -128,13 +143,11 @@ public class HomeFragment extends Fragment {
         });
         return view;
     }
+
     @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
     }
-
-
-
 
 
 }
