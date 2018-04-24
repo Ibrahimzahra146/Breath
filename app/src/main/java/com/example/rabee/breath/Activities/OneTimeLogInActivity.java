@@ -8,6 +8,7 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 
@@ -64,8 +65,9 @@ public class OneTimeLogInActivity extends Activity{
 
             @Override
             public void onResponse(Call<List<PostCommentResponseModel>> call, Response<List<PostCommentResponseModel>> response) {
+                Log.d("DirectSignUp", response.code()+ " " );
                 postResponseModelsList = response.body();
-                recyclerView.setAdapter(new HomePostAdapter(getApplicationContext(),postResponseModelsList));
+                recyclerView.setAdapter(new HomePostAdapter(OneTimeLogInActivity.this,postResponseModelsList));
             }
 
             @Override

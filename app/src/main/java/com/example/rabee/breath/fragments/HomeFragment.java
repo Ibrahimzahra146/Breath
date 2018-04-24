@@ -88,8 +88,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onResponse(Call<List<PostCommentResponseModel>> call, Response<List<PostCommentResponseModel>> response) {
                 postResponseModelsList = response.body();
-
-                recyclerView.setAdapter(new HomePostAdapter(getContext(),postResponseModelsList));
+                recyclerView.setAdapter(new HomePostAdapter(getActivity().getApplicationContext(),postResponseModelsList));
 
             }
 

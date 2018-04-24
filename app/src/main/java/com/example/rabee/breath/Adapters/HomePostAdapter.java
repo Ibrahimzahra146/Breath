@@ -72,11 +72,11 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
         this.pressedLoveFlag = new ArrayList<Boolean>(Collections.nCopies(this.postResponseModelsList.size(), false));
         this.PressedLikeFlag = new ArrayList<Boolean>(Collections.nCopies(this.postResponseModelsList.size(), false));
         this.PressedUnlikeFlag = new ArrayList<Boolean>(Collections.nCopies(this.postResponseModelsList.size(), false));
-        addCommentDialog = new Dialog(context);
+        this.context = context;
+        addCommentDialog = new Dialog(this.context);
         addCommentDialog.setContentView(R.layout.activity_add_comment);
         addCommentDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
-        this.context = context;
     }
 
     @Override
@@ -189,7 +189,6 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
             @Override
             public void onClick(View view) {
 
-                addCommentDialog.setContentView(R.layout.activity_add_comment);
                 addCommentDialog.show();
                 commentTextDialog = (EditText) addCommentDialog.findViewById(R.id.commentText);
                 cancelBtnDialog = (TextView) addCommentDialog.findViewById(R.id.cancelBtn);
@@ -365,7 +364,7 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
         int postId = postResponseModelsList.get(position).getPost().getPostId();
         reactRequestModel.setPostId(postId);
         reactRequestModel.setType(type);
-        reactRequestModel.setUserId(GeneralInfo.getGeneralUserInfo().getUser().getId());
+        reactRequestModel.setUserId(GeneralInfo.getUserID());
         Call<Integer> addNewReactResponse = addNewReact.addNewReact(reactRequestModel);
 
         addNewReactResponse.enqueue(new Callback<Integer>() {
@@ -465,7 +464,7 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
         PostInterface sendComment = retrofit.create(PostInterface.class);
         AddCommentModel addCommentModel = new AddCommentModel();
         addCommentModel.setPostId(addCommentDialogPostId);
-        addCommentModel.setUserId(GeneralInfo.getGeneralUserInfo().getUser().getId());
+        addCommentModel.setUserId(GeneralInfo.getUserID());
         addCommentModel.setText(commentTextDialog.getText().toString());
         Call<AddCommentModel> addNewReactResponse = sendComment.addComment(addCommentModel);
 

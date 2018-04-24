@@ -19,7 +19,7 @@ public class MobileFragment extends android.app.Fragment {
     EditText userMobile;
     Button Nextbtn;
     CountryCodePicker ccp;
-    String regexStr = "^[0-9]{10}$";
+    String regexStr = "^[0-9]{9}$";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -46,7 +46,7 @@ public class MobileFragment extends android.app.Fragment {
                     } else {
                         String phoneCode = ccp.getSelectedCountryCode();
                         String phoneNumber = userMobile.getText().toString();
-                        int phoneNumberInt = Integer.valueOf(phoneNumber);
+                        long phoneNumberInt = Long.valueOf(phoneNumber);
                         String fullPhoneNumber = phoneCode + String.valueOf(phoneNumberInt);
 
                         try {
