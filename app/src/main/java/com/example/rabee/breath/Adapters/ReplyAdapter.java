@@ -45,12 +45,12 @@ public class ReplyAdapter extends RecyclerView.Adapter<ReplyAdapter.UserViewHold
         holder.replyText.setText(replyModelList.get(position).getText());
         Log.d("userModel.getId()", userModel.getId() + "");
         int id = userModel.getId();
-        if (replyModelList.get(position).getUser().getId() == id) {
+        if (replyModelList.get(position).getUser().getId() == GeneralInfo.getUserID() && !GeneralInfo.getLoginType().equals("DIRECT_SIGNUP")) {
             String imageUrl = GeneralInfo.SPRING_URL + "/" + userModel.getImage();
             Picasso.with(context).load(imageUrl).into(holder.profilePic);
             holder.fullName.setText(userModel.getFirst_name() + " " + userModel.getLast_name());
         }
-        if (replyModelList.get(position).getUser().getId() == GeneralInfo.userID) {
+        if (replyModelList.get(position).getUser().getId() == GeneralInfo.userID && !GeneralInfo.getLoginType().equals("DIRECT_SIGNUP")) {
             String imageUrl = GeneralInfo.SPRING_URL + "/" + GeneralInfo.generalUserInfo.getUser().getImage();
             Picasso.with(context).load(imageUrl).into(holder.profilePic);
             holder.fullName.setText(GeneralInfo.getGeneralUserInfo().getUser().getFirst_name() + " " + GeneralInfo.getGeneralUserInfo().getUser().getLast_name());

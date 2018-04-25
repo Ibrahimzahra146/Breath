@@ -16,6 +16,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.rabee.breath.GeneralFunctions;
 import com.example.rabee.breath.GeneralInfo;
 import com.example.rabee.breath.Models.RequestModels.LoginWithFacebookRequestsModel;
 import com.example.rabee.breath.Models.RequestModels.LoginWithGoogleRequestModel;
@@ -31,6 +32,8 @@ import com.facebook.FacebookException;
 import com.facebook.FacebookSdk;
 import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
+import com.facebook.LoggingBehavior;
+import com.facebook.internal.CallbackManagerImpl;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 import com.google.android.gms.auth.api.Auth;
@@ -49,6 +52,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -67,7 +71,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     CircleImageView fb, google;
     GoogleApiClient googleApiClient;
     Dialog progressDialog;
-    TextView AppTitle,directSignUp,registerNow,dontHaveAccount;
+    TextView AppTitle, directSignUp, registerNow, dontHaveAccount;
     SharedPreferences sharedPreferences;
     RecyclerView recyclerView;
     Retrofit retrofit = new Retrofit.Builder()
@@ -81,6 +85,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         FacebookSdk.sdkInitialize(getApplicationContext());
+
         setContentView(R.layout.activity_main);
         sharedPreferences = getSharedPreferences("userInfo", Context.MODE_PRIVATE);
 
@@ -91,17 +96,19 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         //setGooglePlusButtonText(signInButton, "Log in with google ");
         emailEditText = (EditText) findViewById(R.id.username);
         passEditText = (EditText) findViewById(R.id.password);
-        directSignUp=(TextView)findViewById(R.id.direct_signup);
-        registerNow=(TextView)findViewById(R.id.register_now);
-        dontHaveAccount=(TextView)findViewById(R.id.dont_have_account);
+        directSignUp = (TextView) findViewById(R.id.direct_signup);
+        registerNow = (TextView) findViewById(R.id.register_now);
+        dontHaveAccount = (TextView) findViewById(R.id.dont_have_account);
 
-        registerNow.setTextSize(TypedValue.COMPLEX_UNIT_PX,getResources().getDimension(R.dimen.main_activity_text));
-        dontHaveAccount.setTextSize(TypedValue.COMPLEX_UNIT_PX,getResources().getDimension(R.dimen.main_activity_text));
+        registerNow.setTextSize(TypedValue.COMPLEX_UNIT_PX, getResources().getDimension(R.dimen.main_activity_text));
+        dontHaveAccount.setTextSize(TypedValue.COMPLEX_UNIT_PX, getResources().getDimension(R.dimen.main_activity_text));
 
         fb = (CircleImageView) findViewById(R.id.fb);
         google = (CircleImageView) findViewById(R.id.google);
-        loginButton = (LoginButton) findViewById(R.id.login_button);
+        loginButton = (LoginButton) findViewById(R.id.login_btn);
         loginButton.setReadPermissions("email");
+        callbackManager = CallbackManager.Factory.create();
+
         LoggingInDialog = new Dialog(this);
         LoggingInDialog.setContentView(R.layout.logging_in_dialog);
         progressDialog = new Dialog(MainActivity.this);
@@ -111,13 +118,16 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         //check the user if he already logined
         int id = sharedPreferences.getInt("id", -1);
         boolean isLogined = sharedPreferences.getBoolean("isLogined", false);
-        String loginType=sharedPreferences.getString("loginType", "");
+        String loginType = sharedPreferences.getString("loginType", "");
         GeneralInfo.setUserID(id);
-        if ((isLogined == true&&loginType.equals("DIRECT_SIGNUP"))){
+        GeneralInfo.setLoginType(loginType);
+        if ((isLogined == true && loginType.equals("DIRECT_SIGNUP"))) {
+            Gson gson = new Gson();
+            String json = sharedPreferences.getString("generalUserInfo", "");
+            GeneralInfo.setGeneralUserInfo(gson.fromJson(json, UserProfileResponseModel.class));
             Intent i = new Intent(getApplicationContext(), OneTimeLogInActivity.class);
             startActivity(i);
-        }
-        else if ((isLogined == true)) {
+        } else if ((isLogined == true)) {
             Gson gson = new Gson();
             String json = sharedPreferences.getString("generalUserInfo", "");
             GeneralInfo.setGeneralUserInfo(gson.fromJson(json, UserProfileResponseModel.class));
@@ -125,55 +135,75 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
             startActivity(i);
             finish();
         }
+        FacebookSdk.addLoggingBehavior(LoggingBehavior.REQUESTS);
+
         //Login with facebook
-        callbackManager = CallbackManager.Factory.create();
         loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
-
-
             @Override
             public void onSuccess(final LoginResult loginResult) {
-                GraphRequest request = GraphRequest.newMeRequest(loginResult.getAccessToken(), new GraphRequest.GraphJSONObjectCallback() {
+                Log.d("Login success", loginResult.getAccessToken().getUserId());
+                loginButton.setReadPermissions(Arrays.asList("public_profile", "email"));
 
-                    @Override
-                    public void onCompleted(JSONObject object, GraphResponse response) {
-                        LoginWithFacebookRequestsModel loginWithFacebookModel = new LoginWithFacebookRequestsModel();
-                        try {
-                            loginWithFacebookModel.setFirstName(object.getString("first_name"));
-                            loginWithFacebookModel.setLastName(object.getString("last_name"));
-                            loginWithFacebookModel.setId(loginResult.getAccessToken().getUserId());
-                            loginWithFacebookModel.setAccessToken(loginResult.getAccessToken().getToken());
-                            loginWithFacebookModel.setImage("");
-                            loginWithFacebookModel.setGender(object.getString("gender"));
-                            loginWithFacebookModel.setEmail(object.getString("email"));
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
+                Log.d("Login success", loginResult.getAccessToken().getUserId());
+                GraphRequest request = GraphRequest.newMeRequest(
+                        loginResult.getAccessToken(),
+                        new GraphRequest.GraphJSONObjectCallback() {
+                            @Override
+                            public void onCompleted(
+                                    JSONObject object,
+                                    GraphResponse response) {
+                                try {
+                                    Log.d("Login onCompleted", "" + response.getError() + "" + object.getString("email"));
+                                } catch (JSONException e) {
+                                    Log.d("Login onCompleted", "catch");
 
-                    }
-                });
+                                    e.printStackTrace();
+                                }
+
+
+                                LoginWithFacebookRequestsModel loginWithFacebookModel = new LoginWithFacebookRequestsModel();
+                                try {
+                                    loginWithFacebookModel.setFirstName(object.getString("first_name"));
+                                    loginWithFacebookModel.setLastName(object.getString("last_name"));
+                                    loginWithFacebookModel.setId(loginResult.getAccessToken().getUserId());
+                                    loginWithFacebookModel.setAccessToken(loginResult.getAccessToken().getToken());
+                                    loginWithFacebookModel.setImage("");
+                                    loginWithFacebookModel.setGender(object.getString("gender"));
+                                    loginWithFacebookModel.setEmail(object.getString("email"));
+                                    loginWithFacebookRequest(loginWithFacebookModel);
+
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+
+                            }
+
+                        });
                 Bundle parameters = new Bundle();
                 parameters.putString("fields", "id, first_name, last_name, email,gender, birthday, location"); // Parámetros que pedimos a facebook
                 request.setParameters(parameters);
                 request.executeAsync();
-
             }
 
             @Override
             public void onCancel() {
+                Log.d("Login cancelld", "");
+
             }
 
             @Override
             public void onError(FacebookException error) {
+                Log.d("Login onError", "");
 
             }
         });
         //Sign in with google
-        GoogleSignInOptions signInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail()
-                .requestIdToken("283243462011-63sts0savm58dj146d2d8vur45i00bif.apps.googleusercontent.co").
-                        requestServerAuthCode("283243462011-63sts0savm58dj146d2d8vur45i00bif.apps.googleusercontent.co").requestScopes(new Scope(Scopes.PLUS_LOGIN)).build();
+        GoogleSignInOptions signInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestIdToken(getString(R.string.server_client_id)).
+                requestEmail().requestServerAuthCode(getString(R.string.default_web_client_id)).requestScopes(new Scope(Scopes.PLUS_LOGIN)).build();
+
         googleApiClient = new GoogleApiClient.Builder(this)
                 .enableAutoManage(this /* FragmentActivity */, this/* OnConnectionFailedListener */)
-                .addApi(Auth.GOOGLE_SIGN_IN_API, signInOptions).addApi(Plus.API)
+                .addApi(Auth.GOOGLE_SIGN_IN_API, signInOptions)
                 .build();
 
 
@@ -181,19 +211,24 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         directSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final Call<UserProfileResponseModel> call=service.directSignUp("");
+                final Call<UserProfileResponseModel> call = service.directSignUp("");
                 call.enqueue(new Callback<UserProfileResponseModel>() {
                     @Override
                     public void onResponse(Call<UserProfileResponseModel> call, Response<UserProfileResponseModel> response) {
-                        Log.d("Direct sign up status code",""+response.code());
                         GeneralInfo.setUserID(Integer.valueOf(response.body().getUser().getId()));
                         sharedPreferences = getSharedPreferences("userInfo", Context.MODE_PRIVATE);
-
+                        GeneralInfo.setLoginType("DIRECT_SINGUP");
                         SharedPreferences.Editor editor = sharedPreferences.edit();
+                        GeneralInfo.setGeneralUserInfo(response.body());
+                        Log.d("DIRECTSIGNUP",response.body().getUser() + " " );
 
+                        Gson gson = new Gson();
+                        String json = gson.toJson(response.body());
+                        editor.putString("generalUserInfo", json);
                         editor.putInt("id", GeneralInfo.getUserID());
+                        Log.d("SignpPage",response.code()+ " " + GeneralInfo.getUserID());
                         editor.putBoolean("isLogined", true);
-                        editor.putString("loginType","DIRECT_SIGNUP");
+                        editor.putString("loginType", "DIRECT_SIGNUP");
                         editor.apply();
 
                         //laucnh home activity
@@ -212,14 +247,18 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     }
 
     public void signIn() {
+
         Intent intent = Auth.GoogleSignInApi.getSignInIntent(googleApiClient);
         startActivityForResult(intent, 9001);
+        googleApiClient.connect();
     }
 
     public void onClick(View v) {
+
         switch (v.getId()) {
             case R.id.loginWithGoogleBtn:
                 signIn();
+                progressDialog.show();
                 break;
         }
         if (v == fb) {
@@ -228,6 +267,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         }
         if (v == google) {
             signInButton.performClick();
+            progressDialog.show();
             signIn();
         }
 
@@ -272,12 +312,16 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                             saveLoginedUserInfo(userProfileResponseModel);
 
 
+                        }else {
+                            progressDialog.dismiss();
+                            GeneralFunctions.showErrorMesaage(getApplicationContext());
                         }
                     }
 
                     @Override
                     public void onFailure(Call<UserProfileResponseModel> call, Throwable t) {
-
+                        progressDialog.dismiss();
+                        GeneralFunctions.showErrorMesaage(getApplicationContext());
                     }
                 });
             }
@@ -296,12 +340,17 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                     GeneralInfo.setUserID(Integer.valueOf(userProfileResponseModel.getUser().getId()));
                     GeneralInfo.setGeneralUserInfo(userProfileResponseModel);
                     saveLoginedUserInfo(userProfileResponseModel);
+                    progressDialog.dismiss();
 
+                } else {
+                    GeneralFunctions.showErrorMesaage(getApplicationContext());
                 }
             }
 
             @Override
             public void onFailure(Call<UserProfileResponseModel> call, Throwable t) {
+                progressDialog.dismiss();
+                GeneralFunctions.showErrorMesaage(getApplicationContext());
 
             }
         });
@@ -331,32 +380,39 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
 
     @Override
     public void onActivityResult(int requestCode, int responseCode, Intent data) {
-
-        Log.i("899999999999999999999", "");
-        // data.getStringExtra("")
-
-        LoggingInDialog.show();
-        GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
-        handleGoogleResult(result);
-        if (googleApiClient.hasConnectedApi(Plus.API)) {
-            LoggingInDialog.show();
-
-            com.google.android.gms.plus.model.people.Person person = Plus.PeopleApi.getCurrentPerson(googleApiClient);
-
-            if (requestCode == 9001) {
-                Log.i("", "Gender: " + person.getGender());
-            }
-
-        } else {
-            progressDialog.dismiss();
+        Log.d("Direct sign up status code", "" + requestCode);
+        if (requestCode == CallbackManagerImpl.RequestCodeOffset.Login.toRequestCode()) {
             callbackManager.onActivityResult(requestCode, responseCode, data);
+
+        }
+
+        if (requestCode == 9001) {
+
+            // data.getStringExtra("")
+
+            GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
+            handleGoogleResult(result);
+            if (googleApiClient.hasConnectedApi(Plus.API)) {
+                LoggingInDialog.show();
+
+                com.google.android.gms.plus.model.people.Person person = Plus.PeopleApi.getCurrentPerson(googleApiClient);
+
+
+            }
         }
 
     }
 
     public void handleGoogleResult(GoogleSignInResult googleSignInResult) {
+        Log.d("handleGoogleResult:", "handleGoogleResult " + googleSignInResult.getStatus());
         if (googleSignInResult.isSuccess()) {
+
             GoogleSignInAccount account = googleSignInResult.getSignInAccount();
+            Log.d("handleGoogleResult:", "handleGoogleResult" + account.getEmail());
+            Log.d("handleGoogleResult:", "handleGoogleResult" + account.getId());
+            Log.d("handleGoogleResult:", "handleGoogleResult" + account.getGivenName());
+            Log.d("handleGoogleResult:", "handleGoogleResult" + account.getIdToken());
+
             String email = account.getEmail();
             String userId = account.getId();
             LoginWithGoogleRequestModel loginWIthGoogleModel = new LoginWithGoogleRequestModel();
@@ -373,17 +429,31 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     }
 
     public void loginWithGoogleRequest(LoginWithGoogleRequestModel loginWithGoogleRequestModel) {
+
+        Log.d("loginWithGoogleRequest", "loginWithGoogleRequest");
         final Call<UserProfileResponseModel> userModelCall = service.loginWithGoogle(loginWithGoogleRequestModel);
         userModelCall.enqueue(new Callback<UserProfileResponseModel>() {
 
             @Override
             public void onResponse(Call<UserProfileResponseModel> call, Response<UserProfileResponseModel> response) {
+                UserProfileResponseModel userProfileResponseModel = response.body();
+                if (response.code() == 200 || response.code() == 202) {
+                    GeneralInfo.setUserID(Integer.valueOf(userProfileResponseModel.getUser().getId()));
+                    GeneralInfo.setGeneralUserInfo(userProfileResponseModel);
+                    saveLoginedUserInfo(userProfileResponseModel);
+                    progressDialog.dismiss();
 
+                } else {
+                    progressDialog.dismiss();
+                    GeneralFunctions.showErrorMesaage(getApplicationContext());
+
+                }
             }
 
             @Override
             public void onFailure(Call<UserProfileResponseModel> call, Throwable t) {
-
+                progressDialog.dismiss();
+                GeneralFunctions.showErrorMesaage(getApplicationContext());
             }
         });
 

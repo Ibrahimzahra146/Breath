@@ -3,6 +3,8 @@ package com.example.rabee.breath.Adapters;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.text.format.DateUtils;
@@ -111,6 +113,9 @@ public class DirectSignUpHomePostsAdapter extends RecyclerView.Adapter<DirectSig
         holder.addComnent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                addCommentDialog= new Dialog(context);
+                addCommentDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
                 addCommentDialog.setContentView(R.layout.activity_add_comment);
                 addCommentDialog.show();

@@ -17,7 +17,7 @@
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_marginLeft="15dp"
-            android:layout_marginTop="9dp"
+            android:layout_marginTop="15dp"
             android:background="@android:color/transparent"
             android:src="@drawable/search" />
 
@@ -25,11 +25,37 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="15dp"
             android:text="Search"
             android:textAllCaps="false"
             android:textColor="#fff"
             android:textSize="17dp" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="200dp"
+
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:id="@+id/logOut"
+                android:src="@drawable/ic_logout" />
+            <!--<TextView-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Logout"-->
+                <!--android:textAllCaps="false"-->
+                <!--android:layout_marginLeft="5dp"-->
+                <!--android:textColor="#fff"-->
+                <!--android:src="@drawable/ic_logout"-->
+                <!--android:textSize="12sp"/>-->
+
+        </LinearLayout>
+
     </LinearLayout>
 
     <android.support.v7.widget.RecyclerView
