@@ -76,8 +76,6 @@ public class ReplyActivity extends AppCompatActivity {
                 recyclerView.setAdapter(replyAdapter);
                 progressBar.setVisibility(View.GONE);
 
-
-
             }
 
 
