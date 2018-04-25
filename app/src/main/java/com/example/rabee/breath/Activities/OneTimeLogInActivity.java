@@ -76,7 +76,7 @@ public class OneTimeLogInActivity extends Activity{
             public void onResponse(Call<List<PostCommentResponseModel>> call, Response<List<PostCommentResponseModel>> response) {
                 Log.d("DirectSignUp", response.code()+ " " );
                 postResponseModelsList = response.body();
-                recyclerView.setAdapter(new DirectSignUpHomePostsAdapter(OneTimeLogInActivity.this,postResponseModelsList));
+                recyclerView.setAdapter(new DirectSignUpHomePostsAdapter(getApplicationContext(),postResponseModelsList));
             }
 
             @Override
