@@ -103,7 +103,7 @@ public class HomeFragment extends Fragment {
                     progressBar.setVisibility(View.INVISIBLE);
 
                 }else{
-                    recyclerView.setAdapter(new HomePostAdapter(getContext(), postResponseModelsList));
+                    recyclerView.setAdapter(new HomePostAdapter(getActivity(), postResponseModelsList));
                     progressBar.setVisibility(View.INVISIBLE);
                 }
 

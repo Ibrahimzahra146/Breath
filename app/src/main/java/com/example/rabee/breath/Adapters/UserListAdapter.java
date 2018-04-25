@@ -73,6 +73,7 @@ public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.UserVi
 
                 if (userModelList.get(position).getId() == GeneralInfo.getUserID()) {
                     Intent i = new Intent(mContext, UserProfileActivity.class);
+                    i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     mContext.startActivity(i);
                 } else {
                     FollowingService.startRightActivity(mContext, userModelList.get(position).getFirst_name(), userModelList.get(position).getId(), finalUserModel.getImage());

@@ -110,11 +110,13 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
         image = postResponseModel.getUserId().getImage();
         Gson gson = new Gson();
         String json = gson.toJson(postResponseModel);
-        String imageUrl = GeneralInfo.SPRING_URL + image;
-        Picasso.with(context).load(imageUrl).into(holder.posterProfilePicture);
+        String imageUrl = GeneralInfo.SPRING_URL+"/" + image;
+        Log.d("Image url ",imageUrl);
+        Picasso.with(this.context).load(imageUrl).into(holder.posterProfilePicture);
         if (postResponseModel.getImage() != null) {
-            imageUrl = GeneralInfo.SPRING_URL + "/" + postResponseModel.getImage();
-            Picasso.with(context).load(imageUrl).into(holder.postImage);
+             imageUrl = GeneralInfo.SPRING_URL + "/" + postResponseModel.getImage();
+
+            Picasso.with(this.context).load(imageUrl).into(holder.postImage);
 
         }
         likeCount.set(position, postResponseModelsList.get(position).getReacts().getLikeList().getCount());
