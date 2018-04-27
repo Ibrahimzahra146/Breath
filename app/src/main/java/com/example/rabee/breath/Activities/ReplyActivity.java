@@ -43,13 +43,12 @@ public class ReplyActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reply);
-        progressBar= (ProgressBar) findViewById(R.id.progressBar);
         Bundle b = getIntent().getExtras();
         int commentId = 0;
         if (b != null) {
             commentId = b.getInt("commentId");
         }
-        progressBar=(ProgressBar)findViewById(R.id.progress_bar);
+        progressBar= (ProgressBar) findViewById(R.id.progressBar);
         progressBar.setVisibility(View.VISIBLE);
 
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
@@ -76,8 +75,6 @@ public class ReplyActivity extends AppCompatActivity {
                 replyAdapter=new ReplyAdapter(getApplicationContext(), replytModelsList, userModel);
                 recyclerView.setAdapter(replyAdapter);
                 progressBar.setVisibility(View.GONE);
-
-
 
             }
 
@@ -111,8 +108,9 @@ public class ReplyActivity extends AppCompatActivity {
 
                                 ReplyModel replyModel=new ReplyModel();
                                 replyModel.setText(addReplyModel.getText());
+                                Log.d("DIRECTSIGNUP",GeneralInfo.generalUserInfo + " " );
                                 replyModel.setUser(GeneralInfo.getGeneralUserInfo().getUser());
-                                replyModel.setId(1);
+                                replyModel.setId(GeneralInfo.getUserID());
                                 replytModelsList.add(replyModel);
                                 replyAdapter.notifyDataSetChanged();
                                 replyText.setText("");

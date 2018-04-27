@@ -120,7 +120,11 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         boolean isLogined = sharedPreferences.getBoolean("isLogined", false);
         String loginType = sharedPreferences.getString("loginType", "");
         GeneralInfo.setUserID(id);
+        GeneralInfo.setLoginType(loginType);
         if ((isLogined == true && loginType.equals("DIRECT_SIGNUP"))) {
+            Gson gson = new Gson();
+            String json = sharedPreferences.getString("generalUserInfo", "");
+            GeneralInfo.setGeneralUserInfo(gson.fromJson(json, UserProfileResponseModel.class));
             Intent i = new Intent(getApplicationContext(), OneTimeLogInActivity.class);
             startActivity(i);
         } else if ((isLogined == true)) {
@@ -207,16 +211,23 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         directSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                progressDialog.show();
                 final Call<UserProfileResponseModel> call = service.directSignUp("");
                 call.enqueue(new Callback<UserProfileResponseModel>() {
                     @Override
                     public void onResponse(Call<UserProfileResponseModel> call, Response<UserProfileResponseModel> response) {
                         GeneralInfo.setUserID(Integer.valueOf(response.body().getUser().getId()));
                         sharedPreferences = getSharedPreferences("userInfo", Context.MODE_PRIVATE);
-
+                        GeneralInfo.setLoginType("DIRECT_SINGUP");
                         SharedPreferences.Editor editor = sharedPreferences.edit();
+                        GeneralInfo.setGeneralUserInfo(response.body());
+                        Log.d("DIRECTSIGNUP",response.body().getUser() + " " );
 
+                        Gson gson = new Gson();
+                        String json = gson.toJson(response.body());
+                        editor.putString("generalUserInfo", json);
                         editor.putInt("id", GeneralInfo.getUserID());
+                        Log.d("SignpPage",response.code()+ " " + GeneralInfo.getUserID());
                         editor.putBoolean("isLogined", true);
                         editor.putString("loginType", "DIRECT_SIGNUP");
                         editor.apply();
@@ -224,7 +235,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                         //laucnh home activity
                         Intent i = new Intent(getApplicationContext(), OneTimeLogInActivity.class);
                         startActivity(i);
-
+                        progressDialog.dismiss();
                     }
 
                     @Override

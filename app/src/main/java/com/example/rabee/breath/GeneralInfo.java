@@ -12,7 +12,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class GeneralInfo {
-    public static String SPRING_URL = "http://852c8a96.ngrok.io";
+
+    public static String SPRING_URL = "http://819cdd28.ngrok.io";
     public static String USER_NAME="Ibrahim zahra";
     public static String PROFILE_PIC="_437.022828770496916832227_1341475782539973_288842465026282085_n.jpg";
     public static int notifications_counter = 0;
@@ -24,6 +25,15 @@ public class GeneralInfo {
     public static UserProfileResponseModel generalUserInfo;
     public static Bitmap userProfilePicture;
 
+    public static String getLoginType() {
+        return loginType;
+    }
+
+    public static void setLoginType(String loginType) {
+        GeneralInfo.loginType = loginType;
+    }
+
+    public  static String loginType;
     public static Bitmap getUserProfilePicture() {
         return userProfilePicture;
     }

@@ -4,6 +4,8 @@
     android:layout_height="match_parent"
     android:background="@drawable/about_friend_dialog_background"
     android:orientation="vertical"
+    android:layout_marginRight="20dp"
+    android:layout_marginLeft="20dp"
     android:paddingBottom="20dp">
 
     <!--<LinearLayout-->

@@ -3,6 +3,8 @@ package com.example.rabee.breath.Adapters;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.text.format.DateUtils;
@@ -15,6 +17,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.rabee.breath.Activities.CommentActivity;
+import com.example.rabee.breath.Activities.OtherProfileActivity;
 import com.example.rabee.breath.Activities.YoutubeDialogActivity;
 import com.example.rabee.breath.GeneralFunctions;
 import com.example.rabee.breath.GeneralInfo;
@@ -46,23 +49,25 @@ import static com.facebook.FacebookSdk.getApplicationContext;
 
 public class DirectSignUpHomePostsAdapter extends RecyclerView.Adapter<DirectSignUpHomePostsAdapter.MyViewHolder> {
     Context context;
-    private List<PostCommentResponseModel> postResponseModelsList;
     EditText commentTextDialog;
     TextView cancelBtnDialog;
     ImageView sendBtnDialog;
     int addCommentDialogPostId;
     Dialog addCommentDialog;
+    private List<PostCommentResponseModel> postResponseModelsList;
 
-    public DirectSignUpHomePostsAdapter(Context context, List<PostCommentResponseModel> postResponseModelsList){
+    public DirectSignUpHomePostsAdapter(Context context, List<PostCommentResponseModel> postResponseModelsList) {
         this.postResponseModelsList = postResponseModelsList;
-        this.context=context;
+        this.context = context;
 
     }
+
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
         View itemView = LayoutInflater.from(context).inflate(R.layout.direct_sign_up_post_list_view_item, parent, false);
-        return new MyViewHolder(itemView);    }
+        return new MyViewHolder(itemView);
+    }
 
     @Override
     public void onBindViewHolder(final MyViewHolder holder, final int position) {
@@ -87,11 +92,11 @@ public class DirectSignUpHomePostsAdapter extends RecyclerView.Adapter<DirectSig
         image = postResponseModel.getUserId().getImage();
         Gson gson = new Gson();
         String json = gson.toJson(postResponseModel);
-        String imageUrl = GeneralInfo.SPRING_URL + image;
-        Picasso.with(context).load(imageUrl).into(holder.posterProfilePicture);
+        String imageUrl = GeneralInfo.SPRING_URL +"/"+ image;
+        Picasso.with(this.context).load(imageUrl).into(holder.posterProfilePicture);
         if (postResponseModel.getImage() != null) {
             imageUrl = GeneralInfo.SPRING_URL + "/" + postResponseModel.getImage();
-            Picasso.with(context).load(imageUrl).into(holder.postImage);
+            Picasso.with(this.context).load(imageUrl).into(holder.postImage);
 
         }
         //// postStatusIcon
@@ -112,6 +117,9 @@ public class DirectSignUpHomePostsAdapter extends RecyclerView.Adapter<DirectSig
             @Override
             public void onClick(View view) {
 
+                addCommentDialog = new Dialog(context);
+                addCommentDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
                 addCommentDialog.setContentView(R.layout.activity_add_comment);
                 addCommentDialog.show();
                 commentTextDialog = (EditText) addCommentDialog.findViewById(R.id.commentText);
@@ -125,7 +133,7 @@ public class DirectSignUpHomePostsAdapter extends RecyclerView.Adapter<DirectSig
                                 if (commentTextDialog.getText().toString().trim().equals("")) {
 
                                 } else {
-                                    sendComment(holder.postCommentCount,postResponseModelsList.get(position).getComments().size());
+                                    sendComment(holder.postCommentCount, postResponseModelsList.get(position).getComments().size());
                                 }
                             }
                         });
@@ -161,13 +169,31 @@ public class DirectSignUpHomePostsAdapter extends RecyclerView.Adapter<DirectSig
 
             }
         };
+        View.OnClickListener userProfileListener = new View.OnClickListener() {
+            public void onClick(View v) {
+
+                Intent i = new Intent(getApplicationContext(), OtherProfileActivity.class);
+                Bundle b = new Bundle();
+                b.putString("mName", holder.posterUserName.getText().toString());
+                b.putInt("Id",postResponseModelsList.get(position).getPost().getUserId().getId() );
+                b.putString("mImageURL", postResponseModelsList.get(position).getPost().getUserId().getImage());
+                i.putExtras(b);
+                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                i.putExtras(b);
+                context.startActivity(i);
+
+
+            }
+        };
         holder.postCommentCount.setOnClickListener(commentListener);
         holder.postCommentIcon.setOnClickListener(commentListener);
+        holder.posterProfilePicture.setOnClickListener(userProfileListener);
+        holder.posterUserName.setOnClickListener(userProfileListener);
         ////////////////YOUTUBE///
         if (postResponseModel.getYoutubelink().getLink() != "" && postResponseModel.getImage() == null) {
             holder.youtubeLinkTitle.setText(postResponseModel.getYoutubelink().getTitle());
             holder.youtubeLinkAuthor.setText("Channel: " + postResponseModel.getYoutubelink().getAuthor_name());
-            imageUrl = GeneralInfo.SPRING_URL+"/"+postResponseModel.getYoutubelink().getImage();
+            imageUrl = GeneralInfo.SPRING_URL + "/" + postResponseModel.getYoutubelink().getImage();
             Picasso.with(getApplicationContext()).load(imageUrl).into(holder.youtubeLinkImage);
         } else {
             holder.youtubeLinkLayout.setVisibility(View.GONE);
@@ -193,6 +219,7 @@ public class DirectSignUpHomePostsAdapter extends RecyclerView.Adapter<DirectSig
     public int getItemCount() {
         return postResponseModelsList.size();
     }
+
     public void sendComment(final TextView commentCoutnerView, final int commentCounter) {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(GeneralInfo.SPRING_URL)
@@ -211,10 +238,10 @@ public class DirectSignUpHomePostsAdapter extends RecyclerView.Adapter<DirectSig
                     GeneralFunctions generalFunctions = new GeneralFunctions();
                     generalFunctions.showErrorMesaage(getApplicationContext());
                 } else {
-                    int  newCoutner =commentCounter+1;
+                    int newCoutner = commentCounter + 1;
                     addCommentDialog.dismiss();
                     commentTextDialog.setText("");
-                    commentCoutnerView.setText(String.valueOf(newCoutner) + (newCoutner >1 ? " comments": " comment") );
+                    commentCoutnerView.setText(String.valueOf(newCoutner) + (newCoutner > 1 ? " comments" : " comment"));
                     commentCoutnerView.setVisibility(View.VISIBLE);
 
                 }
@@ -241,7 +268,8 @@ public class DirectSignUpHomePostsAdapter extends RecyclerView.Adapter<DirectSig
         TextView youtubeLinkTitle;
         TextView youtubeLinkAuthor;
         LinearLayout youtubeLinkLayout;
-        ImageView postCommentIcon,  postStatusIcon, addComnent;
+        ImageView postCommentIcon, postStatusIcon, addComnent;
+
         public MyViewHolder(View view) {
             super(view);
             posterProfilePicture = (CircleImageView) itemView.findViewById(R.id.userProfilePicture);

@@ -98,6 +98,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onResponse(Call<List<PostCommentResponseModel>> call, Response<List<PostCommentResponseModel>> response) {
                 postResponseModelsList = response.body();
+                recyclerView.setAdapter(new HomePostAdapter(getActivity().getApplicationContext(),postResponseModelsList));
                 if(postResponseModelsList.size()==0){
                     noFriendsLayout.setVisibility(View.VISIBLE);
                     progressBar.setVisibility(View.INVISIBLE);

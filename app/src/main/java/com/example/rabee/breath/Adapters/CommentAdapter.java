@@ -1,7 +1,9 @@
 package com.example.rabee.breath.Adapters;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -53,6 +55,8 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.UserView
 
     @Override
     public void onBindViewHolder(UserViewHolder holder, final int position) {
+        SharedPreferences sharedPreferences;
+
         holder.commentText.setText(commentModelsList.get(position).getText());
         int id = user.getId();
         if (commentModelsList.get(position).getUser().getId() == id) {
@@ -60,8 +64,9 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.UserView
             Picasso.with(context).load(imageUrl).into(holder.profilePic);
             holder.fullName.setText(user.getFirst_name() + " " + user.getLast_name());
         }
-        Log.d("User id",GeneralInfo.userID+"");
-        if (commentModelsList.get(position).getUser().getId() == GeneralInfo.userID) {
+        Log.d("User id",GeneralInfo.userID+" " + GeneralInfo.getLoginType());
+        if (commentModelsList.get(position).getUser().getId() == GeneralInfo.userID && !GeneralInfo.getLoginType().equals("DIRECT_SIGNUP")) {
+
             String imageUrl = GeneralInfo.SPRING_URL + "/" + GeneralInfo.generalUserInfo.getUser().getImage();
             Picasso.with(context).load(imageUrl).into(holder.profilePic);
             holder.fullName.setText(GeneralInfo.getGeneralUserInfo().getUser().getFirst_name() + " " + GeneralInfo.getGeneralUserInfo().getUser().getLast_name());

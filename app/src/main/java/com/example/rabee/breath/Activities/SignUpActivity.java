@@ -153,7 +153,6 @@ public class SignUpActivity extends Activity {
                     SharedPreferences sharedPreferences = getSharedPreferences("userInfo", Context.MODE_PRIVATE);
 
                     if (response.code() == 200) {
-                        LoggingInDialog.dismiss();
                         Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.profile_pic);
                         ByteArrayOutputStream stream = new ByteArrayOutputStream();
                         bitmap.compress(Bitmap.CompressFormat.PNG, 90, stream);
@@ -171,6 +170,7 @@ public class SignUpActivity extends Activity {
                         editor.apply();
                         Intent i = new Intent(getApplicationContext(), HomeActivity.class);
                         i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                        LoggingInDialog.dismiss();
                         startActivity(i);
                         finish();
 
