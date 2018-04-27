@@ -1,8 +1,8 @@
 package com.example.rabee.breath.Activities;
 
+import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -28,14 +28,17 @@ public class AddCommentActivity extends AppCompatActivity {
     ImageView sendBtn;
     int postId;
     ProgressBar progressBar;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-     setContentView(R.layout.activity_add_comment);
+        setContentView(R.layout.activity_add_comment);
+        Log.d("AddCommentActivity", " start ");
 
         commentText = (EditText) findViewById(R.id.commentText);
-        cancelBtn= (TextView) findViewById(R.id.cancelBtn);
+        cancelBtn = (TextView) findViewById(R.id.cancelBtn);
         sendBtn = (ImageView) findViewById(R.id.sendBtn);
+        progressBar = (ProgressBar) findViewById(R.id.postProgressBar);
 
         Bundle b = getIntent().getExtras();
         postId = b.getInt("postId");
@@ -45,12 +48,11 @@ public class AddCommentActivity extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        if(commentText.getText().toString().trim().equals(""))
-                        {
 
-                        }
-                        else
-                        {
+                        progressBar.setVisibility(View.VISIBLE);
+                        if (commentText.getText().toString().trim().equals("")) {
+
+                        } else {
                             sendComment();
                         }
 
@@ -85,7 +87,10 @@ public class AddCommentActivity extends AppCompatActivity {
                 if (response.code() == 404 || response.code() == 500 || response.code() == 502 || response.code() == 400) {
                     GeneralFunctions generalFunctions = new GeneralFunctions();
                     generalFunctions.showErrorMesaage(getApplicationContext());
+                    progressBar.setVisibility(View.INVISIBLE);
+
                 } else {
+                    progressBar.setVisibility(View.INVISIBLE);
 
                     finish();
                 }
@@ -96,6 +101,8 @@ public class AddCommentActivity extends AppCompatActivity {
                 GeneralFunctions generalFunctions = new GeneralFunctions();
                 generalFunctions.showErrorMesaage(getApplicationContext());
                 Log.d("PostHolder", t.getMessage());
+                progressBar.setVisibility(View.INVISIBLE);
+
             }
 
         });

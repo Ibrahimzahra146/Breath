@@ -2,7 +2,9 @@ package com.example.rabee.breath.Activities;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ProgressBar;
@@ -43,21 +45,19 @@ public class ReactActivity extends AppCompatActivity {
         if (b != null) {
             postId = b.getInt("postId");
             type = b.getInt("type");
-
-
         }
 
-
+        final LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         progressBar = (ProgressBar) findViewById(R.id.progress_bar);
         reactTypeLabel = (TextView) findViewById(R.id.react_type_label);
         backIcon=(TextView)findViewById(R.id.back_icon);
-        if (type == 0) {
-            reactTypeLabel.setText("Love reacts");
+        if (type == 3) {
+            reactTypeLabel.setText("Love Reacts");
         } else if (type == 1) {
-            reactTypeLabel.setText("Like reacts");
+            reactTypeLabel.setText("Like Reacts");
         } else if (type == 2) {
-            reactTypeLabel.setText("Dislike reacts");
+            reactTypeLabel.setText("Dislike Reacts");
         }
         backIcon.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -83,7 +83,7 @@ public class ReactActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<ReactSingleModel> call, Response<ReactSingleModel> response) {
                 userModelList = (ArrayList<UserModel>) response.body().getUsers();
-
+                recyclerView.setLayoutManager(linearLayoutManager);
                 recyclerView.setAdapter(new UserListAdapter(getApplicationContext(), userModelList));
                 progressBar.setVisibility(View.INVISIBLE);
 
