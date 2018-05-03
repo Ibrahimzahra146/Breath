@@ -31,6 +31,9 @@ import retrofit2.http.Query;
 
 public interface PostInterface {
     @Headers("Cache-Control: max-age=64000")
+    @GET("/api/v1/post/getUserPost/{id}")
+    Call<List<PostCommentResponseModel>> getUserPost(@Path("id") int id);
+    @Headers("Cache-Control: max-age=64000")
     @GET("/api/v1/post/getUserHomePost/{id}")
     Call<List<PostCommentResponseModel>> getUserHomePost(@Path("id") int id);
     @Multipart

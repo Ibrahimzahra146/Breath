@@ -379,7 +379,6 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         editor.putString("password", passEditText.getText().toString());
         editor.putString("profileImage", userProfileResponseModel.getUser().getImage());
         editor.putString("coverImage", userProfileResponseModel.getUser().getCover_image());
-
         editor.putInt("id", GeneralInfo.getUserID());
         editor.putBoolean("isLogined", true);
         editor.apply();

@@ -30,9 +30,10 @@ public class AddCommentActivity extends AppCompatActivity {
     ProgressBar progressBar;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_comment);
+     setContentView(R.layout.activity_add_comment);
+        Log.d("Raghad hyo zabaet :P","");
         Log.d("AddCommentActivity", " start ");
 
         commentText = (EditText) findViewById(R.id.commentText);

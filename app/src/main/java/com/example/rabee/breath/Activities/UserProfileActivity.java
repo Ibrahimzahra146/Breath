@@ -16,6 +16,8 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Base64;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -24,19 +26,25 @@ import android.view.animation.DecelerateInterpolator;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.example.rabee.breath.Adapters.HomePostAdapter;
 import com.example.rabee.breath.GeneralFunctions;
 import com.example.rabee.breath.GeneralInfo;
 import com.example.rabee.breath.Models.RequestModels.AboutUserRequestModel;
 import com.example.rabee.breath.Models.ResponseModels.AboutUserResponseModel;
+import com.example.rabee.breath.Models.ResponseModels.PostCommentResponseModel;
 import com.example.rabee.breath.R;
 import com.example.rabee.breath.RequestInterface.AboutUserInterface;
 import com.example.rabee.breath.RequestInterface.ImageInterface;
+import com.example.rabee.breath.RequestInterface.PostInterface;
 import com.example.rabee.breath.Services.ImageService;
 import com.google.gson.Gson;
 import com.squareup.picasso.Picasso;
+
+import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 import retrofit2.Call;
@@ -60,15 +68,21 @@ public class UserProfileActivity extends AppCompatActivity {
     Retrofit retrofit = new Retrofit.Builder()
             .baseUrl(GeneralInfo.SPRING_URL)
             .addConverterFactory(GsonConverterFactory.create()).build();
+    public static List<PostCommentResponseModel> postResponseModelsList;
+
     ImageView img, coverImage, imageView;
-    TextView followingTxt, newPostTxt, followerCount, followingCount, userName, profileBio;
-    TextView changePic, viewPic, RemovePic, toolBarText, editBio;
-    CircleImageView editProfile, editSong;
+    TextView followingTxt, newPostTxt, followerCount, followingCount, userName, profileBio , editProfile;
+    TextView changePic, viewPic, RemovePic, toolBarText, addPost;
+    static TextView postCount;
+    CircleImageView editBio, editSong;
     Button saveAbout, saveSong;
     EditText bioTxt, statusTxt, songTxt;
     Dialog imgClick, ViewImgDialog, editMyBio, editMySong;
     ProgressBar coverProgressBar, progressBar;
     Uri imageuri;
+
+    RecyclerView recyclerView;
+    LinearLayout noFriendsLayout;
 
 
     String songUrl;
@@ -96,23 +110,26 @@ public class UserProfileActivity extends AppCompatActivity {
         img = (ImageView) findViewById(R.id.user_profile_photo);
         coverImage = (ImageView) findViewById(R.id.coverImage);
         userName = (TextView) findViewById(R.id.user_profile_name);
-        followingTxt = (TextView) findViewById(R.id.followingTxt);
-        newPostTxt = (TextView) findViewById(R.id.newPostTxt);
-        editProfile = (CircleImageView) findViewById(R.id.editProfile);
+        editProfile = (TextView) findViewById(R.id.editProfile);
         editSong = (CircleImageView) findViewById(R.id.editSong);
         coverImage = (ImageView) findViewById(R.id.coverImage);
         profileBio = (TextView) findViewById(R.id.profileBio);
+        addPost = (TextView) findViewById(R.id.addPost);
+        postCount = (TextView) findViewById(R.id.post_count);
         coverProgressBar = (ProgressBar) findViewById(R.id.coverProgressBar);
         img = (ImageView) findViewById(R.id.user_profile_photo);
         // songTxt = (EditText) editMySong.findViewById(R.id.songTxt);
         // saveSong = (Button) editMySong.findViewById(R.id.saveSong);
-        editBio = (TextView) findViewById(R.id.editBio);
+        editBio = (CircleImageView) findViewById(R.id.editBio);
         toolBarText = (TextView) findViewById(R.id.toolBarText);
         progressBar = (ProgressBar) findViewById(R.id.profilePictureProgressBar);
-        followingCount = (TextView) findViewById(R.id.followingCount);
-        followerCount = (TextView) findViewById(R.id.followerCount);
-
-
+        followingCount = (TextView) findViewById(R.id.following_count);
+        followerCount = (TextView) findViewById(R.id.followers_count);
+        recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+        recyclerView.hasFixedSize();
+        recyclerView.setNestedScrollingEnabled(false);
+        getUserPosts();
         ////////////////////////////////////////
         SharedPreferences sharedPreferences = getSharedPreferences("userInfo", Context.MODE_PRIVATE);
         userName.setText(GeneralInfo.getGeneralUserInfo().getUser().getFirst_name() + " " + GeneralInfo.getGeneralUserInfo().getUser().getLast_name());
@@ -120,16 +137,16 @@ public class UserProfileActivity extends AppCompatActivity {
         String coverUrl = GeneralInfo.SPRING_URL + "/" + GeneralInfo.getGeneralUserInfo().getUser().getCover_image();
         Picasso.with(getApplicationContext()).load(imageUrl).into(img);
         Picasso.with(getApplicationContext()).load(coverUrl).into(coverImage);
-        profileBio.setText(GeneralInfo.getGeneralUserInfo().getAboutUser().getUserBio());
+        if (GeneralInfo.getGeneralUserInfo().getAboutUser().getUserBio().equals("")) {
+            profileBio.setText("Nothing to show");
+
+        } else {
+            profileBio.setText(GeneralInfo.getGeneralUserInfo().getAboutUser().getUserBio());
+
+        }
         followingCount.setText(String.valueOf(GeneralInfo.getGeneralUserInfo().getNumberOfFollowing()));
         followerCount.setText(String.valueOf(GeneralInfo.getGeneralUserInfo().getNumberOfFollower()));
         //animation
-        progressBar.setProgress(0);
-        progressBar.setMax(100);
-        anim = ObjectAnimator.ofInt(progressBar, "progress", 0, 100);
-        anim.setDuration(2000);
-        anim.setInterpolator(new DecelerateInterpolator());
-        anim.start();
         ///////////////
         imgClick = new Dialog(this);
         ViewImgDialog = new Dialog(this, android.R.style.Theme_Black_NoTitleBar_Fullscreen);
@@ -150,9 +167,11 @@ public class UserProfileActivity extends AppCompatActivity {
         statusTxt = (EditText) editMyBio.findViewById(R.id.statusTxt);
         songTxt = (EditText) editMySong.findViewById(R.id.songTxt);
         saveSong = (Button) editMySong.findViewById(R.id.saveSong);
-        editBio = (TextView) findViewById(R.id.editBio);
+        //editBio = (TextView) findViewById(R.id.editBio);
         toolBarText = (TextView) findViewById(R.id.toolBarText);
         fillAbout();
+        Log.d("Song url", songUrl);
+
         //Listens
         //Listener for profile picture and it's dialog
         img.setOnClickListener(new View.OnClickListener() {
@@ -169,7 +188,6 @@ public class UserProfileActivity extends AppCompatActivity {
                 changePic.setOnClickListener(new View.OnClickListener() {
                     public void onClick(View v) {
                         verifyStoragePermissions(UserProfileActivity.this);
-
                         imgClick.dismiss();
                         Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                         startActivityForResult(intent, 100);
@@ -257,114 +275,49 @@ public class UserProfileActivity extends AppCompatActivity {
                 return false;
             }
         });
-        followingTxt.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-
-                Intent i = new Intent(getApplicationContext(), FollowingActivity.class);
-                startActivity(i);
-            }
-        });
-        editBio.setOnClickListener(new View.OnClickListener() {
+//        followingTxt.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View v) {
+//
+//                Intent i = new Intent(getApplicationContext(), FollowingActivity.class);
+//                startActivity(i);
+//            }
+//        });
+        editProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                editMyBio.show();
-
+                Intent i = new Intent(getApplicationContext(), EditProfileActivity.class);
+              startActivity(i);
             }
         });
+
         editSong.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(), UserYoutubeActivity.class);
                 Bundle b = new Bundle();
+                Log.d("Song url", songUrl);
                 if (songUrl != null) {
-                    b.putString("youtubeSongUrl", songUrl);
+                    b.putString("youtubeSongUrl", GeneralInfo.getGeneralUserInfo().getAboutUser().getUserSong());
                 }
                 i.putExtras(b);
                 startActivity(i);
 
             }
         });
-        editProfile.setOnClickListener(new View.OnClickListener() {
+        editBio.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                fillAbout();
+                editMyBio.show();
 
-                Intent i = new Intent(getApplicationContext(), EditProfileActivity.class);
-                startActivity(i);
+
+//                Intent i = new Intent(getApplicationContext(), EditProfileActivity.class);
+//                startActivity(i);
             }
         });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         saveAbout.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                saveAbout.setPressed(true);
                 String bioText, statusText, songText;
                 bioText = bioTxt.getText().toString();
                 songText = songTxt.getText().toString();
@@ -375,16 +328,34 @@ public class UserProfileActivity extends AppCompatActivity {
             }
         });
 
+//        addPost.setOnTouchListener(new View.OnTouchListener() {
+//
+//            @Override
+//            public boolean onTouch(View v, MotionEvent event) {
+//                addPost.setPressed(true);
+//                return true;
+//            }
+//        });
+
+        addPost.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                addPost.setPressed(true);
+                Intent i = new Intent(getApplicationContext(), AddPostActivity.class);
+                startActivity(i);
+            }
+        });
+
 
     }
 
     public void getUserInfo() {
         userName.setText(GeneralInfo.getGeneralUserInfo().getUser().getFirst_name() + " " + GeneralInfo.getGeneralUserInfo().getUser().getLast_name());
         String imageUrl = GeneralInfo.SPRING_URL + "/" + GeneralInfo.getGeneralUserInfo().getUser().getImage();
-        progressBar.setVisibility(View.INVISIBLE);
         Picasso.with(getApplicationContext()).load(imageUrl).into(img);
+
         String coverUrl = GeneralInfo.SPRING_URL + "/" + GeneralInfo.getGeneralUserInfo().getUser().getCover_image();
         Picasso.with(getApplicationContext()).load(coverUrl).into(coverImage);
+
 
     }
 
@@ -395,6 +366,8 @@ public class UserProfileActivity extends AppCompatActivity {
         statusTxt.setText(GeneralInfo.getGeneralUserInfo().getAboutUser().getUserStatus());
         songTxt.setText(GeneralInfo.getGeneralUserInfo().getAboutUser().getUserSong());
         songUrl = GeneralInfo.getGeneralUserInfo().getAboutUser().getUserSong();
+        Log.d("Song url", songUrl);
+
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -405,23 +378,34 @@ public class UserProfileActivity extends AppCompatActivity {
                 ImageService imageService = new ImageService();
                 String path = imageService.getRealPathFromURI(this, imageuri);
                 int rotate = imageService.getPhotoOrientation(path);
+                sharedPreferences = getSharedPreferences("userInfo", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
 
                 Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), imageuri);
                 bitmap = scaleDown(bitmap, 1000, true);
                 bitmap = RotateBitmap(bitmap, rotate);
                 if (requestCode == 100) {
                     img.setImageBitmap(bitmap);
+                    GeneralInfo.generalUserInfo.getUser().setImage(path);
                 }
                 if (requestCode == 200) {
                     coverImage.setImageBitmap(bitmap);
+                    GeneralInfo.generalUserInfo.getUser().setCover_image(path);
+
                 }
                 byte[] image = imageService.getBytes(bitmap);
-                String encodedImage = Base64.encodeToString(image, Base64.DEFAULT);
+//                String encodedImage = Base64.encodedImagencodeToString(image, Base64.DEFAULT);
                 imageService.uploadImagetoDB(GeneralInfo.getUserID(), path, bitmap, requestCode, coverProgressBar);
+
+                Gson gson = new Gson();
+                String json = gson.toJson(GeneralInfo.generalUserInfo);
+                editor.putString("generalUserInfo", json);
+                editor.apply();
 
             } catch (Exception e) {
                 Log.d("XX", "Image cannot be uploaded");
             }
+
         }
     }
 
@@ -490,5 +474,32 @@ public class UserProfileActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void getUserPosts() {
+        PostInterface postInterface;
+        postInterface = retrofit.create(PostInterface.class);
+        final Call<List<PostCommentResponseModel>> postResponse = postInterface.getUserPost(GeneralInfo.getUserID());
+        postResponse.enqueue(new Callback<List<PostCommentResponseModel>>() {
+
+            @Override
+            public void onResponse(Call<List<PostCommentResponseModel>> call, Response<List<PostCommentResponseModel>> response) {
+                postResponseModelsList = response.body();
+                recyclerView.setAdapter(new HomePostAdapter(getApplicationContext(), postResponseModelsList));
+                if (postResponseModelsList.size() == 0) {
+
+                } else {
+                    postCount.setText(postResponseModelsList.size() + "");
+                    recyclerView.setAdapter(new HomePostAdapter(getApplicationContext(), postResponseModelsList));
+                }
+
+
+            }
+
+            @Override
+            public void onFailure(Call<List<PostCommentResponseModel>> call, Throwable t) {
+
+            }
+        });
     }
 }

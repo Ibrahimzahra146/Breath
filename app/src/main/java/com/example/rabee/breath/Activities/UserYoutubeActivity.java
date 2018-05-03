@@ -1,8 +1,11 @@
 package com.example.rabee.breath.Activities;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -19,6 +22,7 @@ import com.google.android.youtube.player.YouTubeBaseActivity;
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerView;
+import com.google.gson.Gson;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -29,14 +33,15 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class UserYoutubeActivity extends YouTubeBaseActivity implements
-        YouTubePlayer.OnInitializedListener {
+public class UserYoutubeActivity extends YouTubeBaseActivity implements YouTubePlayer.OnInitializedListener {
     private static YouTubePlayerView youTubePlayerFragment;
     int youtubeFlag = 0;
     String video_id, backUp_video_id = "", backUp_Url = "", youtubeBundleSong;
-    String API_KEY = "AIzaSyCHH7wadSVxjRklA5ebZHLIofaiYj_pgeE";
+    String API_KEY = "AIzaSyDLZWvpohj00mUdNTIwBPM2felFLI5ZD84";
     EditText youtubeEdit;
     Button saveBtn;
+    SharedPreferences sharedPreferences;
+
 
     private YouTubePlayer.PlayerStateChangeListener playerStateChangeListener = new YouTubePlayer.PlayerStateChangeListener() {
         @Override
@@ -100,13 +105,14 @@ public class UserYoutubeActivity extends YouTubeBaseActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-
         setContentView(R.layout.activity_user_youtube);
+        Log.d("Youtube activirty", "");
         youTubePlayerFragment = (YouTubePlayerView) findViewById(R.id.youtubeplayerfragment);
         youtubeEdit = (EditText) findViewById(R.id.youtubeText);
         saveBtn = (Button) findViewById(R.id.saveBtn);
         youTubePlayerFragment = new YouTubePlayerView(this);
         Bundle b = getIntent().getExtras();
+        Log.d("Youtube activirty", b.getString("youtubeSongUrl"));
         if (b != null) {
             youtubeBundleSong = b.getString("youtubeSongUrl");
             youtubeEdit.setText(youtubeBundleSong);
@@ -157,8 +163,6 @@ public class UserYoutubeActivity extends YouTubeBaseActivity implements
                     backUp_Url = youtubeBundleSong;
                     backUp_video_id = video_id;
                     youTubePlayerFragment = null;
-
-
                     String[] split = s.split("v=");
                     try {
                         if (isValidVideoId((s))) {
@@ -185,7 +189,9 @@ public class UserYoutubeActivity extends YouTubeBaseActivity implements
 
     @Override
     public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
-
+        youTubePlayer.setPlayerStateChangeListener(playerStateChangeListener);
+        youTubePlayer.setPlaybackEventListener(playbackEventListener);
+        youTubePlayer.cueVideo(video_id);
     }
 
     @Override
@@ -194,6 +200,7 @@ public class UserYoutubeActivity extends YouTubeBaseActivity implements
     }
 
     public void setNewVideo(String video_id) {
+        Log.d("setNewVideo ", video_id);
 
 
         youTubePlayerFragment = new YouTubePlayerView(this);
@@ -213,7 +220,7 @@ public class UserYoutubeActivity extends YouTubeBaseActivity implements
         return matcher.find();
     }
 
-    public void editUserSongRequest(String songUrl) {
+    public void editUserSongRequest(final String songUrl) {
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(GeneralInfo.SPRING_URL)
@@ -234,7 +241,17 @@ public class UserYoutubeActivity extends YouTubeBaseActivity implements
 
                     GeneralFunctions generalFunctions = new GeneralFunctions();
                     generalFunctions.showErrorMesaage(getApplicationContext());
+                } else {
+                    GeneralInfo.getGeneralUserInfo().getAboutUser().setUserSong(songUrl);
+                    sharedPreferences = getSharedPreferences("userInfo", Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    Gson gson = new Gson();
+                    String json = gson.toJson(GeneralInfo.getGeneralUserInfo());
+                    editor.putString("generalUserInfo", json);
+                    editor.apply();
+
                 }
+
                 finish();
             }
 
