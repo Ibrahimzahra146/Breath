@@ -10,7 +10,7 @@
         <shape xmlns:android="http://schemas.android.com/apk/res/android">
             <corners android:radius="50dp" />
             <solid android:color="#007c017c" />
-            <stroke android:width="1dip" android:color="@color/purple" />
+            <stroke android:width="1dip" android:color="#A9A9A9" />
 
         </shape>
 

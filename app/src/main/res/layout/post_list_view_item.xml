@@ -62,8 +62,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
-                android:layout_marginTop="8dp"
                 android:layout_marginRight="15dp"
+                android:layout_marginTop="8dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -81,8 +81,8 @@
                     android:id="@+id/save_icon"
                     android:layout_width="30dp"
                     android:layout_height="19.5dp"
-                    android:layout_marginTop="7dp"
                     android:layout_alignParentRight="true"
+                    android:layout_marginTop="7dp"
                     android:src="@drawable/save_icon" />
 
             </RelativeLayout>
@@ -113,7 +113,7 @@
                     android:fontFamily="sans-serif-black"
                     android:text="My fist post is the best post ever ,I cant find better than what I have said"
                     android:textSize="13.5dp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
             </LinearLayout>
 
             <LinearLayout
@@ -226,9 +226,9 @@
                         android:id="@+id/loveCount"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="1"
                         android:layout_gravity="center"
                         android:layout_marginTop="3dp"
+                        android:text="1"
                         android:textSize="12dp" />
 
                 </LinearLayout>
@@ -255,9 +255,9 @@
                         android:id="@+id/likeCount"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="1"
                         android:layout_gravity="center"
                         android:layout_marginTop="4.3dp"
+                        android:text="1"
                         android:textSize="12dp" />
 
                 </LinearLayout>
@@ -290,10 +290,6 @@
                 </LinearLayout>
 
 
-
-
-
-
             </LinearLayout>
 
             <RelativeLayout
@@ -312,29 +308,40 @@
                     android:src="@drawable/comment_icon" />
 
                 <TextView
+                    android:id="@+id/commentText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/comment_icon"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="2dp"
                     android:text="8 comments"
-                    android:textSize="12dp"
-                    android:id="@+id/commentText"/>
+                    android:textSize="12dp" />
             </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                >
+                android:gravity="center">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="22dp">
+                    <ImageView
+                        android:id="@+id/add_comment"
+                        android:layout_width="22dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center"
 
-                <ImageView
-                    android:id="@+id/add_comment"
-                    android:layout_width="30dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_gravity="center"
-                    android:layout_height="30dp"
-                    android:src="@drawable/add_comment_icon_png" />
+                        android:layout_marginTop="0dp"
+                        android:src="@drawable/ic_plus" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Add comment"
+                        android:textSize="12dp" />
+                </LinearLayout>
+
             </RelativeLayout>
         </RelativeLayout>
 

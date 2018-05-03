@@ -32,7 +32,7 @@ public class AddCommentActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
      setContentView(R.layout.activity_add_comment);
-
+        Log.d("Raghad hyo zabaet :P","");
         commentText = (EditText) findViewById(R.id.commentText);
         cancelBtn= (TextView) findViewById(R.id.cancelBtn);
         sendBtn = (ImageView) findViewById(R.id.sendBtn);
