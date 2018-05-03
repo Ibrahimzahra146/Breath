@@ -74,12 +74,13 @@ public class UserProfileActivity extends AppCompatActivity {
     TextView followingTxt, newPostTxt, followerCount, followingCount, userName, profileBio , editProfile;
     TextView changePic, viewPic, RemovePic, toolBarText, addPost;
     static TextView postCount;
-    CircleImageView editBio, editSong;
+    CircleImageView  editSong;
     Button saveAbout, saveSong;
     EditText bioTxt, statusTxt, songTxt;
     Dialog imgClick, ViewImgDialog, editMyBio, editMySong;
     ProgressBar coverProgressBar, progressBar;
     Uri imageuri;
+    ImageView editBio;
 
     RecyclerView recyclerView;
     LinearLayout noFriendsLayout;
@@ -120,7 +121,7 @@ public class UserProfileActivity extends AppCompatActivity {
         img = (ImageView) findViewById(R.id.user_profile_photo);
         // songTxt = (EditText) editMySong.findViewById(R.id.songTxt);
         // saveSong = (Button) editMySong.findViewById(R.id.saveSong);
-        editBio = (CircleImageView) findViewById(R.id.editBio);
+        editBio = (ImageView) findViewById(R.id.editBio);
         toolBarText = (TextView) findViewById(R.id.toolBarText);
         progressBar = (ProgressBar) findViewById(R.id.profilePictureProgressBar);
         followingCount = (TextView) findViewById(R.id.following_count);
@@ -386,13 +387,15 @@ public class UserProfileActivity extends AppCompatActivity {
                 bitmap = RotateBitmap(bitmap, rotate);
                 if (requestCode == 100) {
                     img.setImageBitmap(bitmap);
-                    GeneralInfo.generalUserInfo.getUser().setImage(path);
+                   // GeneralInfo.generalUserInfo.getUser().setImage(path);
+
                 }
                 if (requestCode == 200) {
                     coverImage.setImageBitmap(bitmap);
-                    GeneralInfo.generalUserInfo.getUser().setCover_image(path);
+                   // GeneralInfo.generalUserInfo.getUser().setCover_image(path);
 
                 }
+                this.onCreate(null);
                 byte[] image = imageService.getBytes(bitmap);
 //                String encodedImage = Base64.encodedImagencodeToString(image, Base64.DEFAULT);
                 imageService.uploadImagetoDB(GeneralInfo.getUserID(), path, bitmap, requestCode, coverProgressBar);
