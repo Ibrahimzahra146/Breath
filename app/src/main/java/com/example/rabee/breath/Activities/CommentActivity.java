@@ -57,11 +57,6 @@ public class CommentActivity extends AppCompatActivity {
         postResponse.enqueue(new Callback<PostCommentResponseModel>() {
             @Override
             public void onResponse(Call<PostCommentResponseModel> call, Response<PostCommentResponseModel> response) {
-                Log.d("response", response.code() + "res");
-                Log.d("response", response.body().getComments().get(0).getText() + "res");
-
-
-
                 commentModelsList=  response.body().getComments();
                 toolbarText.setText(commentModelsList.size()+ ( commentModelsList.size()>1 ?" Comments" : " Comment"));
                 progressBar.setVisibility(View.GONE);
