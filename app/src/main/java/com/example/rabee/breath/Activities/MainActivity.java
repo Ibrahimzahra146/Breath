@@ -240,6 +240,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
 
                     @Override
                     public void onFailure(Call<UserProfileResponseModel> call, Throwable t) {
+                        progressDialog.dismiss();
 
                     }
                 });
@@ -303,9 +304,11 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
 
                 final Call<UserProfileResponseModel> userModelCall = service.signIn(signInRequestModel);
                 userModelCall.enqueue(new Callback<UserProfileResponseModel>() {
-
                     @Override
                     public void onResponse(Call<UserProfileResponseModel> call, Response<UserProfileResponseModel> response) {
+
+                        Log.d("MainActivity1",response.code()+ " ");
+
                         if (response.code() == 200) {
                             UserProfileResponseModel userProfileResponseModel = response.body();
                             GeneralInfo.setUserID(Integer.valueOf(userProfileResponseModel.getUser().getId()));
@@ -314,13 +317,16 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
 
 
                         }else {
+
                             progressDialog.dismiss();
+                            LoggingInDialog.dismiss();
                             GeneralFunctions.showErrorMesaage(getApplicationContext());
                         }
                     }
 
                     @Override
                     public void onFailure(Call<UserProfileResponseModel> call, Throwable t) {
+                        LoggingInDialog.dismiss();
                         progressDialog.dismiss();
                         GeneralFunctions.showErrorMesaage(getApplicationContext());
                     }
@@ -344,6 +350,9 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                     progressDialog.dismiss();
 
                 } else {
+                    LoggingInDialog.dismiss();
+                    progressDialog.dismiss();
+
                     GeneralFunctions.showErrorMesaage(getApplicationContext());
                 }
             }
@@ -351,6 +360,8 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
             @Override
             public void onFailure(Call<UserProfileResponseModel> call, Throwable t) {
                 progressDialog.dismiss();
+                LoggingInDialog.dismiss();
+
                 GeneralFunctions.showErrorMesaage(getApplicationContext());
 
             }
@@ -445,6 +456,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
 
                 } else {
                     progressDialog.dismiss();
+                    LoggingInDialog.dismiss();
                     GeneralFunctions.showErrorMesaage(getApplicationContext());
 
                 }
@@ -453,6 +465,8 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
             @Override
             public void onFailure(Call<UserProfileResponseModel> call, Throwable t) {
                 progressDialog.dismiss();
+                LoggingInDialog.dismiss();
+
                 GeneralFunctions.showErrorMesaage(getApplicationContext());
             }
         });

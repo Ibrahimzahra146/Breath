@@ -209,6 +209,7 @@
                     android:layout_width="35dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="-4.5dp"
+                    android:id="@+id/loveLayout"
                     android:orientation="vertical">
 
                     <ImageView
@@ -235,6 +236,7 @@
 
                 <LinearLayout
                     android:layout_width="35dp"
+                    android:id="@+id/likeLayout"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="7.5dp"
                     android:layout_marginTop="-6dp"
@@ -267,6 +269,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="0dp"
+                    android:id="@+id/unlikeLayout"
                     android:orientation="vertical">
 
                     <ImageView

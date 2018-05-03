@@ -111,11 +111,8 @@
             android:layout_alignParentTop="true"
             android:layout_marginTop="32dp"
             android:indeterminate="true"
-
             android:indeterminateTint="#000"
             android:visibility="invisible"
-
-
             />
     </RelativeLayout>
 

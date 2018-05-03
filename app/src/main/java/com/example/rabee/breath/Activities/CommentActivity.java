@@ -63,7 +63,7 @@ public class CommentActivity extends AppCompatActivity {
 
 
                 commentModelsList=  response.body().getComments();
-                toolbarText.setText(commentModelsList.size()+" Comments");
+                toolbarText.setText(commentModelsList.size()+ ( commentModelsList.size()>1 ?" Comments" : " Comment"));
                 progressBar.setVisibility(View.GONE);
                 recyclerView.setAdapter(new CommentAdapter(getApplicationContext(), commentModelsList,response.body().getPost().getUserId()));
 

@@ -15,10 +15,12 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.rabee.breath.Activities.CommentActivity;
+import com.example.rabee.breath.Activities.OtherProfileActivity;
 import com.example.rabee.breath.Activities.ReactActivity;
 import com.example.rabee.breath.Activities.YoutubeDialogActivity;
 import com.example.rabee.breath.GeneralFunctions;
@@ -57,6 +59,7 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
     List<Boolean> pressedLoveFlag, PressedLikeFlag, PressedUnlikeFlag;
     List<Integer> likeCount, loveCount, disLikeCount;
     EditText commentTextDialog;
+    ProgressBar addCommentDialogProgressBar;
     TextView cancelBtnDialog;
     ImageView sendBtnDialog;
     int addCommentDialogPostId;
@@ -141,6 +144,16 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
             holder.postCommentCount.setVisibility(View.INVISIBLE);
         }
 
+        Log.d("Reacts", "id " +postResponseModelsList.get(position).getPost().getPostId());
+        Log.d("Reacts", "love "+postResponseModelsList.get(position).getReacts().getLoveList().getMyAction() + " "  );
+        Log.d("Reacts", "like "+postResponseModelsList.get(position).getReacts().getLikeList().getMyAction() + " "  );
+        Log.d("Reacts", "unlike "+postResponseModelsList.get(position).getReacts().getDislikeList().getMyAction() + " "  );
+
+
+        holder.postUnlikeIcon.setImageResource(R.drawable.unlike_icon);
+        holder.postLoveIcon.setImageResource(R.drawable.love_icon);
+        holder.postUnlikeIcon.setImageResource(R.drawable.unlike_icon);
+
 
         if (postResponseModelsList.get(position).getReacts().getLoveList().getMyAction()) {
             holder.postLoveIcon.setImageResource(R.drawable.love_icon_filled);
@@ -159,35 +172,48 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
         }
         /////////////////Listeners//////////////////////////////
         //React listener
-        View.OnClickListener reactsClickListener = new View.OnClickListener() {
+        View.OnClickListener LoveReactsClickListener = new View.OnClickListener() {
             public void onClick(View v) {
+                Log.d("ReactAction", "React Action == Pressed");
                 Intent i = new Intent(getApplicationContext(), ReactActivity.class);
                 Bundle b = new Bundle();
                 b.putInt("postId", postResponseModelsList.get(position).getPost().getPostId());
-
+                b.putInt("type",3);
                 i.putExtras(b);
                 context.startActivity(i);
                 // your stuff
             }
         };
 
-        holder.postLoveCount.setOnClickListener(reactsClickListener);
-        holder.postLikeCount.setOnClickListener(reactsClickListener);
-        holder.postDislikeCount.setOnClickListener(reactsClickListener);
+        View.OnClickListener LikeReactsClickListener = new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), ReactActivity.class);
+                Bundle b = new Bundle();
+                b.putInt("postId", postResponseModelsList.get(position).getPost().getPostId());
+                b.putInt("type",1);
+                i.putExtras(b);
+                context.startActivity(i);
+            }
+        };
 
-        if (postResponseModelsList.get(position).getReacts().getDislikeList().getMyAction()) {
-            holder.postUnlikeIcon.setImageResource(R.drawable.dislike_filled_icon);
-            PressedUnlikeFlag.set(position, true);
+        View.OnClickListener UnlikeReactsClickListener = new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), ReactActivity.class);
+                Bundle b = new Bundle();
+                b.putInt("postId", postResponseModelsList.get(position).getPost().getPostId());
+                b.putInt("type",1);
+                i.putExtras(b);
+                context.startActivity(i);
+            }
+        };
 
-        }
-
+        holder.loveLayout.setOnClickListener(LoveReactsClickListener);
+        holder.likeLayout.setOnClickListener(LikeReactsClickListener);
+        holder.unlikeLayout.setOnClickListener(UnlikeReactsClickListener);
         ///////////////Listeners//////////////////////////////
         // React listener
 
-        //  holder.postLoveCount.setOnClickListener(reactsClickListener);
-        //holder.postLikeCount.setOnClickListener(reactsClickListener);
-        //holder.postDislikeCount.setOnClickListener(reactsClickListener);
-        holder.addComnent.setOnClickListener(new View.OnClickListener() {
+       holder.addComnent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -196,6 +222,7 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
                 cancelBtnDialog = (TextView) addCommentDialog.findViewById(R.id.cancelBtn);
                 sendBtnDialog = (ImageView) addCommentDialog.findViewById(R.id.sendBtn);
                 addCommentDialogPostId = postResponseModelsList.get(position).getPost().getPostId();
+                addCommentDialogProgressBar= (ProgressBar) addCommentDialog.findViewById(R.id.progressBar) ;
                 sendBtnDialog.setOnClickListener(
                         new View.OnClickListener() {
                             @Override
@@ -203,6 +230,7 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
                                 if (commentTextDialog.getText().toString().trim().equals("")) {
 
                                 } else {
+                                    addCommentDialogProgressBar.setVisibility(View.VISIBLE);
                                     sendComment(holder.postCommentCount,postResponseModelsList.get(position).getComments().size());
                                 }
                             }
@@ -227,16 +255,16 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
 
         View.OnClickListener commentListener = new View.OnClickListener() {
             public void onClick(View v) {
-                if (postResponseModelsList.get(position).getComments().size() == 0) {
+               // if (postResponseModelsList.get(position).getComments().size() == 0) {
 
-                } else {
+                //} else {
                     Intent i = new Intent(getApplicationContext(), CommentActivity.class);
                     Bundle b = new Bundle();
                     b.putInt("postId", postResponseModelsList.get(position).getPost().getPostId());
 
                     i.putExtras(b);
                     context.startActivity(i);
-                }
+                //}
 
             }
         };
@@ -323,7 +351,7 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
         holder.saveIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                SavePost(position);
+                SavePost(position,holder.saveIcon);
             }
         });
 
@@ -350,6 +378,23 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
         holder.youtubeLinkAuthor.setOnClickListener(youtubeListener);
         holder.youtubeLinkImage.setOnClickListener(youtubeListener);
 
+        View.OnClickListener userProfileListener = new View.OnClickListener() {
+            public void onClick(View v) {
+
+                Intent i = new Intent(getApplicationContext(), OtherProfileActivity.class);
+                Bundle b = new Bundle();
+                b.putString("mName", holder.posterUserName.getText().toString());
+                b.putInt("Id",postResponseModelsList.get(position).getPost().getUserId().getId() );
+                b.putString("mImageURL", postResponseModelsList.get(position).getPost().getUserId().getImage());
+                i.putExtras(b);
+                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                i.putExtras(b);
+                context.startActivity(i);
+            }
+        };
+
+        holder.posterProfilePicture.setOnClickListener(userProfileListener);
+        holder.posterUserName.setOnClickListener(userProfileListener);
     }
 
     @Override
@@ -424,7 +469,7 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
         });
     }
 
-    public void SavePost(int position) {
+    public void SavePost(int position, final ImageView saveIcon) {
 
         PostInterface savePost = retrofit.create(PostInterface.class);
         SavePostRequestModel savePostRequestModel = new SavePostRequestModel();
@@ -441,6 +486,7 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
                     GeneralFunctions generalFunctions = new GeneralFunctions();
                     generalFunctions.showErrorMesaage(getApplicationContext());
                 } else {
+                    saveIcon.setImageResource(R.drawable.saved_icon);
                     Toast.makeText(context, "Post saved",
                             Toast.LENGTH_SHORT).show();
 
@@ -476,7 +522,11 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
                 if (response.code() == 404 || response.code() == 500 || response.code() == 502 || response.code() == 400) {
                     GeneralFunctions generalFunctions = new GeneralFunctions();
                     generalFunctions.showErrorMesaage(getApplicationContext());
+                    addCommentDialogProgressBar.setVisibility(View.INVISIBLE);
+
                 } else {
+                    addCommentDialogProgressBar.setVisibility(View.INVISIBLE);
+
                     int  newCoutner =commentCounter+1;
                     addCommentDialog.dismiss();
                     commentTextDialog.setText("");
@@ -490,6 +540,8 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
             public void onFailure(Call<AddCommentModel> call, Throwable t) {
                 GeneralFunctions generalFunctions = new GeneralFunctions();
                 generalFunctions.showErrorMesaage(getApplicationContext());
+                addCommentDialogProgressBar.setVisibility(View.INVISIBLE);
+
            }
 
         });
@@ -507,7 +559,7 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
         ImageView youtubeLinkImage;
         TextView youtubeLinkTitle;
         TextView youtubeLinkAuthor;
-        LinearLayout youtubeLinkLayout;
+        LinearLayout youtubeLinkLayout,unlikeLayout,likeLayout,loveLayout;
         ImageView postCommentIcon, postLoveIcon, postLikeIcon, postUnlikeIcon, postStatusIcon, saveIcon, addComnent;
 
         public MyViewHolder(View view) {
@@ -533,6 +585,9 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
             postStatusIcon = (ImageView) view.findViewById(R.id.postStatus);
             addComnent = (ImageView) view.findViewById(R.id.add_comment);
             postTime = (TextView) view.findViewById(R.id.postTime);
+            unlikeLayout = (LinearLayout) view.findViewById(R.id.unlikeLayout);
+            likeLayout = (LinearLayout) view.findViewById(R.id.likeLayout);
+            loveLayout = (LinearLayout) view.findViewById(R.id.loveLayout);
 
 
         }
