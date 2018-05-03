@@ -299,6 +299,7 @@
 
             </LinearLayout>
 
+
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -337,7 +338,7 @@
                     android:layout_marginTop="10dp"
                     android:layout_gravity="center"
                     android:layout_height="30dp"
-                    android:src="@drawable/add_comment_icon_png" />
+                    android:src="@drawable/add_comment_icon_2" />
             </RelativeLayout>
         </RelativeLayout>
 
