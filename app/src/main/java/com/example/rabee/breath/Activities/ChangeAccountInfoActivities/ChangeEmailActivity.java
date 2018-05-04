@@ -17,6 +17,7 @@ import com.example.rabee.breath.Models.ResponseModels.UserProfileResponseModel;
 import com.example.rabee.breath.Models.UserModel;
 import com.example.rabee.breath.R;
 import com.example.rabee.breath.RequestInterface.AccountInfoInterface;
+import com.example.rabee.breath.Services.FieldValidationService;
 import com.google.gson.Gson;
 
 import retrofit2.Call;
@@ -42,6 +43,12 @@ public class ChangeEmailActivity extends Activity {
 
         saveNewEmail.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                if ((newEmailText.getText().toString().equals(""))) {
+                    newEmailText.setError("Email is required");
+                } else if (!(FieldValidationService.valid(newEmailText.getText().toString(),"----------",newEmailText,null))) {
+                    /// TO DO ? DEPARATED OR NOT
+                    newEmailText.setError("Email is not valid");
+                } else {
                 Retrofit retrofit = new Retrofit.Builder()
                         .baseUrl(GeneralInfo.SPRING_URL)
                         .addConverterFactory(GsonConverterFactory.create()).build();
@@ -79,7 +86,7 @@ public class ChangeEmailActivity extends Activity {
                         GeneralFunctions generalFunctions = new GeneralFunctions();
                         generalFunctions.showErrorMesaage(getApplicationContext());
                     }
-                });
+                });}
             }
         });
 

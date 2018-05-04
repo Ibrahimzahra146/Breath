@@ -112,6 +112,7 @@ public class EditProfileActivity extends Activity {
                             GeneralInfo.getGeneralUserInfo().getUser().setGender(editProfileModle.getGender());
                             SharedPreferences sharedPreferences = getSharedPreferences("userInfo", Context.MODE_PRIVATE);
                             SharedPreferences.Editor editor = sharedPreferences.edit();
+                            GeneralInfo.generalUserInfo=GeneralInfo.getGeneralUserInfo();
                             Gson gson = new Gson();
                             String json = gson.toJson(GeneralInfo.generalUserInfo);
                             editor.putString("generalUserInfo", json);

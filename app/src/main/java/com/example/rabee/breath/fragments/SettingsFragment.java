@@ -178,4 +178,11 @@ public class SettingsFragment extends Fragment {
 
         });
     }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        userName.setText(GeneralInfo.getGeneralUserInfo().getUser().getFirst_name() + " " + GeneralInfo.getGeneralUserInfo().getUser().getLast_name());
+
+    }
 }
