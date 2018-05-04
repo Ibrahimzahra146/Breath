@@ -71,15 +71,16 @@ public class UserProfileActivity extends AppCompatActivity {
     public static List<PostCommentResponseModel> postResponseModelsList;
 
     ImageView img, coverImage, imageView;
-    TextView followingTxt, newPostTxt, followerCount, followingCount, userName, profileBio;
+    TextView followingTxt, newPostTxt, followerCount, followingCount, userName, profileBio , editProfile;
     TextView changePic, viewPic, RemovePic, toolBarText, addPost;
     static TextView postCount;
-    CircleImageView editBio, editSong;
+    CircleImageView  editSong;
     Button saveAbout, saveSong;
     EditText bioTxt, statusTxt, songTxt;
     Dialog imgClick, ViewImgDialog, editMyBio, editMySong;
     ProgressBar coverProgressBar, progressBar;
     Uri imageuri;
+    ImageView editBio;
 
     RecyclerView recyclerView;
     LinearLayout noFriendsLayout;
@@ -110,7 +111,7 @@ public class UserProfileActivity extends AppCompatActivity {
         img = (ImageView) findViewById(R.id.user_profile_photo);
         coverImage = (ImageView) findViewById(R.id.coverImage);
         userName = (TextView) findViewById(R.id.user_profile_name);
-        // editProfile = (CircleImageView) findViewById(R.id.editBio);
+        editProfile = (TextView) findViewById(R.id.editProfile);
         editSong = (CircleImageView) findViewById(R.id.editSong);
         coverImage = (ImageView) findViewById(R.id.coverImage);
         profileBio = (TextView) findViewById(R.id.profileBio);
@@ -120,7 +121,7 @@ public class UserProfileActivity extends AppCompatActivity {
         img = (ImageView) findViewById(R.id.user_profile_photo);
         // songTxt = (EditText) editMySong.findViewById(R.id.songTxt);
         // saveSong = (Button) editMySong.findViewById(R.id.saveSong);
-        editBio = (CircleImageView) findViewById(R.id.editBio);
+        editBio = (ImageView) findViewById(R.id.editBio);
         toolBarText = (TextView) findViewById(R.id.toolBarText);
         progressBar = (ProgressBar) findViewById(R.id.profilePictureProgressBar);
         followingCount = (TextView) findViewById(R.id.following_count);
@@ -147,12 +148,6 @@ public class UserProfileActivity extends AppCompatActivity {
         followingCount.setText(String.valueOf(GeneralInfo.getGeneralUserInfo().getNumberOfFollowing()));
         followerCount.setText(String.valueOf(GeneralInfo.getGeneralUserInfo().getNumberOfFollower()));
         //animation
-        progressBar.setProgress(0);
-        progressBar.setMax(100);
-        anim = ObjectAnimator.ofInt(progressBar, "progress", 0, 100);
-        anim.setDuration(2000);
-        anim.setInterpolator(new DecelerateInterpolator());
-        anim.start();
         ///////////////
         imgClick = new Dialog(this);
         ViewImgDialog = new Dialog(this, android.R.style.Theme_Black_NoTitleBar_Fullscreen);
@@ -194,7 +189,6 @@ public class UserProfileActivity extends AppCompatActivity {
                 changePic.setOnClickListener(new View.OnClickListener() {
                     public void onClick(View v) {
                         verifyStoragePermissions(UserProfileActivity.this);
-
                         imgClick.dismiss();
                         Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                         startActivityForResult(intent, 100);
@@ -289,14 +283,14 @@ public class UserProfileActivity extends AppCompatActivity {
 //                startActivity(i);
 //            }
 //        });
-       /* editProfile.setOnClickListener(new View.OnClickListener() {
+        editProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                Intent i = new Intent(getApplicationContext(), FollowingActivity.class);
+                Intent i = new Intent(getApplicationContext(), EditProfileActivity.class);
               startActivity(i);
             }
-        });*/
+        });
 
         editSong.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -313,7 +307,9 @@ public class UserProfileActivity extends AppCompatActivity {
         });
         editBio.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                fillAbout();
                 editMyBio.show();
+
 
 //                Intent i = new Intent(getApplicationContext(), EditProfileActivity.class);
 //                startActivity(i);
@@ -322,6 +318,7 @@ public class UserProfileActivity extends AppCompatActivity {
 
         saveAbout.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                saveAbout.setPressed(true);
                 String bioText, statusText, songText;
                 bioText = bioTxt.getText().toString();
                 songText = songTxt.getText().toString();
@@ -332,16 +329,34 @@ public class UserProfileActivity extends AppCompatActivity {
             }
         });
 
+//        addPost.setOnTouchListener(new View.OnTouchListener() {
+//
+//            @Override
+//            public boolean onTouch(View v, MotionEvent event) {
+//                addPost.setPressed(true);
+//                return true;
+//            }
+//        });
+
+        addPost.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                addPost.setPressed(true);
+                Intent i = new Intent(getApplicationContext(), AddPostActivity.class);
+                startActivity(i);
+            }
+        });
+
 
     }
 
     public void getUserInfo() {
         userName.setText(GeneralInfo.getGeneralUserInfo().getUser().getFirst_name() + " " + GeneralInfo.getGeneralUserInfo().getUser().getLast_name());
         String imageUrl = GeneralInfo.SPRING_URL + "/" + GeneralInfo.getGeneralUserInfo().getUser().getImage();
-        progressBar.setVisibility(View.INVISIBLE);
         Picasso.with(getApplicationContext()).load(imageUrl).into(img);
+
         String coverUrl = GeneralInfo.SPRING_URL + "/" + GeneralInfo.getGeneralUserInfo().getUser().getCover_image();
         Picasso.with(getApplicationContext()).load(coverUrl).into(coverImage);
+
 
     }
 
@@ -364,23 +379,36 @@ public class UserProfileActivity extends AppCompatActivity {
                 ImageService imageService = new ImageService();
                 String path = imageService.getRealPathFromURI(this, imageuri);
                 int rotate = imageService.getPhotoOrientation(path);
+                sharedPreferences = getSharedPreferences("userInfo", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
 
                 Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), imageuri);
                 bitmap = scaleDown(bitmap, 1000, true);
                 bitmap = RotateBitmap(bitmap, rotate);
                 if (requestCode == 100) {
                     img.setImageBitmap(bitmap);
+                   // GeneralInfo.generalUserInfo.getUser().setImage(path);
+
                 }
                 if (requestCode == 200) {
                     coverImage.setImageBitmap(bitmap);
+                   // GeneralInfo.generalUserInfo.getUser().setCover_image(path);
+
                 }
+                this.onCreate(null);
                 byte[] image = imageService.getBytes(bitmap);
-                String encodedImage = Base64.encodeToString(image, Base64.DEFAULT);
+//                String encodedImage = Base64.encodedImagencodeToString(image, Base64.DEFAULT);
                 imageService.uploadImagetoDB(GeneralInfo.getUserID(), path, bitmap, requestCode, coverProgressBar);
+
+                Gson gson = new Gson();
+                String json = gson.toJson(GeneralInfo.generalUserInfo);
+                editor.putString("generalUserInfo", json);
+                editor.apply();
 
             } catch (Exception e) {
                 Log.d("XX", "Image cannot be uploaded");
             }
+
         }
     }
 

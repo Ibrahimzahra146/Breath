@@ -174,36 +174,44 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
         //React listener
         View.OnClickListener LoveReactsClickListener = new View.OnClickListener() {
             public void onClick(View v) {
-                Log.d("ReactAction", "React Action == Pressed");
-                Intent i = new Intent(getApplicationContext(), ReactActivity.class);
-                Bundle b = new Bundle();
-                b.putInt("postId", postResponseModelsList.get(position).getPost().getPostId());
-                b.putInt("type",3);
-                i.putExtras(b);
-                context.startActivity(i);
-                // your stuff
+                if(postResponseModelsList.get(position).getReacts().getLoveList().getCount()>0) {
+                    Log.d("ReactAction", "React Action == Pressed");
+                    Intent i = new Intent(getApplicationContext(), ReactActivity.class);
+                    Bundle b = new Bundle();
+                    b.putInt("postId", postResponseModelsList.get(position).getPost().getPostId());
+                    b.putInt("type", 3);
+                    i.putExtras(b);
+                    context.startActivity(i);
+                    // your stuff
+                }
             }
         };
 
         View.OnClickListener LikeReactsClickListener = new View.OnClickListener() {
             public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(), ReactActivity.class);
-                Bundle b = new Bundle();
-                b.putInt("postId", postResponseModelsList.get(position).getPost().getPostId());
-                b.putInt("type",1);
-                i.putExtras(b);
-                context.startActivity(i);
+                if(postResponseModelsList.get(position).getReacts().getLikeList().getCount()>0) {
+
+                    Intent i = new Intent(getApplicationContext(), ReactActivity.class);
+                    Bundle b = new Bundle();
+                    b.putInt("postId", postResponseModelsList.get(position).getPost().getPostId());
+                    b.putInt("type", 1);
+                    i.putExtras(b);
+                    context.startActivity(i);
+                }
             }
         };
 
         View.OnClickListener UnlikeReactsClickListener = new View.OnClickListener() {
             public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(), ReactActivity.class);
-                Bundle b = new Bundle();
-                b.putInt("postId", postResponseModelsList.get(position).getPost().getPostId());
-                b.putInt("type",1);
-                i.putExtras(b);
-                context.startActivity(i);
+                if(postResponseModelsList.get(position).getReacts().getDislikeList().getCount()>0) {
+
+                    Intent i = new Intent(getApplicationContext(), ReactActivity.class);
+                    Bundle b = new Bundle();
+                    b.putInt("postId", postResponseModelsList.get(position).getPost().getPostId());
+                    b.putInt("type", 2);
+                    i.putExtras(b);
+                    context.startActivity(i);
+                }
             }
         };
 
