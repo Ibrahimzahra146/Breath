@@ -97,8 +97,9 @@ public class EditProfileActivity extends Activity {
                 call.enqueue(new Callback<Integer>() {
                     @Override
                     public void onResponse(Call<Integer> call, Response<Integer> response) {
-                        progressBar.setVisibility(View.GONE);
+                        progressBar.setVisibility(View.INVISIBLE);
 
+                        Log.d("EditProfile", " " + response.code());
                         if (response.code() == 404 || response.code() == 500 || response.code() == 502 || response.code() == 400) {
                             GeneralFunctions generalFunctions = new GeneralFunctions();
                             generalFunctions.showErrorMesaage(getApplicationContext());

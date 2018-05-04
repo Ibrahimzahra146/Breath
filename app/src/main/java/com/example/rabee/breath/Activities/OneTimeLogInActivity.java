@@ -134,7 +134,7 @@ public class OneTimeLogInActivity extends Activity{
                     editor.commit();
                     LoginManager.getInstance().logOut();
                     Intent i = new Intent(getApplicationContext(), MainActivity.class);
-                    i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                    i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK |Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(i);
                     //.activity.finish();
 
