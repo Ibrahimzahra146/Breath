@@ -102,16 +102,16 @@ public class HomeFragment extends Fragment {
                 if (getActivity() != null) {
 
 
-                    recyclerView.setAdapter(new HomePostAdapter(getActivity().getApplicationContext(), postResponseModelsList));
-                    if (postResponseModelsList.size() == 0) {
-                        noFriendsLayout.setVisibility(View.VISIBLE);
-                        progressBar.setVisibility(View.INVISIBLE);
+                recyclerView.setAdapter(new HomePostAdapter(getActivity().getApplicationContext(), postResponseModelsList));
+                if (postResponseModelsList.size() == 0) {
+                    noFriendsLayout.setVisibility(View.VISIBLE);
+                    progressBar.setVisibility(View.INVISIBLE);
 
-                    } else {
-                        recyclerView.setAdapter(new HomePostAdapter(getActivity(), postResponseModelsList));
-                        progressBar.setVisibility(View.INVISIBLE);
-                    }
+                } else {
+                    recyclerView.setAdapter(new HomePostAdapter(getActivity(), postResponseModelsList));
+                    progressBar.setVisibility(View.INVISIBLE);
                 }
+            }
 
 
             }

@@ -8,9 +8,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.example.rabee.breath.Adapters.HomePostAdapter;
 import com.example.rabee.breath.Adapters.UserListAdapter;
 import com.example.rabee.breath.GeneralInfo;
 import com.example.rabee.breath.Models.UserModel;
@@ -37,6 +39,8 @@ public class FollowingActivity extends AppCompatActivity {
     FollowingInterface followingInterface;
     ProgressBar progressBar;
     TextView following_label,toolbarText;
+    LinearLayout noFollowingLayout ;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +50,7 @@ public class FollowingActivity extends AppCompatActivity {
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         following_label = (TextView) findViewById(R.id.following_label);
         toolbarText = (TextView) findViewById(R.id.toolBarText);
-
+        noFollowingLayout = (LinearLayout) findViewById(R.id.no_friends_Layout);
         following_label.setText("Following");
         progressBar.setProgress(0);
         progressBar.setMax(100);
@@ -62,8 +66,20 @@ public class FollowingActivity extends AppCompatActivity {
             public void onResponse(Call<List<UserModel>> call, Response<List<UserModel>> response) {
                 userModelList = (ArrayList<UserModel>) response.body();
                 progressBar.setVisibility(View.GONE);
-                recyclerView.setAdapter(new UserListAdapter(getApplicationContext(),userModelList));
+
+                if (userModelList != null && userModelList.size() == 0)
+                {
+                    noFollowingLayout.setVisibility(View.VISIBLE);
+                }
+                else
+                {
+                    recyclerView.setAdapter(new UserListAdapter(getApplicationContext(),userModelList));
+
+                }
+
             }
+
+
 
             @Override
             public void onFailure(Call<List<UserModel>> call, Throwable t) {

@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -32,6 +33,7 @@ public class ReactActivity extends AppCompatActivity {
     ProgressBar progressBar;
     PostInterface postInterface;
     TextView reactTypeLabel,backIcon;
+    LinearLayout noReactLayout;
 
 
 
@@ -50,6 +52,8 @@ public class ReactActivity extends AppCompatActivity {
         final LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         progressBar = (ProgressBar) findViewById(R.id.progress_bar);
+        progressBar.setVisibility(View.VISIBLE);
+        noReactLayout = (LinearLayout) findViewById(R.id.no_react_Layout);
         reactTypeLabel = (TextView) findViewById(R.id.react_type_label);
         backIcon=(TextView)findViewById(R.id.back_icon);
         if (type == 3) {
@@ -72,7 +76,6 @@ public class ReactActivity extends AppCompatActivity {
                 return false;
             }
         });
-        progressBar.setVisibility(View.VISIBLE);
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(GeneralInfo.SPRING_URL)
                 .addConverterFactory(GsonConverterFactory.create()).build();
@@ -83,15 +86,22 @@ public class ReactActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<ReactSingleModel> call, Response<ReactSingleModel> response) {
                 userModelList = (ArrayList<UserModel>) response.body().getUsers();
+                progressBar.setVisibility(View.GONE);
+                if(userModelList!= null && userModelList.size()==0)
+                {
+                    noReactLayout.setVisibility(View.VISIBLE);
+                }
+                else
+                {
                 recyclerView.setLayoutManager(linearLayoutManager);
                 recyclerView.setAdapter(new UserListAdapter(getApplicationContext(), userModelList));
-                progressBar.setVisibility(View.INVISIBLE);
+              }
 
             }
 
             @Override
             public void onFailure(Call<ReactSingleModel> call, Throwable t) {
-                progressBar.setVisibility(View.INVISIBLE);
+                progressBar.setVisibility(View.GONE);
 
             }
         });

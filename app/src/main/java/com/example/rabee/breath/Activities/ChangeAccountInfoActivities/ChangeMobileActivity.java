@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.rabee.breath.GeneralFunctions;
 import com.example.rabee.breath.GeneralInfo;
@@ -41,7 +42,7 @@ public class ChangeMobileActivity extends Activity {
         passwordText = (EditText) findViewById(R.id.passwordText);
         saveNewEmail.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-
+                if(newMobileText.getText().toString().trim().length() >= 9){
                 Retrofit retrofit = new Retrofit.Builder()
                         .baseUrl(GeneralInfo.SPRING_URL)
                         .addConverterFactory(GsonConverterFactory.create()).build();
@@ -79,6 +80,13 @@ public class ChangeMobileActivity extends Activity {
                         generalFunctions.showErrorMesaage(getApplicationContext());
                     }
                 });
+            }
+
+            else
+                {
+                    Toast.makeText(ChangeMobileActivity.this, "Entered mobile is not valid.",
+                            Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
