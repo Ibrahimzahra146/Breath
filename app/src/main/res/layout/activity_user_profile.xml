@@ -196,6 +196,7 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
+                        android:gravity="center_horizontal"
                         android:layout_height="wrap_content"
                         android:background="#d6f8f8f8"
                         android:paddingTop="10dp"
@@ -212,7 +213,7 @@
 
                             <TextView
                                 android:id="@+id/posts"
-                                android:layout_width="100dp"
+                                android:layout_width="90dp"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:gravity="center"
@@ -223,7 +224,7 @@
 
                             <TextView
                                 android:id="@+id/post_count"
-                                android:layout_width="100dp"
+                                android:layout_width="90dp"
                                 android:layout_height="wrap_content"
                                 android:text=""
                                 android:textAlignment="center"
@@ -241,10 +242,8 @@
 
                             <TextView
                                 android:id="@+id/following"
-                                android:layout_width="100dp"
+                                android:layout_width="80dp"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:gravity="center"
                                 android:text="Following"
                                 android:textAlignment="center"
                                 android:textAllCaps="false"
@@ -252,7 +251,7 @@
 
                             <TextView
                                 android:id="@+id/following_count"
-                                android:layout_width="100dp"
+                                android:layout_width="80dp"
                                 android:layout_height="wrap_content"
                                 android:text="150"
                                 android:textAlignment="center"
@@ -262,7 +261,7 @@
                         </LinearLayout>
 
                         <LinearLayout
-                            android:layout_width="wrap_content"
+                            android:layout_width="124dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:orientation="vertical"
@@ -270,9 +269,8 @@
 
                             <TextView
                                 android:id="@+id/followers"
-                                android:layout_width="100dp"
+                                android:layout_width="90dp"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="center"
                                 android:gravity="center"
                                 android:text="Followers"
                                 android:textAlignment="center"
@@ -281,7 +279,8 @@
 
                             <TextView
                                 android:id="@+id/followers_count"
-                                android:layout_width="100dp"
+                                android:layout_width="90dp"
+                                android:gravity="center_horizontal"
                                 android:layout_height="wrap_content"
                                 android:text="150"
                                 android:textAlignment="center"
