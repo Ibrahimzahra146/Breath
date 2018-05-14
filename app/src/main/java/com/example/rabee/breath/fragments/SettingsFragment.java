@@ -127,6 +127,14 @@ public class SettingsFragment extends Fragment {
             }
         });
 
+        savedPostsLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getContext(), SavedPostActivity.class);
+                startActivity(i);
+            }
+        });
+
         return view;
     }
 
