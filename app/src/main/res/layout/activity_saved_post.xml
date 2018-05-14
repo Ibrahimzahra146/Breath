@@ -41,7 +41,7 @@
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:align="@id/toolbar" />
+       />
     <ProgressBar
         android:id="@+id/progress_bar"
         android:layout_gravity="center"
