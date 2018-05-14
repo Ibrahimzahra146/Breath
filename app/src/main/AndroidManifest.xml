@@ -15,17 +15,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Activities.MainActivity">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN"/>
-            <category android:name="android.intent.category.LAUNCHER"/>
-        </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".Activities.SettingsActivity" />
         <activity android:name=".Activities.ChangeAccountInfoActivities.ChangePasswordActivity" />
         <activity android:name=".Activities.ChangeAccountInfoActivities.ChangeEmailActivity" />
         <activity android:name=".Activities.ChangeAccountInfoActivities.ChangeMobileActivity" />
         <activity android:name=".Activities.OneTimeLogInActivity" />
-
         <activity
             android:name=".Activities.HomeActivity"
             android:label="@string/title_activity_home"
@@ -40,16 +40,15 @@
             android:label="@string/title_activity_search"
             android:theme="@style/AppTheme" />
         <activity android:name=".Activities.UserProfileActivity" />
-        <activity android:name=".Activities.SplashActivity">
+        <activity android:name=".Activities.SplashActivity"></activity>
 
-        </activity>
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
 
-        <meta-data android:name="com.facebook.sdk.ApplicationId"
-            android:value="@string/facebook_app_id"/>
-
-        <activity android:name="com.facebook.FacebookActivity"
-            android:configChanges=
-                "keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:label="@string/app_name" />
         <activity
             android:name=".Activities.UserYoutubeActivity"
@@ -64,7 +63,8 @@
         <activity android:name=".Activities.CommentActivity" />
         <activity android:name=".Activities.ReplyActivity" />
         <activity android:name=".Activities.AddCommentActivity" />
-        <activity android:name=".Activities.RecentCommentsActivity"></activity>
+        <activity android:name=".Activities.RecentCommentsActivity" />
+        <activity android:name=".Activities.SavedPostActivity"></activity>
     </application>
 
 </manifest>

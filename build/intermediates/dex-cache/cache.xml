@@ -2,85 +2,499 @@
 <items version="2" >
 
     <item
-        is-multidex="true"
-        jar="C:\Users\exalt\Desktop\Breath\app\mail.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="428e267abff0d10802ccde86b915da2c20471160">
-        <dex dex="C:\Users\exalt\Desktop\Breath\app\build\intermediates\transforms\dex\debug\folders\1000\2\mail_0c3dbdf940d3ea40badb8205e86d15dc13680c78\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\exalt\.android\build-cache\f173da43c5823fe5862e8928ad24380a2a117500\output\jars\classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/Users/mbp/.android/build-cache/6cdeb90da47e60c29e74376e1154cc031d7c7bac/output/jars/classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.3"
         sha1="b478831814c5b6a1337f9e75d696d5faa6973519">
-        <dex dex="C:\Users\exalt\Desktop\Breath\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_9730bfec2d1fe907b61e7df2fe5816d6c0e79e54\classes.dex" />
+        <dex dex="/Users/mbp/Documents/Android/Breath/Breath/app/build/intermediates/pre-dexed/debug/classes_e7d9d93ca302e5fcb5dedfc3ed3ea6fd0a796324.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="C:\Users\exalt\Desktop\Breath\app\additionnal.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/Users/mbp/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-tasks/1.4.0/d85884acf6810a3bbbecb587f239005cbc846dc4/bolts-tasks-1.4.0.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.3"
-        sha1="bd9e8dc422bb8c8405359947fe9f4282b49f57f4">
-        <dex dex="C:\Users\exalt\Desktop\Breath\app\build\intermediates\transforms\dex\debug\folders\1000\2\additionnal_0dfd451c7adc5c9e72faf7ca62004c701ec5093a\classes.dex" />
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="/Users/mbp/Documents/Android/Breath/Breath/app/build/intermediates/pre-dexed/debug/bolts-tasks-1.4.0_cadb72a3847ee4c2f9a8d1cf4bdd2580be08ade2.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="C:\Users\exalt\Desktop\Breath\app\activation.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/Users/mbp/Documents/Android/Breath/Breath/app/mail.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.3"
-        sha1="d1257cbff6faa44c1f325ae0d9413522d4644383">
-        <dex dex="C:\Users\exalt\Desktop\Breath\app\build\intermediates\transforms\dex\debug\folders\1000\2\activation_50d3b9cdaabb71ecf3ce08584f0922e1ef463cb5\classes.dex" />
+        sha1="428e267abff0d10802ccde86b915da2c20471160">
+        <dex dex="/Users/mbp/Documents/Android/Breath/Breath/app/build/intermediates/pre-dexed/debug/mail_da158c52604aac046fcbe531227bd64a0f026126.jar" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\exalt\Desktop\Breath\app\YouTubeAndroidPlayerApi.jar"
+        jar="/Users/mbp/Documents/Android/Breath/Breath/app/YouTubeAndroidPlayerApi.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.3"
         sha1="3c4f96ff493456651cc7bdb0b47e10eb25545a16">
-        <dex dex="C:\Users\exalt\Desktop\Breath\app\build\intermediates\transforms\dex\debug\folders\1000\2\YouTubeAndroidPlayerApi_fd57b48db5335fd3025d8327b46d8f6479233be3\classes.dex" />
+        <dex dex="/Users/mbp/Documents/Android/Breath/Breath/app/build/intermediates/transforms/dex/debug/folders/1000/2/YouTubeAndroidPlayerApi_906d3ace66210630c028363f7b4d271153d53b23/classes.dex" />
     </item>
     <item
-        is-multidex="true"
-        jar="C:\Users\exalt\.android\build-cache\099216cfe28bbb8759f9c98d636746f0c87a022f\output\jars\classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/Users/mbp/Library/Android/sdk/extras/m2repository/com/android/support/constraint/constraint-layout-solver/1.0.2/constraint-layout-solver-1.0.2.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.3"
-        sha1="4d9151b05d74c7d17dba9485cbb56be7e16ed9aa">
-        <dex dex="C:\Users\exalt\Desktop\Breath\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_08e5442e42ef71dac88feb4fab675e43667e641e\classes.dex" />
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="/Users/mbp/Documents/Android/Breath/Breath/app/build/intermediates/pre-dexed/debug/constraint-layout-solver-1.0.2_f402575d4366a65775da0ababef560ee5be98581.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="C:\Users\exalt\Desktop\Breath\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/Users/mbp/.android/build-cache/2726a2865bc6cee2544505fc5753d1e9e1e25f97/output/jars/classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.3"
-        sha1="f661193bd137f1d041a5fae0016a4aa215c0ecbe">
-        <dex dex="C:\Users\exalt\Desktop\Breath\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_27b9172dcd9add6bbbdaf0284381e6e80aa50b23\classes.dex" />
+        sha1="fbb206f7a119f66ce171d95aae1225a5b209a8b7">
+        <dex dex="/Users/mbp/Documents/Android/Breath/Breath/app/build/intermediates/pre-dexed/debug/classes_43dc9f3765a116d8545bb703167b4d27d5311f78.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="C:\Users\exalt\.android\build-cache\51df538a20b65998e02c6949a41c30fd12aef218\output\jars\classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/Users/mbp/.android/build-cache/e1e734c7e4071cc10961fc4f1af339118feaf0fe/output/jars/classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.3"
-        sha1="95dbd34766d3f158ef20de4b5b0206118e960709">
-        <dex dex="C:\Users\exalt\Desktop\Breath\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_f57e1589c86e227734f78b8d38b3d1cb8243f13a\classes.dex" />
+        sha1="c5d103b270b3f3b50d8e6b44aa8e068b0de33426">
+        <dex dex="/Users/mbp/Documents/Android/Breath/Breath/app/build/intermediates/pre-dexed/debug/classes_4bf70538bb06088162046ad115af08dc37ca1b37.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/mbp/.android/build-cache/6434e7fcf6e67feda96bee277c54befa8a6fcc5a/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="a2af9c72ccaa4c5c049b500ca6ea664a4ce1f7d4">
+        <dex dex="/Users/mbp/Documents/Android/Breath/Breath/app/build/intermediates/pre-dexed/debug/classes_fa5518a72fea3c125ac02f4bd95a91cf97fbf4b2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/mbp/.android/build-cache/7dd20485cb94ad8f623caa742eac1551798b6811/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="d6a04527c17597019dad82777c5094a3d60d1c33">
+        <dex dex="/Users/mbp/Documents/Android/Breath/Breath/app/build/intermediates/pre-dexed/debug/classes_f090a9b5e8ce221c70ef9a1a3c3306b12feba242.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/mbp/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/converter-gson/2.1.0/aa557d71ead91cbf26e0c316a0f593d168303309/converter-gson-2.1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="aa557d71ead91cbf26e0c316a0f593d168303309">
+        <dex dex="/Users/mbp/Documents/Android/Breath/Breath/app/build/intermediates/pre-dexed/debug/converter-gson-2.1.0_08b61342b23a0970083828b6d397b36f6ce5cd32.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/mbp/.android/build-cache/39007bdd9e2a93941295db1c7a139c90d6ae1cce/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="93c10d68ab5ea070f15782ae6d3a28d1f1d8f45e">
+        <dex dex="/Users/mbp/Documents/Android/Breath/Breath/app/build/intermediates/pre-dexed/debug/classes_5f8984fbceabf91e17dede60971ea7799ca0716d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/mbp/.gradle/caches/modules-2/files-2.1/com.google.zxing/core/3.3.0/73c49077166faa4c3c0059c5f583d1d7bd1475fe/core-3.3.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="73c49077166faa4c3c0059c5f583d1d7bd1475fe">
+        <dex dex="/Users/mbp/Documents/Android/Breath/Breath/app/build/intermediates/pre-dexed/debug/core-3.3.0_b7fbe9086ae3f2496283b32619e60f1313644774.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/mbp/.android/build-cache/522977b5c3345429f8ed1f566ca45c6d593cab06/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="70a9349df3cb6b8e23c2e5866ef157e57850e156">
+        <dex dex="/Users/mbp/Documents/Android/Breath/Breath/app/build/intermediates/pre-dexed/debug/classes_ec6f8aa58aededc74b3a9503afa24ac1c2a76ab6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/mbp/.android/build-cache/4e47ba3037b0910257d9fd06a57cd0807754c92a/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="25438f55fc6d906a0e72f30b21487541430ede43">
+        <dex dex="/Users/mbp/Documents/Android/Breath/Breath/app/build/intermediates/pre-dexed/debug/classes_21b326848f756316f08690aa0134c3026598093e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/mbp/Documents/Android/Breath/Breath/app/additionnal.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="bd9e8dc422bb8c8405359947fe9f4282b49f57f4">
+        <dex dex="/Users/mbp/Documents/Android/Breath/Breath/app/build/intermediates/pre-dexed/debug/additionnal_0067b901985636dfb7375501224dc04d37a2ef07.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/mbp/.android/build-cache/a0a6a5fb5a66b708c1eece2a785b58f93d2ec57f/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="93c1199fcb0a34b980e6fff8350daff62e696ec2">
+        <dex dex="/Users/mbp/Documents/Android/Breath/Breath/app/build/intermediates/pre-dexed/debug/classes_eb7e6803ae41cea5e12dc9113e0de5c52ee9bce3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/mbp/.android/build-cache/3f32d75563daf81bb4c0cb8f4e54475b37602519/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="ebe3b1f14fa79ba3cd1588acda4e6517ee9fe611">
+        <dex dex="/Users/mbp/Documents/Android/Breath/Breath/app/build/intermediates/pre-dexed/debug/classes_7ce8917914cc225562e3a5a1336231c7adc0ab44.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/mbp/.android/build-cache/52e518f1b64ce98e7efe48ec1a0812736806466f/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="/Users/mbp/Documents/Android/Breath/Breath/app/build/intermediates/pre-dexed/debug/classes_d4282b5d5f0fc575baf9ab9d01cec34085e6ed57.jar" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\exalt\Desktop\Breath\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jar="/Users/mbp/Documents/Android/Breath/Breath/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.3"
         sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
-        <dex dex="C:\Users\exalt\Desktop\Breath\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_56abb352a3eadba70c050aab244acac7f1545789\classes.dex" />
+        <dex dex="/Users/mbp/Documents/Android/Breath/Breath/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_16067eb7bd4086cd55e785cab9e123c30e9f9e30/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/mbp/Documents/Android/Breath/Breath/app/activation.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="d1257cbff6faa44c1f325ae0d9413522d4644383">
+        <dex dex="/Users/mbp/Documents/Android/Breath/Breath/app/build/intermediates/transforms/dex/debug/folders/1000/2/activation_3191e72b28e6640a0ba79b0e219302bf744db409/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/mbp/.android/build-cache/1e0dfc62305c30211a61bb0172ae1447fe59050d/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="4b746ef0fd46acb5aaf3d9ab9a4cec22c28d3211">
+        <dex dex="/Users/mbp/Documents/Android/Breath/Breath/app/build/intermediates/pre-dexed/debug/classes_6b99143e67f4aef30cca6cecc1cbad1842a49ff3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/mbp/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/retrofit/2.1.0/2de7cd8b95b7021b1d597f049bcb422055119f2c/retrofit-2.1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="2de7cd8b95b7021b1d597f049bcb422055119f2c">
+        <dex dex="/Users/mbp/Documents/Android/Breath/Breath/app/build/intermediates/pre-dexed/debug/retrofit-2.1.0_b658592db6197fb0eb94f14efbe20373ca059ca2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/mbp/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.5.2/7446d06ec8d4f7ffcc53f1da37c95f200dcb9387/picasso-2.5.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="/Users/mbp/Documents/Android/Breath/Breath/app/build/intermediates/pre-dexed/debug/picasso-2.5.2_bad47fee22b56a2030d833b0f72a789c6ff696be.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/mbp/.android/build-cache/bc6a691656278b1942a42afd26d35a7913c2237e/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="4d9151b05d74c7d17dba9485cbb56be7e16ed9aa">
+        <dex dex="/Users/mbp/Documents/Android/Breath/Breath/app/build/intermediates/pre-dexed/debug/classes_154281a118f021e16d045acd9cfe90d05738fceb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/mbp/.android/build-cache/9bda6316e4ed0adfcb9e4a49deb5ef97127a8bc7/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="e2185aff89caeb337b1ffc36d5e525d8318e7cfe">
+        <dex dex="/Users/mbp/Documents/Android/Breath/Breath/app/build/intermediates/pre-dexed/debug/classes_eb4e05841b37cfc3c1fbdfca38d3ad71fe01607c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/mbp/.android/build-cache/2cee328bf5eb934f71a105922784901228f50954/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/mbp/Documents/Android/Breath/Breath/app/build/intermediates/pre-dexed/debug/classes_c83470c13c8b44664756ed023f42eefbf6aeaaa8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/mbp/.android/build-cache/f5e6ddea51cc43d56957053cab9444c80a94cadd/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="a3e61044038fb54cddf6b8dc79f41d2b57f42caf">
+        <dex dex="/Users/mbp/Documents/Android/Breath/Breath/app/build/intermediates/pre-dexed/debug/classes_7a245be09fdbef72e5d07cf9c6a6d50bfae5fe4d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/mbp/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.3.0/2b802460eea20f8f2ad9c08c74e0f14718e88aa9/okhttp-3.3.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="2b802460eea20f8f2ad9c08c74e0f14718e88aa9">
+        <dex dex="/Users/mbp/Documents/Android/Breath/Breath/app/build/intermediates/pre-dexed/debug/okhttp-3.3.0_2bd4b370cda736d58f21308816f2cc9efcaf1e05.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/mbp/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-applinks/1.4.0/8ad21bf21784dacce5f2043afb97218cc377e835/bolts-applinks-1.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="8ad21bf21784dacce5f2043afb97218cc377e835">
+        <dex dex="/Users/mbp/Documents/Android/Breath/Breath/app/build/intermediates/pre-dexed/debug/bolts-applinks-1.4.0_e621ad6404a9f625adc3dea6c86964e478f8f7f2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/mbp/.android/build-cache/675a93d6408de592e5d06ff8d1570c865a5c311b/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="6addaba208e21c6da776d0ca75b6b23a6ccd5499">
+        <dex dex="/Users/mbp/Documents/Android/Breath/Breath/app/build/intermediates/pre-dexed/debug/classes_b911796e716405bda05c171d05e0861a0164afb4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/mbp/.gradle/caches/modules-2/files-2.1/com.googlecode.libphonenumber/libphonenumber/8.5.2/4a5b5caed312654f6aa2171d2f24e44785621d3d/libphonenumber-8.5.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="4a5b5caed312654f6aa2171d2f24e44785621d3d">
+        <dex dex="/Users/mbp/Documents/Android/Breath/Breath/app/build/intermediates/pre-dexed/debug/libphonenumber-8.5.2_b4aec63de8809701846a52b413844698529bc0c2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/mbp/.android/build-cache/eb79d38ab9b72cf2e5c0c8d41c276e4ce2e1f13c/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="c14f0c89f28cf782e42581ab0aba5f63af39b3d2">
+        <dex dex="/Users/mbp/Documents/Android/Breath/Breath/app/build/intermediates/pre-dexed/debug/classes_ce95ef90dcd956d7643df71c8fb6b1befbd932dd.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/mbp/Documents/Android/Breath/Breath/app/mail.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="428e267abff0d10802ccde86b915da2c20471160">
+        <dex dex="/Users/mbp/Documents/Android/Breath/Breath/app/build/intermediates/transforms/dex/debug/folders/1000/2/mail_da158c52604aac046fcbe531227bd64a0f026126/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/mbp/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.8.0/5ea7af56cc7c567ed9856d99efb30740e9b17ff/okio-1.8.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="05ea7af56cc7c567ed9856d99efb30740e9b17ff">
+        <dex dex="/Users/mbp/Documents/Android/Breath/Breath/app/build/intermediates/pre-dexed/debug/okio-1.8.0_eb431b86d020c3ca8f9e9dac230eb8118c3b62c3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/mbp/.android/build-cache/358b895473c1f2be5608637443bd6e5a884444cd/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="1ee075177bd403c333d4843b92c4b6c55db929ed">
+        <dex dex="/Users/mbp/Documents/Android/Breath/Breath/app/build/intermediates/pre-dexed/debug/classes_30429a07c838b3d7f63eee37e2d445febe1794c1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/mbp/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="6975da39a7040257bd51d21a231b76c915872d38">
+        <dex dex="/Users/mbp/Documents/Android/Breath/Breath/app/build/intermediates/pre-dexed/debug/javax.inject-1_b62141c6c67569f9872e1dcca1934b4f4ce96f9a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/mbp/.android/build-cache/0b98977e8a1216f043ac9bfe2156f508b5b70074/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="eb0d830e3eabb9deb9ec44869cf7ac7ea1ad794c">
+        <dex dex="/Users/mbp/Documents/Android/Breath/Breath/app/build/intermediates/pre-dexed/debug/classes_8a098e02bdc155c8f0f3f6cd8ae6a2e780e177f0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/mbp/.android/build-cache/ceb3267349f5f62135c6da28bbd73e2562c8f6fd/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="e96c6974cf924e7ee3b230e6847d5731423388c9">
+        <dex dex="/Users/mbp/Documents/Android/Breath/Breath/app/build/intermediates/pre-dexed/debug/classes_9efe905e67bf2b5fe054e2b3a734cbd86ad6c605.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/mbp/.android/build-cache/1a2190320610d80a83b768fe52bf72105e168e80/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="2cfb5a2b52bb09fa94a7a0c4c2f2319703cb1f03">
+        <dex dex="/Users/mbp/Documents/Android/Breath/Breath/app/build/intermediates/pre-dexed/debug/classes_05562c6f9b804746768af9be1ead5a92fda67806.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/mbp/Documents/Android/Breath/Breath/app/YouTubeAndroidPlayerApi.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="3c4f96ff493456651cc7bdb0b47e10eb25545a16">
+        <dex dex="/Users/mbp/Documents/Android/Breath/Breath/app/build/intermediates/pre-dexed/debug/YouTubeAndroidPlayerApi_906d3ace66210630c028363f7b4d271153d53b23.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/mbp/.android/build-cache/b30f588230bab6366cd39830dbf99efe12b68058/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="9ab787a20aae245b5b3651ae0b9c38459eb37715">
+        <dex dex="/Users/mbp/Documents/Android/Breath/Breath/app/build/intermediates/pre-dexed/debug/classes_1e01bd751db30cc4f363b29315d2b91b719251bb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/mbp/.android/build-cache/f89776d08980a472a351a322463d776a026d4431/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="433f4d6aa5f21f19552afe0e6c5eff0fedba73ad">
+        <dex dex="/Users/mbp/Documents/Android/Breath/Breath/app/build/intermediates/pre-dexed/debug/classes_a2cbdaf9aeef780ea8ebebad582a305c07cdb4c0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/mbp/.android/build-cache/6d8dc9f888d94c4bb3b5c81818b0c547f48d199d/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="518768f3200963fbfec652f498da2c9d39245234">
+        <dex dex="/Users/mbp/Documents/Android/Breath/Breath/app/build/intermediates/pre-dexed/debug/classes_7ed042b1da38d832c88c7f296206081fa1d9ee91.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/mbp/.android/build-cache/33ce902801b65aea6ff0cecd08aa6f6c9fceddeb/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="486371f97baad8e607f332f20fee1d3dd00a731a">
+        <dex dex="/Users/mbp/Documents/Android/Breath/Breath/app/build/intermediates/pre-dexed/debug/classes_0efb59fc9c9bbab0f326920637062f408a35c90f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/mbp/.android/build-cache/380e724cdbde2d3d55953f863f3931966d7377f0/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="5cc5ef8347a6bafa14556cbd35230aa9b3431bb0">
+        <dex dex="/Users/mbp/Documents/Android/Breath/Breath/app/build/intermediates/pre-dexed/debug/classes_1ff7e3c939e339a2db853521ec195be0776a8653.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/mbp/.android/build-cache/3de1b88751085ade08f36b162943d0df0da5c117/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="756f6297eef79784f5e356dcd4f39865028b2bd0">
+        <dex dex="/Users/mbp/Documents/Android/Breath/Breath/app/build/intermediates/pre-dexed/debug/classes_da6ce4ec1c14f4d1b1c25269b0f79f4214a86ebb.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/mbp/Documents/Android/Breath/Breath/app/additionnal.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="bd9e8dc422bb8c8405359947fe9f4282b49f57f4">
+        <dex dex="/Users/mbp/Documents/Android/Breath/Breath/app/build/intermediates/transforms/dex/debug/folders/1000/2/additionnal_0067b901985636dfb7375501224dc04d37a2ef07/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/mbp/.android/build-cache/9387a272ae717ef6f416397e6828a6150581fd81/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="6116e0e7069de7fc259aac8e08b84f32c2038231">
+        <dex dex="/Users/mbp/Documents/Android/Breath/Breath/app/build/intermediates/pre-dexed/debug/classes_d36dde3efe5daee69e5dcecbfebf2e85d867b756.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/mbp/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/25.3.0/support-annotations-25.3.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="dd84903d2e1af25a6081ef9038ad863cb14ca3a0">
+        <dex dex="/Users/mbp/Documents/Android/Breath/Breath/app/build/intermediates/pre-dexed/debug/support-annotations-25.3.0_501c09f35fa22eb7b78b46c48c88c15b00e6726c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/mbp/.android/build-cache/848c3b00bec018ef6442132041297c021e58a5bf/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="425c7b17887e5c3f8cbdf67ba171bc246f29b42c">
+        <dex dex="/Users/mbp/Documents/Android/Breath/Breath/app/build/intermediates/pre-dexed/debug/classes_5d0f3d0eac17c1ce6783c86d51c0e92990fcd710.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/mbp/Documents/Android/Breath/Breath/app/activation.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="d1257cbff6faa44c1f325ae0d9413522d4644383">
+        <dex dex="/Users/mbp/Documents/Android/Breath/Breath/app/build/intermediates/pre-dexed/debug/activation_3191e72b28e6640a0ba79b0e219302bf744db409.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/mbp/.android/build-cache/4581eb7f2a83b49339818bd0981992fa43c18fe1/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="70f23cb87278f89aa51e6f57e8f0fd5266572d95">
+        <dex dex="/Users/mbp/Documents/Android/Breath/Breath/app/build/intermediates/pre-dexed/debug/classes_b8143e0bc1a4ccf6df841058f90caca890fb4dee.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/mbp/.android/build-cache/0e994402534430671b6682f76c50c3a782c12f83/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="95dbd34766d3f158ef20de4b5b0206118e960709">
+        <dex dex="/Users/mbp/Documents/Android/Breath/Breath/app/build/intermediates/pre-dexed/debug/classes_c94e4aec084e33bb11ac38bee2aa05d2240dcca4.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/mbp/Documents/Android/Breath/Breath/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="4003f079af62028f63832f08faeaf37d9155a847">
+        <dex dex="/Users/mbp/Documents/Android/Breath/Breath/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_ba37c0454c6fa8bcc3f1beeb3c871c4deaf0d846/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/mbp/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.7/751f548c85fa49f330cecbb1875893f971b33c4e/gson-2.7.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="751f548c85fa49f330cecbb1875893f971b33c4e">
+        <dex dex="/Users/mbp/Documents/Android/Breath/Breath/app/build/intermediates/pre-dexed/debug/gson-2.7_8a3d33f338c2882ccb1e73744d52fc7b9f442f13.jar" />
     </item>
 
 </items>

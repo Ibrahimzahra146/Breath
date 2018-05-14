@@ -36,6 +36,9 @@ public interface PostInterface {
     @Headers("Cache-Control: max-age=64000")
     @GET("/api/v1/post/getUserHomePost/{id}")
     Call<List<PostCommentResponseModel>> getUserHomePost(@Path("id") int id);
+    @Headers("Cache-Control: max-age=64000")
+    @GET("/api/v1/post/getSavedPost/{id}")
+    Call<List<PostCommentResponseModel>> getSavedPost(@Path("id") int id);
     @Multipart
     @POST("/api/v1/post/addNewImagePost")
     Call<PostResponseModel> addNewPost(@Part MultipartBody.Part file , @Query("id") int id, @Query("text") String text, @Query("is_public_comment") boolean is_public_comment);
