@@ -40,7 +40,7 @@
             android:label="@string/title_activity_search"
             android:theme="@style/AppTheme" />
         <activity android:name=".Activities.UserProfileActivity" />
-        <activity android:name=".Activities.SplashActivity"></activity>
+        <activity android:name=".Activities.SplashActivity" />
 
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
@@ -64,7 +64,8 @@
         <activity android:name=".Activities.ReplyActivity" />
         <activity android:name=".Activities.AddCommentActivity" />
         <activity android:name=".Activities.RecentCommentsActivity" />
-        <activity android:name=".Activities.SavedPostActivity"></activity>
+        <activity android:name=".Activities.SavedPostActivity" />
+        <activity android:name=".Activities.ViewPostActivity"></activity>
     </application>
 
 </manifest>
