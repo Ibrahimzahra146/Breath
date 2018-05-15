@@ -141,7 +141,9 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
                 holder.postCommentCount.setText(String.valueOf(commentSize) + " comments");
             }
         } else {
-            holder.postCommentCount.setVisibility(View.INVISIBLE);
+            holder.postCommentCount.setText("no comments");
+
+            //holder.postCommentCount.setVisibility(View.INVISIBLE);
         }
 
         Log.d("Reacts", "id " +postResponseModelsList.get(position).getPost().getPostId());
