@@ -43,6 +43,10 @@ import static com.facebook.FacebookSdk.getApplicationContext;
 import static com.facebook.FacebookSdk.getClientToken;
 
 public class GeneralFunctions {
+    Retrofit retrofit = new Retrofit.Builder()
+            .baseUrl(GeneralInfo.SPRING_URL)
+            .addConverterFactory(GsonConverterFactory.create()).
+                    client(GeneralInfo.getClient(getApplicationContext())).build();
     public static boolean isAppRunning(final Context context, final String packageName) {
         final ActivityManager activityManager = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
         final List<ActivityManager.RunningAppProcessInfo> procInfos = activityManager.getRunningAppProcesses();
@@ -104,9 +108,7 @@ public class GeneralFunctions {
     }
 
     public void storeDeviceIdWithDeviceToken(int user_id, String deviceId) {
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(GeneralInfo.SPRING_URL)
-                .addConverterFactory(GsonConverterFactory.create()).build();
+
         DeviceTokenInterface tokenApi = retrofit.create(DeviceTokenInterface.class);
         DeviceTokenModel deviceTokenModel = new DeviceTokenModel();
         deviceTokenModel.setDeviceId(deviceId);
@@ -135,9 +137,7 @@ public class GeneralFunctions {
      * @param deviceId
      */
     public void storeUserIdWithDeviceId(int user_id, String deviceId) {
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(GeneralInfo.SPRING_URL)
-                .addConverterFactory(GsonConverterFactory.create()).build();
+
         UserIdDeviceIdInterface tokenApi = retrofit.create(UserIdDeviceIdInterface.class);
         UserDeviceIdRequestModel userDeviceIdRequestModel = new UserDeviceIdRequestModel();
         userDeviceIdRequestModel.setUserId(user_id);
@@ -226,9 +226,7 @@ public class GeneralFunctions {
         final MultipartBody.Part body =
                 MultipartBody.Part.createFormData("uploadfile", file.getName(), requestFile);
 
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(GeneralInfo.SPRING_URL)
-                .addConverterFactory(GsonConverterFactory.create()).build();
+
         ImageInterface imageInterface = retrofit.create(ImageInterface.class);
         Call<UserModel> userImageResponse;
         if (requestCode == 100) {

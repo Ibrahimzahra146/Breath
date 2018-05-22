@@ -142,7 +142,7 @@ public class FollowingService {
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(GeneralInfo.SPRING_URL)
-                .addConverterFactory(GsonConverterFactory.create()).build();
+                .addConverterFactory(GsonConverterFactory.create()).client(GeneralInfo.getClient(getApplicationContext())).build();
         FollowingInterface FriendApi = retrofit.create(FollowingInterface.class);
 
         final FollowingRequestModel followingRequestModel = new FollowingRequestModel();

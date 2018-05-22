@@ -32,7 +32,8 @@ public class FollowingActivity extends AppCompatActivity {
     public static ArrayList<UserModel> userModelList = new ArrayList<>();
     Retrofit retrofit = new Retrofit.Builder()
             .baseUrl(GeneralInfo.SPRING_URL)
-            .addConverterFactory(GsonConverterFactory.create()).build();
+            .addConverterFactory(GsonConverterFactory.create()).
+                    client(GeneralInfo.getClient(getApplicationContext())).build();
     ObjectAnimator anim;
 
     public RecyclerView recyclerView;

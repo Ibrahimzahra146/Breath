@@ -223,7 +223,9 @@ public class DirectSignUpHomePostsAdapter extends RecyclerView.Adapter<DirectSig
     public void sendComment(final TextView commentCoutnerView, final int commentCounter) {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(GeneralInfo.SPRING_URL)
-                .addConverterFactory(GsonConverterFactory.create()).build();
+                .addConverterFactory(GsonConverterFactory.create())
+                .client(GeneralInfo.getClient(getApplicationContext()))
+                .build();
         PostInterface sendComment = retrofit.create(PostInterface.class);
         AddCommentModel addCommentModel = new AddCommentModel();
         addCommentModel.setPostId(addCommentDialogPostId);

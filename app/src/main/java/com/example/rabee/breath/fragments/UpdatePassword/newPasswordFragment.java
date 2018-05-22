@@ -61,7 +61,9 @@ public class newPasswordFragment extends android.app.Fragment {
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(GeneralInfo.SPRING_URL)
-                .addConverterFactory(GsonConverterFactory.create()).build();
+                .addConverterFactory(GsonConverterFactory.create())
+                .client(GeneralInfo.getClient(getActivity().getApplicationContext())).build();
+
         service = retrofit.create(AuthInterface.class);
         final SignInRequestModel signInModel = new SignInRequestModel();
         signInModel.setEmail( ((UpdatePasswordActivity) getActivity()).getEmail());

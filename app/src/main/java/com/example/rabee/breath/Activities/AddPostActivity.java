@@ -338,7 +338,7 @@ public class AddPostActivity extends YouTubeBaseActivity implements YouTubePlaye
             //  progressBar.setVisibility(View.VISIBLE);
             Retrofit retrofit = new Retrofit.Builder()
                     .baseUrl(GeneralInfo.SPRING_URL)
-                    .addConverterFactory(GsonConverterFactory.create()).build();
+                    .addConverterFactory(GsonConverterFactory.create()).client(GeneralInfo.getClient(getApplicationContext())).build();
             PostInterface Postservice;
             Postservice = retrofit.create(PostInterface.class);
 
@@ -387,7 +387,8 @@ public class AddPostActivity extends YouTubeBaseActivity implements YouTubePlaye
                 MultipartBody.Part.createFormData("uploadfile", file.getName(), requestFile);
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(GeneralInfo.SPRING_URL)
-                .addConverterFactory(GsonConverterFactory.create()).build();
+                .addConverterFactory(GsonConverterFactory.create())
+                .client(GeneralInfo.getClient(getApplicationContext())).build();
         PostInterface Postservice;
         Postservice = retrofit.create(PostInterface.class);
         Postservice = retrofit.create(PostInterface.class);

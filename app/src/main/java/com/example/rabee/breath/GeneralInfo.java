@@ -1,7 +1,10 @@
 package com.example.rabee.breath;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.util.Log;
 
 import com.example.rabee.breath.Models.ResponseModels.UserProfileResponseModel;
 
@@ -11,9 +14,13 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import okhttp3.Interceptor;
+import okhttp3.OkHttpClient;
+import okhttp3.Response;
+
 public class GeneralInfo {
 
-    public static String SPRING_URL = "http://52944f15.ngrok.io";
+    public static String SPRING_URL = "http://97b4d296.ngrok.io";
     public static String USER_NAME="Ibrahim zahra";
     public static String PROFILE_PIC="_437.022828770496916832227_1341475782539973_288842465026282085_n.jpg";
     public static int notifications_counter = 0;
@@ -24,6 +31,22 @@ public class GeneralInfo {
     public static int userID;
     public static UserProfileResponseModel generalUserInfo;
     public static Bitmap userProfilePicture;
+    public static OkHttpClient getClient(Context context){
+
+        SharedPreferences sharedPreferences =  context.getSharedPreferences("userInfo", Context.MODE_PRIVATE);
+        final String session  = sharedPreferences.getString("session","");
+         Log.d("Session",session);
+        OkHttpClient client = new OkHttpClient.Builder()
+                .addInterceptor(new Interceptor() {
+                    @Override public Response intercept(Chain chain) throws IOException {
+                        return chain.proceed(chain.request()
+                                .newBuilder()
+                                .addHeader("Cookie", session)
+                                .build());
+                    }})
+                .build();
+        return client;
+    }
 
     public static String getLoginType() {
         return loginType;

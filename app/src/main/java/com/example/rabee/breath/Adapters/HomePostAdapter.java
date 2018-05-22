@@ -54,7 +54,7 @@ import static com.facebook.FacebookSdk.getApplicationContext;
 public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyViewHolder> {
     Retrofit retrofit = new Retrofit.Builder()
             .baseUrl(GeneralInfo.SPRING_URL)
-            .addConverterFactory(GsonConverterFactory.create()).build();
+            .addConverterFactory(GsonConverterFactory.create()).client(GeneralInfo.getClient(getApplicationContext())).build();
     PostInterface postInterface = retrofit.create(PostInterface.class);
     List<Boolean> pressedLoveFlag, PressedLikeFlag, PressedUnlikeFlag;
     List<Integer> likeCount, loveCount, disLikeCount;
@@ -113,11 +113,11 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
         image = postResponseModel.getUserId().getImage();
         Gson gson = new Gson();
         String json = gson.toJson(postResponseModel);
-        String imageUrl = GeneralInfo.SPRING_URL+"/" + image;
-        Log.d("Image url ",imageUrl);
+        String imageUrl = GeneralInfo.SPRING_URL + "/" + image;
+        Log.d("Image url ", imageUrl);
         Picasso.with(this.context).load(imageUrl).into(holder.posterProfilePicture);
         if (postResponseModel.getImage() != null) {
-             imageUrl = GeneralInfo.SPRING_URL + "/" + postResponseModel.getImage();
+            imageUrl = GeneralInfo.SPRING_URL + "/" + postResponseModel.getImage();
 
             Picasso.with(this.context).load(imageUrl).into(holder.postImage);
 
@@ -129,7 +129,7 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
         holder.postLikeCount.setText(likeCount.get(position) > 0 ? (String.valueOf(likeCount.get(position))) : "");
         holder.postDislikeCount.setText(disLikeCount.get(position) > 0 ? (String.valueOf(disLikeCount.get(position))) : "");
 
-       //// postStatusIcon
+        //// postStatusIcon
 
 //        holder.postStatusIcon.setImageResource(postResponseModelsList.get(position).getPost().is_public_comment() ? R.drawable.unlocked_icon : R.drawable.locked_icon);
         // holder.postTime.setText(postResponseModelsList.get(position).getPost());
@@ -146,10 +146,10 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
             //holder.postCommentCount.setVisibility(View.INVISIBLE);
         }
 
-        Log.d("Reacts", "id " +postResponseModelsList.get(position).getPost().getPostId());
-        Log.d("Reacts", "love "+postResponseModelsList.get(position).getReacts().getLoveList().getMyAction() + " "  );
-        Log.d("Reacts", "like "+postResponseModelsList.get(position).getReacts().getLikeList().getMyAction() + " "  );
-        Log.d("Reacts", "unlike "+postResponseModelsList.get(position).getReacts().getDislikeList().getMyAction() + " "  );
+        Log.d("Reacts", "id " + postResponseModelsList.get(position).getPost().getPostId());
+        Log.d("Reacts", "love " + postResponseModelsList.get(position).getReacts().getLoveList().getMyAction() + " ");
+        Log.d("Reacts", "like " + postResponseModelsList.get(position).getReacts().getLikeList().getMyAction() + " ");
+        Log.d("Reacts", "unlike " + postResponseModelsList.get(position).getReacts().getDislikeList().getMyAction() + " ");
 
 
         holder.postUnlikeIcon.setImageResource(R.drawable.unlike_icon);
@@ -176,7 +176,7 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
         //React listener
         View.OnClickListener LoveReactsClickListener = new View.OnClickListener() {
             public void onClick(View v) {
-                if(postResponseModelsList.get(position).getReacts().getLoveList().getCount()>0) {
+                if (postResponseModelsList.get(position).getReacts().getLoveList().getCount() > 0) {
                     Log.d("ReactAction", "React Action == Pressed");
                     Intent i = new Intent(getApplicationContext(), ReactActivity.class);
                     Bundle b = new Bundle();
@@ -191,7 +191,7 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
 
         View.OnClickListener LikeReactsClickListener = new View.OnClickListener() {
             public void onClick(View v) {
-                if(postResponseModelsList.get(position).getReacts().getLikeList().getCount()>0) {
+                if (postResponseModelsList.get(position).getReacts().getLikeList().getCount() > 0) {
 
                     Intent i = new Intent(getApplicationContext(), ReactActivity.class);
                     Bundle b = new Bundle();
@@ -205,7 +205,7 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
 
         View.OnClickListener UnlikeReactsClickListener = new View.OnClickListener() {
             public void onClick(View v) {
-                if(postResponseModelsList.get(position).getReacts().getDislikeList().getCount()>0) {
+                if (postResponseModelsList.get(position).getReacts().getDislikeList().getCount() > 0) {
 
                     Intent i = new Intent(getApplicationContext(), ReactActivity.class);
                     Bundle b = new Bundle();
@@ -224,16 +224,16 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
         // React listener
 
 
-        View.OnClickListener addCommentListener= (new View.OnClickListener() {
+        View.OnClickListener addCommentListener = (new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 addCommentDialog.show();
                 commentTextDialog = (EditText) addCommentDialog.findViewById(R.id.commentText);
                 cancelBtnDialog = (TextView) addCommentDialog.findViewById(R.id.cancelBtn);
-                sendBtnDialog= (ImageView) addCommentDialog.findViewById(R.id.sendBtn);
+                sendBtnDialog = (ImageView) addCommentDialog.findViewById(R.id.sendBtn);
                 addCommentDialogPostId = postResponseModelsList.get(position).getPost().getPostId();
-                addCommentDialogProgressBar= (ProgressBar) addCommentDialog.findViewById(R.id.progressBar) ;
+                addCommentDialogProgressBar = (ProgressBar) addCommentDialog.findViewById(R.id.progressBar);
                 sendBtnDialog.setOnClickListener(
                         new View.OnClickListener() {
                             @Override
@@ -242,7 +242,7 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
 
                                 } else {
                                     addCommentDialogProgressBar.setVisibility(View.VISIBLE);
-                                    sendComment(holder.postCommentCount,postResponseModelsList.get(position).getComments().size());
+                                    sendComment(holder.postCommentCount, postResponseModelsList.get(position).getComments().size());
                                 }
                             }
                         });
@@ -261,20 +261,20 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
 
         View.OnClickListener commentListener = new View.OnClickListener() {
             public void onClick(View v) {
-               // if (postResponseModelsList.get(position).getComments().size() == 0) {
+                // if (postResponseModelsList.get(position).getComments().size() == 0) {
 
                 //} else {
-                    Intent i = new Intent(getApplicationContext(), CommentActivity.class);
-                    Bundle b = new Bundle();
-                    b.putInt("postId", postResponseModelsList.get(position).getPost().getPostId());
+                Intent i = new Intent(getApplicationContext(), CommentActivity.class);
+                Bundle b = new Bundle();
+                b.putInt("postId", postResponseModelsList.get(position).getPost().getPostId());
 
-                    i.putExtras(b);
-                    context.startActivity(i);
+                i.putExtras(b);
+                context.startActivity(i);
                 //}
 
             }
         };
-  //      holder.postCommentCount.setOnClickListener(commentListener);
+        //      holder.postCommentCount.setOnClickListener(commentListener);
 //        holder.postCommentIcon.setOnClickListener(commentListener);
         holder.viewCommentLayout.setOnClickListener(commentListener);
 
@@ -358,20 +358,20 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
         holder.saveIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                SavePost(position,holder.saveIcon);
+                SavePost(position, holder.saveIcon);
             }
         });
         holder.savePostLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                SavePost(position,holder.saveIcon);
+                SavePost(position, holder.saveIcon);
             }
         });
 
         if (postResponseModel.getYoutubelink().getLink() != "" && postResponseModel.getImage() == null) {
             holder.youtubeLinkTitle.setText(postResponseModel.getYoutubelink().getTitle());
             holder.youtubeLinkAuthor.setText("Channel: " + postResponseModel.getYoutubelink().getAuthor_name());
-            imageUrl = GeneralInfo.SPRING_URL+"/"+postResponseModel.getYoutubelink().getImage();
+            imageUrl = GeneralInfo.SPRING_URL + "/" + postResponseModel.getYoutubelink().getImage();
             Picasso.with(getApplicationContext()).load(imageUrl).into(holder.youtubeLinkImage);
         } else {
             holder.youtubeLinkLayout.setVisibility(View.GONE);
@@ -397,7 +397,7 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
                 Intent i = new Intent(getApplicationContext(), OtherProfileActivity.class);
                 Bundle b = new Bundle();
                 b.putString("mName", holder.posterUserName.getText().toString());
-                b.putInt("Id",postResponseModelsList.get(position).getPost().getUserId().getId() );
+                b.putInt("Id", postResponseModelsList.get(position).getPost().getUserId().getId());
                 b.putString("mImageURL", postResponseModelsList.get(position).getPost().getUserId().getImage());
                 i.putExtras(b);
                 i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -521,7 +521,7 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
     public void sendComment(final TextView commentCoutnerView, final int commentCounter) {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(GeneralInfo.SPRING_URL)
-                .addConverterFactory(GsonConverterFactory.create()).build();
+                .addConverterFactory(GsonConverterFactory.create()).client(GeneralInfo.getClient(getApplicationContext())).build();
         PostInterface sendComment = retrofit.create(PostInterface.class);
         AddCommentModel addCommentModel = new AddCommentModel();
         addCommentModel.setPostId(addCommentDialogPostId);
@@ -540,10 +540,10 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
                 } else {
                     addCommentDialogProgressBar.setVisibility(View.INVISIBLE);
 
-                    int  newCoutner =commentCounter+1;
+                    int newCoutner = commentCounter + 1;
                     addCommentDialog.dismiss();
                     commentTextDialog.setText("");
-                    commentCoutnerView.setText(String.valueOf(newCoutner) + (newCoutner >1 ? " comments": " comment") );
+                    commentCoutnerView.setText(String.valueOf(newCoutner) + (newCoutner > 1 ? " comments" : " comment"));
                     commentCoutnerView.setVisibility(View.VISIBLE);
 
                 }
@@ -555,7 +555,7 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
                 generalFunctions.showErrorMesaage(getApplicationContext());
                 addCommentDialogProgressBar.setVisibility(View.INVISIBLE);
 
-           }
+            }
 
         });
     }
@@ -572,8 +572,8 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
         ImageView youtubeLinkImage;
         TextView youtubeLinkTitle;
         TextView youtubeLinkAuthor;
-        LinearLayout youtubeLinkLayout,unlikeLayout,likeLayout,loveLayout;
-        LinearLayout viewCommentLayout , addCommentLayout, savePostLayout;
+        LinearLayout youtubeLinkLayout, unlikeLayout, likeLayout, loveLayout;
+        LinearLayout viewCommentLayout, addCommentLayout, savePostLayout;
         ImageView postCommentIcon, postLoveIcon, postLikeIcon, postUnlikeIcon, postStatusIcon, saveIcon, addComnent;
 
         public MyViewHolder(View view) {
@@ -599,13 +599,12 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
             postStatusIcon = (ImageView) view.findViewById(R.id.postStatus);
             addComnent = (ImageView) view.findViewById(R.id.add_comment);
             postTime = (TextView) view.findViewById(R.id.postTime);
-           unlikeLayout = (LinearLayout) view.findViewById(R.id.dislikeLayout);
+            unlikeLayout = (LinearLayout) view.findViewById(R.id.dislikeLayout);
             likeLayout = (LinearLayout) view.findViewById(R.id.likeLayout);
             loveLayout = (LinearLayout) view.findViewById(R.id.loveLayout);
             viewCommentLayout = (LinearLayout) view.findViewById(R.id.viewCommentLayout);
             addCommentLayout = (LinearLayout) view.findViewById(R.id.addCommentLayout);
             savePostLayout = (LinearLayout) view.findViewById(R.id.savePostLayout);
-
 
 
         }

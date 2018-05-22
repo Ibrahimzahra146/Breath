@@ -58,7 +58,9 @@ public class EmailFragment extends android.app.Fragment {
                     checkEmailProgress.setVisibility(View.VISIBLE);
                     Retrofit retrofit = new Retrofit.Builder()
                             .baseUrl(GeneralInfo.SPRING_URL)
-                            .addConverterFactory(GsonConverterFactory.create()).build();
+                            .addConverterFactory(GsonConverterFactory.create())
+                            .client(GeneralInfo.getClient(getActivity().getApplicationContext()))
+                            .build();
                     service = retrofit.create(AuthInterface.class);
                     final SignInRequestModel signInModel = new SignInRequestModel();
                     signInModel.setEmail(email.getText().toString());

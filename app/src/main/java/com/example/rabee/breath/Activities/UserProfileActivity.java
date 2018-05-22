@@ -67,7 +67,8 @@ public class UserProfileActivity extends AppCompatActivity {
     SharedPreferences sharedPreferences;
     Retrofit retrofit = new Retrofit.Builder()
             .baseUrl(GeneralInfo.SPRING_URL)
-            .addConverterFactory(GsonConverterFactory.create()).build();
+            .addConverterFactory(GsonConverterFactory.create())
+            .client(GeneralInfo.getClient(getApplicationContext())).build();
     public static List<PostCommentResponseModel> postResponseModelsList;
 
     ImageView img, coverImage, imageView;
@@ -417,7 +418,8 @@ public class UserProfileActivity extends AppCompatActivity {
         AboutUserRequestModel aboutUserModel = new AboutUserRequestModel(GeneralInfo.getUserID(), bioText, statusText, songText);
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(GeneralInfo.SPRING_URL)
-                .addConverterFactory(GsonConverterFactory.create()).build();
+                .addConverterFactory(GsonConverterFactory.create())
+                .client(GeneralInfo.getClient(getApplicationContext())).build();
         AboutUserInterface aboutUserApi = retrofit.create(AboutUserInterface.class);
 
         Call<AboutUserResponseModel> call = aboutUserApi.addNewAboutUser(aboutUserModel);

@@ -61,7 +61,7 @@ public class ReplyActivity extends AppCompatActivity {
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(GeneralInfo.SPRING_URL)
-                .addConverterFactory(GsonConverterFactory.create()).build();
+                .addConverterFactory(GsonConverterFactory.create()).client(GeneralInfo.getClient(getApplicationContext())).build();
         postInterface = retrofit.create(PostInterface.class);
         final Call<ReplyResponseModel> postResponse = postInterface.getCommentReplies(commentId);
         postResponse.enqueue(new Callback<ReplyResponseModel>() {

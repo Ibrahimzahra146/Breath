@@ -87,7 +87,9 @@ public class SearchActivity extends AppCompatActivity {
         userModelList.clear();
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(GeneralInfo.SPRING_URL)
-                .addConverterFactory(GsonConverterFactory.create()).build();
+                .addConverterFactory(GsonConverterFactory.create())
+                .client(GeneralInfo.getClient(getApplicationContext()))
+                .build();
 
         searchInterface = retrofit.create(SearchInterface.class);
         final Call<List<UserModel>> searchResponse = searchInterface.getSearchResult(word);

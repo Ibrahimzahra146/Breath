@@ -70,7 +70,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.3"
-        sha1="e0e728911666ab74af34eea2ab38ab52b946c1f3">
+        sha1="79305b8e0c1374a78e247dca5687fa8875aa9dc7">
         <dex dex="/Users/mbp/Documents/Android/Breath/Breath/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_ba37c0454c6fa8bcc3f1beeb3c871c4deaf0d846/classes.dex" />
     </item>
     <item
