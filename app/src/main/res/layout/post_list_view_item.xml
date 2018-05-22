@@ -1,7 +1,6 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="13dp"
     android:background="@drawable/white_layout_corners">
 
 
@@ -166,7 +165,6 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/postInfoLayout"
             android:orientation="vertical"
-            android:paddingBottom="2dp"
             android:paddingRight="7dp"
             android:paddingTop="1dp">
 

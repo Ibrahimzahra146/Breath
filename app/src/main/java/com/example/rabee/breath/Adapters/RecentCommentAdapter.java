@@ -15,6 +15,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.rabee.breath.Activities.CommentActivity;
+import com.example.rabee.breath.Activities.ViewPostActivity;
 import com.example.rabee.breath.GeneralInfo;
 import com.example.rabee.breath.Models.ResponseModels.PostCommentResponseModel;
 import com.example.rabee.breath.R;
@@ -91,8 +92,21 @@ public class RecentCommentAdapter extends RecyclerView.Adapter<RecentCommentAdap
                     i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     Bundle b = new Bundle();
                     b.putInt("postId", postCommentResponseModels.get(position).getPost().getPostId());
-
                     i.putExtras(b);
+                    context.startActivity(i);
+                }
+            });
+            holder.postText.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent i = new Intent(getApplicationContext(), ViewPostActivity.class);
+                    i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                   // Bundle b = new Bundle();
+                 //   b.putInt("postId", postCommentResponseModels.get(position).getPost().getPostId());
+                    Log.d("ActivityAdd2", " " + postCommentResponseModels.get(position).getPost().getPostId());
+                    i.putExtra("postId", postCommentResponseModels.get(position).getPost().getPostId());
+
+                  //  i.putExtras(b);
                     context.startActivity(i);
                 }
             });
