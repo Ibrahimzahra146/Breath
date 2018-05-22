@@ -90,7 +90,8 @@ public class EditProfileActivity extends Activity {
 
                 Retrofit retrofit = new Retrofit.Builder()
                         .baseUrl(GeneralInfo.SPRING_URL)
-                        .addConverterFactory(GsonConverterFactory.create()).build();
+                        .addConverterFactory(GsonConverterFactory.create()).
+                                client(GeneralInfo.getClient(getApplicationContext())).build();
                 AboutUserInterface aboutUserApi = retrofit.create(AboutUserInterface.class);
 
                 Call<Integer> call = aboutUserApi.updateProfile(editProfileModle);

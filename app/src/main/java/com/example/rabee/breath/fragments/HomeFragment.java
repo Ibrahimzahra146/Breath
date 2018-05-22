@@ -1,12 +1,15 @@
 
 package com.example.rabee.breath.fragments;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,8 +25,11 @@ import com.example.rabee.breath.R;
 import com.example.rabee.breath.ReactsRecyclerViewModel;
 import com.example.rabee.breath.RequestInterface.PostInterface;
 
+import java.io.IOException;
 import java.util.List;
 
+import okhttp3.Interceptor;
+import okhttp3.OkHttpClient;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -40,8 +46,8 @@ public class HomeFragment extends Fragment {
     View view;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private static final String ARG_PARAM1 = "param1" ;
+    private static final String ARG_PARAM2 = "param2" ;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -86,11 +92,12 @@ public class HomeFragment extends Fragment {
         recyclerView.hasFixedSize();
         progressBar = (ProgressBar) view.findViewById(R.id.progress_bar);
         noFriendsLayout = (LinearLayout) view.findViewById(R.id.no_friends_Layout);
-
         progressBar.setVisibility(View.VISIBLE);
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(GeneralInfo.SPRING_URL)
+                .client(GeneralInfo.getClient(getContext()))
                 .addConverterFactory(GsonConverterFactory.create()).build();
+
         postInterface = retrofit.create(PostInterface.class);
         final Call<List<PostCommentResponseModel>> postResponse = postInterface.getUserHomePost(GeneralInfo.getUserID());
         postResponse.enqueue(new Callback<List<PostCommentResponseModel>>() {
@@ -102,16 +109,16 @@ public class HomeFragment extends Fragment {
                 if (getActivity() != null) {
 
 
-                recyclerView.setAdapter(new HomePostAdapter(getActivity().getApplicationContext(), postResponseModelsList));
-                if (postResponseModelsList.size() == 0) {
-                    noFriendsLayout.setVisibility(View.VISIBLE);
-                    progressBar.setVisibility(View.INVISIBLE);
+                    recyclerView.setAdapter(new HomePostAdapter(getActivity().getApplicationContext(), postResponseModelsList));
+                    if (postResponseModelsList.size() == 0) {
+                        noFriendsLayout.setVisibility(View.VISIBLE);
+                        progressBar.setVisibility(View.INVISIBLE);
 
-                } else {
-                    recyclerView.setAdapter(new HomePostAdapter(getActivity(), postResponseModelsList));
-                    progressBar.setVisibility(View.INVISIBLE);
+                    } else {
+                        recyclerView.setAdapter(new HomePostAdapter(getActivity(), postResponseModelsList));
+                        progressBar.setVisibility(View.INVISIBLE);
+                    }
                 }
-            }
 
 
             }

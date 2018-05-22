@@ -5,6 +5,10 @@
       <config />
     </shared>
   </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="ses" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
   <component name="ChangeListManager">
 <<<<<<< HEAD
     <list default="true" id="3af59b0b-9529-4755-be25-446f348b0473" name="Default" comment="">
@@ -233,17 +237,40 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/local.properties" afterPath="$PROJECT_DIR$/local.properties" />
 =======
     <list default="true" id="8c88ac9b-f0a8-4bce-b5b8-c38ce5734d23" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/ViewPostActivity.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_view_post.xml" />
       <change beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.lock" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" />
+      <change beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" />
+      <change beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
+      <change beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Adapters/RecentCommentAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Adapters/RecentCommentAdapter.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/AddPostActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/AddPostActivity.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/CommentActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/CommentActivity.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/EditProfileActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/EditProfileActivity.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/FollowingActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/FollowingActivity.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/MainActivity.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/OtherProfileActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/OtherProfileActivity.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/ReactActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/ReactActivity.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/RecentCommentsActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/RecentCommentsActivity.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/ReplyActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/ReplyActivity.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/SavedPostActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/SavedPostActivity.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/SearchActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/SearchActivity.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/SettingsActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/SettingsActivity.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/SignUpActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/SignUpActivity.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/UserProfileActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/UserProfileActivity.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/UserYoutubeActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/UserYoutubeActivity.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/ViewPostActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/ViewPostActivity.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Adapters/DirectSignUpHomePostsAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Adapters/DirectSignUpHomePostsAdapter.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Adapters/HomePostAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Adapters/HomePostAdapter.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/GeneralFunctions.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/GeneralFunctions.java" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/GeneralInfo.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/GeneralInfo.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Services/FollowingService.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Services/FollowingService.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/fragments/HomeFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/fragments/HomeFragment.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/fragments/SignUpFragments/EmailFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/fragments/SignUpFragments/EmailFragment.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/fragments/UpdatePassword/SendEmailFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/fragments/UpdatePassword/SendEmailFragment.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/fragments/UpdatePassword/newPasswordFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/fragments/UpdatePassword/newPasswordFragment.java" />
       <change beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
 >>>>>>> 5aa6fde1e4252e955229a06e988e24077a8d078c
     </list>
@@ -278,34 +305,21 @@
               <caret line="71" column="55" lean-forward="true" selection-start-line="71" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
 =======
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="activity_view_post.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_view_post.xml">
+      <file leaf-file-name="HomeFragment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/fragments/HomeFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="472">
-              <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer2">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RecentCommentsActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/RecentCommentsActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="395">
-              <caret line="59" column="55" lean-forward="false" selection-start-line="59" selection-start-column="55" selection-end-line="59" selection-end-column="55" />
+            <state relative-caret-position="305">
+              <caret line="109" column="0" lean-forward="true" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RecentCommentAdapter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Adapters/RecentCommentAdapter.java">
+      <file leaf-file-name="NotificationFragment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/fragments/NotificationFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="379">
-              <caret line="102" column="83" lean-forward="false" selection-start-line="102" selection-start-column="83" selection-end-line="102" selection-end-column="83" />
+            <state relative-caret-position="-326">
+              <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -314,37 +328,50 @@
       <file leaf-file-name="GeneralInfo.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/GeneralInfo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="15" column="63" lean-forward="false" selection-start-line="15" selection-start-column="63" selection-end-line="15" selection-end-column="63" />
+            <state relative-caret-position="-38">
+              <caret line="37" column="14" lean-forward="false" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="14" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="activity_comment.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_comment.xml">
+      <file leaf-file-name="SettingsFragment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/fragments/SettingsFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="141">
-              <caret line="16" column="48" lean-forward="true" selection-start-line="16" selection-start-column="48" selection-end-line="16" selection-end-column="48" />
+            <state relative-caret-position="255">
+              <caret line="49" column="0" lean-forward="true" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
               <folding />
             </state>
           </provider>
-          <provider editor-type-id="android-designer2">
-            <state />
+        </entry>
+      </file>
+      <file leaf-file-name="FieldValidationService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Services/FieldValidationService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="116">
+              <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HomeFragment.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/fragments/HomeFragment.java">
+      <file leaf-file-name="FollowingService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Services/FollowingService.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="195">
               <caret line="89" column="6" lean-forward="false" selection-start-line="89" selection-start-column="6" selection-end-line="122" selection-end-column="11" />
 >>>>>>> 5aa6fde1e4252e955229a06e988e24077a8d078c
+=======
+            <state relative-caret-position="868">
+              <caret line="144" column="120" lean-forward="false" selection-start-line="144" selection-start-column="120" selection-end-line="144" selection-end-column="120" />
+>>>>>>> e2ca6dce49db1c58b857a99c29f313d08fe0adc8
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
 <<<<<<< HEAD
       <file leaf-file-name="SavedPostActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/SavedPostActivity.java">
@@ -357,19 +384,33 @@
 =======
       <file leaf-file-name="ViewPostActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/ViewPostActivity.java">
+=======
+      <file leaf-file-name="ImageService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Services/ImageService.java">
+>>>>>>> e2ca6dce49db1c58b857a99c29f313d08fe0adc8
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="38" column="44" lean-forward="true" selection-start-line="38" selection-start-column="44" selection-end-line="38" selection-end-column="44" />
+            <state relative-caret-position="-1265">
+              <caret line="43" column="13" lean-forward="false" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HomePostAdapter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Adapters/HomePostAdapter.java">
+      <file leaf-file-name="newPasswordFragment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/fragments/UpdatePassword/newPasswordFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="229">
-              <caret line="181" column="20" lean-forward="false" selection-start-line="181" selection-start-column="20" selection-end-line="181" selection-end-column="20" />
+            <state relative-caret-position="-197">
+              <caret line="64" column="83" lean-forward="false" selection-start-line="64" selection-start-column="83" selection-end-line="64" selection-end-column="83" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GeneralFunctions.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/GeneralFunctions.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="36" column="12" lean-forward="false" selection-start-line="36" selection-start-column="7" selection-end-line="36" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -378,18 +419,8 @@
       <file leaf-file-name="SendEmailFragment.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/fragments/UpdatePassword/SendEmailFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="38" column="28" lean-forward="false" selection-start-line="38" selection-start-column="28" selection-end-line="38" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CommentActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/CommentActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="32" column="26" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+            <state relative-caret-position="-137">
+              <caret line="61" column="99" lean-forward="false" selection-start-line="61" selection-start-column="99" selection-end-line="61" selection-end-column="99" />
               <folding />
             </state>
           </provider>
@@ -408,10 +439,21 @@
 =======
       <find>dec</find>
       <find>bundle</find>
-      <find>b.get</find>
       <find>commentText</find>
+      <find>b.get</find>
       <find>postText</find>
+<<<<<<< HEAD
 >>>>>>> 5aa6fde1e4252e955229a06e988e24077a8d078c
+=======
+      <find>checkl</find>
+      <find>retrofit</find>
+      <find>retrofi</find>
+      <find>postId</find>
+      <find>ret</find>
+      <find>retr</find>
+      <find>DeleteFriend</find>
+      <find>retro</find>
+>>>>>>> e2ca6dce49db1c58b857a99c29f313d08fe0adc8
     </findStrings>
     <dirStrings>
       <dir>C:\Users\exalt\Desktop\Breath\app</dir>
@@ -2509,23 +2551,52 @@
         <option value="$PROJECT_DIR$/app/build.gradle" />
 =======
         <option value="$PROJECT_DIR$/app/build.gradle" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/RequestInterface/PostInterface.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/SavedPostActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_saved_post.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/ViewPostActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Adapters/HomePostAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_view_post.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Adapters/RecentCommentAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/RequestInterface/PostInterface.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/GeneralInfo.java" />
+<<<<<<< HEAD
 >>>>>>> 5aa6fde1e4252e955229a06e988e24077a8d078c
+=======
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/fragments/HomeFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Adapters/HomePostAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/AddPostActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/CommentActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/EditProfileActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/FollowingActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/OtherProfileActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/ReactActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/RecentCommentsActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/ReplyActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/SavedPostActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/SearchActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/SettingsActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/SignUpActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/UserProfileActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/UserYoutubeActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/ViewPostActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Adapters/DirectSignUpHomePostsAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/fragments/SignUpFragments/EmailFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/fragments/UpdatePassword/newPasswordFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/fragments/UpdatePassword/SendEmailFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Services/FollowingService.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/GeneralFunctions.java" />
+>>>>>>> e2ca6dce49db1c58b857a99c29f313d08fe0adc8
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
+<<<<<<< HEAD
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1382" />
     <option name="height" value="744" />
+=======
+    <option name="width" value="1440" />
+    <option name="height" value="900" />
+>>>>>>> e2ca6dce49db1c58b857a99c29f313d08fe0adc8
   </component>
   <component name="ProjectView">
     <navigator currentView="AndroidView" proportions="" version="1">
@@ -2543,6 +2614,7 @@
     </navigator>
     <panes>
       <pane id="ProjectPane" />
+<<<<<<< HEAD
 <<<<<<< HEAD
       <pane id="PackagesPane" />
       <pane id="AndroidView">
@@ -2573,12 +2645,21 @@
       <pane id="Scope" />
 =======
       <pane id="Scope" />
+=======
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+>>>>>>> e2ca6dce49db1c58b857a99c29f313d08fe0adc8
       <pane id="AndroidView">
         <subPane>
           <expand>
             <path>
               <item name="Breath" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
+            </path>
+            <path>
+              <item name="Breath" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="manifests" type="f94875db:AndroidManifestsGroupNode" />
             </path>
             <path>
               <item name="Breath" type="1abcf292:AndroidViewProjectNode" />
@@ -2603,18 +2684,37 @@
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="breath" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="Adapters" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Breath" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="breath" type="cbb59c9e:AndroidPsiDirectoryNode" />
               <item name="fragments" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Breath" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="breath" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="fragments" type="462c0819:PsiDirectoryNode" />
+              <item name="SignUpFragments" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Breath" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="breath" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="fragments" type="462c0819:PsiDirectoryNode" />
+              <item name="UpdatePassword" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Breath" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="breath" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="Services" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Breath" type="1abcf292:AndroidViewProjectNode" />
@@ -2624,16 +2724,27 @@
           <select />
         </subPane>
       </pane>
+<<<<<<< HEAD
       <pane id="Scratches" />
       <pane id="PackagesPane" />
 >>>>>>> 5aa6fde1e4252e955229a06e988e24077a8d078c
+=======
+      <pane id="Scope" />
+>>>>>>> e2ca6dce49db1c58b857a99c29f313d08fe0adc8
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
+<<<<<<< HEAD
     <property name="device.picker.selection" value="FA54HYJ01807" />
     <property name="sync.plugin.last.upgrade.timestamp" value="1526230570122" />
     <property name="show.do.not.ask.upgrade.gradle.plugin" value="2.3.3" />
+=======
+    <property name="device.picker.selection" value="Nexus_5X_API_24" />
+    <property name="sync.plugin.last.upgrade.timestamp" value="1526461091418" />
+    <property name="show.do.not.ask.upgrade.gradle.plugin" value="2.3.3" />
+    <property name="android.profiler.active" value="true" />
+>>>>>>> e2ca6dce49db1c58b857a99c29f313d08fe0adc8
   </component>
   <component name="RecentsManager">
     <key name="android.template.packageName">
@@ -3006,6 +3117,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
+<<<<<<< HEAD
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
@@ -3024,18 +3136,27 @@
       <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
 =======
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+=======
+    <frame x="0" y="0" width="1440" height="900" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.32916668" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+>>>>>>> e2ca6dce49db1c58b857a99c29f313d08fe0adc8
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286908" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3272727" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
 >>>>>>> 5aa6fde1e4252e955229a06e988e24077a8d078c
+=======
+      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+>>>>>>> e2ca6dce49db1c58b857a99c29f313d08fe0adc8
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="true" content_ui="tabs" />
@@ -3062,11 +3183,12 @@
       <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32587412" sideWeight="0.5" order="19" side_tool="false" content_ui="tabs" />
 =======
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24964234" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
 >>>>>>> 5aa6fde1e4252e955229a06e988e24077a8d078c
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -3084,6 +3206,11 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24964234" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+>>>>>>> e2ca6dce49db1c58b857a99c29f313d08fe0adc8
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
 <<<<<<< HEAD
 =======
@@ -3094,7 +3221,11 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286908" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
 >>>>>>> 5aa6fde1e4252e955229a06e988e24077a8d078c
+=======
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+>>>>>>> e2ca6dce49db1c58b857a99c29f313d08fe0adc8
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -3106,27 +3237,42 @@
   </component>
   <component name="editorHistoryManager">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/fragments/HomeFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
 =======
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/SavedPostActivity.java">
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/general_post_item_view.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+>>>>>>> e2ca6dce49db1c58b857a99c29f313d08fe0adc8
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="228">
+          <caret line="119" column="4" lean-forward="false" selection-start-line="119" selection-start-column="4" selection-end-line="125" selection-end-column="36" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/SettingsActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_comment.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="75">
 >>>>>>> 5aa6fde1e4252e955229a06e988e24077a8d078c
           <caret line="33" column="13" lean-forward="false" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
+=======
+        <state relative-caret-position="240">
+          <caret line="16" column="48" lean-forward="false" selection-start-line="16" selection-start-column="48" selection-end-line="16" selection-end-column="48" />
+>>>>>>> e2ca6dce49db1c58b857a99c29f313d08fe0adc8
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
 <<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/GeneralInfo.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -3134,22 +3280,39 @@
           <caret line="15" column="54" lean-forward="false" selection-start-line="15" selection-start-column="54" selection-end-line="15" selection-end-column="54" />
 =======
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/SearchActivity.java">
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_view_post.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+>>>>>>> e2ca6dce49db1c58b857a99c29f313d08fe0adc8
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="48" column="51" lean-forward="false" selection-start-line="48" selection-start-column="51" selection-end-line="48" selection-end-column="51" />
+        <state relative-caret-position="870">
+          <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/fragments/HomeFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1155">
           <caret line="104" column="0" lean-forward="false" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
 >>>>>>> 5aa6fde1e4252e955229a06e988e24077a8d078c
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_user_profile.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> e2ca6dce49db1c58b857a99c29f313d08fe0adc8
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
 <<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/RequestInterface/PostInterface.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -3162,84 +3325,118 @@
       </provider>
 =======
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_saved_post.xml">
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/RequestInterface/PostInterface.java">
+>>>>>>> e2ca6dce49db1c58b857a99c29f313d08fe0adc8
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
->>>>>>> 5aa6fde1e4252e955229a06e988e24077a8d078c
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/AddPostActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="465">
+          <caret line="53" column="44" lean-forward="false" selection-start-line="53" selection-start-column="44" selection-end-line="53" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/AddCommentActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
+        <state relative-caret-position="-515">
           <caret line="24" column="13" lean-forward="false" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+>>>>>>> 5aa6fde1e4252e955229a06e988e24077a8d078c
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/AddPostActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-469">
+          <caret line="390" column="69" lean-forward="false" selection-start-line="390" selection-start-column="69" selection-end-line="390" selection-end-column="69" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/CommentActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="28" column="13" lean-forward="false" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+        <state relative-caret-position="465">
+          <caret line="54" column="77" lean-forward="false" selection-start-line="54" selection-start-column="77" selection-end-line="54" selection-end-column="77" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/EditProfileActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="1" lean-forward="false" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
+        <state relative-caret-position="387">
+          <caret line="93" column="84" lean-forward="false" selection-start-line="93" selection-start-column="84" selection-end-line="93" selection-end-column="84" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Adapters/HomePostAdapter.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/FollowingActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1440">
-          <caret line="145" column="14" lean-forward="false" selection-start-line="145" selection-start-column="14" selection-end-line="145" selection-end-column="14" />
+        <state relative-caret-position="-695">
+          <caret line="35" column="72" lean-forward="false" selection-start-line="35" selection-start-column="72" selection-end-line="35" selection-end-column="72" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/HomeActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-290">
+          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_saved_post.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="48" lean-forward="false" selection-start-line="6" selection-start-column="48" selection-end-line="6" selection-end-column="48" />
+        <state relative-caret-position="-5554">
+          <caret line="78" column="116" lean-forward="false" selection-start-line="78" selection-start-column="116" selection-end-line="78" selection-end-column="116" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/OneTimeLogInActivity.java">
+>>>>>>> e2ca6dce49db1c58b857a99c29f313d08fe0adc8
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="56" column="44" lean-forward="true" selection-start-line="56" selection-start-column="44" selection-end-line="56" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+<<<<<<< HEAD
+=======
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/OtherProfileActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="56" column="116" lean-forward="false" selection-start-line="56" selection-start-column="116" selection-end-line="56" selection-end-column="116" />
+          <folding />
+        </state>
+      </provider>
+>>>>>>> e2ca6dce49db1c58b857a99c29f313d08fe0adc8
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/ReactActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="80" column="120" lean-forward="false" selection-start-line="80" selection-start-column="120" selection-end-line="80" selection-end-column="120" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/SavedPostActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/RecentCommentsActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="12" column="23" lean-forward="false" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+        <state relative-caret-position="35">
+          <caret line="46" column="120" lean-forward="false" selection-start-line="46" selection-start-column="120" selection-end-line="46" selection-end-column="120" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/fragments/HomeFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1560">
-          <caret line="131" column="45" lean-forward="false" selection-start-line="131" selection-start-column="45" selection-end-line="131" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml">
       <provider editor-type-id="android-designer2">
         <state />
@@ -3249,39 +3446,57 @@
           <caret line="5" column="1" lean-forward="false" selection-start-line="5" selection-start-column="1" selection-end-line="91" selection-end-column="0" />
         </state>
       </provider>
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/ReplyActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-166">
+          <caret line="63" column="120" lean-forward="false" selection-start-line="63" selection-start-column="120" selection-end-line="63" selection-end-column="120" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/SavedPostActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-169">
+          <caret line="48" column="76" lean-forward="false" selection-start-line="48" selection-start-column="76" selection-end-line="48" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+>>>>>>> e2ca6dce49db1c58b857a99c29f313d08fe0adc8
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/SearchActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="193">
+          <caret line="90" column="71" lean-forward="false" selection-start-line="90" selection-start-column="71" selection-end-line="90" selection-end-column="71" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/ReplyActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/SettingsActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="59" column="47" lean-forward="false" selection-start-line="59" selection-start-column="47" selection-end-line="59" selection-end-column="47" />
+        <state relative-caret-position="2040">
+          <caret line="188" column="71" lean-forward="true" selection-start-line="188" selection-start-column="71" selection-end-line="188" selection-end-column="71" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/AddPostActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/SignUpActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-527">
+          <caret line="136" column="16" lean-forward="true" selection-start-line="136" selection-start-column="16" selection-end-line="136" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/SplashActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
-          <caret line="56" column="13" lean-forward="false" selection-start-line="56" selection-start-column="13" selection-end-line="56" selection-end-column="13" />
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/AddCommentActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="24" column="13" lean-forward="false" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml">
       <provider editor-type-id="android-designer2">
         <state />
@@ -3311,21 +3526,49 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/FollowingActivity.java">
 >>>>>>> 5aa6fde1e4252e955229a06e988e24077a8d078c
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/UpdatePasswordActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="34" selection-end-column="72" />
+        <state relative-caret-position="-110">
+          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_saved_post.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/UserProfileActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        <state relative-caret-position="-1036">
+          <caret line="421" column="69" lean-forward="false" selection-start-line="421" selection-start-column="69" selection-end-line="421" selection-end-column="69" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/UserYoutubeActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-244">
+          <caret line="227" column="69" lean-forward="false" selection-start-line="227" selection-start-column="69" selection-end-line="227" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/ViewPostActivity.java">
+>>>>>>> e2ca6dce49db1c58b857a99c29f313d08fe0adc8
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-139">
+          <caret line="54" column="69" lean-forward="false" selection-start-line="54" selection-start-column="69" selection-end-line="54" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/YoutubeDialogActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/FollowingActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="66">
@@ -3345,6 +3588,14 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_saved_post.xml">
       <provider editor-type-id="android-designer2">
         <state />
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Adapters/CommentAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="56" column="11" lean-forward="false" selection-start-line="56" selection-start-column="11" selection-end-line="56" selection-end-column="11" />
+          <folding />
+        </state>
+>>>>>>> e2ca6dce49db1c58b857a99c29f313d08fe0adc8
       </provider>
 <<<<<<< HEAD
       <provider selected="true" editor-type-id="text-editor">
@@ -3352,15 +3603,21 @@
           <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
 =======
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/SettingsActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Adapters/DirectSignUpHomePostsAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="75">
           <caret line="33" column="13" lean-forward="false" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
 >>>>>>> 5aa6fde1e4252e955229a06e988e24077a8d078c
+=======
+        <state relative-caret-position="-634">
+          <caret line="226" column="69" lean-forward="false" selection-start-line="226" selection-start-column="69" selection-end-line="226" selection-end-column="69" />
+>>>>>>> e2ca6dce49db1c58b857a99c29f313d08fe0adc8
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
 <<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/SettingsActivity.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -3368,32 +3625,48 @@
           <caret line="33" column="13" lean-forward="false" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
 =======
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/SavedPostActivity.java">
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Adapters/HomePostAdapter.java">
+>>>>>>> e2ca6dce49db1c58b857a99c29f313d08fe0adc8
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="37" column="36" lean-forward="false" selection-start-line="37" selection-start-column="36" selection-end-line="37" selection-end-column="36" />
+        <state relative-caret-position="6525">
+          <caret line="524" column="40" lean-forward="false" selection-start-line="524" selection-start-column="36" selection-end-line="524" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/RequestInterface/PostInterface.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Adapters/PagerAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="221">
           <caret line="40" column="41" lean-forward="false" selection-start-line="40" selection-start-column="41" selection-end-line="40" selection-end-column="41" />
 >>>>>>> 5aa6fde1e4252e955229a06e988e24077a8d078c
+=======
+        <state relative-caret-position="-258">
+          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+>>>>>>> e2ca6dce49db1c58b857a99c29f313d08fe0adc8
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/fragments/HomeFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="143">
           <caret line="104" column="0" lean-forward="false" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Adapters/RecentCommentAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-64">
+          <caret line="105" column="36" lean-forward="false" selection-start-line="105" selection-start-column="30" selection-end-line="105" selection-end-column="36" />
+>>>>>>> e2ca6dce49db1c58b857a99c29f313d08fe0adc8
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/post_list_view_item.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Adapters/ReplyAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
 <<<<<<< HEAD
         <state relative-caret-position="177">
           <caret line="67" column="35" lean-forward="false" selection-start-line="67" selection-start-column="31" selection-end-line="67" selection-end-column="35" />
@@ -3411,13 +3684,23 @@
         <state relative-caret-position="210">
           <caret line="14" column="15" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="383" selection-end-column="14" />
 >>>>>>> 5aa6fde1e4252e955229a06e988e24077a8d078c
+=======
+        <state relative-caret-position="153">
+          <caret line="39" column="11" lean-forward="false" selection-start-line="39" selection-start-column="11" selection-end-line="39" selection-end-column="11" />
+>>>>>>> e2ca6dce49db1c58b857a99c29f313d08fe0adc8
           <folding />
         </state>
       </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Adapters/UserListAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="44" column="11" lean-forward="false" selection-start-line="44" selection-start-column="11" selection-end-line="44" selection-end-column="11" />
+          <folding />
+        </state>
       </provider>
     </entry>
+<<<<<<< HEAD
 <<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Models/RequestModels/SavePostRequestModel.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -3429,18 +3712,32 @@
         <state relative-caret-position="585">
           <caret line="39" column="34" lean-forward="true" selection-start-line="39" selection-start-column="34" selection-end-line="39" selection-end-column="34" />
 >>>>>>> 5aa6fde1e4252e955229a06e988e24077a8d078c
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/fragments/SignUpFragments/BirthDateFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+>>>>>>> e2ca6dce49db1c58b857a99c29f313d08fe0adc8
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/fragments/SettingsFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1054">
           <caret line="95" column="83" lean-forward="false" selection-start-line="95" selection-start-column="83" selection-end-line="95" selection-end-column="83" />
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/fragments/SignUpFragments/EmailFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="96" column="20" lean-forward="true" selection-start-line="96" selection-start-column="20" selection-end-line="96" selection-end-column="20" />
+>>>>>>> e2ca6dce49db1c58b857a99c29f313d08fe0adc8
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
 <<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/GeneralInfo.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -3452,10 +3749,17 @@
         <state relative-caret-position="-274">
           <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
 >>>>>>> 5aa6fde1e4252e955229a06e988e24077a8d078c
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/fragments/SignUpFragments/GenderFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="326">
+          <caret line="42" column="11" lean-forward="false" selection-start-line="42" selection-start-column="11" selection-end-line="42" selection-end-column="11" />
+>>>>>>> e2ca6dce49db1c58b857a99c29f313d08fe0adc8
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
 <<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/SavedPostActivity.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -3463,25 +3767,39 @@
           <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
 =======
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/general_post_item_view.xml">
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/fragments/SignUpFragments/MobileFragment.java">
+>>>>>>> e2ca6dce49db1c58b857a99c29f313d08fe0adc8
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="119" column="4" lean-forward="false" selection-start-line="119" selection-start-column="4" selection-end-line="125" selection-end-column="36" />
+        <state relative-caret-position="46">
+          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
           <folding />
         </state>
       </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/fragments/SignUpFragments/NameFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="50" column="11" lean-forward="false" selection-start-line="50" selection-start-column="8" selection-end-line="50" selection-end-column="11" />
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/CommentActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/fragments/SignUpFragments/PasswordFragment.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="135">
           <caret line="32" column="26" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
 >>>>>>> 5aa6fde1e4252e955229a06e988e24077a8d078c
+=======
+        <state relative-caret-position="326">
+          <caret line="45" column="11" lean-forward="false" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="11" />
+>>>>>>> e2ca6dce49db1c58b857a99c29f313d08fe0adc8
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Adapters/HomePostAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
@@ -3490,77 +3808,98 @@
 =======
         <state relative-caret-position="195">
           <caret line="89" column="6" lean-forward="false" selection-start-line="89" selection-start-column="6" selection-end-line="122" selection-end-column="11" />
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/fragments/UpdatePassword/CheckCodeFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="45" column="11" lean-forward="false" selection-start-line="45" selection-start-column="11" selection-end-line="45" selection-end-column="11" />
+>>>>>>> e2ca6dce49db1c58b857a99c29f313d08fe0adc8
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_comment.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/fragments/UpdatePassword/newPasswordFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="16" column="48" lean-forward="true" selection-start-line="16" selection-start-column="48" selection-end-line="16" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Adapters/HomePostAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="181" column="20" lean-forward="false" selection-start-line="181" selection-start-column="20" selection-end-line="181" selection-end-column="20" />
+        <state relative-caret-position="-197">
+          <caret line="64" column="83" lean-forward="false" selection-start-line="64" selection-start-column="83" selection-end-line="64" selection-end-column="83" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/fragments/UpdatePassword/SendEmailFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="38" column="28" lean-forward="false" selection-start-line="38" selection-start-column="28" selection-end-line="38" selection-end-column="28" />
+        <state relative-caret-position="-137">
+          <caret line="61" column="99" lean-forward="false" selection-start-line="61" selection-start-column="99" selection-end-line="61" selection-end-column="99" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/ViewPostActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/fragments/HomeFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="38" column="44" lean-forward="true" selection-start-line="38" selection-start-column="44" selection-end-line="38" selection-end-column="44" />
+        <state relative-caret-position="305">
+          <caret line="109" column="0" lean-forward="true" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_view_post.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/fragments/NotificationFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
-          <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Activities/RecentCommentsActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
-          <caret line="59" column="55" lean-forward="false" selection-start-line="59" selection-start-column="55" selection-end-line="59" selection-end-column="55" />
+        <state relative-caret-position="-326">
+          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Adapters/RecentCommentAdapter.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/fragments/SettingsFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="102" column="83" lean-forward="false" selection-start-line="102" selection-start-column="83" selection-end-line="102" selection-end-column="83" />
+        <state relative-caret-position="255">
+          <caret line="49" column="0" lean-forward="true" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Services/FieldValidationService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Services/FollowingService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="868">
+          <caret line="144" column="120" lean-forward="false" selection-start-line="144" selection-start-column="120" selection-end-line="144" selection-end-column="120" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/Services/ImageService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1265">
+          <caret line="43" column="13" lean-forward="false" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/GeneralFunctions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="36" column="12" lean-forward="false" selection-start-line="36" selection-start-column="7" selection-end-line="36" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/rabee/breath/GeneralInfo.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="90">
           <caret line="15" column="63" lean-forward="false" selection-start-line="15" selection-start-column="63" selection-end-line="15" selection-end-column="63" />
 >>>>>>> 5aa6fde1e4252e955229a06e988e24077a8d078c
+=======
+        <state relative-caret-position="-38">
+          <caret line="37" column="14" lean-forward="false" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="14" />
+>>>>>>> e2ca6dce49db1c58b857a99c29f313d08fe0adc8
           <folding />
         </state>
       </provider>

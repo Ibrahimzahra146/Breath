@@ -61,7 +61,9 @@ public class ViewPostActivity extends AppCompatActivity {
         progressBar.setVisibility(View.VISIBLE);
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(GeneralInfo.SPRING_URL)
-                .addConverterFactory(GsonConverterFactory.create()).build();
+                .addConverterFactory(GsonConverterFactory.create())
+                .client(GeneralInfo.getClient(getApplicationContext()))
+                .build();
         postInterface = retrofit.create(PostInterface.class);
         Log.d("ActivityAdd","id is " + postId);
 

@@ -139,7 +139,9 @@ public class SignUpActivity extends Activity {
             AuthInterface authInterface;
             Retrofit retrofit = new Retrofit.Builder()
                     .baseUrl(GeneralInfo.SPRING_URL)
-                    .addConverterFactory(GsonConverterFactory.create()).build();
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .client(GeneralInfo.getClient(getApplicationContext()))
+                            .build();
             authInterface = retrofit.create(AuthInterface.class);
 
 

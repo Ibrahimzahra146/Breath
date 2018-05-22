@@ -25,7 +25,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class SavedPostActivity extends AppCompatActivity {
     Retrofit retrofit = new Retrofit.Builder()
             .baseUrl(GeneralInfo.SPRING_URL)
-            .addConverterFactory(GsonConverterFactory.create()).build();
+            .addConverterFactory(GsonConverterFactory.create()).client(GeneralInfo.getClient(getApplicationContext())).build();
     public static List<PostCommentResponseModel> postResponseModelsList;
     RecyclerView recyclerView;
     ProgressBar progressBar;
@@ -45,7 +45,8 @@ public class SavedPostActivity extends AppCompatActivity {
         progressBar.setVisibility(View.VISIBLE);
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(GeneralInfo.SPRING_URL)
-                .addConverterFactory(GsonConverterFactory.create()).build();
+                .addConverterFactory(GsonConverterFactory.create()).
+                        client(GeneralInfo.getClient(getApplicationContext())).build();
         postInterface = retrofit.create(PostInterface.class);
         final Call<List<PostCommentResponseModel>> postResponse = postInterface.getSavedPost(GeneralInfo.getUserID());
         postResponse.enqueue(new Callback<List<PostCommentResponseModel>>() {

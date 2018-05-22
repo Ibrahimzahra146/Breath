@@ -78,7 +78,7 @@ public class ReactActivity extends AppCompatActivity {
         });
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(GeneralInfo.SPRING_URL)
-                .addConverterFactory(GsonConverterFactory.create()).build();
+                .addConverterFactory(GsonConverterFactory.create()).client(GeneralInfo.getClient(getApplicationContext())).build();
 
         postInterface = retrofit.create(PostInterface.class);
         final Call<ReactSingleModel> reactResponse = postInterface.getPostReact(postId, type);

@@ -185,7 +185,9 @@ public class SettingsActivity extends Activity {
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(GeneralInfo.SPRING_URL)
-                .addConverterFactory(GsonConverterFactory.create()).build();
+                .addConverterFactory(GsonConverterFactory.create())
+                .client(GeneralInfo.getClient(getApplicationContext()))
+                .build();
         AccountInfoInterface service = retrofit.create(AccountInfoInterface.class);
         final EditPrivacyRequestModel editPrivacy = new EditPrivacyRequestModel();
         editPrivacy.setId(GeneralInfo.getUserID());

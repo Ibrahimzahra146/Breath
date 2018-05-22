@@ -74,9 +74,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     TextView AppTitle, directSignUp, registerNow, dontHaveAccount;
     SharedPreferences sharedPreferences;
     RecyclerView recyclerView;
-    Retrofit retrofit = new Retrofit.Builder()
-            .baseUrl(GeneralInfo.SPRING_URL)
-            .addConverterFactory(GsonConverterFactory.create()).build();
+    Retrofit retrofit ;
     private EditText emailEditText;
     private EditText passEditText;
     private List<ReactsRecyclerViewModel> reactsList = new ArrayList<>();
@@ -85,6 +83,9 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         FacebookSdk.sdkInitialize(getApplicationContext());
+        retrofit = new Retrofit.Builder()
+                .baseUrl(GeneralInfo.SPRING_URL)
+                .addConverterFactory(GsonConverterFactory.create()).client(GeneralInfo.getClient(getApplicationContext())).build();
 
         setContentView(R.layout.activity_main);
         sharedPreferences = getSharedPreferences("userInfo", Context.MODE_PRIVATE);
@@ -307,13 +308,13 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                     @Override
                     public void onResponse(Call<UserProfileResponseModel> call, Response<UserProfileResponseModel> response) {
 
-                        Log.d("MainActivity1",response.code()+ " ");
+                        Log.d("MainActivity1",response.code()+ " "+response.headers().get("Set-Cookie"));
 
                         if (response.code() == 200) {
                             UserProfileResponseModel userProfileResponseModel = response.body();
                             GeneralInfo.setUserID(Integer.valueOf(userProfileResponseModel.getUser().getId()));
                             GeneralInfo.setGeneralUserInfo(userProfileResponseModel);
-                            saveLoginedUserInfo(userProfileResponseModel);
+                            saveLoginedUserInfo(userProfileResponseModel,response.headers().get("Set-Cookie").split(";")[0]);
 
 
                         }else {
@@ -346,7 +347,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                 if (response.code() == 200 || response.code() == 202) {
                     GeneralInfo.setUserID(Integer.valueOf(userProfileResponseModel.getUser().getId()));
                     GeneralInfo.setGeneralUserInfo(userProfileResponseModel);
-                    saveLoginedUserInfo(userProfileResponseModel);
+                    saveLoginedUserInfo(userProfileResponseModel,(response.headers().get("Set-Cookie").split(";"))[0].toString());
                     progressDialog.dismiss();
 
                 } else {
@@ -368,12 +369,12 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         });
     }
 
-    public void saveLoginedUserInfo(UserProfileResponseModel userProfileResponseModel) {
+    public void saveLoginedUserInfo(UserProfileResponseModel userProfileResponseModel,String session) {
         sharedPreferences = getSharedPreferences("userInfo", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         Gson gson = new Gson();
         String json = gson.toJson(userProfileResponseModel);
-
+        editor.putString("session",session);
         editor.putString("generalUserInfo", json);
         editor.putString("email", emailEditText.getText().toString());
         editor.putString("password", passEditText.getText().toString());
@@ -391,7 +392,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
 
     @Override
     public void onActivityResult(int requestCode, int responseCode, Intent data) {
-        Log.d("Direct sign up status code", "" + requestCode);
+      //  Log.d("Direct sign up status code", "" + requestCode);
         if (requestCode == CallbackManagerImpl.RequestCodeOffset.Login.toRequestCode()) {
             callbackManager.onActivityResult(requestCode, responseCode, data);
 
@@ -451,7 +452,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                 if (response.code() == 200 || response.code() == 202) {
                     GeneralInfo.setUserID(Integer.valueOf(userProfileResponseModel.getUser().getId()));
                     GeneralInfo.setGeneralUserInfo(userProfileResponseModel);
-                    saveLoginedUserInfo(userProfileResponseModel);
+                    saveLoginedUserInfo(userProfileResponseModel,"");
                     progressDialog.dismiss();
 
                 } else {
