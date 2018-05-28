@@ -92,7 +92,6 @@ public class RecentCommentAdapter extends RecyclerView.Adapter<RecentCommentAdap
                     i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     Bundle b = new Bundle();
                     b.putInt("postId", postCommentResponseModels.get(position).getPost().getPostId());
-
                     i.putExtras(b);
                     context.startActivity(i);
                 }
@@ -102,10 +101,12 @@ public class RecentCommentAdapter extends RecyclerView.Adapter<RecentCommentAdap
                 public void onClick(View v) {
                     Intent i = new Intent(getApplicationContext(), ViewPostActivity.class);
                     i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    Bundle b = new Bundle();
-                    b.putInt("postId", postCommentResponseModels.get(position).getPost().getPostId());
+                   // Bundle b = new Bundle();
+                 //   b.putInt("postId", postCommentResponseModels.get(position).getPost().getPostId());
+                    Log.d("ActivityAdd2", " " + postCommentResponseModels.get(position).getPost().getPostId());
+                    i.putExtra("postId", postCommentResponseModels.get(position).getPost().getPostId());
 
-                    i.putExtras(b);
+                  //  i.putExtras(b);
                     context.startActivity(i);
                 }
             });

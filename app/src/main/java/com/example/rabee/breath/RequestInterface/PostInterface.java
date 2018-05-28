@@ -74,10 +74,11 @@ public interface PostInterface {
     Call<List<PostCommentResponseModel>> getRecentComments(@Path("userId") int postId,@Path("page") int page);
     @POST("/api/v1/comment/addNewReply")
     Call<AddReplyModel> addReply(@Body AddReplyModel addReplyModel);
-
     @GET("/api/v1/post/getRandomPosts/{id}/{page}")
     Call<List<PostCommentResponseModel>> getRandomPosts(@Path("id") int postId,@Path("page") int page);
-
+    @Headers("Cache-Control: max-age=64000")
+    @POST("/api/v1/post/unSave")
+    Call<SavePostRequestModel> unsavePost(@Body SavePostRequestModel unsavePostRequestModel);
 
 
 }

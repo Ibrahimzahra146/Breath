@@ -31,7 +31,7 @@
             android:layout_marginTop="11.5dp"
             android:focusableInTouchMode="true"
             android:paddingRight="10dp"
-            android:text="Comments"
+            android:text="Post"
             android:textColor="#fff"
             android:textSize="18dp"
             android:textStyle="bold" />
@@ -39,24 +39,31 @@
 
     </Toolbar>
 
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="25dp"
+        android:layout_gravity="center"
+        android:layout_height="25dp"
+        android:visibility="gone"
+        android:indeterminateTint="@color/purple"
+        />
     <android.support.v7.widget.RecyclerView
         android:id="@+id/post_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/toolbar"
         tools:ignore="NotSibling" />
-    <View
-        android:layout_width="wrap_content"
-        android:layout_height="0.1mm"
-        android:paddingBottom="2dp"
-        android:layout_below="@+id/postTime"
-        android:layout_marginTop="10dp"
-        android:background="#000" />
+    <!--<View-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="0.1mm"-->
+        <!--android:paddingBottom="2dp"-->
+        <!--android:layout_below="@+id/postTime"-->
+        <!--android:layout_marginTop="10dp"-->
+        <!--android:background="#000" />-->
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/comment_recycler_view"
         android:layout_width="match_parent"
-
         android:layout_height="wrap_content"
         android:layout_below="@+id/toolbar"
         tools:ignore="NotSibling" />

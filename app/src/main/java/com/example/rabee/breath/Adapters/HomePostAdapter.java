@@ -49,6 +49,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+import static android.support.v4.content.ContextCompat.getDrawable;
 import static com.facebook.FacebookSdk.getApplicationContext;
 
 public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyViewHolder> {
@@ -355,16 +356,20 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
                         PressedLikeFlag.set(position, false);
                     }
                 });
-        holder.saveIcon.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                SavePost(position, holder.saveIcon);
-            }
-        });
+
         holder.savePostLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                SavePost(position, holder.saveIcon);
+
+
+                if ( holder.saveIcon.getDrawable().getConstantState() !=  getDrawable(getApplicationContext(),R.drawable.saved_icon).getConstantState() )
+                {
+                    SavePost(position, holder.saveIcon);
+                }
+                else
+                {
+                    unSavePost(position,holder.saveIcon);
+                }
             }
         });
 
@@ -518,6 +523,41 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
         });
     }
 
+    public void unSavePost(int position, final ImageView saveIcon) {
+
+        PostInterface unsavePost = retrofit.create(PostInterface.class);
+        SavePostRequestModel unsavePostRequestModel = new SavePostRequestModel();
+
+        int postId = postResponseModelsList.get(position).getPost().getPostId();
+        unsavePostRequestModel.setUserId(GeneralInfo.getUserID());
+        unsavePostRequestModel.setPostId(postId);
+        Call<SavePostRequestModel> savePostRequestModelCall = unsavePost.unsavePost(unsavePostRequestModel);
+
+        savePostRequestModelCall.enqueue(new Callback<SavePostRequestModel>() {
+            @Override
+            public void onResponse(Call<SavePostRequestModel> call, Response<SavePostRequestModel> response) {
+                if (response.code() == 404 || response.code() == 500 || response.code() == 502 || response.code() == 400) {
+                    GeneralFunctions generalFunctions = new GeneralFunctions();
+                    generalFunctions.showErrorMesaage(getApplicationContext());
+                } else {
+                    saveIcon.setImageResource(R.drawable.save_icon);
+                    Toast.makeText(context, "Post unsaved",
+                            Toast.LENGTH_SHORT).show();
+
+                }
+
+
+            }
+
+            @Override
+            public void onFailure(Call<SavePostRequestModel> call, Throwable t) {
+                GeneralFunctions generalFunctions = new GeneralFunctions();
+                generalFunctions.showErrorMesaage(getApplicationContext());
+                Log.d("PostHolder", t.getMessage());
+            }
+
+        });
+    }
     public void sendComment(final TextView commentCoutnerView, final int commentCounter) {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(GeneralInfo.SPRING_URL)

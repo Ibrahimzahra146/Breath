@@ -74,7 +74,11 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     TextView AppTitle, directSignUp, registerNow, dontHaveAccount;
     SharedPreferences sharedPreferences;
     RecyclerView recyclerView;
+<<<<<<< HEAD
 
+=======
+    Retrofit retrofit ;
+>>>>>>> c546a4369a2c98db553d204cf32ead7c8df07795
     private EditText emailEditText;
     private EditText passEditText;
     private List<ReactsRecyclerViewModel> reactsList = new ArrayList<>();
@@ -83,9 +87,16 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         FacebookSdk.sdkInitialize(getApplicationContext());
+<<<<<<< HEAD
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(GeneralInfo.SPRING_URL)
                 .addConverterFactory(GsonConverterFactory.create()).client(GeneralInfo.getClient(getApplicationContext())).build();
+=======
+        retrofit = new Retrofit.Builder()
+                .baseUrl(GeneralInfo.SPRING_URL)
+                .addConverterFactory(GsonConverterFactory.create()).client(GeneralInfo.getClient(getApplicationContext())).build();
+
+>>>>>>> c546a4369a2c98db553d204cf32ead7c8df07795
         setContentView(R.layout.activity_main);
         sharedPreferences = getSharedPreferences("userInfo", Context.MODE_PRIVATE);
 

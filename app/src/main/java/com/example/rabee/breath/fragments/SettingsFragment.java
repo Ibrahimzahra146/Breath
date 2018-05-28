@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 import com.example.rabee.breath.Activities.FollowingActivity;
 import com.example.rabee.breath.Activities.MainActivity;
+import com.example.rabee.breath.Activities.SavedPostActivity;
 import com.example.rabee.breath.Activities.SettingsActivity;
 import com.example.rabee.breath.Activities.UserProfileActivity;
 import com.example.rabee.breath.GeneralFunctions;
@@ -124,6 +125,14 @@ public class SettingsFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 logout();
+            }
+        });
+
+        savedPostsLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getContext(), SavedPostActivity.class);
+                startActivity(i);
             }
         });
 
