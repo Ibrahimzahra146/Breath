@@ -74,9 +74,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     TextView AppTitle, directSignUp, registerNow, dontHaveAccount;
     SharedPreferences sharedPreferences;
     RecyclerView recyclerView;
-    Retrofit retrofit = new Retrofit.Builder()
-            .baseUrl(GeneralInfo.SPRING_URL)
-            .addConverterFactory(GsonConverterFactory.create()).client(GeneralInfo.getClient(getApplicationContext())).build();
+
     private EditText emailEditText;
     private EditText passEditText;
     private List<ReactsRecyclerViewModel> reactsList = new ArrayList<>();
@@ -85,7 +83,9 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         FacebookSdk.sdkInitialize(getApplicationContext());
-
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(GeneralInfo.SPRING_URL)
+                .addConverterFactory(GsonConverterFactory.create()).client(GeneralInfo.getClient(getApplicationContext())).build();
         setContentView(R.layout.activity_main);
         sharedPreferences = getSharedPreferences("userInfo", Context.MODE_PRIVATE);
 
@@ -307,13 +307,17 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                     @Override
                     public void onResponse(Call<UserProfileResponseModel> call, Response<UserProfileResponseModel> response) {
 
-                        Log.d("MainActivity1",response.code()+ " "+response.headers().get("Set-Cookie"));
+                        Log.d("MainActivity1 ",((response.headers().toString().split(";")[0]).split("Set-Cookie:")[1].trim() +" Hi"));
+                        Log.d("MainActivity2 ",(response.headers().get("Set-Cookie").toString().split(";")[0])+"  Hi ");
 
+                        String session=(response.headers().toString().split(";")[0]).split("Set-Cookie:")[1].trim();
+                        String remember_me=(response.headers().get("Set-Cookie").toString().split(";")[0]);
+                        String cookie=session+";"+remember_me;
                         if (response.code() == 200) {
                             UserProfileResponseModel userProfileResponseModel = response.body();
                             GeneralInfo.setUserID(Integer.valueOf(userProfileResponseModel.getUser().getId()));
                             GeneralInfo.setGeneralUserInfo(userProfileResponseModel);
-                            saveLoginedUserInfo(userProfileResponseModel,response.headers().get("Set-Cookie").split(";")[0]);
+                            saveLoginedUserInfo(userProfileResponseModel,cookie);
 
 
                         }else {

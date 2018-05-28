@@ -42,7 +42,11 @@ public class HomeFragment extends Fragment {
     RecyclerView recyclerView;
     ProgressBar progressBar;
     LinearLayout noFriendsLayout;
+    //save the post list before swap to can retrieve it when return
 
+    static List<PostCommentResponseModel> currentList;
+    //flag to indicate we should load new posts or should return to same previous instance
+    boolean firstTime=true;
     View view;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -84,7 +88,9 @@ public class HomeFragment extends Fragment {
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
+
         super.onActivityCreated(savedInstanceState);
+        setRetainInstance(true);
         ReactsRecyclerViewModel reactSingleModel = new ReactsRecyclerViewModel(1, "Ibrahim zahra", "75782539973_288842465026282085_n.jpg");
         PostInterface postInterface;
         recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view1);
@@ -93,6 +99,12 @@ public class HomeFragment extends Fragment {
         progressBar = (ProgressBar) view.findViewById(R.id.progress_bar);
         noFriendsLayout = (LinearLayout) view.findViewById(R.id.no_friends_Layout);
         progressBar.setVisibility(View.VISIBLE);
+        if (firstTime == false) {
+            recyclerView.setAdapter(new HomePostAdapter(getActivity(), postResponseModelsList));
+            progressBar.setVisibility(View.INVISIBLE);
+        } else {
+
+
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(GeneralInfo.SPRING_URL)
                 .client(GeneralInfo.getClient(getContext()))
@@ -105,6 +117,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onResponse(Call<List<PostCommentResponseModel>> call, Response<List<PostCommentResponseModel>> response) {
                 postResponseModelsList = response.body();
+                currentList = postResponseModelsList;
                 //ensure that still in homefragment
                 if (getActivity() != null) {
 
@@ -117,6 +130,7 @@ public class HomeFragment extends Fragment {
                     } else {
                         recyclerView.setAdapter(new HomePostAdapter(getActivity(), postResponseModelsList));
                         progressBar.setVisibility(View.INVISIBLE);
+                        firstTime=false;
                     }
                 }
 
@@ -128,6 +142,7 @@ public class HomeFragment extends Fragment {
 
             }
         });
+    }
 
 
     }

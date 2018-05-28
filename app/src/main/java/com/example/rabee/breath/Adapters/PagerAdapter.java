@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 public class PagerAdapter extends FragmentStatePagerAdapter {
     int mNumOfTabs;
-    ArrayList<Fragment> list = new ArrayList<Fragment>();
+    static ArrayList<Fragment> list = new ArrayList<Fragment>();
 
     public PagerAdapter(FragmentManager fm, int NumOfTabs) {
         super(fm);
@@ -32,7 +32,6 @@ public class PagerAdapter extends FragmentStatePagerAdapter {
                     return list.get(0);
                 } else {
                     Log.d("Size ",list.size()+"");
-
                     return list.get(0);
                 }
 
