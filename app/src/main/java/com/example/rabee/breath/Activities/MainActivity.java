@@ -74,11 +74,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     TextView AppTitle, directSignUp, registerNow, dontHaveAccount;
     SharedPreferences sharedPreferences;
     RecyclerView recyclerView;
-<<<<<<< HEAD
 
-=======
-    Retrofit retrofit ;
->>>>>>> c546a4369a2c98db553d204cf32ead7c8df07795
     private EditText emailEditText;
     private EditText passEditText;
     private List<ReactsRecyclerViewModel> reactsList = new ArrayList<>();
@@ -87,19 +83,13 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         FacebookSdk.sdkInitialize(getApplicationContext());
-<<<<<<< HEAD
+
+
+        setContentView(R.layout.activity_main);
+        sharedPreferences = getSharedPreferences("userInfo", Context.MODE_PRIVATE);
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(GeneralInfo.SPRING_URL)
                 .addConverterFactory(GsonConverterFactory.create()).client(GeneralInfo.getClient(getApplicationContext())).build();
-=======
-        retrofit = new Retrofit.Builder()
-                .baseUrl(GeneralInfo.SPRING_URL)
-                .addConverterFactory(GsonConverterFactory.create()).client(GeneralInfo.getClient(getApplicationContext())).build();
-
->>>>>>> c546a4369a2c98db553d204cf32ead7c8df07795
-        setContentView(R.layout.activity_main);
-        sharedPreferences = getSharedPreferences("userInfo", Context.MODE_PRIVATE);
-
 
         signInButton = (SignInButton) findViewById(R.id.loginWithGoogleBtn);
         // signInButton.setOnClickListener(this);
@@ -317,8 +307,8 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                 userModelCall.enqueue(new Callback<UserProfileResponseModel>() {
                     @Override
                     public void onResponse(Call<UserProfileResponseModel> call, Response<UserProfileResponseModel> response) {
-
-                        Log.d("MainActivity1 ",((response.headers().toString().split(";")[0]).split("Set-Cookie:")[1].trim() +" Hi"));
+                        Log.d("Header",response.headers().toString());
+                       // Log.d("MainActivity1 ",((response.headers().toString().split(";")[0]).split("Set-Cookie:")[1].trim() +" Hi"));
                         Log.d("MainActivity2 ",(response.headers().get("Set-Cookie").toString().split(";")[0])+"  Hi ");
 
                         String session=(response.headers().toString().split(";")[0]).split("Set-Cookie:")[1].trim();

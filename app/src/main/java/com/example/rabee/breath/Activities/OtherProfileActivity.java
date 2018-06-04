@@ -121,7 +121,7 @@ public class OtherProfileActivity extends AppCompatActivity implements SwipeRefr
                 .baseUrl(GeneralInfo.SPRING_URL)
                 .addConverterFactory(GsonConverterFactory.create()).client(GeneralInfo.getClient(getApplicationContext())).build();
         postInterface = retrofit.create(PostInterface.class);
-        final Call<List<PostCommentResponseModel>> postResponse = postInterface.getUserHomePost(GeneralInfo.getUserID());
+        final Call<List<PostCommentResponseModel>> postResponse = postInterface.getUserHomePost(GeneralInfo.getUserID(),0);
         postResponse.enqueue(new Callback<List<PostCommentResponseModel>>() {
 
             @Override

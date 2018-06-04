@@ -34,8 +34,8 @@ public interface PostInterface {
     @GET("/api/v1/post/getUserPost/{id}")
     Call<List<PostCommentResponseModel>> getUserPost(@Path("id") int id);
     @Headers("Cache-Control: max-age=64000")
-    @GET("/api/v1/post/getUserHomePost/{id}")
-    Call<List<PostCommentResponseModel>> getUserHomePost(@Path("id") int id);
+    @GET("/api/v1/post/getUserHomePost/{id}/{page}")
+    Call<List<PostCommentResponseModel>> getUserHomePost(@Path("id") int id,@Path("page") int page);
     @Headers("Cache-Control: max-age=64000")
     @GET("/api/v1/post/getSavedPost/{id}")
     Call<List<PostCommentResponseModel>> getSavedPost(@Path("id") int id);

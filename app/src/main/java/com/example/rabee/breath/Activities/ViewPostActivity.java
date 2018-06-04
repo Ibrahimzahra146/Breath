@@ -57,11 +57,9 @@ public class ViewPostActivity extends AppCompatActivity {
         posttRecyclerView = (RecyclerView) findViewById(R.id.post_recycler_view);
         posttRecyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         posttRecyclerView.hasFixedSize();
-<<<<<<< HEAD
-=======
+
         progressBar =(ProgressBar)findViewById(R.id.progress_bar);
         progressBar.setVisibility(View.VISIBLE);
->>>>>>> c546a4369a2c98db553d204cf32ead7c8df07795
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(GeneralInfo.SPRING_URL)
                 .addConverterFactory(GsonConverterFactory.create())

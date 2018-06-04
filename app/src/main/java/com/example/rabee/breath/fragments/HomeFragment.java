@@ -13,12 +13,16 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsListView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 
+import com.cooltechworks.views.shimmer.ShimmerAdapter;
+import com.cooltechworks.views.shimmer.ShimmerRecyclerView;
 import com.example.rabee.breath.Activities.AddPostActivity;
 import com.example.rabee.breath.Activities.RecentCommentsActivity;
 import com.example.rabee.breath.Adapters.HomePostAdapter;
+import com.example.rabee.breath.EndlessRecyclerOnScrollListener;
 import com.example.rabee.breath.GeneralInfo;
 import com.example.rabee.breath.Models.ResponseModels.PostCommentResponseModel;
 import com.example.rabee.breath.R;
@@ -26,6 +30,7 @@ import com.example.rabee.breath.ReactsRecyclerViewModel;
 import com.example.rabee.breath.RequestInterface.PostInterface;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import okhttp3.Interceptor;
@@ -38,20 +43,32 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 
 public class HomeFragment extends Fragment {
-    public static List<PostCommentResponseModel> postResponseModelsList;
-    RecyclerView recyclerView;
+    public static List<PostCommentResponseModel> postResponseModelsList=new ArrayList<>();
+    ShimmerRecyclerView recyclerView;
+    LinearLayoutManager linearLayout;
     ProgressBar progressBar;
     LinearLayout noFriendsLayout;
+    PostInterface postInterface;
+    HomePostAdapter adapter;
+
+    int page_number = 1, item_count = 10;
+    int lastVisibleItem, visibleItemCount, totalItemCount, previousTotal = 0;
+    int view_threshold = 0;
+    int page = 0;
+
+    boolean isScrolling = false, isLoading = false;
+    //flag to indicate we should load new posts or should return to same previous instance
+
+    boolean firstTime = true;
+
     //save the post list before swap to can retrieve it when return
 
     static List<PostCommentResponseModel> currentList;
-    //flag to indicate we should load new posts or should return to same previous instance
-    boolean firstTime=true;
     View view;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1" ;
-    private static final String ARG_PARAM2 = "param2" ;
+    private static final String ARG_PARAM1 = "param1";
+    private static final String ARG_PARAM2 = "param2";
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -92,57 +109,42 @@ public class HomeFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         setRetainInstance(true);
         ReactsRecyclerViewModel reactSingleModel = new ReactsRecyclerViewModel(1, "Ibrahim zahra", "75782539973_288842465026282085_n.jpg");
-        PostInterface postInterface;
-        recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view1);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView = (ShimmerRecyclerView) view.findViewById(R.id.recycler_view1);
+        recyclerView.showShimmerAdapter();
+        linearLayout = new LinearLayoutManager(getContext());
+        recyclerView.setLayoutManager(linearLayout);
         recyclerView.hasFixedSize();
+
         progressBar = (ProgressBar) view.findViewById(R.id.progress_bar);
         noFriendsLayout = (LinearLayout) view.findViewById(R.id.no_friends_Layout);
-        progressBar.setVisibility(View.VISIBLE);
-        if (firstTime == false) {
-            recyclerView.setAdapter(new HomePostAdapter(getActivity(), postResponseModelsList));
-            progressBar.setVisibility(View.INVISIBLE);
-        } else {
-
-
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(GeneralInfo.SPRING_URL)
                 .client(GeneralInfo.getClient(getContext()))
                 .addConverterFactory(GsonConverterFactory.create()).build();
 
         postInterface = retrofit.create(PostInterface.class);
-        final Call<List<PostCommentResponseModel>> postResponse = postInterface.getUserHomePost(GeneralInfo.getUserID());
-        postResponse.enqueue(new Callback<List<PostCommentResponseModel>>() {
+
+        recyclerView.addOnScrollListener(new EndlessRecyclerOnScrollListener(linearLayout) {
+
 
             @Override
-            public void onResponse(Call<List<PostCommentResponseModel>> call, Response<List<PostCommentResponseModel>> response) {
-                postResponseModelsList = response.body();
-                currentList = postResponseModelsList;
-                //ensure that still in homefragment
-                if (getActivity() != null) {
-
-
-                    recyclerView.setAdapter(new HomePostAdapter(getActivity().getApplicationContext(), postResponseModelsList));
-                    if (postResponseModelsList.size() == 0) {
-                        noFriendsLayout.setVisibility(View.VISIBLE);
-                        progressBar.setVisibility(View.INVISIBLE);
-
-                    } else {
-                        recyclerView.setAdapter(new HomePostAdapter(getActivity(), postResponseModelsList));
-                        progressBar.setVisibility(View.INVISIBLE);
-                        firstTime=false;
-                    }
-                }
-
-
+            public void onLoadMore(int current_page) {
+                Log.d("Page",""+page);
+                page++;
+                performPagination(page);
             }
 
-            @Override
-            public void onFailure(Call<List<PostCommentResponseModel>> call, Throwable t) {
 
-            }
         });
-    }
+        if (firstTime == false) {
+            adapter = new HomePostAdapter(getActivity(), postResponseModelsList);
+
+            recyclerView.setAdapter(adapter);
+            progressBar.setVisibility(View.INVISIBLE);
+        } else {
+            performPagination(page);
+        }
+
 
 
     }
@@ -174,6 +176,43 @@ public class HomeFragment extends Fragment {
     @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
+    }
+    //////////////////
+
+    public void performPagination(final int page) {
+        final Call<List<PostCommentResponseModel>> postResponse = postInterface.getUserHomePost(GeneralInfo.getUserID(), page);
+
+        postResponse.enqueue(new Callback<List<PostCommentResponseModel>>() {
+
+            @Override
+            public void onResponse(Call<List<PostCommentResponseModel>> call, Response<List<PostCommentResponseModel>> response) {
+                currentList = postResponseModelsList;
+                //ensure that still in homefragment
+                if (getActivity() != null) {
+
+
+                    if (response.body().size() == 0&&page==0) {
+                        noFriendsLayout.setVisibility(View.VISIBLE);
+                        progressBar.setVisibility(View.INVISIBLE);
+
+                    } else {
+                        postResponseModelsList.addAll(response.body());
+                        adapter = new HomePostAdapter(getActivity(), postResponseModelsList);
+                        recyclerView.setAdapter(adapter);
+                        adapter.notifyItemRangeInserted(adapter.getItemCount(), postResponseModelsList.size()-1);
+                        firstTime = false;
+
+                    }
+                }
+
+
+            }
+
+            @Override
+            public void onFailure(Call<List<PostCommentResponseModel>> call, Throwable t) {
+
+            }
+        });
     }
 
 
