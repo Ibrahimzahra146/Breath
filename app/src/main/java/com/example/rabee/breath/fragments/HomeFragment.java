@@ -43,18 +43,20 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 
 public class HomeFragment extends Fragment {
-    public static List<PostCommentResponseModel> postResponseModelsList=new ArrayList<>();
+    public static List<PostCommentResponseModel> postResponseModelsList = new ArrayList<>();
     ShimmerRecyclerView recyclerView;
     LinearLayoutManager linearLayout;
     ProgressBar progressBar;
     LinearLayout noFriendsLayout;
     PostInterface postInterface;
     HomePostAdapter adapter;
-
-    int page_number = 1, item_count = 10;
-    int lastVisibleItem, visibleItemCount, totalItemCount, previousTotal = 0;
-    int view_threshold = 0;
+    boolean isLastPage = false;
+    private int previousTotal = 0; // The total number of items in the dataset after the last load
+    static boolean loading = true; // True if we are still waiting for the last set of data to load.
+    private int visibleThreshold = 2; // The minimum amount of items to have below your current scroll position before loading more.
+    int firstVisibleItem, visibleItemCount, totalItemCount;
     int page = 0;
+
 
     boolean isScrolling = false, isLoading = false;
     //flag to indicate we should load new posts or should return to same previous instance
@@ -124,18 +126,38 @@ public class HomeFragment extends Fragment {
 
         postInterface = retrofit.create(PostInterface.class);
 
-        recyclerView.addOnScrollListener(new EndlessRecyclerOnScrollListener(linearLayout) {
-
-
+        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
-            public void onLoadMore(int current_page) {
-                Log.d("Page",""+page);
-                page++;
-                performPagination(page);
+            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+                super.onScrollStateChanged(recyclerView, newState);
             }
 
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+                visibleItemCount = recyclerView.getChildCount();
+                totalItemCount = linearLayout.getItemCount();
+                firstVisibleItem = linearLayout.findFirstVisibleItemPosition();
+
+                if (loading) {
+                    if (totalItemCount > previousTotal) {
+                        loading = false;
+                        previousTotal = totalItemCount;
+                    }
+                }
+                if (!loading && !isLastPage && (totalItemCount - visibleItemCount)
+                        <= (firstVisibleItem + visibleThreshold)) {
+                    // End has been reached
+
+                    // Do something
+                    page++;
+                    performPagination(page);
+                }
+            }
 
         });
+
+
         if (firstTime == false) {
             adapter = new HomePostAdapter(getActivity(), postResponseModelsList);
 
@@ -144,7 +166,6 @@ public class HomeFragment extends Fragment {
         } else {
             performPagination(page);
         }
-
 
 
     }
@@ -180,6 +201,8 @@ public class HomeFragment extends Fragment {
     //////////////////
 
     public void performPagination(final int page) {
+        Log.d("Page ", "page");
+        loading = true;
         final Call<List<PostCommentResponseModel>> postResponse = postInterface.getUserHomePost(GeneralInfo.getUserID(), page);
 
         postResponse.enqueue(new Callback<List<PostCommentResponseModel>>() {
@@ -191,16 +214,21 @@ public class HomeFragment extends Fragment {
                 if (getActivity() != null) {
 
 
-                    if (response.body().size() == 0&&page==0) {
+                    if (response.body().size() == 0 && page == 0) {
                         noFriendsLayout.setVisibility(View.VISIBLE);
                         progressBar.setVisibility(View.INVISIBLE);
+                        isLastPage = true;
+
+                    } else if (response.body().size() == 0) {
+                        isLastPage=true;
 
                     } else {
                         postResponseModelsList.addAll(response.body());
                         adapter = new HomePostAdapter(getActivity(), postResponseModelsList);
                         recyclerView.setAdapter(adapter);
-                        adapter.notifyItemRangeInserted(adapter.getItemCount(), postResponseModelsList.size()-1);
+                        adapter.notifyDataSetChanged();
                         firstTime = false;
+                        loading = false;
 
                     }
                 }
