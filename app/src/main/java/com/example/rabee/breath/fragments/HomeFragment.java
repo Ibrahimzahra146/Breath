@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -44,12 +45,14 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class HomeFragment extends Fragment {
     public static List<PostCommentResponseModel> postResponseModelsList = new ArrayList<>();
+    private Parcelable recyclerViewState;
+
     ShimmerRecyclerView recyclerView;
     LinearLayoutManager linearLayout;
     ProgressBar progressBar;
     LinearLayout noFriendsLayout;
     PostInterface postInterface;
-    HomePostAdapter adapter;
+    private static HomePostAdapter adapter;
     boolean isLastPage = false;
     private int previousTotal = 0; // The total number of items in the dataset after the last load
     static boolean loading = true; // True if we are still waiting for the last set of data to load.
@@ -116,6 +119,7 @@ public class HomeFragment extends Fragment {
         linearLayout = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(linearLayout);
         recyclerView.hasFixedSize();
+        recyclerView.stopScroll();
 
         progressBar = (ProgressBar) view.findViewById(R.id.progress_bar);
         noFriendsLayout = (LinearLayout) view.findViewById(R.id.no_friends_Layout);
@@ -151,6 +155,9 @@ public class HomeFragment extends Fragment {
 
                     // Do something
                     page++;
+                    loading = true;
+                    recyclerViewState = recyclerView.getLayoutManager().onSaveInstanceState();
+
                     performPagination(page);
                 }
             }
@@ -202,7 +209,6 @@ public class HomeFragment extends Fragment {
 
     public void performPagination(final int page) {
         Log.d("Page ", "page");
-        loading = true;
         final Call<List<PostCommentResponseModel>> postResponse = postInterface.getUserHomePost(GeneralInfo.getUserID(), page);
 
         postResponse.enqueue(new Callback<List<PostCommentResponseModel>>() {
@@ -220,15 +226,19 @@ public class HomeFragment extends Fragment {
                         isLastPage = true;
 
                     } else if (response.body().size() == 0) {
-                        isLastPage=true;
+                        isLastPage = true;
 
                     } else {
+                        int startPosition = postResponseModelsList.size();
                         postResponseModelsList.addAll(response.body());
-                        adapter = new HomePostAdapter(getActivity(), postResponseModelsList);
-                        recyclerView.setAdapter(adapter);
+
+                            adapter = new HomePostAdapter(getContext(), postResponseModelsList);
+                            recyclerView.setAdapter(adapter);
+                            //adapter.notifyItemRangeInserted(adapter.getItemCount(), postResponseModelsList.size() - 1);
                         adapter.notifyDataSetChanged();
+                        recyclerView.setAdapter(adapter);
+
                         firstTime = false;
-                        loading = false;
 
                     }
                 }

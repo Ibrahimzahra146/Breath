@@ -2,6 +2,7 @@
 <items version="2" >
 
     <item
+<<<<<<< HEAD
         is-multidex="true"
         jar="C:\Users\exalt\Desktop\Breath\app\mail.jar"
         jumboMode="true"
@@ -54,6 +55,42 @@
         revision="25.0.3"
         sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
         <dex dex="C:\Users\exalt\Desktop\Breath\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_56abb352a3eadba70c050aab244acac7f1545789\classes.dex" />
+=======
+        is-multidex="false"
+        jar="/Users/mbp/Documents/Android/Breath/Breath/app/additionnal.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="bd9e8dc422bb8c8405359947fe9f4282b49f57f4">
+        <dex dex="/Users/mbp/Documents/Android/Breath/Breath/app/build/intermediates/pre-dexed/debug/additionnal_0067b901985636dfb7375501224dc04d37a2ef07.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/mbp/Documents/Android/Breath/Breath/app/mail.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="428e267abff0d10802ccde86b915da2c20471160">
+        <dex dex="/Users/mbp/Documents/Android/Breath/Breath/app/build/intermediates/pre-dexed/debug/mail_da158c52604aac046fcbe531227bd64a0f026126.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/mbp/Documents/Android/Breath/Breath/app/YouTubeAndroidPlayerApi.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="3c4f96ff493456651cc7bdb0b47e10eb25545a16">
+        <dex dex="/Users/mbp/Documents/Android/Breath/Breath/app/build/intermediates/pre-dexed/debug/YouTubeAndroidPlayerApi_906d3ace66210630c028363f7b4d271153d53b23.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/mbp/Documents/Android/Breath/Breath/app/activation.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="d1257cbff6faa44c1f325ae0d9413522d4644383">
+        <dex dex="/Users/mbp/Documents/Android/Breath/Breath/app/build/intermediates/pre-dexed/debug/activation_3191e72b28e6640a0ba79b0e219302bf744db409.jar" />
+>>>>>>> 4c9e756e11bb742c6a0dd15d4906fbfa8aa4d287
     </item>
 
 </items>
