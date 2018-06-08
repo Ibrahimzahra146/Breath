@@ -30,10 +30,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class FollowingActivity extends AppCompatActivity {
     public static ArrayList<UserModel> userModelList = new ArrayList<>();
-    Retrofit retrofit = new Retrofit.Builder()
-            .baseUrl(GeneralInfo.SPRING_URL)
-            .addConverterFactory(GsonConverterFactory.create()).
-                    client(GeneralInfo.getClient(getApplicationContext())).build();
+    Retrofit retrofit;
     ObjectAnimator anim;
 
     public RecyclerView recyclerView;
@@ -46,6 +43,10 @@ public class FollowingActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        retrofit = new Retrofit.Builder()
+                .baseUrl(GeneralInfo.SPRING_URL)
+                .addConverterFactory(GsonConverterFactory.create()).
+                        client(GeneralInfo.getClient(getApplicationContext())).build();
         setContentView(R.layout.activity_following);
         progressBar= (ProgressBar) findViewById(R.id.ProgressBar);
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);

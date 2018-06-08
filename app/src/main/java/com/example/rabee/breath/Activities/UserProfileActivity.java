@@ -65,10 +65,7 @@ public class UserProfileActivity extends AppCompatActivity {
             Manifest.permission.WRITE_EXTERNAL_STORAGE
     };
     SharedPreferences sharedPreferences;
-    Retrofit retrofit = new Retrofit.Builder()
-            .baseUrl(GeneralInfo.SPRING_URL)
-            .addConverterFactory(GsonConverterFactory.create())
-            .client(GeneralInfo.getClient(getApplicationContext())).build();
+    Retrofit retrofit;
     public static List<PostCommentResponseModel> postResponseModelsList;
 
     ImageView img, coverImage, imageView;
@@ -82,7 +79,6 @@ public class UserProfileActivity extends AppCompatActivity {
     ProgressBar coverProgressBar, progressBar;
     Uri imageuri;
     ImageView editBio;
-
     RecyclerView recyclerView;
     LinearLayout noFriendsLayout;
 
@@ -109,6 +105,10 @@ public class UserProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile);
+        retrofit = new Retrofit.Builder()
+                .baseUrl(GeneralInfo.SPRING_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .client(GeneralInfo.getClient(getApplicationContext())).build();
         img = (ImageView) findViewById(R.id.user_profile_photo);
         coverImage = (ImageView) findViewById(R.id.coverImage);
         userName = (TextView) findViewById(R.id.user_profile_name);

@@ -62,6 +62,8 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+import static android.util.Log.d;
+
 public class MainActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
     static Dialog LoggingInDialog;
     LoginButton loginButton;
@@ -142,10 +144,10 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(final LoginResult loginResult) {
-                Log.d("Login success", loginResult.getAccessToken().getUserId());
+                d("Login success", loginResult.getAccessToken().getUserId());
                 loginButton.setReadPermissions(Arrays.asList("public_profile", "email"));
 
-                Log.d("Login success", loginResult.getAccessToken().getUserId());
+                d("Login success", loginResult.getAccessToken().getUserId());
                 GraphRequest request = GraphRequest.newMeRequest(
                         loginResult.getAccessToken(),
                         new GraphRequest.GraphJSONObjectCallback() {
@@ -154,9 +156,9 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                                     JSONObject object,
                                     GraphResponse response) {
                                 try {
-                                    Log.d("Login onCompleted", "" + response.getError() + "" + object.getString("email"));
+                                    d("Login onCompleted", "" + response.getError() + "" + object.getString("email"));
                                 } catch (JSONException e) {
-                                    Log.d("Login onCompleted", "catch");
+                                    d("Login onCompleted", "catch");
 
                                     e.printStackTrace();
                                 }
@@ -188,13 +190,13 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
 
             @Override
             public void onCancel() {
-                Log.d("Login cancelld", "");
+                d("Login cancelld", "");
 
             }
 
             @Override
             public void onError(FacebookException error) {
-                Log.d("Login onError", "");
+                d("Login onError", "");
 
             }
         });
@@ -222,13 +224,13 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                         GeneralInfo.setLoginType("DIRECT_SINGUP");
                         SharedPreferences.Editor editor = sharedPreferences.edit();
                         GeneralInfo.setGeneralUserInfo(response.body());
-                        Log.d("DIRECTSIGNUP",response.body().getUser() + " " );
+                        d("DIRECTSIGNUP",response.body().getUser() + " " );
 
                         Gson gson = new Gson();
                         String json = gson.toJson(response.body());
                         editor.putString("generalUserInfo", json);
                         editor.putInt("id", GeneralInfo.getUserID());
-                        Log.d("SignpPage",response.code()+ " " + GeneralInfo.getUserID());
+                        d("SignpPage",response.code()+ " " + GeneralInfo.getUserID());
                         editor.putBoolean("isLogined", true);
                         editor.putString("loginType", "DIRECT_SIGNUP");
                         editor.apply();
@@ -307,7 +309,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                 userModelCall.enqueue(new Callback<UserProfileResponseModel>() {
                     @Override
                     public void onResponse(Call<UserProfileResponseModel> call, Response<UserProfileResponseModel> response) {
-                        Log.d("Header",response.headers().toString());
+                        d("Header",response.headers().toString());
                        // Log.d("MainActivity1 ",((response.headers().toString().split(";")[0]).split("Set-Cookie:")[1].trim() +" Hi"));
                         Log.d("MainActivity2 ",(response.headers().get("Set-Cookie").toString().split(";")[0])+"  Hi ");
 
@@ -420,14 +422,14 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     }
 
     public void handleGoogleResult(GoogleSignInResult googleSignInResult) {
-        Log.d("handleGoogleResult:", "handleGoogleResult " + googleSignInResult.getStatus());
+        d("handleGoogleResult:", "handleGoogleResult " + googleSignInResult.getStatus());
         if (googleSignInResult.isSuccess()) {
 
             GoogleSignInAccount account = googleSignInResult.getSignInAccount();
-            Log.d("handleGoogleResult:", "handleGoogleResult" + account.getEmail());
-            Log.d("handleGoogleResult:", "handleGoogleResult" + account.getId());
-            Log.d("handleGoogleResult:", "handleGoogleResult" + account.getGivenName());
-            Log.d("handleGoogleResult:", "handleGoogleResult" + account.getIdToken());
+            d("handleGoogleResult:", "handleGoogleResult" + account.getEmail());
+            d("handleGoogleResult:", "handleGoogleResult" + account.getId());
+            d("handleGoogleResult:", "handleGoogleResult" + account.getGivenName());
+            d("handleGoogleResult:", "handleGoogleResult" + account.getIdToken());
 
             String email = account.getEmail();
             String userId = account.getId();
@@ -446,7 +448,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
 
     public void loginWithGoogleRequest(LoginWithGoogleRequestModel loginWithGoogleRequestModel) {
 
-        Log.d("loginWithGoogleRequest", "loginWithGoogleRequest");
+        d("loginWithGoogleRequest", "loginWithGoogleRequest");
         final Call<UserProfileResponseModel> userModelCall = service.loginWithGoogle(loginWithGoogleRequestModel);
         userModelCall.enqueue(new Callback<UserProfileResponseModel>() {
 

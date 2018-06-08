@@ -23,9 +23,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class SavedPostActivity extends AppCompatActivity {
-    Retrofit retrofit = new Retrofit.Builder()
-            .baseUrl(GeneralInfo.SPRING_URL)
-            .addConverterFactory(GsonConverterFactory.create()).client(GeneralInfo.getClient(getApplicationContext())).build();
+    Retrofit retrofit;
     public static List<PostCommentResponseModel> postResponseModelsList;
     RecyclerView recyclerView;
     ProgressBar progressBar;
@@ -34,12 +32,17 @@ public class SavedPostActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        retrofit = new Retrofit.Builder()
+                .baseUrl(GeneralInfo.SPRING_URL)
+                .addConverterFactory(GsonConverterFactory.create()).client(GeneralInfo.getClient(getApplicationContext())).build();
+
         setContentView(R.layout.activity_saved_post);
         PostInterface postInterface;
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         recyclerView.hasFixedSize();
         progressBar = (ProgressBar) findViewById(R.id.progress_bar);
+        progressBar.setVisibility(View.VISIBLE);
        // noFriendsLayout = (LinearLayout) findViewById(R.id.no_friends_Layout);
 
         progressBar.setVisibility(View.VISIBLE);
@@ -57,15 +60,15 @@ public class SavedPostActivity extends AppCompatActivity {
                 //ensure that still in homefragment
                 if (this!= null) {
 
-
                     recyclerView.setAdapter(new HomePostAdapter(getApplicationContext(), postResponseModelsList));
                     if (postResponseModelsList.size() == 0) {
                         //noFriendsLayout.setVisibility(View.VISIBLE);
-                        progressBar.setVisibility(View.INVISIBLE);
+                        progressBar.setVisibility(View.GONE);
 
                     } else {
+
                         recyclerView.setAdapter(new HomePostAdapter(getApplication(), postResponseModelsList));
-                        progressBar.setVisibility(View.INVISIBLE);
+                        progressBar.setVisibility(View.GONE);
                     }
                 }
 
