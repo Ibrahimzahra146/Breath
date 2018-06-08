@@ -67,9 +67,15 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
     Dialog addCommentDialog;
     private List<PostCommentResponseModel> postResponseModelsList;
     private Context context;
+    public HomePostAdapter( ) {
+
+    }
 
     public HomePostAdapter(Context context, List<PostCommentResponseModel> postResponseModelsList) {
         this.postResponseModelsList = postResponseModelsList;
+        if(postResponseModelsList!=null){
+
+
         this.likeCount = new ArrayList<Integer>(Collections.nCopies(this.postResponseModelsList.size(), 0));
         this.loveCount = new ArrayList<Integer>(Collections.nCopies(this.postResponseModelsList.size(), 0));
         this.disLikeCount = new ArrayList<Integer>(Collections.nCopies(this.postResponseModelsList.size(), 0));
@@ -80,7 +86,7 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
         addCommentDialog = new Dialog(this.context);
         addCommentDialog.setContentView(R.layout.activity_add_comment);
         addCommentDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-
+        }
     }
 
     @Override
@@ -91,6 +97,7 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
 
     @Override
     public void onBindViewHolder(final MyViewHolder holder, final int position) {
+
         final PostResponseModel postResponseModel = postResponseModelsList.get(position).getPost();
         holder.posterUserName.setText(postResponseModel.getUserId().getFirst_name() + " " + postResponseModel.getUserId().getLast_name());
         holder.postBodyText.setText(postResponseModel.getText());
