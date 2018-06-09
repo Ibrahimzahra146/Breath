@@ -66,8 +66,8 @@ public class RecentCommentAdapter extends RecyclerView.Adapter<RecentCommentAdap
             }
 //        imageUrl = GeneralInfo.SPRING_URL + "/" +postCommentResponseModels.get(position).getPost().getUserId().getImage() ;
 //        Picasso.with(context).load(imageUrl).into(holder.profilePic );
-            if (!postCommentResponseModels.get(position).getPost().getYoutubelink().getLink().equals("")) {
-                holder.postText.setText(postCommentResponseModels.get(position).getPost().getYoutubelink().getLink());
+            if (!postCommentResponseModels.get(position).getPost().getLink().equals("")) {
+                holder.postText.setText(postCommentResponseModels.get(position).getPost().getLink());
 
             }
             long now = System.currentTimeMillis();

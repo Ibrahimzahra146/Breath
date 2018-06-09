@@ -52,9 +52,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class OtherProfileActivity extends AppCompatActivity implements SwipeRefreshLayout.OnRefreshListener {
-    Retrofit retrofit = new Retrofit.Builder()
-            .baseUrl(GeneralInfo.SPRING_URL)
-            .addConverterFactory(GsonConverterFactory.create()).client(GeneralInfo.getClient(getApplicationContext())).build();
+    Retrofit  retrofit;
     public static ObjectAnimator anim,anim_button;
     SwipeRefreshLayout swipeRefreshLayout;
     CircleImageView img,showOtherSong;
@@ -77,6 +75,9 @@ public class OtherProfileActivity extends AppCompatActivity implements SwipeRefr
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        retrofit = new Retrofit.Builder()
+                .baseUrl(GeneralInfo.SPRING_URL)
+                .addConverterFactory(GsonConverterFactory.create()).client(GeneralInfo.getClient(getApplicationContext())).build();
         setContentView(R.layout.activity_other_profile);
         Bundle b = getIntent().getExtras();
 

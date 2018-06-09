@@ -15,7 +15,6 @@ public class PostResponseModel {
     String image;
     String link;
     boolean isPublic_comment;
-    YoutubeLinkModel youtubeLink;
     String timestamp;
 
     public String getTimestamp() {
@@ -26,12 +25,6 @@ public class PostResponseModel {
         this.timestamp = timestamp;
     }
 
-    public void setYoutubelink(YoutubeLinkModel youtubelink) {
-        this.youtubeLink = youtubelink;
-    }
-    public YoutubeLinkModel getYoutubelink() {
-        return youtubeLink;
-    }
     public int getPostId() {
         return postId;
     }

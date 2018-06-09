@@ -154,10 +154,10 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
             //holder.postCommentCount.setVisibility(View.INVISIBLE);
         }
 
-        Log.d("Reacts", "id " + postResponseModelsList.get(position).getPost().getPostId());
-        Log.d("Reacts", "love " + postResponseModelsList.get(position).getReacts().getLoveList().getMyAction() + " ");
-        Log.d("Reacts", "like " + postResponseModelsList.get(position).getReacts().getLikeList().getMyAction() + " ");
-        Log.d("Reacts", "unlike " + postResponseModelsList.get(position).getReacts().getDislikeList().getMyAction() + " ");
+//        Log.d("Reacts", "id " + postResponseModelsList.get(position).getPost().getPostId());
+//        Log.d("Reacts", "love " + postResponseModelsList.get(position).getReacts().getLoveList().getMyAction() + " ");
+//        Log.d("Reacts", "like " + postResponseModelsList.get(position).getReacts().getLikeList().getMyAction() + " ");
+//        Log.d("Reacts", "unlike " + postResponseModelsList.get(position).getReacts().getDislikeList().getMyAction() + " ");
 
 
         holder.postUnlikeIcon.setImageResource(R.drawable.unlike_icon);
@@ -380,10 +380,10 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
             }
         });
 
-        if (postResponseModel.getYoutubelink().getLink() != "" && postResponseModel.getImage() == null) {
-            holder.youtubeLinkTitle.setText(postResponseModel.getYoutubelink().getTitle());
-            holder.youtubeLinkAuthor.setText("Channel: " + postResponseModel.getYoutubelink().getAuthor_name());
-            imageUrl = GeneralInfo.SPRING_URL + "/" + postResponseModel.getYoutubelink().getImage();
+        if (postResponseModel.getLink() != "" && postResponseModel.getImage() == null) {
+           // holder.youtubeLinkTitle.setText(postResponseModel.getYoutubelink().getTitle());
+            //holder.youtubeLinkAuthor.setText("Channel: " + postResponseModel.getYoutubelink().getAuthor_name());
+            //imageUrl = GeneralInfo.SPRING_URL + "/" + postResponseModel.getYoutubelink().getImage();
             Picasso.with(getApplicationContext()).load(imageUrl).into(holder.youtubeLinkImage);
         } else {
             holder.youtubeLinkLayout.setVisibility(View.GONE);

@@ -311,7 +311,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                     public void onResponse(Call<UserProfileResponseModel> call, Response<UserProfileResponseModel> response) {
                         d("Header",response.headers().toString());
                        // Log.d("MainActivity1 ",((response.headers().toString().split(";")[0]).split("Set-Cookie:")[1].trim() +" Hi"));
-                        Log.d("MainActivity2 ",(response.headers().get("Set-Cookie").toString().split(";")[0])+"  Hi ");
+//                        Log.d("MainActivity2 ",(response.headers().get("Set-Cookie").toString().split(";")[0])+"  Hi ");
 
                         String session=(response.headers().toString().split(";")[0]).split("Set-Cookie:")[1].trim();
                         String remember_me=(response.headers().get("Set-Cookie").toString().split(";")[0]);

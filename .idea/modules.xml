@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Breath.iml" filepath="$PROJECT_DIR$/Breath.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/Breath-app.iml" filepath="$PROJECT_DIR$/app/Breath-app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

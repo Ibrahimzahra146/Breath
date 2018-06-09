@@ -1,9 +1,6 @@
-
 package com.example.rabee.breath.fragments;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.design.widget.FloatingActionButton;
@@ -14,28 +11,22 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AbsListView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 
-import com.cooltechworks.views.shimmer.ShimmerAdapter;
 import com.cooltechworks.views.shimmer.ShimmerRecyclerView;
 import com.example.rabee.breath.Activities.AddPostActivity;
 import com.example.rabee.breath.Activities.RecentCommentsActivity;
 import com.example.rabee.breath.Adapters.HomePostAdapter;
-import com.example.rabee.breath.EndlessRecyclerOnScrollListener;
 import com.example.rabee.breath.GeneralInfo;
 import com.example.rabee.breath.Models.ResponseModels.PostCommentResponseModel;
 import com.example.rabee.breath.R;
 import com.example.rabee.breath.ReactsRecyclerViewModel;
 import com.example.rabee.breath.RequestInterface.PostInterface;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import okhttp3.Interceptor;
-import okhttp3.OkHttpClient;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -44,19 +35,20 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 
 public class HomeFragment extends Fragment {
+    // TODO: Rename parameter arguments, choose names that match
+    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+    private static final String ARG_PARAM1 = "param1";
+    private static final String ARG_PARAM2 = "param2";
     public static List<PostCommentResponseModel> postResponseModelsList = new ArrayList<>();
-    private Parcelable recyclerViewState;
-
+    static boolean loading = true; // True if we are still waiting for the last set of data to load.
+    static List<PostCommentResponseModel> currentList;
+    private static HomePostAdapter adapter;
     ShimmerRecyclerView recyclerView;
     LinearLayoutManager linearLayout;
     ProgressBar progressBar;
     LinearLayout noFriendsLayout;
     PostInterface postInterface;
-    private static HomePostAdapter adapter;
     boolean isLastPage = false;
-    private int previousTotal = 0; // The total number of items in the dataset after the last load
-    static boolean loading = true; // True if we are still waiting for the last set of data to load.
-    private int visibleThreshold = 2; // The minimum amount of items to have below your current scroll position before loading more.
     int firstVisibleItem, visibleItemCount, totalItemCount;
     int page = 0;
 
@@ -67,14 +59,10 @@ public class HomeFragment extends Fragment {
     boolean firstTime = true;
 
     //save the post list before swap to can retrieve it when return
-
-    static List<PostCommentResponseModel> currentList;
     View view;
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
+    private Parcelable recyclerViewState;
+    private int previousTotal = 0; // The total number of items in the dataset after the last load
+    private int visibleThreshold = 2; // The minimum amount of items to have below your current scroll position before loading more.
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
@@ -216,12 +204,14 @@ public class HomeFragment extends Fragment {
             @Override
             public void onResponse(Call<List<PostCommentResponseModel>> call, Response<List<PostCommentResponseModel>> response) {
                 currentList = postResponseModelsList;
+                Log.d("-------","   ACTIVITY " + response.code());
                 //ensure that still in homefragment
                 if (getActivity() != null) {
 
 
                     if (response.body().size() == 0 && page == 0) {
                         noFriendsLayout.setVisibility(View.VISIBLE);
+                        recyclerView.setVisibility(View.GONE);
                         progressBar.setVisibility(View.INVISIBLE);
                         isLastPage = true;
 
@@ -229,18 +219,31 @@ public class HomeFragment extends Fragment {
                         isLastPage = true;
 
                     } else {
-                        int startPosition = postResponseModelsList.size();
-                        postResponseModelsList.addAll(response.body());
+                        if(page ==0)
+                        {
+                            Log.d("-------","   ACTIVITY  PAGE  0 ");
 
-                            adapter = new HomePostAdapter(getContext(), postResponseModelsList);
-                            recyclerView.setAdapter(adapter);
-                            //adapter.notifyItemRangeInserted(adapter.getItemCount(), postResponseModelsList.size() - 1);
+                            int startPosition = postResponseModelsList.size();
+                        postResponseModelsList.addAll(response.body());
+                        adapter = new HomePostAdapter(getContext(), postResponseModelsList);
+                        recyclerView.setAdapter(adapter);
+                        //adapter.notifyItemRangeInserted(adapter.getItemCount(), postResponseModelsList.size() - 1);
                         adapter.notifyDataSetChanged();
                         recyclerView.setAdapter(adapter);
+                        //firstTime = false;
+                        }
+                        else{
 
-                        firstTime = false;
 
-                    }
+                            postResponseModelsList.addAll(response.body());
+                            Log.d("-------","   ACTIVITY  NOT  PAGE  0 " + postResponseModelsList.size());
+                            adapter.notifyItemRangeChanged(postResponseModelsList.size()-10,postResponseModelsList.size()-1);
+//                            adapter.notifyItemChanged();
+                        recyclerView.setAdapter(adapter);
+                        //adapter.notifyItemRangeInserted(adapter.getItemCount(), postResponseModelsList.size() - 1);
+                        adapter.notifyDataSetChanged();
+                        recyclerView.setAdapter(adapter);
+                    }}
                 }
 
 

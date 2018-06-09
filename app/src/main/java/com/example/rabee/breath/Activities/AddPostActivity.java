@@ -354,9 +354,9 @@ public class AddPostActivity extends YouTubeBaseActivity implements YouTubePlaye
                 @Override
                 public void onResponse(Call<PostResponseModel> call, Response<PostResponseModel> response) {
                     progressBar.setVisibility(View.INVISIBLE);
-                    Intent i = new Intent(getApplicationContext(), HomeActivity.class);
-                    startActivity(i);
-                    finish();
+                    //Intent i = new Intent(getApplicationContext(), HomeActivity.class);
+                   // startActivity(i);
+                    onBackPressed();
                 }
 
                 @Override
